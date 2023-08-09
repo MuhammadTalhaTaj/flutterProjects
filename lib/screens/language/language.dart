@@ -4,12 +4,14 @@ import 'package:demo_flutter/screens/signIn/signIn.dart';
 import 'package:flutter/material.dart';
 
 import '../../commonwidgets/customElevetedButton.dart';
+import '../../generated/l10n.dart';
 
 class Language extends StatelessWidget {
   const Language({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    // TODO: Use Utils insted of writing again and again.
     Size size = MediaQuery.of(context).size;
     return Scaffold(
       backgroundColor: Theme.of(context).colorScheme.background,
@@ -38,7 +40,8 @@ class Language extends StatelessWidget {
                       // Adjust the height as needed
                     ),
                     Text(
-                      'Language',
+                      // TODO: Use text from one file like this.
+                      S.of(context).Language,
                       style: headingTextStyle(context),
                     ),
                     SizedBox(
@@ -74,7 +77,7 @@ class Language extends StatelessWidget {
             Align(
                 alignment: Alignment.bottomCenter,
                 child: CustomElivitedButton(
-                  // TODO: Use text from one file.
+                  // TODO: Use text from one file like I added on top (S.of(context).Language).
                   text: 'Get Started',
                   onPress: () {
                     // TODO: Use PushNamed to Navigate In entire project.

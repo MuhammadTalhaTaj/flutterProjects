@@ -25,7 +25,8 @@ class SignUp extends StatelessWidget {
               gradient: LinearGradient(
                 // begin: Alignment.centerLeft,
                 colors: [Color(0xFF483548), Color(0xff1e051a)],
-              )),
+              ),
+          ),
           child: SingleChildScrollView(
             child: Column(
               children: [

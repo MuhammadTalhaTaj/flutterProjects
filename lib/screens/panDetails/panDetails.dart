@@ -1,14 +1,15 @@
 import 'package:demo_flutter/commonwidgets/cusotmDropdown.dart';
 import 'package:demo_flutter/commonwidgets/customElevetedButton.dart';
 import 'package:demo_flutter/constants/textStyles.dart';
-import 'package:demo_flutter/screens/signUp/signUp2.dart';
-import 'package:demo_flutter/screens/signUp/signup.dart';
+import 'package:demo_flutter/screens/OTP/otp.dart';
+import 'package:demo_flutter/screens/congratulations/congratulation.dart';
+import 'package:demo_flutter/screens/signIn/signIn.dart';
 import 'package:flutter/material.dart';
-
+import 'package:dotted_border/dotted_border.dart';
 import '../../commonwidgets/customTextField.dart';
 
-class OTP extends StatelessWidget {
-  const OTP({Key? key}) : super(key: key);
+class PanUpdate extends StatelessWidget {
+  const PanUpdate({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -30,13 +31,13 @@ class OTP extends StatelessWidget {
             child: Column(
               children: [
                 Container(
-                  height: height1 * 0.5,
-                  child: Image.asset('assets/images/otp.png'),
+                  height: height1 * 0.3,
+                  child: Image.asset('assets/images/pandetails.png'),
                 ),
                 Container(
                   padding: EdgeInsets.all(20),
                   width: double.infinity,
-                  height: height1 * 0.5,
+                  height: height1 * 0.7,
                   decoration: BoxDecoration(
                       color: Color(0xff35192f),
                       borderRadius: BorderRadius.only(
@@ -50,55 +51,56 @@ class OTP extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            'Enter OTP',
+                            'Add PAN Details',
                             style: headingTextStyle(context),
                           ),
                           SizedBox(
                             height: 10,
                           ),
                           Text(
-                            'We sent OTP on your number.',
+
+                            'Please enter pan details to continue',
                             style: subBodyTextStyle(),
                           ),
                           SizedBox(
                             height: 20,
                           ),
 
-
                           Text(
-                            'Enter OTP',
+                            'PAN Number',
                             style: bodyTextStyle(context),
                           ),
                           SizedBox(
+
                             height: 10,
                           ),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              SizedBox(width:50,height: 45,child: CustomTextField(labelText: "",)),
-                              SizedBox(width:50,height: 45,child: CustomTextField(labelText: "",)),
-                              SizedBox(width:50,height: 45,child: CustomTextField(labelText: "",)),
-                              SizedBox(width:50,height: 45,child: CustomTextField(labelText: "",)),
-                              SizedBox(width:50,height: 45,child: CustomTextField(labelText: "",)),
-                              SizedBox(width:50,height: 45,child: CustomTextField(labelText: "",)),
+                          CustomTextField(labelText: 'Enter Number',),
 
-                            ],
-                          ),
                           SizedBox(
                             height: 10,
                           ),
-
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.end,
-                            children: [
-                              Text('01:20',style: TextStyle(color: Colors.redAccent),),
-                              SizedBox(width: 10,),
-                              Text(
-                                'Resend it',
-                                style: subBodyTextStyle(),
-                              ),
-                            ],
+                          RichText(text: TextSpan(text: 'Note: ',style: TextStyle(fontWeight: FontWeight.bold,color: Color(0xFFFD7E14)),children: [TextSpan(text:'Lorem ipsum dolor sit amet consectetur. Lorem ipsum dolor sit amet.' ,style: TextStyle(fontWeight: FontWeight.normal))],),),
+                                SizedBox(height: 25,),
+                          Text(
+                            'Upload Your Image',
+                            style: bodyTextStyle(context),
                           ),
+                          SizedBox(
+
+                            height: 10,
+                          ),
+                          DottedBorder(
+                            dashPattern: [8,4],
+                            color: Colors.white,
+                            strokeWidth: 0.5,
+                            child: Container(
+                            color: Color(0xff1B021A),
+                              height: 58,
+                              width: double.infinity,
+                              child: ElevatedButton(style: ElevatedButton.styleFrom(backgroundColor:Color(0xff1B021A), ),onPressed: (){}, child: Row(children: [Icon(Icons.add,color: Colors.white,size: 20,),SizedBox(width: 5,),Text('Upload image',style: bodyTextStyle(context),)],)),
+                            ),
+                          )
+
                         ],
                       ),
 
@@ -107,10 +109,10 @@ class OTP extends StatelessWidget {
                       Column(
                         children: [
                           CustomElivitedButton(text: 'Continue', onPress: (){
-                            Navigator.push(context, MaterialPageRoute(builder: (context) => SignUp2(),));
+                            Navigator.push(context, MaterialPageRoute(builder: (context) => Congratulation(),));
                           }),
-                          SizedBox(height: 10,),
-                          Row( mainAxisAlignment:MainAxisAlignment.center,children: [Text('You never work with us?  ',style: subBodyTextStyle(),),GestureDetector(onTap: (){Navigator.push(context, MaterialPageRoute(builder: (context) => SignUp(),));}, child: Text('Sign up',style: bodyTextStyle(context),))],)
+                          SizedBox(height: 15,),
+                          GestureDetector(onTap: (){Navigator.push(context, MaterialPageRoute(builder: (context) => SignIn(),));}, child: Text('Skip',style: bodyTextStyle(context),))
 
                         ],
                       )

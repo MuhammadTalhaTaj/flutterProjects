@@ -14,10 +14,11 @@ class Language extends StatelessWidget {
     return Scaffold(
       backgroundColor: Theme.of(context).colorScheme.background,
       body: Container(
+        // TODO: Use const where required.
         decoration: BoxDecoration(
             gradient: LinearGradient(
           begin: Alignment.centerLeft,
-
+              // TODO: Use colors from Theme file don't use color codes.
           colors: [Color(0xFF493548), Color(0xff1f071e)],
         )),
         padding: EdgeInsets.all(20),
@@ -31,6 +32,7 @@ class Language extends StatelessWidget {
               child: Container(
                 child: Column(
                   children: [
+                    // TODO: create image Variable file and use variable hear in all files.
                     Image.asset(
                       'assets/images/languageImage.png',
                       // Adjust the height as needed
@@ -46,12 +48,14 @@ class Language extends StatelessWidget {
                       'Please select language to continue',
                       style: subBodyTextStyle(),
                     ),
+                    // TODO: Create app size class and use that in entire project don't use this type of sizebox every time
                     SizedBox(
                       height: 20,
                     ),
                     SizedBox(
                         height: 58,
                         width: double.infinity,
+                        // TODO: Use List varible and store all language on that and show hear and select Language is hint text don't use as value.
                         child: CustomDropDownButton([
                           'Select Language',
                           'English',
@@ -59,7 +63,9 @@ class Language extends StatelessWidget {
                           'Mandarin',
                           'Arabic',
                           'Hindi'
-                        ], (value) {},Color(0xff331c30))),
+                        ], (value) {},
+                            // TODO: Use Comma after every parenthesis.
+                            Color(0xff331c30))),
                   ],
                 ),
               ),
@@ -68,12 +74,14 @@ class Language extends StatelessWidget {
             Align(
                 alignment: Alignment.bottomCenter,
                 child: CustomElivitedButton(
+                  // TODO: Use text from one file.
                   text: 'Get Started',
                   onPress: () {
+                    // TODO: Use PushNamed to Navigate In entire project.
                     Navigator.push(context, MaterialPageRoute(builder: (context) => SignIn(),));
-
                   },
-                )),
+                ),
+            ),
           ],
         ),
       ),

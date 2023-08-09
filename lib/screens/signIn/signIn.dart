@@ -70,6 +70,7 @@ class SignIn extends StatelessWidget {
                           SizedBox(
                             height: 10,
                           ),
+                          // TODO: Use List variable and store all types on that and show hear and Select Type is hint text don't use as value.
                           CustomDropDownButton(
                               ['Select Type', 'Basic User', 'Pro User'], (value) {},Color(0xff1B021A)),
                           SizedBox(

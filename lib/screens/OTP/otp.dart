@@ -1,4 +1,3 @@
-import 'package:demo_flutter/commonwidgets/cusotmDropdown.dart';
 import 'package:demo_flutter/commonwidgets/customElevetedButton.dart';
 import 'package:demo_flutter/constants/textStyles.dart';
 import 'package:demo_flutter/screens/signUp/signUp2.dart';
@@ -73,6 +72,7 @@ class OTP extends StatelessWidget {
                           SizedBox(
                             height: 10,
                           ),
+                          // TODO: Use Pinput Package and make otp fields dont use this fields.
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [

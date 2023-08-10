@@ -38,6 +38,12 @@ dependencies:
   cupertino_icons: ^1.0.2
   dotted_border: ^2.0.0+3
 
+  #for adding multi language
+  intl: ^0.18.1
+  intl_utils: ^2.8.4
+  # for adding some util functions
+  get: ^4.6.5
+
 dev_dependencies:
   flutter_test:
     sdk: flutter

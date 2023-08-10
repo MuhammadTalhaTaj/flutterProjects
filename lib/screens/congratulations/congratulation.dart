@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import '../../commonwidgets/customElevetedButton.dart';
 
 class Congratulation extends StatelessWidget {
+  static const routeName='congratulation';
   const Congratulation({Key? key}) : super(key: key);
 
   @override

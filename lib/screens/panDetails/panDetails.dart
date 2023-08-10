@@ -9,6 +9,7 @@ import 'package:dotted_border/dotted_border.dart';
 import '../../commonwidgets/customTextField.dart';
 
 class PanUpdate extends StatelessWidget {
+  static const routeName='pan-update';
   const PanUpdate({Key? key}) : super(key: key);
 
   @override

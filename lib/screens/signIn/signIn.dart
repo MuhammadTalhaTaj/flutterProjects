@@ -8,6 +8,7 @@ import '../../commonwidgets/customTextField.dart';
 import '../signUp/signup.dart';
 
 class SignIn extends StatelessWidget {
+  static const routeName='/sign-in';
   const SignIn({Key? key}) : super(key: key);
 
   @override
@@ -101,10 +102,10 @@ class SignIn extends StatelessWidget {
                       Column(
                         children: [
                           CustomElivitedButton(text: 'Get Started', onPress: (){
-                            Navigator.push(context, MaterialPageRoute(builder: (context) => OTP(),));
+                             Navigator.pushNamed(context, OTP.routeName);
                           }),
                           SizedBox(height: 10,),
-                          Row( mainAxisAlignment:MainAxisAlignment.center,children: [Text('You never work with us?  ',style: subBodyTextStyle(),),GestureDetector(onTap: (){Navigator.push(context, MaterialPageRoute(builder: (context) => SignUp(),));}, child: Text('Sign up',style: bodyTextStyle(context),))],)
+                          Row( mainAxisAlignment:MainAxisAlignment.center,children: [Text('You never work with us?  ',style: subBodyTextStyle(),),GestureDetector(onTap: (){Navigator.pushNamed(context, SignUp.routeName);}, child: Text('Sign up',style: bodyTextStyle(context),))],)
 
                         ],
                       )

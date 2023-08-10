@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import '../../commonwidgets/customElevetedButton.dart';
 
 class Failed extends StatelessWidget {
+  static const routeName='failed';
   const Failed({Key? key}) : super(key: key);
 
   @override

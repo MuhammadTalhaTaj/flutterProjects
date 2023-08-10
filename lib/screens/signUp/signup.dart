@@ -8,6 +8,7 @@ import 'package:flutter/material.dart';
 import '../../commonwidgets/customTextField.dart';
 
 class SignUp extends StatelessWidget {
+  static const routeName='/sign-up';
   const SignUp({Key? key}) : super(key: key);
 
   @override

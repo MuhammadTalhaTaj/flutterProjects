@@ -4,6 +4,7 @@ import 'package:demo_flutter/screens/congratulations/congratulation.dart';
 import 'package:demo_flutter/screens/failed/failed.dart';
 import 'package:demo_flutter/screens/language/language.dart';
 import 'package:demo_flutter/screens/panDetails/panDetails.dart';
+import 'package:demo_flutter/screens/signIn/signIn.dart';
 import 'package:demo_flutter/screens/signUp/signUp2.dart';
 import 'package:demo_flutter/screens/signUp/signup.dart';
 import 'package:flutter/material.dart';
@@ -20,10 +21,18 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       theme: ThemeData(
         colorScheme: lightColorScheme,
-
       ),
-
       home: Language(),
+      routes: {
+        SignIn.routeName: (ctx) => SignIn(),
+        SignUp.routeName: (ctx) => SignUp(),
+        SignUp2.routeName: (ctx) => SignUp2(),
+        OTP.routeName: (ctx) => OTP(),
+        PanUpdate.routeName: (ctx) => PanUpdate(),
+        Language.routeName: (ctx) => Language(),
+        Failed.routeName: (ctx) => Failed(),
+        Congratulation.routeName: (ctx) => Congratulation(),
+      },
     );
   }
 }

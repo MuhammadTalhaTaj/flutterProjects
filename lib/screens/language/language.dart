@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import '../../commonwidgets/customElevetedButton.dart';
 
 class Language extends StatelessWidget {
+  static const routeName='language';
   const Language({Key? key}) : super(key: key);
 
   @override
@@ -64,13 +65,14 @@ class Language extends StatelessWidget {
                 ),
               ),
             ),
+
             Spacer(),
             Align(
                 alignment: Alignment.bottomCenter,
                 child: CustomElivitedButton(
                   text: 'Get Started',
                   onPress: () {
-                    Navigator.push(context, MaterialPageRoute(builder: (context) => SignIn(),));
+                    Navigator.pushNamed(context, SignIn.routeName);
 
                   },
                 )),

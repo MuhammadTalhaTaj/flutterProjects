@@ -8,6 +8,7 @@ import 'package:flutter/material.dart';
 import '../../commonwidgets/customTextField.dart';
 
 class OTP extends StatelessWidget {
+  static const routeName='otp';
   const OTP({Key? key}) : super(key: key);
 
   @override
@@ -107,10 +108,10 @@ class OTP extends StatelessWidget {
                       Column(
                         children: [
                           CustomElivitedButton(text: 'Continue', onPress: (){
-                            Navigator.push(context, MaterialPageRoute(builder: (context) => SignUp2(),));
+                            Navigator.pushNamed(context, SignUp2.routeName);
                           }),
                           SizedBox(height: 10,),
-                          Row( mainAxisAlignment:MainAxisAlignment.center,children: [Text('You never work with us?  ',style: subBodyTextStyle(),),GestureDetector(onTap: (){Navigator.push(context, MaterialPageRoute(builder: (context) => SignUp(),));}, child: Text('Sign up',style: bodyTextStyle(context),))],)
+                          Row( mainAxisAlignment:MainAxisAlignment.center,children: [Text('You never work with us?  ',style: subBodyTextStyle(),),GestureDetector(onTap: (){Navigator.pushNamed(context, SignUp.routeName);}, child: Text('Sign up',style: bodyTextStyle(context),))],)
 
                         ],
                       )

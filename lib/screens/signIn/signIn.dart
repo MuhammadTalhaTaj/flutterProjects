@@ -1,46 +1,52 @@
 import 'package:demo_flutter/commonwidgets/cusotmDropdown.dart';
 import 'package:demo_flutter/commonwidgets/customElevetedButton.dart';
 import 'package:demo_flutter/constants/textStyles.dart';
+import 'package:demo_flutter/imageVairableFiles/ImageVariableFiles.dart';
+import 'package:demo_flutter/randomData/listRandomData.dart';
 import 'package:demo_flutter/screens/OTP/otp.dart';
+import 'package:demo_flutter/utils/app_utils/extensions/color_extension.dart';
+import 'package:demo_flutter/utils/app_utils/extensions/screen_util_extension.dart';
 import 'package:flutter/material.dart';
 
+import '../../commonwidgets/appsize.dart';
 import '../../commonwidgets/customTextField.dart';
+import '../../generated/l10n.dart';
 import '../signUp/signup.dart';
 
 class SignIn extends StatelessWidget {
-  static const routeName='/sign-in';
+  static const routeName = '/sign-in';
+
   const SignIn({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    double width = MediaQuery.of(context).size.width;
-    double height = MediaQuery.of(context).size.height;
-    var padding = MediaQuery.of(context).viewPadding;
-    double height1 = height - padding.top - padding.bottom;
-
     return SafeArea(
       child: Scaffold(
+        backgroundColor: context.colorScheme.background,
         body: Container(
           width: double.infinity,
           decoration: BoxDecoration(
               gradient: LinearGradient(
             // begin: Alignment.centerLeft,
-            colors: [Color(0xFF483548), Color(0xff1e051a)],
+            colors: [
+              context.colorScheme.background,
+              context.colorScheme.onBackground
+            ],
           )),
           child: SingleChildScrollView(
             child: Column(
               children: [
                 Container(
-                  height: height1 * 0.3,
-                  child: Image.asset('assets/images/signIn.png'),
+                  height: context.heightWithoutSafeArea * 0.33,
+                  child: Image.asset(ImageVariables.signInImage),
                 ),
                 Container(
-                  padding: EdgeInsets.all(20),
+                  padding:const EdgeInsets.all(20),
                   width: double.infinity,
-                  height: height1 * 0.7,
+                  height: context.heightWithoutSafeArea * 0.67,
                   decoration: BoxDecoration(
-                      color: Color(0xff35192f),
-                      borderRadius: BorderRadius.only(
+                      color: context.colorScheme.primaryContainer,
+                      borderRadius:const  BorderRadius.only(
                           topLeft: Radius.circular(35),
                           topRight: Radius.circular(35))),
                   child: Column(
@@ -51,63 +57,89 @@ class SignIn extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            'Welcome Back!',
+                            S.of(context).welcome,
                             style: headingTextStyle(context),
                           ),
-                          SizedBox(
+                          AppSize(
                             height: 10,
                           ),
                           Text(
-                            'Welcome Back please sign in to continue',
+                            S.of(context).welcomeBack,
                             style: subBodyTextStyle(),
                           ),
-                          SizedBox(
+                          AppSize(
                             height: 20,
                           ),
                           Text(
-                            'Select user type',
+                            S.of(context).selectUserType,
                             style: bodyTextStyle(context),
                           ),
-                          SizedBox(
+                          AppSize(
                             height: 10,
                           ),
-                          // TODO: Use List variable and store all types on that and show hear and Select Type is hint text don't use as value.
+
                           CustomDropDownButton(
-                              ['Select Type', 'Basic User', 'Pro User'], (value) {},Color(0xff1B021A)),
-                          SizedBox(
+                            list: listUserType,
+                            onPressed: (value) {},
+                            color: context.colorScheme.onPrimaryContainer,
+                            hint: S.of(context).selectType,
+                          ),
+                          AppSize(
                             height: 15,
                           ),
                           Text(
-                            'Mobile Number',
+                            S.of(context).mobileNumber,
                             style: bodyTextStyle(context),
                           ),
-                          SizedBox(
+                          AppSize(
                             height: 10,
                           ),
-                          CustomTextField(labelText: 'Enter Number',),
-                          SizedBox(
+                          CustomTextField(
+                            labelText: S.of(context).enterNumber,
+                          ),
+                          AppSize(
                             height: 10,
                           ),
                           Align(
                             alignment: Alignment.centerRight,
                             child: Text(
-                              'Forgot MPIN?',
+                              S.of(context).forgotMpin,
                               style: subBodyTextStyle(),
                             ),
                           ),
                         ],
                       ),
-
-
-
                       Column(
                         children: [
-                          CustomElivitedButton(text: 'Get Started', onPress: (){
-                             Navigator.pushNamed(context, OTP.routeName);
-                          }),
-                          SizedBox(height: 10,),
-                          Row( mainAxisAlignment:MainAxisAlignment.center,children: [Text('You never work with us?  ',style: subBodyTextStyle(),),GestureDetector(onTap: (){Navigator.pushNamed(context, SignUp.routeName);}, child: Text('Sign up',style: bodyTextStyle(context),))],)
-
+                          CustomElivitedButton(
+                              text: S.of(context).getStarted,
+                              onPress: () {
+                                Navigator.pushNamed(context, OTP.routeName);
+                              }),
+                          AppSize(
+                            height: 10,
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Text(
+                                S.of(context).youNeverWorkWithUs,
+                                style: subBodyTextStyle(),
+                              ),
+                              AppSize(
+                                width: 5,
+                              ),
+                              GestureDetector(
+                                  onTap: () {
+                                    Navigator.pushNamed(
+                                        context, SignUp.routeName);
+                                  },
+                                  child: Text(
+                                    S.of(context).signUp,
+                                    style: bodyTextStyle(context),
+                                  ))
+                            ],
+                          )
                         ],
                       )
                     ],
@@ -121,6 +153,3 @@ class SignIn extends StatelessWidget {
     );
   }
 }
-
-
-

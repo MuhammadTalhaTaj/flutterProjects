@@ -3,12 +3,18 @@
 import 'package:demo_flutter/commonwidgets/cusotmDropdown.dart';
 import 'package:demo_flutter/commonwidgets/customElevetedButton.dart';
 import 'package:demo_flutter/constants/textStyles.dart';
+import 'package:demo_flutter/imageVairableFiles/ImageVariableFiles.dart';
 import 'package:demo_flutter/screens/OTP/otp.dart';
 import 'package:demo_flutter/screens/panDetails/panDetails.dart';
 import 'package:demo_flutter/screens/signIn/signIn.dart';
+import 'package:demo_flutter/utils/app_utils/extensions/color_extension.dart';
+import 'package:demo_flutter/utils/app_utils/extensions/screen_util_extension.dart';
 import 'package:flutter/material.dart';
 
+import '../../commonwidgets/appsize.dart';
 import '../../commonwidgets/customTextField.dart';
+import '../../generated/l10n.dart';
+import '../../randomData/listRandomData.dart';
 
 class SignUp2 extends StatelessWidget {
   static const routeName='/sign-up2';
@@ -16,10 +22,7 @@ class SignUp2 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    double width = MediaQuery.of(context).size.width;
-    double height = MediaQuery.of(context).size.height;
-    var padding = MediaQuery.of(context).viewPadding;
-    double height1 = height - padding.top - padding.bottom;
+
 
     return SafeArea(
       child: Scaffold(
@@ -27,7 +30,7 @@ class SignUp2 extends StatelessWidget {
           decoration: BoxDecoration(
               gradient: LinearGradient(
             // begin: Alignment.centerLeft,
-            colors: [Color(0xFF483548), Color(0xff1e051a)],
+            colors: [context.colorScheme.background, context.colorScheme.onBackground],
           )),
           child: CustomScrollView(
             slivers: [
@@ -37,21 +40,21 @@ class SignUp2 extends StatelessWidget {
                   pinned: false,
 
                   //  width: double.infinity,
-                  expandedHeight: height1 * 0.3,
+                  expandedHeight: context.heightWithoutSafeArea * 0.33,
                   flexibleSpace: Container(
                     decoration: BoxDecoration(
                         gradient: LinearGradient(
                           // begin: Alignment.centerLeft,
                           colors: [Color(0xFF483548), Color(0xff1e051a)],
                         )),
-                    child: Image.asset('assets/images/signup2.png'),
+                    child: Image.asset(ImageVariables.signUp2Image),
                   )),
               SliverFillRemaining(
                 hasScrollBody: true,
                 child: Container(
                   padding: EdgeInsets.all(20),
                   width: double.infinity,
-                  height: height1 * 0.7,
+                  height: context.height * 0.67,
                   decoration: BoxDecoration(
                       color: Color(0xff35192f),
                       borderRadius: BorderRadius.only(
@@ -70,137 +73,121 @@ class SignUp2 extends StatelessWidget {
                               Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  Row(
-                                    children: [
-                                      Text(
-                                        'Welcome ',
-                                        style: headingTextStyle(context),
-                                      ),
-                                      SizedBox(
-                                        width: 5,
-                                      ),
-                                      Icon(
-                                        Icons.waving_hand,
-                                        color: Colors.yellow,
-                                      )
-                                    ],
-                                  ),
-                                  SizedBox(
+                                  Text(S.of(context).welcome,style: headingTextStyle(context),),
+                                  AppSize(
                                     height: 10,
                                   ),
                                   Text(
-                                    'Welcome please sign in to continue',
+                                    S.of(context).welcomePleaseSignInTOContinue,
                                     style: subBodyTextStyle(),
                                   ),
-                                  SizedBox(
+                                  AppSize(
                                     height: 20,
                                   ),
                                   Text(
-                                    'Select user type',
+                                    S.of(context).selectUserType,
                                     style: bodyTextStyle(context),
                                   ),
-                                  SizedBox(
+                                  AppSize(
                                     height: 10,
                                   ),
                                   CustomDropDownButton(
-                                      ['Select Type', 'Basic User', 'Pro User'],
-                                      (value) {},
-                                      Color(0xff1B021A)),
-                                  SizedBox(
+                                    list: listUserType, onPressed:(value) {},color:context.colorScheme.onPrimaryContainer,hint: S.of(context).selectType,),
+                                  AppSize(
                                     height: 15,
                                   ),
                                   Text(
-                                    'Your Name',
+                                    S.of(context).yourName,
                                     style: bodyTextStyle(context),
                                   ),
-                                  SizedBox(
+                                  AppSize(
                                     height: 10,
                                   ),
                                   CustomTextField(
-                                    labelText: 'Enter Name',
+                                    labelText: S.of(context).enterNumber,
                                   ),
-                                  SizedBox(
+                                  AppSize(
                                     height: 15,
                                   ),
                                   Text(
-                                    'Mobile Number',
+                                    S.of(context).mobileNumber,
                                     style: bodyTextStyle(context),
                                   ),
-                                  SizedBox(
+                                  AppSize(
                                     height: 10,
                                   ),
                                   CustomTextField(
-                                    labelText: 'Enter Number',
+                                    labelText: S.of(context).enterNumber,
                                   ),
-                                  SizedBox(
+                                  AppSize(
                                     height: 15,
                                   ),
                                   Text(
-                                    'Workshop Name',
+                                    S.of(context).workShopName,
                                     style: bodyTextStyle(context),
                                   ),
-                                  SizedBox(
+                                  AppSize(
                                     height: 10,
                                   ),
                                   CustomTextField(
-                                    labelText: 'Enter Name',
+                                    labelText: S.of(context).enterName,
                                   ),
-                                  SizedBox(
+                                  AppSize(
                                     height: 15,
                                   ),
                                   Text(
-                                    'Road Name',
+                                    S.of(context).roadName,
                                     style: bodyTextStyle(context),
                                   ),
-                                  SizedBox(
+                                  AppSize(
                                     height: 10,
                                   ),
                                   CustomTextField(
-                                    labelText: 'Enter Name',
+                                    labelText: S.of(context).enterName,
                                   ),
-                                  SizedBox(
+                                  AppSize(
                                     height: 15,
                                   ),
                                   Text(
-                                    'Pin code',
+                                    S.of(context).pinCode,
                                     style: bodyTextStyle(context),
                                   ),
-                                  SizedBox(
+                                  AppSize(
                                     height: 10,
                                   ),
                                   CustomTextField(
-                                    labelText: 'Enter Code',
+                                    labelText: S.of(context).enterCode,
                                   ),
-                                  SizedBox(
+                                  AppSize(
                                     height: 15,
                                   ),
                                   Text(
-                                    'Your State',
+                                    S.of(context).yourState,
                                     style: bodyTextStyle(context),
                                   ),
-                                  SizedBox(
+                                  AppSize(
                                     height: 10,
                                   ),
                                   CustomDropDownButton(
-                                      ['Select State', 'US', 'UK'],
-                                          (value) {},
-                                      Color(0xff1B021A)),
-                                  SizedBox(
+                                     list: listStates,
+                                          onPressed: (value) {},
+                                     color: context.colorScheme.onPrimaryContainer,hint: S.of(context).selectState,),
+                                  AppSize(
                                     height: 15,
                                   ),
 
                                   Text(
-                                    'Your City',
+                                    S.of(context).yourCity,
                                     style: bodyTextStyle(context),
                                   ),
-                                  SizedBox(
+                                  AppSize(
                                     height: 10,
                                   ),
                                   CustomDropDownButton(
-                                      ['Select City', 'Basic User', 'Pro User'],
-                                          (value) {},
-                                      Color(0xff1B021A)),
-                                  SizedBox(
+                                   list:listCities,
+                                         onPressed: (value) {},
+                                      color:context.colorScheme.onPrimaryContainer,hint: S.of(context).selectCity,),
+                                  AppSize(
                                     height: 15,
                                   ),
 
@@ -210,7 +197,7 @@ class SignUp2 extends StatelessWidget {
                               Column(
                                 children: [
                                   CustomElivitedButton(
-                                      text: 'Get Started',
+                                      text: S.of(context).getStarted,
                                       onPress: () {
                                         Navigator.push(
                                             context,
@@ -218,16 +205,17 @@ class SignUp2 extends StatelessWidget {
                                               builder: (context) => PanUpdate(),
                                             ));
                                       }),
-                                  SizedBox(
+                                  AppSize(
                                     height: 10,
                                   ),
                                   Row(
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     children: [
                                       Text(
-                                        'Already member with us?  ',
+                                        S.of(context).alreadyMemberWithUs,
                                         style: subBodyTextStyle(),
                                       ),
+                                      AppSize(width: 5,),
                                       GestureDetector(
                                           onTap: () {
                                             Navigator.push(
@@ -237,7 +225,7 @@ class SignUp2 extends StatelessWidget {
                                                 ));
                                           },
                                           child: Text(
-                                            'Log in',
+                                            S.of(context).logIn,
                                             style: bodyTextStyle(context),
                                           ))
                                     ],

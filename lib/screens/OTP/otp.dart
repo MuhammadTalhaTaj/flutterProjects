@@ -1,21 +1,58 @@
 import 'package:demo_flutter/commonwidgets/customElevetedButton.dart';
 import 'package:demo_flutter/constants/textStyles.dart';
+import 'package:demo_flutter/imageVairableFiles/ImageVariableFiles.dart';
 import 'package:demo_flutter/screens/signUp/signUp2.dart';
 import 'package:demo_flutter/screens/signUp/signup.dart';
+import 'package:demo_flutter/utils/app_utils/extensions/color_extension.dart';
+import 'package:demo_flutter/utils/app_utils/extensions/screen_util_extension.dart';
 import 'package:flutter/material.dart';
-
+import 'package:pinput/pinput.dart';
+import '../../commonwidgets/appsize.dart';
 import '../../commonwidgets/customTextField.dart';
+import '../../generated/l10n.dart';
 
-class OTP extends StatelessWidget {
-  static const routeName='otp';
-  const OTP({Key? key}) : super(key: key);
+class OTP extends StatefulWidget {
+  static const routeName = '/otp';
+
+  OTP({Key? key}) : super(key: key);
+
+  @override
+  State<OTP> createState() => _OTPState();
+}
+
+class _OTPState extends State<OTP> {
+  final pinController = TextEditingController();
+
+  final focusNode = FocusNode();
+
+  final formKey = GlobalKey<FormState>();
+
+  @override
+  void dispose() {
+    pinController.dispose();
+    focusNode.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
-    double width = MediaQuery.of(context).size.width;
-    double height = MediaQuery.of(context).size.height;
-    var padding = MediaQuery.of(context).viewPadding;
-    double height1 = height - padding.top - padding.bottom;
+    const focusedBorderColor = Color.fromRGBO(23, 171, 144, 1);
+    var fillColor = context.colorScheme.onPrimaryContainer;
+    const borderColor = Color.fromRGBO(23, 171, 144, 0.4);
+
+    final defaultPinTheme = PinTheme(
+
+      width: 50,
+      height: 56,
+      textStyle: const TextStyle(
+        fontSize: 22,
+        color: Color.fromRGBO(30, 60, 87, 1),
+      ),
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(0),
+        border: Border.all(color: borderColor),
+      ),
+    );
 
     return SafeArea(
       child: Scaffold(
@@ -23,23 +60,26 @@ class OTP extends StatelessWidget {
           width: double.infinity,
           decoration: BoxDecoration(
               gradient: LinearGradient(
-                // begin: Alignment.centerLeft,
-                colors: [Color(0xFF483548), Color(0xff1e051a)],
-              )),
+            // begin: Alignment.centerLeft,
+            colors: [
+              context.colorScheme.background,
+              context.colorScheme.onBackground
+            ],
+          )),
           child: SingleChildScrollView(
             child: Column(
               children: [
                 Container(
-                  height: height1 * 0.5,
-                  child: Image.asset('assets/images/otp.png'),
+                  height: context.heightWithoutSafeArea * 0.5,
+                  child: Image.asset(ImageVariables.otpImage),
                 ),
                 Container(
-                  padding: EdgeInsets.all(20),
+                  padding: const EdgeInsets.all(20),
                   width: double.infinity,
-                  height: height1 * 0.5,
+                  height: context.heightWithoutSafeArea * 0.5,
                   decoration: BoxDecoration(
-                      color: Color(0xff35192f),
-                      borderRadius: BorderRadius.only(
+                      color: context.colorScheme.primaryContainer,
+                      borderRadius: const BorderRadius.only(
                           topLeft: Radius.circular(35),
                           topRight: Radius.circular(35))),
                   child: Column(
@@ -47,72 +87,140 @@ class OTP extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              S.of(context).enterOtp,
+                              style: headingTextStyle(context),
+                            ),
+                            AppSize(
+                              height: 10,
+                            ),
+                            Text(
+                              S.of(context).weSentOtp,
+                              style: subBodyTextStyle(),
+                            ),
+                            AppSize(
+                              height: 20,
+                            ),
+
+                            Text(
+                              S.of(context).enterOtp,
+                              style: bodyTextStyle(context),
+                            ),
+                            AppSize(
+                              height: 10,
+                            ),
+                            Pinput(
+
+                              length: 6,
+                              controller: pinController,
+                              focusNode: focusNode,
+                              androidSmsAutofillMethod:
+                                  AndroidSmsAutofillMethod.smsUserConsentApi,
+                              listenForMultipleSmsOnAndroid: true,
+                              defaultPinTheme: defaultPinTheme,
+                              separatorBuilder: (index) =>
+                                  const SizedBox(width: 8),
+                              validator: (value) {
+                                return value == '2222'
+                                    ? null
+                                    : 'Pin is incorrect';
+                              },
+                              // onClipboardFound: (value) {
+                              //   debugPrint('onClipboardFound: $value');
+                              //   pinController.setText(value);
+                              // },
+                              hapticFeedbackType:
+                                  HapticFeedbackType.lightImpact,
+                              onCompleted: (pin) {
+                                debugPrint('onCompleted: $pin');
+                              },
+                              onChanged: (value) {
+                                debugPrint('onChanged: $value');
+                              },
+                              cursor: Column(
+                                mainAxisAlignment: MainAxisAlignment.end,
+                                children: [
+                                  Container(
+
+                                    margin: const EdgeInsets.only(bottom: 9),
+                                    width: 22,
+                                    height: 1,
+                                    color: focusedBorderColor,
+                                  ),
+                                ],
+                              ),
+                              focusedPinTheme: defaultPinTheme.copyWith(
+                                decoration:
+                                    defaultPinTheme.decoration!.copyWith(
+                                  borderRadius: BorderRadius.circular(8),
+                                  border: Border.all(color: focusedBorderColor),
+                                ),
+                              ),
+                              submittedPinTheme: defaultPinTheme.copyWith(
+                                decoration:
+                                    defaultPinTheme.decoration!.copyWith(
+                                  color: fillColor,
+                                  borderRadius: BorderRadius.circular(19),
+                                  border: Border.all(color: focusedBorderColor),
+                                ),
+                              ),
+                              errorPinTheme: defaultPinTheme.copyBorderWith(
+                                border: Border.all(color: Colors.redAccent),
+                              ),
+                            ),
+                          ]),
+                      AppSize(
+                        height: 10,
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.end,
                         children: [
                           Text(
-                            'Enter OTP',
-                            style: headingTextStyle(context),
+                            '01:20',
+                            style: TextStyle(color: context.colorScheme.error),
                           ),
-                          SizedBox(
-                            height: 10,
+                          AppSize(
+                            width: 10,
                           ),
                           Text(
-                            'We sent OTP on your number.',
+                            S.of(context).resend,
                             style: subBodyTextStyle(),
-                          ),
-                          SizedBox(
-                            height: 20,
-                          ),
-
-
-                          Text(
-                            'Enter OTP',
-                            style: bodyTextStyle(context),
-                          ),
-                          SizedBox(
-                            height: 10,
-                          ),
-                          // TODO: Use Pinput Package and make otp fields dont use this fields.
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              SizedBox(width:50,height: 45,child: CustomTextField(labelText: "",)),
-                              SizedBox(width:50,height: 45,child: CustomTextField(labelText: "",)),
-                              SizedBox(width:50,height: 45,child: CustomTextField(labelText: "",)),
-                              SizedBox(width:50,height: 45,child: CustomTextField(labelText: "",)),
-                              SizedBox(width:50,height: 45,child: CustomTextField(labelText: "",)),
-                              SizedBox(width:50,height: 45,child: CustomTextField(labelText: "",)),
-
-                            ],
-                          ),
-                          SizedBox(
-                            height: 10,
-                          ),
-
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.end,
-                            children: [
-                              Text('01:20',style: TextStyle(color: Colors.redAccent),),
-                              SizedBox(width: 10,),
-                              Text(
-                                'Resend it',
-                                style: subBodyTextStyle(),
-                              ),
-                            ],
                           ),
                         ],
                       ),
-
-
-
                       Column(
                         children: [
-                          CustomElivitedButton(text: 'Continue', onPress: (){
-                            Navigator.pushNamed(context, SignUp2.routeName);
-                          }),
-                          SizedBox(height: 10,),
-                          Row( mainAxisAlignment:MainAxisAlignment.center,children: [Text('You never work with us?  ',style: subBodyTextStyle(),),GestureDetector(onTap: (){Navigator.pushNamed(context, SignUp.routeName);}, child: Text('Sign up',style: bodyTextStyle(context),))],)
-
+                          CustomElivitedButton(
+                              text: S.of(context).continue1,
+                              onPress: () {
+                                Navigator.pushNamed(context, SignUp2.routeName);
+                              }),
+                          AppSize(
+                            height: 10,
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Text(
+                                S.of(context).youNeverWorkWithUs,
+                                style: subBodyTextStyle(),
+                              ),
+                              AppSize(
+                                width: 5,
+                              ),
+                              GestureDetector(
+                                  onTap: () {
+                                    Navigator.pushNamed(
+                                        context, SignUp.routeName);
+                                  },
+                                  child: Text(
+                                    S.of(context).signUp,
+                                    style: bodyTextStyle(context),
+                                  ))
+                            ],
+                          )
                         ],
                       )
                     ],
@@ -126,6 +234,3 @@ class OTP extends StatelessWidget {
     );
   }
 }
-
-
-

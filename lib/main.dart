@@ -9,8 +9,11 @@ import 'package:demo_flutter/screens/signUp/signUp2.dart';
 import 'package:demo_flutter/screens/signUp/signup.dart';
 import 'package:flutter/material.dart';
 
+import 'generated/l10n.dart';
+import 'package:flutter/services.dart';
 void main() {
-  runApp(const MyApp());
+  runApp(const MyApp()
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -19,9 +22,14 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+
       theme: ThemeData(
         colorScheme: lightColorScheme,
       ),
+      localizationsDelegates: const [
+        S.delegate,
+      ],
+      supportedLocales: S.delegate.supportedLocales,
       home: Language(),
       routes: {
         SignIn.routeName: (ctx) => SignIn(),

@@ -1,7 +1,13 @@
 import 'package:flutter/material.dart';
 
-extension ScreenUtils on BuildContext {
-  double get height => MediaQuery.of(this).size.height;
 
+
+
+
+extension ScreenUtils on BuildContext {
+  double get heightWithoutSafeArea => (MediaQuery.of(this).size.height-MediaQuery.of(this).viewPadding.top-MediaQuery.of(this).viewPadding.bottom);
+  double get height => MediaQuery.of(this).size.height;
   double get width => MediaQuery.of(this).size.width;
+
+
 }

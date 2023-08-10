@@ -1,3 +1,4 @@
+import 'package:demo_flutter/utils/app_utils/extensions/color_extension.dart';
 import 'package:flutter/material.dart';
 
 class CustomTextField extends StatelessWidget {
@@ -10,7 +11,7 @@ class CustomTextField extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
 
-        color: Color(0xff1B021A),
+        color: context.colorScheme.onPrimaryContainer,
         width: double.infinity,
         child: TextField(
           style: TextStyle(color: Colors.white),

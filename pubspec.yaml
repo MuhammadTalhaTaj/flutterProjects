@@ -43,6 +43,7 @@ dependencies:
   intl_utils: ^2.8.4
   # for adding some util functions
   get: ^4.6.5
+  pinput: ^3.0.0
 
 dev_dependencies:
   flutter_test:

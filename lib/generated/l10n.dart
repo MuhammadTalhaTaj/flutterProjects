@@ -69,6 +69,416 @@ class S {
       args: [],
     );
   }
+
+  /// `Select Language`
+  String get selectLanguage {
+    return Intl.message(
+      'Select Language',
+      name: 'selectLanguage',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Get Started`
+  String get getStarted {
+    return Intl.message(
+      'Get Started',
+      name: 'getStarted',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Welcome 👋`
+  String get welcome {
+    return Intl.message(
+      'Welcome 👋',
+      name: 'welcome',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Welcome Back please sign in to continue`
+  String get welcomeBack {
+    return Intl.message(
+      'Welcome Back please sign in to continue',
+      name: 'welcomeBack',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Select user type`
+  String get selectUserType {
+    return Intl.message(
+      'Select user type',
+      name: 'selectUserType',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Mobile Number`
+  String get mobileNumber {
+    return Intl.message(
+      'Mobile Number',
+      name: 'mobileNumber',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter Number`
+  String get enterNumber {
+    return Intl.message(
+      'Enter Number',
+      name: 'enterNumber',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Forgot MPIN?`
+  String get forgotMpin {
+    return Intl.message(
+      'Forgot MPIN?',
+      name: 'forgotMpin',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `You never work with us?`
+  String get youNeverWorkWithUs {
+    return Intl.message(
+      'You never work with us?',
+      name: 'youNeverWorkWithUs',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Sign up`
+  String get signUp {
+    return Intl.message(
+      'Sign up',
+      name: 'signUp',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Select Type`
+  String get selectType {
+    return Intl.message(
+      'Select Type',
+      name: 'selectType',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Create account`
+  String get createAccount {
+    return Intl.message(
+      'Create account',
+      name: 'createAccount',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Fill all the details to create account`
+  String get fillAllDetailsToCreateAccount {
+    return Intl.message(
+      'Fill all the details to create account',
+      name: 'fillAllDetailsToCreateAccount',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Already member with us?`
+  String get alreadyMemberWithUs {
+    return Intl.message(
+      'Already member with us?',
+      name: 'alreadyMemberWithUs',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Log in`
+  String get logIn {
+    return Intl.message(
+      'Log in',
+      name: 'logIn',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Welcome please sign in to continue`
+  String get welcomePleaseSignInTOContinue {
+    return Intl.message(
+      'Welcome please sign in to continue',
+      name: 'welcomePleaseSignInTOContinue',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Your Name`
+  String get yourName {
+    return Intl.message(
+      'Your Name',
+      name: 'yourName',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Workshop Name`
+  String get workShopName {
+    return Intl.message(
+      'Workshop Name',
+      name: 'workShopName',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter Name`
+  String get enterName {
+    return Intl.message(
+      'Enter Name',
+      name: 'enterName',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Road Name`
+  String get roadName {
+    return Intl.message(
+      'Road Name',
+      name: 'roadName',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Pin code`
+  String get pinCode {
+    return Intl.message(
+      'Pin code',
+      name: 'pinCode',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter Code`
+  String get enterCode {
+    return Intl.message(
+      'Enter Code',
+      name: 'enterCode',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Your State`
+  String get yourState {
+    return Intl.message(
+      'Your State',
+      name: 'yourState',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Select State`
+  String get selectState {
+    return Intl.message(
+      'Select State',
+      name: 'selectState',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Your City`
+  String get yourCity {
+    return Intl.message(
+      'Your City',
+      name: 'yourCity',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Select City`
+  String get selectCity {
+    return Intl.message(
+      'Select City',
+      name: 'selectCity',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Add PAN Details`
+  String get addPanDetails {
+    return Intl.message(
+      'Add PAN Details',
+      name: 'addPanDetails',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please enter pan details to continue`
+  String get pleaseEnterPanDetails {
+    return Intl.message(
+      'Please enter pan details to continue',
+      name: 'pleaseEnterPanDetails',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `PAN Number`
+  String get panNumber {
+    return Intl.message(
+      'PAN Number',
+      name: 'panNumber',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Note: `
+  String get note {
+    return Intl.message(
+      'Note: ',
+      name: 'note',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Lorem ipsum dolor sit amet consectetur. Lorem ipsum dolor sit amet.`
+  String get loremIspumdolor {
+    return Intl.message(
+      'Lorem ipsum dolor sit amet consectetur. Lorem ipsum dolor sit amet.',
+      name: 'loremIspumdolor',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Upload Your Image`
+  String get uploadImage {
+    return Intl.message(
+      'Upload Your Image',
+      name: 'uploadImage',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Continue`
+  String get continue1 {
+    return Intl.message(
+      'Continue',
+      name: 'continue1',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Skip`
+  String get skip {
+    return Intl.message(
+      'Skip',
+      name: 'skip',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter OTP`
+  String get enterOtp {
+    return Intl.message(
+      'Enter OTP',
+      name: 'enterOtp',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `We sent OTP on your number.`
+  String get weSentOtp {
+    return Intl.message(
+      'We sent OTP on your number.',
+      name: 'weSentOtp',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Resend it`
+  String get resend {
+    return Intl.message(
+      'Resend it',
+      name: 'resend',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Oops! 😒`
+  String get oop {
+    return Intl.message(
+      'Oops! 😒',
+      name: 'oop',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Your pan card details not verify with original details.`
+  String get yourPanCardDetails {
+    return Intl.message(
+      'Your pan card details not verify with original details.',
+      name: 'yourPanCardDetails',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Congratulations 🤩`
+  String get congratulations {
+    return Intl.message(
+      'Congratulations 🤩',
+      name: 'congratulations',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Your pan card details verify successfully Approved `
+  String get yourPanCardSuccessfully {
+    return Intl.message(
+      'Your pan card details verify successfully Approved ',
+      name: 'yourPanCardSuccessfully',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

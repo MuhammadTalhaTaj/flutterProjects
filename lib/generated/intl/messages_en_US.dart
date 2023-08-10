@@ -23,6 +23,62 @@ class MessageLookup extends MessageLookupByLibrary {
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "Language": MessageLookupByLibrary.simpleMessage("Language"),
-        "appName": MessageLookupByLibrary.simpleMessage("Loyalty Flutter")
+        "addPanDetails":
+            MessageLookupByLibrary.simpleMessage("Add PAN Details"),
+        "alreadyMemberWithUs":
+            MessageLookupByLibrary.simpleMessage("Already member with us?"),
+        "appName": MessageLookupByLibrary.simpleMessage("Loyalty Flutter"),
+        "congratulations":
+            MessageLookupByLibrary.simpleMessage("Congratulations 🤩"),
+        "continue1": MessageLookupByLibrary.simpleMessage("Continue"),
+        "createAccount": MessageLookupByLibrary.simpleMessage("Create account"),
+        "enterCode": MessageLookupByLibrary.simpleMessage("Enter Code"),
+        "enterName": MessageLookupByLibrary.simpleMessage("Enter Name"),
+        "enterNumber": MessageLookupByLibrary.simpleMessage("Enter Number"),
+        "enterOtp": MessageLookupByLibrary.simpleMessage("Enter OTP"),
+        "fillAllDetailsToCreateAccount": MessageLookupByLibrary.simpleMessage(
+            "Fill all the details to create account"),
+        "forgotMpin": MessageLookupByLibrary.simpleMessage("Forgot MPIN?"),
+        "getStarted": MessageLookupByLibrary.simpleMessage("Get Started"),
+        "logIn": MessageLookupByLibrary.simpleMessage("Log in"),
+        "loremIspumdolor": MessageLookupByLibrary.simpleMessage(
+            "Lorem ipsum dolor sit amet consectetur. Lorem ipsum dolor sit amet."),
+        "mobileNumber": MessageLookupByLibrary.simpleMessage("Mobile Number"),
+        "note": MessageLookupByLibrary.simpleMessage("Note: "),
+        "oop": MessageLookupByLibrary.simpleMessage("Oops! 😒"),
+        "panNumber": MessageLookupByLibrary.simpleMessage("PAN Number"),
+        "pinCode": MessageLookupByLibrary.simpleMessage("Pin code"),
+        "pleaseEnterPanDetails": MessageLookupByLibrary.simpleMessage(
+            "Please enter pan details to continue"),
+        "resend": MessageLookupByLibrary.simpleMessage("Resend it"),
+        "roadName": MessageLookupByLibrary.simpleMessage("Road Name"),
+        "selectCity": MessageLookupByLibrary.simpleMessage("Select City"),
+        "selectLanguage":
+            MessageLookupByLibrary.simpleMessage("Select Language"),
+        "selectState": MessageLookupByLibrary.simpleMessage("Select State"),
+        "selectType": MessageLookupByLibrary.simpleMessage("Select Type"),
+        "selectUserType":
+            MessageLookupByLibrary.simpleMessage("Select user type"),
+        "signUp": MessageLookupByLibrary.simpleMessage("Sign up"),
+        "skip": MessageLookupByLibrary.simpleMessage("Skip"),
+        "uploadImage":
+            MessageLookupByLibrary.simpleMessage("Upload Your Image"),
+        "weSentOtp":
+            MessageLookupByLibrary.simpleMessage("We sent OTP on your number."),
+        "welcome": MessageLookupByLibrary.simpleMessage("Welcome 👋"),
+        "welcomeBack": MessageLookupByLibrary.simpleMessage(
+            "Welcome Back please sign in to continue"),
+        "welcomePleaseSignInTOContinue": MessageLookupByLibrary.simpleMessage(
+            "Welcome please sign in to continue"),
+        "workShopName": MessageLookupByLibrary.simpleMessage("Workshop Name"),
+        "youNeverWorkWithUs":
+            MessageLookupByLibrary.simpleMessage("You never work with us?"),
+        "yourCity": MessageLookupByLibrary.simpleMessage("Your City"),
+        "yourName": MessageLookupByLibrary.simpleMessage("Your Name"),
+        "yourPanCardDetails": MessageLookupByLibrary.simpleMessage(
+            "Your pan card details not verify with original details."),
+        "yourPanCardSuccessfully": MessageLookupByLibrary.simpleMessage(
+            "Your pan card details verify successfully Approved "),
+        "yourState": MessageLookupByLibrary.simpleMessage("Your State")
       };
 }

@@ -1,47 +1,51 @@
 import 'package:demo_flutter/commonwidgets/cusotmDropdown.dart';
 import 'package:demo_flutter/commonwidgets/customElevetedButton.dart';
 import 'package:demo_flutter/constants/textStyles.dart';
+import 'package:demo_flutter/imageVairableFiles/ImageVariableFiles.dart';
 import 'package:demo_flutter/screens/OTP/otp.dart';
 import 'package:demo_flutter/screens/congratulations/congratulation.dart';
 import 'package:demo_flutter/screens/signIn/signIn.dart';
+import 'package:demo_flutter/utils/app_utils/extensions/color_extension.dart';
+import 'package:demo_flutter/utils/app_utils/extensions/screen_util_extension.dart';
 import 'package:flutter/material.dart';
 import 'package:dotted_border/dotted_border.dart';
+import '../../commonwidgets/appsize.dart';
 import '../../commonwidgets/customTextField.dart';
+import '../../generated/l10n.dart';
 
 class PanUpdate extends StatelessWidget {
-  static const routeName='pan-update';
+  static const routeName = 'pan-update';
+
   const PanUpdate({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    double width = MediaQuery.of(context).size.width;
-    double height = MediaQuery.of(context).size.height;
-    var padding = MediaQuery.of(context).viewPadding;
-    double height1 = height - padding.top - padding.bottom;
-
     return SafeArea(
       child: Scaffold(
         body: Container(
           width: double.infinity,
           decoration: BoxDecoration(
               gradient: LinearGradient(
-                // begin: Alignment.centerLeft,
-                colors: [Color(0xFF483548), Color(0xff1e051a)],
-              )),
+            // begin: Alignment.centerLeft,
+            colors: [
+              context.colorScheme.background,
+              context.colorScheme.onBackground
+            ],
+          )),
           child: SingleChildScrollView(
             child: Column(
               children: [
                 Container(
-                  height: height1 * 0.3,
-                  child: Image.asset('assets/images/pandetails.png'),
+                  height: context.heightWithoutSafeArea * 0.33,
+                  child: Image.asset(ImageVariables.panDetailsImage),
                 ),
                 Container(
-                  padding: EdgeInsets.all(20),
+                  padding: const EdgeInsets.all(20),
                   width: double.infinity,
-                  height: height1 * 0.7,
+                  height: context.heightWithoutSafeArea * 0.67,
                   decoration: BoxDecoration(
-                      color: Color(0xff35192f),
-                      borderRadius: BorderRadius.only(
+                      color: context.colorScheme.primaryContainer,
+                      borderRadius: const BorderRadius.only(
                           topLeft: Radius.circular(35),
                           topRight: Radius.circular(35))),
                   child: Column(
@@ -52,69 +56,117 @@ class PanUpdate extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            'Add PAN Details',
+                            S.of(context).addPanDetails,
                             style: headingTextStyle(context),
                           ),
-                          SizedBox(
+                          AppSize(
                             height: 10,
                           ),
                           Text(
-
-                            'Please enter pan details to continue',
+                            S.of(context).pleaseEnterPanDetails,
                             style: subBodyTextStyle(),
                           ),
-                          SizedBox(
+                          AppSize(
                             height: 20,
                           ),
-
                           Text(
-                            'PAN Number',
+                            S.of(context).panNumber,
                             style: bodyTextStyle(context),
                           ),
-                          SizedBox(
-
+                          AppSize(
                             height: 10,
                           ),
-                          CustomTextField(labelText: 'Enter Number',),
-
-                          SizedBox(
+                          CustomTextField(
+                            labelText: S.of(context).enterNumber,
+                          ),
+                          AppSize(
                             height: 10,
                           ),
-                          RichText(text: TextSpan(text: 'Note: ',style: TextStyle(fontWeight: FontWeight.bold,color: Color(0xFFFD7E14)),children: [TextSpan(text:'Lorem ipsum dolor sit amet consectetur. Lorem ipsum dolor sit amet.' ,style: TextStyle(fontWeight: FontWeight.normal))],),),
-                                SizedBox(height: 25,),
+                          RichText(
+                            text: TextSpan(
+                              text: S.of(context).note,
+                              style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  color: context.colorScheme.error),
+                              children: [
+                                TextSpan(
+                                    text: S.of(context).loremIspumdolor,
+                                    style: TextStyle(
+                                        fontWeight: FontWeight.normal))
+                              ],
+                            ),
+                          ),
+                          AppSize(
+                            height: 25,
+                          ),
                           Text(
-                            'Upload Your Image',
+                            S.of(context).uploadImage,
                             style: bodyTextStyle(context),
                           ),
-                          SizedBox(
-
+                          AppSize(
                             height: 10,
                           ),
                           DottedBorder(
-                            dashPattern: [8,4],
+                            dashPattern: [8, 4],
                             color: Colors.white,
                             strokeWidth: 0.5,
                             child: Container(
-                            color: Color(0xff1B021A),
+                              color: context.colorScheme.onPrimaryContainer,
                               height: 58,
                               width: double.infinity,
-                              child: ElevatedButton(style: ElevatedButton.styleFrom(backgroundColor:Color(0xff1B021A), ),onPressed: (){}, child: Row(children: [Icon(Icons.add,color: Colors.white,size: 20,),SizedBox(width: 5,),Text('Upload image',style: bodyTextStyle(context),)],)),
+                              child: ElevatedButton(
+                                style: ElevatedButton.styleFrom(
+                                  backgroundColor:
+                                      context.colorScheme.onPrimaryContainer,
+                                ),
+                                onPressed: () {},
+                                child: Row(
+                                  children: [
+                                    Icon(
+                                      Icons.add,
+                                      color: Colors.white,
+                                      size: 20,
+                                    ),
+                                    AppSize(
+                                      width: 5,
+                                    ),
+                                    Text(
+                                      'Upload image',
+                                      style: bodyTextStyle(context),
+                                    ),
+                                  ],
+                                ),
+                              ),
                             ),
                           )
-
                         ],
                       ),
-
-
-
                       Column(
                         children: [
-                          CustomElivitedButton(text: 'Continue', onPress: (){
-                            Navigator.push(context, MaterialPageRoute(builder: (context) => Congratulation(),));
-                          }),
-                          SizedBox(height: 15,),
-                          GestureDetector(onTap: (){Navigator.push(context, MaterialPageRoute(builder: (context) => SignIn(),));}, child: Text('Skip',style: bodyTextStyle(context),))
-
+                          CustomElivitedButton(
+                              text: S.of(context).continue1,
+                              onPress: () {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) => Congratulation(),
+                                    ));
+                              }),
+                          AppSize(
+                            height: 15,
+                          ),
+                          GestureDetector(
+                              onTap: () {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) => SignIn(),
+                                    ));
+                              },
+                              child: Text(
+                                S.of(context).skip,
+                                style: bodyTextStyle(context),
+                              ))
                         ],
                       )
                     ],
@@ -128,6 +180,3 @@ class PanUpdate extends StatelessWidget {
     );
   }
 }
-
-
-

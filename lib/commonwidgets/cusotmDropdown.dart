@@ -6,8 +6,9 @@ class CustomDropDownButton extends StatefulWidget {
   List<String> list;
   ValueChanged<String> onPressed;
   Color color;
+  String hint;
 
-  CustomDropDownButton(this.list, this.onPressed,this.color);
+  CustomDropDownButton({required this.list, required this.onPressed, required this.color, required this.hint});
 
   @override
   State<CustomDropDownButton> createState() => _CustomDropDownButtonState();
@@ -19,7 +20,7 @@ class _CustomDropDownButtonState extends State<CustomDropDownButton> {
   @override
   void initState() {
     super.initState();
-    selectedValue = widget.list.isNotEmpty ? widget.list[0] : null;
+    selectedValue =  null;
   }
 
   @override
@@ -33,6 +34,7 @@ class _CustomDropDownButtonState extends State<CustomDropDownButton> {
           color: widget.color
       ),
       child: DropdownButton<String>(
+        hint: Text(widget.hint,style:  TextStyle(fontSize: 20,color: Colors.white),),
         isExpanded: true,
         underline: Container(),
 

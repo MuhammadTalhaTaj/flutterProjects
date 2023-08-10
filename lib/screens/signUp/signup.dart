@@ -1,47 +1,53 @@
+import 'package:demo_flutter/commonwidgets/appsize.dart';
 import 'package:demo_flutter/commonwidgets/cusotmDropdown.dart';
 import 'package:demo_flutter/commonwidgets/customElevetedButton.dart';
 import 'package:demo_flutter/constants/textStyles.dart';
+import 'package:demo_flutter/imageVairableFiles/ImageVariableFiles.dart';
 import 'package:demo_flutter/screens/OTP/otp.dart';
 import 'package:demo_flutter/screens/signIn/signIn.dart';
+import 'package:demo_flutter/utils/app_utils/extensions/color_extension.dart';
+import 'package:demo_flutter/utils/app_utils/extensions/screen_util_extension.dart';
 import 'package:flutter/material.dart';
 
 import '../../commonwidgets/customTextField.dart';
+import '../../generated/l10n.dart';
+import '../../randomData/listRandomData.dart';
 
 class SignUp extends StatelessWidget {
-  static const routeName='/sign-up';
+  static const routeName = '/sign-up';
+
   const SignUp({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    double width = MediaQuery.of(context).size.width;
-    double height = MediaQuery.of(context).size.height;
-    var padding = MediaQuery.of(context).viewPadding;
-    double height1 = height - padding.top - padding.bottom;
-
     return SafeArea(
       child: Scaffold(
+        backgroundColor: context.colorScheme.background,
         body: Container(
           width: double.infinity,
           decoration: BoxDecoration(
-              gradient: LinearGradient(
-                // begin: Alignment.centerLeft,
-                colors: [Color(0xFF483548), Color(0xff1e051a)],
-              ),
+            gradient: LinearGradient(
+              // begin: Alignment.centerLeft,
+              colors: [
+                context.colorScheme.background,
+                context.colorScheme.onBackground
+              ],
+            ),
           ),
           child: SingleChildScrollView(
             child: Column(
               children: [
                 Container(
-                  height: height1 * 0.3,
-                  child: Image.asset('assets/images/signup.png'),
+                  height: context.heightWithoutSafeArea * 0.33,
+                  child: Image.asset(ImageVariables.signUpImage),
                 ),
                 Container(
-                  padding: EdgeInsets.all(20),
+                  padding: const EdgeInsets.all(20),
                   width: double.infinity,
-                  height: height1 * 0.7,
+                  height: context.heightWithoutSafeArea * 0.67,
                   decoration: BoxDecoration(
-                      color: Color(0xff35192f),
-                      borderRadius: BorderRadius.only(
+                      color: context.colorScheme.primaryContainer,
+                      borderRadius: const BorderRadius.only(
                           topLeft: Radius.circular(35),
                           topRight: Radius.circular(35))),
                   child: Column(
@@ -52,57 +58,89 @@ class SignUp extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            'Create account',
+                            S.of(context).createAccount,
                             style: headingTextStyle(context),
                           ),
-                          SizedBox(
+                          AppSize(
                             height: 10,
                           ),
                           Text(
-
-                            'Fill all the details to create account',
+                            S.of(context).fillAllDetailsToCreateAccount,
                             style: subBodyTextStyle(),
                           ),
-                          SizedBox(
+                          AppSize(
                             height: 20,
                           ),
                           Text(
-                            'Select user type',
+                            S.of(context).selectUserType,
                             style: bodyTextStyle(context),
                           ),
-                          SizedBox(
+                          AppSize(
                             height: 10,
                           ),
                           CustomDropDownButton(
-                              ['Select Type', 'Basic User', 'Pro User'], (value) {},Color(0xff1B021A)),
-                          SizedBox(
+                            list: listUserType,
+                            onPressed: (value) {},
+                            color: context.colorScheme.onPrimaryContainer,
+                            hint: 'Select Type',
+                          ),
+                          AppSize(
                             height: 15,
                           ),
                           Text(
-                            'Mobile Number',
+                            S.of(context).mobileNumber,
                             style: bodyTextStyle(context),
                           ),
-                          SizedBox(
+                          AppSize(
                             height: 10,
                           ),
-                          CustomTextField(labelText: 'Enter Number',),
-                          SizedBox(
+                          CustomTextField(
+                            labelText: S.of(context).enterNumber,
+                          ),
+                          AppSize(
                             height: 10,
                           ),
-
                         ],
                       ),
-
-
-
                       Column(
                         children: [
-                          CustomElivitedButton(text: 'Get Started', onPress: (){
-                            Navigator.push(context, MaterialPageRoute(builder: (context) => OTP(),));
-                          }),
-                          SizedBox(height: 10,),
-                          Row( mainAxisAlignment:MainAxisAlignment.center,children: [Text('Already member with us?  ',style: subBodyTextStyle(),),GestureDetector(onTap: (){Navigator.push(context, MaterialPageRoute(builder: (context) => SignIn(),));}, child: Text('Log in',style: bodyTextStyle(context),))],)
-
+                          CustomElivitedButton(
+                              text: S.of(context).getStarted,
+                              onPress: () {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) => OTP(),
+                                    ));
+                              }),
+                          AppSize(
+                            height: 10,
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Text(
+                                S.of(context).alreadyMemberWithUs,
+                                style: subBodyTextStyle(),
+                              ),
+                              AppSize(
+                                width: 5,
+                              ),
+                              GestureDetector(
+                                  onTap: () {
+                                    Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                          builder: (context) => SignIn(),
+                                        ),);
+                                  },
+                                  child: Text(
+                                    S.of(context).logIn,
+                                    style: bodyTextStyle(context),
+                                  ),
+                              )
+                            ],
+                          )
                         ],
                       )
                     ],
@@ -116,6 +154,3 @@ class SignUp extends StatelessWidget {
     );
   }
 }
-
-
-

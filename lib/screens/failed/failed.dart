@@ -1,12 +1,16 @@
 import 'package:demo_flutter/commonwidgets/cusotmDropdown.dart';
 import 'package:demo_flutter/constants/textStyles.dart';
+import 'package:demo_flutter/imageVairableFiles/ImageVariableFiles.dart';
 import 'package:demo_flutter/screens/signIn/signIn.dart';
+import 'package:demo_flutter/utils/app_utils/extensions/color_extension.dart';
 import 'package:flutter/material.dart';
 
+import '../../commonwidgets/appsize.dart';
 import '../../commonwidgets/customElevetedButton.dart';
+import '../../generated/l10n.dart';
 
 class Failed extends StatelessWidget {
-  static const routeName='failed';
+  static const routeName='/failed';
   const Failed({Key? key}) : super(key: key);
 
   @override
@@ -15,17 +19,17 @@ class Failed extends StatelessWidget {
     return Scaffold(
       backgroundColor: Theme.of(context).colorScheme.background,
       body: Container(
-        decoration: BoxDecoration(
+        decoration:  BoxDecoration(
             gradient: LinearGradient(
               begin: Alignment.centerLeft,
 
-              colors: [Color(0xFF493548), Color(0xff1f071e)],
+              colors: [context.colorScheme.background, context.colorScheme.onBackground],
             )),
-        padding: EdgeInsets.all(20),
+        padding: const EdgeInsets.all(20),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            SizedBox(
+            AppSize(
               height: size.height * 0.25,
             ),
             Center(
@@ -33,21 +37,21 @@ class Failed extends StatelessWidget {
                 child: Column(
                   children: [
                     Image.asset(
-                      'assets/images/oops.png',
+                      ImageVariables.failedImage,
                       // Adjust the height as needed
                     ),
-                    SizedBox(
+                    AppSize(
                       height: 20,
                     ),
                     Text(
-                      'Oops! 😒',
+                      S.of(context).oop,
                       style: headingTextStyle(context),
                     ),
-                    SizedBox(
+                    AppSize(
                       height: 10,
                     ),
                     Text(
-                      'Your pan card details not verify with original details.',
+                      S.of(context).yourPanCardDetails,
                       style: subBodyTextStyle(),
                     ),
 
@@ -55,13 +59,13 @@ class Failed extends StatelessWidget {
                 ),
               ),
             ),
-            Spacer(),
+            const Spacer(),
             Align(
                 alignment: Alignment.bottomCenter,
                 child: CustomElivitedButton(
-                  text: 'Continue',
+                  text: S.of(context).continue1,
                   onPress: () {
-                    Navigator.push(context, MaterialPageRoute(builder: (context) => SignIn(),));
+                    Navigator.pushNamed(context, SignIn.routeName);
 
                   },
                 )),

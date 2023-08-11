@@ -49,5 +49,21 @@
   "yourPanCardDetails":"Your pan card details not verify with original details.",
   "congratulations":"Congratulations \uD83E\uDD29",
   "yourPanCardSuccessfully":"Your pan card details verify successfully Approved ",
+  "home":"Home",
+  "history":"History",
+  "notification":"Notification",
+  "more":"More",
+  "availablePoints":"Available Point",
+  "redeemedPoint":"Redeemed Point",
+  "inProcessPoint":"In-Process Point",
+  "texDeducted":"Tex Deducted",
+  "others":"OTHERS",
+  "entry":"Entry",
+  "methods":"Methods",
+  "mpin":"MPIN",
+  "help":"Help",
+  "skip":"Skip",
+  "skip":"Skip",
   "skip":"Skip"
+
 }

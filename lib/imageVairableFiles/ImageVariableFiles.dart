@@ -8,6 +8,8 @@ class ImageVariables{
   static const String otpImage='assets/images/otp.png';
   static const String failedImage='assets/images/oops.png';
   static const String congratulationsImage='assets/images/congragulations.png';
+  static const String homeScreenImage='assets/images/homescreen.png';
+
 
 
 }

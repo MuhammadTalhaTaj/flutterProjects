@@ -1,3 +1,4 @@
+import 'package:demo_flutter/imageVairableFiles/ImageVariableFiles.dart';
 import 'package:flutter/material.dart';
 
 class PicHorizontalContainer extends StatelessWidget {
@@ -17,8 +18,9 @@ class PicHorizontalContainer extends StatelessWidget {
               height: 50,
               width: constraints.maxWidth * 0.9,
               child: Image.asset(
-                'assets/images/pic.jpg',
-                fit: BoxFit.contain,
+                ImageVariables.homeScreenImage,
+
+                fit: BoxFit.fill,
               ));
         },
         itemCount: 5,

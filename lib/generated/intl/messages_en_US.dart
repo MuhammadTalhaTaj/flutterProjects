@@ -28,6 +28,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "alreadyMemberWithUs":
             MessageLookupByLibrary.simpleMessage("Already member with us?"),
         "appName": MessageLookupByLibrary.simpleMessage("Loyalty Flutter"),
+        "availablePoints":
+            MessageLookupByLibrary.simpleMessage("Available Point"),
         "congratulations":
             MessageLookupByLibrary.simpleMessage("Congratulations 🤩"),
         "continue1": MessageLookupByLibrary.simpleMessage("Continue"),
@@ -36,20 +38,32 @@ class MessageLookup extends MessageLookupByLibrary {
         "enterName": MessageLookupByLibrary.simpleMessage("Enter Name"),
         "enterNumber": MessageLookupByLibrary.simpleMessage("Enter Number"),
         "enterOtp": MessageLookupByLibrary.simpleMessage("Enter OTP"),
+        "entry": MessageLookupByLibrary.simpleMessage("Entry"),
         "fillAllDetailsToCreateAccount": MessageLookupByLibrary.simpleMessage(
             "Fill all the details to create account"),
         "forgotMpin": MessageLookupByLibrary.simpleMessage("Forgot MPIN?"),
         "getStarted": MessageLookupByLibrary.simpleMessage("Get Started"),
+        "help": MessageLookupByLibrary.simpleMessage("Help"),
+        "history": MessageLookupByLibrary.simpleMessage("History"),
+        "home": MessageLookupByLibrary.simpleMessage("Home"),
+        "inProcessPoint":
+            MessageLookupByLibrary.simpleMessage("In-Process Point"),
         "logIn": MessageLookupByLibrary.simpleMessage("Log in"),
         "loremIspumdolor": MessageLookupByLibrary.simpleMessage(
             "Lorem ipsum dolor sit amet consectetur. Lorem ipsum dolor sit amet."),
+        "methods": MessageLookupByLibrary.simpleMessage("Methods"),
         "mobileNumber": MessageLookupByLibrary.simpleMessage("Mobile Number"),
+        "more": MessageLookupByLibrary.simpleMessage("More"),
+        "mpin": MessageLookupByLibrary.simpleMessage("MPIN"),
         "note": MessageLookupByLibrary.simpleMessage("Note: "),
+        "notification": MessageLookupByLibrary.simpleMessage("Notification"),
         "oop": MessageLookupByLibrary.simpleMessage("Oops! 😒"),
+        "others": MessageLookupByLibrary.simpleMessage("OTHERS"),
         "panNumber": MessageLookupByLibrary.simpleMessage("PAN Number"),
         "pinCode": MessageLookupByLibrary.simpleMessage("Pin code"),
         "pleaseEnterPanDetails": MessageLookupByLibrary.simpleMessage(
             "Please enter pan details to continue"),
+        "redeemedPoint": MessageLookupByLibrary.simpleMessage("Redeemed Point"),
         "resend": MessageLookupByLibrary.simpleMessage("Resend it"),
         "roadName": MessageLookupByLibrary.simpleMessage("Road Name"),
         "selectCity": MessageLookupByLibrary.simpleMessage("Select City"),
@@ -61,6 +75,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Select user type"),
         "signUp": MessageLookupByLibrary.simpleMessage("Sign up"),
         "skip": MessageLookupByLibrary.simpleMessage("Skip"),
+        "texDeducted": MessageLookupByLibrary.simpleMessage("Tex Deducted"),
         "uploadImage":
             MessageLookupByLibrary.simpleMessage("Upload Your Image"),
         "weSentOtp":

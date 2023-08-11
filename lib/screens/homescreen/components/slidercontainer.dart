@@ -1,3 +1,4 @@
+import 'package:demo_flutter/utils/app_utils/extensions/color_extension.dart';
 import 'package:flutter/material.dart';
 
 class SliderContainer extends StatefulWidget {
@@ -22,7 +23,7 @@ int val=0;
         padding: EdgeInsets.all(13),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(15),
-          color: Color(0xFF281125),
+          color: context.colorScheme.primaryContainer,
         ),
 
 

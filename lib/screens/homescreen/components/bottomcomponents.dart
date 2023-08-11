@@ -1,3 +1,4 @@
+import 'package:demo_flutter/utils/app_utils/extensions/color_extension.dart';
 import 'package:flutter/material.dart';
 
 class BottomComponent extends StatelessWidget {
@@ -18,7 +19,7 @@ class BottomComponent extends StatelessWidget {
               borderRadius: BorderRadius.circular(29.0),
               child: Card(
                 elevation: 10,
-                color: Color(0xFF281125),
+                color: context.colorScheme.surface,
                 child: Padding(
                     padding: EdgeInsets.all(15),
                     child: Icon(iconData,size: 40,color: Colors.white,)),

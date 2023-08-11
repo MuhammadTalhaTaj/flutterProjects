@@ -6,6 +6,7 @@ class NameContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return  Container(
+      padding: EdgeInsets.symmetric(vertical: 15),
       width: double.infinity,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,

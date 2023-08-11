@@ -2,6 +2,8 @@ import 'package:demo_flutter/constants/color_schemes.g.dart';
 import 'package:demo_flutter/screens/OTP/otp.dart';
 import 'package:demo_flutter/screens/congratulations/congratulation.dart';
 import 'package:demo_flutter/screens/failed/failed.dart';
+
+import 'package:demo_flutter/screens/homescreen/home.dart';
 import 'package:demo_flutter/screens/language/language.dart';
 import 'package:demo_flutter/screens/panDetails/panDetails.dart';
 import 'package:demo_flutter/screens/signIn/signIn.dart';
@@ -30,7 +32,7 @@ class MyApp extends StatelessWidget {
         S.delegate,
       ],
       supportedLocales: S.delegate.supportedLocales,
-      home: Language(),
+      home: Home(),
       routes: {
         SignIn.routeName: (ctx) => SignIn(),
         SignUp.routeName: (ctx) => SignUp(),

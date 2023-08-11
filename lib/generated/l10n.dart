@@ -479,6 +479,136 @@ class S {
       args: [],
     );
   }
+
+  /// `Home`
+  String get home {
+    return Intl.message(
+      'Home',
+      name: 'home',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `History`
+  String get history {
+    return Intl.message(
+      'History',
+      name: 'history',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Notification`
+  String get notification {
+    return Intl.message(
+      'Notification',
+      name: 'notification',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `More`
+  String get more {
+    return Intl.message(
+      'More',
+      name: 'more',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Available Point`
+  String get availablePoints {
+    return Intl.message(
+      'Available Point',
+      name: 'availablePoints',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Redeemed Point`
+  String get redeemedPoint {
+    return Intl.message(
+      'Redeemed Point',
+      name: 'redeemedPoint',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `In-Process Point`
+  String get inProcessPoint {
+    return Intl.message(
+      'In-Process Point',
+      name: 'inProcessPoint',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Tex Deducted`
+  String get texDeducted {
+    return Intl.message(
+      'Tex Deducted',
+      name: 'texDeducted',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `OTHERS`
+  String get others {
+    return Intl.message(
+      'OTHERS',
+      name: 'others',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Entry`
+  String get entry {
+    return Intl.message(
+      'Entry',
+      name: 'entry',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Methods`
+  String get methods {
+    return Intl.message(
+      'Methods',
+      name: 'methods',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `MPIN`
+  String get mpin {
+    return Intl.message(
+      'MPIN',
+      name: 'mpin',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Help`
+  String get help {
+    return Intl.message(
+      'Help',
+      name: 'help',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

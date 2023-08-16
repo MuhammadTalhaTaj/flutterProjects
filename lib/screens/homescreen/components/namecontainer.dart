@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../../generated/l10n.dart';
+
 class NameContainer extends StatelessWidget {
   const NameContainer({Key? key}) : super(key: key);
 
@@ -14,9 +16,9 @@ class NameContainer extends StatelessWidget {
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text('Hey! john',style: TextStyle(fontWeight: FontWeight.bold,fontSize: 33,color: Colors.white),),
+              Text(S.of(context).heyJohn,style: TextStyle(fontWeight: FontWeight.bold,fontSize: 33,color: Colors.white),),
               SizedBox(height: 5,),
-              Text('welcome to the loyalty app',style: TextStyle(color: Colors.white70),)
+              Text(S.of(context).welcomeToTheLoyaltyApp,style: TextStyle(color: Colors.white70),)
             ],
 
           ),

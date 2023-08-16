@@ -9,6 +9,8 @@ class ImageVariables{
   static const String failedImage='assets/images/oops.png';
   static const String congratulationsImage='assets/images/congragulations.png';
   static const String homeScreenImage='assets/images/homescreen.png';
+  static const String moneyTransferImage='assets/images/moneyTransfer.png';
+  static const String teamSupportImage='assets/images/teamSupport.png';
 
 
 

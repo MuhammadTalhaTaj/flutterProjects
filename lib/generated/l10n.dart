@@ -609,6 +609,26 @@ class S {
       args: [],
     );
   }
+
+  /// `Hey! john`
+  String get heyJohn {
+    return Intl.message(
+      'Hey! john',
+      name: 'heyJohn',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `welcome to the loyalty app`
+  String get welcomeToTheLoyaltyApp {
+    return Intl.message(
+      'welcome to the loyalty app',
+      name: 'welcomeToTheLoyaltyApp',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

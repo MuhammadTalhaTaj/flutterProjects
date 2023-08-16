@@ -1,10 +1,12 @@
 import 'package:demo_flutter/constants/textStyles.dart';
-import 'package:demo_flutter/more_setting/widgets/settingItem.dart';
+import 'package:demo_flutter/screens/more_setting/widgets/settingItem.dart';
 import 'package:demo_flutter/utils/app_utils/extensions/color_extension.dart';
 import 'package:flutter/material.dart';
 
-import '../commonwidgets/appsize.dart';
-import '../screens/homescreen/components/namecontainer.dart';
+import '../../commonwidgets/appsize.dart';
+import '../homescreen/components/namecontainer.dart';
+
+
 
 class MoreSettings extends StatelessWidget {
   MoreSettings({Key? key}) : super(key: key);

@@ -1,8 +1,9 @@
 import 'package:demo_flutter/utils/app_utils/extensions/color_extension.dart';
 import 'package:flutter/material.dart';
 
-import '../../commonwidgets/appsize.dart';
-import '../../constants/textStyles.dart';
+import '../../../commonwidgets/appsize.dart';
+import '../../../constants/textStyles.dart';
+
 class SettingItem extends StatelessWidget {
   final String icon;
   final String text;

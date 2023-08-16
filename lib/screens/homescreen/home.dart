@@ -1,4 +1,3 @@
-import 'package:demo_flutter/more_setting/more_setting.dart';
 import 'package:demo_flutter/screens/congratulations/congratulation.dart';
 import 'package:demo_flutter/screens/failed/failed.dart';
 import 'package:demo_flutter/screens/language/language.dart';
@@ -6,6 +5,7 @@ import 'package:demo_flutter/utils/app_utils/extensions/color_extension.dart';
 import 'package:flutter/material.dart';
 
 import '../../generated/l10n.dart';
+import '../more_setting/more_setting.dart';
 import 'components/appbar.dart';
 
 import 'homeScreen.dart';

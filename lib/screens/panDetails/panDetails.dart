@@ -1,5 +1,6 @@
 import 'package:demo_flutter/commonwidgets/cusotmDropdown.dart';
 import 'package:demo_flutter/commonwidgets/customElevetedButton.dart';
+import 'package:demo_flutter/commonwidgets/dottedElevetedButton.dart';
 import 'package:demo_flutter/constants/textStyles.dart';
 import 'package:demo_flutter/imageVairableFiles/ImageVariableFiles.dart';
 import 'package:demo_flutter/screens/OTP/otp.dart';
@@ -106,39 +107,10 @@ class PanUpdate extends StatelessWidget {
                           AppSize(
                             height: 10,
                           ),
-                          DottedBorder(
-                            dashPattern: [8, 4],
-                            color: Colors.white,
-                            strokeWidth: 0.5,
-                            child: Container(
-                              color: context.colorScheme.onPrimaryContainer,
-                              height: 58,
-                              width: double.infinity,
-                              child: ElevatedButton(
-                                style: ElevatedButton.styleFrom(
-                                  backgroundColor:
-                                      context.colorScheme.onPrimaryContainer,
-                                ),
-                                onPressed: () {},
-                                child: Row(
-                                  children: [
-                                    Icon(
-                                      Icons.add,
-                                      color: Colors.white,
-                                      size: 20,
-                                    ),
-                                    AppSize(
-                                      width: 5,
-                                    ),
-                                    Text(
-                                      'Upload image',
-                                      style: bodyTextStyle(context),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            ),
-                          )
+
+                          DottedElevatedButton(),
+
+
                         ],
                       ),
                       Column(

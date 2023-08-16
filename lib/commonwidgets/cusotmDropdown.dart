@@ -3,12 +3,14 @@ import 'package:flutter/material.dart';
 
 
 class CustomDropDownButton extends StatefulWidget {
+
   List<String> list;
   ValueChanged<String> onPressed;
   Color color;
   String hint;
+  String selected;
 
-  CustomDropDownButton({required this.list, required this.onPressed, required this.color, required this.hint});
+  CustomDropDownButton({required this.list, required this.onPressed, required this.color,  this.hint='',this.selected=''});
 
   @override
   State<CustomDropDownButton> createState() => _CustomDropDownButtonState();
@@ -34,7 +36,7 @@ class _CustomDropDownButtonState extends State<CustomDropDownButton> {
           color: widget.color
       ),
       child: DropdownButton<String>(
-        hint: Text(widget.hint,style:  TextStyle(fontSize: 20,color: Colors.white),),
+        hint:Text(widget.selected==''?widget.hint:widget.selected,style:  TextStyle(fontSize: 20,color: Colors.white),),
         isExpanded: true,
         underline: Container(),
 

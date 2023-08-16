@@ -44,6 +44,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "forgotMpin": MessageLookupByLibrary.simpleMessage("Forgot MPIN?"),
         "getStarted": MessageLookupByLibrary.simpleMessage("Get Started"),
         "help": MessageLookupByLibrary.simpleMessage("Help"),
+        "heyJohn": MessageLookupByLibrary.simpleMessage("Hey! john"),
         "history": MessageLookupByLibrary.simpleMessage("History"),
         "home": MessageLookupByLibrary.simpleMessage("Home"),
         "inProcessPoint":
@@ -85,6 +86,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "Welcome Back please sign in to continue"),
         "welcomePleaseSignInTOContinue": MessageLookupByLibrary.simpleMessage(
             "Welcome please sign in to continue"),
+        "welcomeToTheLoyaltyApp":
+            MessageLookupByLibrary.simpleMessage("welcome to the loyalty app"),
         "workShopName": MessageLookupByLibrary.simpleMessage("Workshop Name"),
         "youNeverWorkWithUs":
             MessageLookupByLibrary.simpleMessage("You never work with us?"),

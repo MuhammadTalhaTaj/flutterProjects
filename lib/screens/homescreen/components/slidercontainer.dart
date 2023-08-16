@@ -41,6 +41,7 @@ int val=0;
               children: [
                 Flexible(
                   child: SliderTheme(
+
                     data: SliderTheme.of(context).copyWith(
                       inactiveTrackColor: Colors.white,
                       activeTrackColor: widget.activeColor,
@@ -53,6 +54,8 @@ int val=0;
                       RoundSliderOverlayShape(overlayRadius: 5.0),
                     ),
                     child: Slider(
+
+
                       value: val.toDouble(),
                       min: 0,
                       max: 100,
@@ -60,7 +63,9 @@ int val=0;
                         setState(() {
                           val = newHeight.round();
                         });
+
                       },
+
                     ),
                   ),
                 ),

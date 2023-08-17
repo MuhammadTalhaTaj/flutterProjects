@@ -3,16 +3,16 @@ import 'package:flutter/material.dart';
 
 import '../../../commonwidgets/appsize.dart';
 import '../../../constants/textStyles.dart';
-import '../history.dart';
+import '../paymentMethod.dart';
 
-class OnlyHistoryListContainer extends StatelessWidget {
+class PaymentMethodListContainer extends StatelessWidget {
   final String imagePath;
   final String name;
   final String date;
   final String code;
   final String rightNumber;
 
-  const OnlyHistoryListContainer({
+  const PaymentMethodListContainer({
     super.key,
     required this.imagePath, required this.name, required this.date, required this.code, required this.rightNumber,
   });
@@ -22,7 +22,7 @@ class OnlyHistoryListContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.all( 10),
+      margin: EdgeInsets.symmetric(vertical: 10),
       padding: EdgeInsets.all(13),
       height: 100,
       width: double.infinity,
@@ -31,9 +31,10 @@ class OnlyHistoryListContainer extends StatelessWidget {
               width: 2, color: context.colorScheme.primaryContainer)),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        crossAxisAlignment: CrossAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Row(
+
             children: [
               Container(
                 width: 48,
@@ -78,7 +79,8 @@ class OnlyHistoryListContainer extends StatelessWidget {
               )
             ],
           ),
-          Text(rightNumber,style: bodyTextStyle(context).copyWith(color: Color(0xff20c997)),)
+          Image.asset('lib/icons/deleteIcon2.png'),
+
         ],
       ),
     );

@@ -1,10 +1,14 @@
+import 'package:demo_flutter/commonwidgets/appsize.dart';
+import 'package:demo_flutter/commonwidgets/nameAppbar.dart';
 import 'package:demo_flutter/commonwidgets/simpleAppbar.dart';
+import 'package:demo_flutter/constants/textStyles.dart';
+import 'package:demo_flutter/imageVairableFiles/ImageVariableFiles.dart';
+import 'package:demo_flutter/screens/history/widgets/historyListContainer.dart';
 import 'package:demo_flutter/screens/withdrawalHistory/widgets/historyListContainer.dart';
 import 'package:demo_flutter/utils/app_utils/extensions/color_extension.dart';
 import 'package:flutter/material.dart';
 
-import '../../commonwidgets/appsize.dart';
-import '../../constants/textStyles.dart';
+
 
 class History extends StatelessWidget {
   History({Key? key}) : super(key: key);
@@ -46,7 +50,7 @@ class History extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        appBar: SimpleAppbar(name: 'withdrawal History'),
+        appBar:NameAppbar(),
         body: Container(
           width: double.infinity,
           decoration: BoxDecoration(
@@ -57,9 +61,9 @@ class History extends StatelessWidget {
               context.colorScheme.onBackground
             ],
           )),
-          child: ListView.builder(
+          child:items.length!=0? ListView.builder(
             itemBuilder: (context, index) {
-              return HistoryListContainer(
+              return OnlyHistoryListContainer(
                   imagePath: items[index]['imagePath'],
                   name: items[index]['name'],
                   date: items[index]['date'],
@@ -68,7 +72,15 @@ class History extends StatelessWidget {
               );
             },
             itemCount: items.length,
-          ),
+          ):Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+            Image.asset(ImageVariables.historyImage),
+              AppSize(height: 20,),
+              Text('No Data',style: headingTextStyle(context).copyWith(fontWeight: FontWeight.normal),)
+          ],),
+          
+          
         ),
       ),
     );

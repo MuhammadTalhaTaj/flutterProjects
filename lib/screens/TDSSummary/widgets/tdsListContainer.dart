@@ -3,28 +3,34 @@ import 'package:flutter/material.dart';
 
 import '../../../commonwidgets/appsize.dart';
 import '../../../constants/textStyles.dart';
-import '../history.dart';
 
-class OnlyHistoryListContainer extends StatelessWidget {
+class TdsListContainer extends StatelessWidget {
   final String imagePath;
   final String name;
   final String date;
   final String code;
-  final String rightNumber;
+  final String rightNumber1;
+  final String rightNumber2;
+  final String rightNumber3;
 
-  const OnlyHistoryListContainer({
+
+  const TdsListContainer({
     super.key,
-    required this.imagePath, required this.name, required this.date, required this.code, required this.rightNumber,
+    required this.imagePath,
+    required this.name,
+    required this.date,
+    required this.code,
+    required this.rightNumber1,
+    required this.rightNumber2,
+    required this.rightNumber3,
   });
-
-
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.all( 10),
+      margin: EdgeInsets.symmetric(vertical: 10),
       padding: EdgeInsets.all(13),
-      height: 100,
+      height: 113,
       width: double.infinity,
       decoration: BoxDecoration(
           border: Border.all(
@@ -40,11 +46,10 @@ class OnlyHistoryListContainer extends StatelessWidget {
                 height: 51,
                 color: context.colorScheme.primaryContainer,
                 child: Center(
-
+                  //TODO image will be change later
                   child: Image.asset(imagePath),
                 ),
               ),
-
               AppSize(
                 width: 10,
               ),
@@ -60,27 +65,55 @@ class OnlyHistoryListContainer extends StatelessWidget {
                     height: 5,
                   ),
                   Text(
-                   date,
+                    date,
                     style: subBodyTextStyle(),
                   ),
-                  AppSize(
-                    height: 8,
-                  ),
-                  Container(
-                    padding: EdgeInsets.symmetric(horizontal: 7),
-                    color:  context.colorScheme.primaryContainer,
-                    child: Text(
-                      code,
-                      style: subBodyTextStyle().copyWith(fontSize: 12),
-                    ),
-                  )
+
                 ],
               )
             ],
           ),
-          Text(rightNumber,style: bodyTextStyle(context).copyWith(color: Color(0xff20c997)),)
+          Column(
+            children: [
+              pointsContainer(color: Color(0xff198754), Points: rightNumber1),
+              AppSize(height: 7,),
+              pointsContainer(color: Color(0xffdc3545), Points: rightNumber2),
+              AppSize(height: 10,width:70,child: Divider(color: Color(0xff343a40)),),
+              pointsContainer(color: Color(0xff0d6efd), Points: rightNumber3),
+
+
+            ],
+          )
         ],
       ),
     );
+  }
+}
+
+class pointsContainer extends StatelessWidget {
+  final Color color;
+  final String Points;
+  const pointsContainer({
+    super.key,
+     required this.color, required this.Points,
+  });
+
+
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: 22,
+        width: 43,
+        decoration: BoxDecoration(
+          color: color,
+          borderRadius: BorderRadius.circular(10)
+        ),
+        child: Center(
+          child: Text(
+      Points,
+      style: bodyTextStyle(context).copyWith(color: Color(0xff20c997)),
+    ),
+        ));
   }
 }

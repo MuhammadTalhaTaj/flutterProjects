@@ -11,6 +11,16 @@ class ImageVariables{
   static const String homeScreenImage='assets/images/homescreen.png';
   static const String moneyTransferImage='assets/images/moneyTransfer.png';
   static const String teamSupportImage='assets/images/teamSupport.png';
+  static const String historyImage='assets/images/history.png';
+  static const String manualEntryImage='assets/images/manualEntry.png';
+  static const String couponImage='assets/images/coupon.png';
+  static const String qrCodeImage='assets/images/qrCode.png';
+  static const String connectionLostImage='assets/images/connectionLost.png';
+  static const String serverErrorImage='assets/images/serverError.png';
+
+
+
+
 
 
 

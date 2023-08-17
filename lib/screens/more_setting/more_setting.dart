@@ -1,10 +1,10 @@
+import 'package:demo_flutter/commonwidgets/nameAppbar.dart';
 import 'package:demo_flutter/constants/textStyles.dart';
 import 'package:demo_flutter/screens/more_setting/widgets/settingItem.dart';
 import 'package:demo_flutter/utils/app_utils/extensions/color_extension.dart';
 import 'package:flutter/material.dart';
 
 import '../../commonwidgets/appsize.dart';
-import '../homescreen/components/namecontainer.dart';
 
 
 
@@ -23,33 +23,38 @@ class MoreSettings extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: EdgeInsets.all(13),
-      decoration: BoxDecoration(
-          gradient: LinearGradient(colors: [
-        context.colorScheme.background,
-        context.colorScheme.onBackground
-      ])),
-      child: Column(
-        children: [
-          NameContainer(),
-          AppSize(height: 10,),
-          Expanded(
-            child: AppSize(
-              width: double.infinity,
-              height: 400,
-              child: GridView.builder(
-                  itemCount: settingItems.length,
+    return SafeArea(
 
-                  gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
+      child: Scaffold(
+        appBar: NameAppbar(),
+        body: Container(
+          padding: EdgeInsets.all(13),
+          decoration: BoxDecoration(
+              gradient: LinearGradient(colors: [
+            context.colorScheme.background,
+            context.colorScheme.onBackground
+          ])),
+          child: Column(
+            children: [
 
-                      childAspectRatio: 3/ 1.8,
-                      crossAxisSpacing: 10,
-                      mainAxisSpacing: 10, maxCrossAxisExtent: 200),
-                  itemBuilder: (context, index) => SettingItem(settingItems[index]['icon'],settingItems[index]['text'])),
-            ),
-          )
-        ],
+              Expanded(
+                child: AppSize(
+                  width: double.infinity,
+                  height: 400,
+                  child: GridView.builder(
+                      itemCount: settingItems.length,
+
+                      gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
+
+                          childAspectRatio: 3/ 1.8,
+                          crossAxisSpacing: 10,
+                          mainAxisSpacing: 10, maxCrossAxisExtent: 200),
+                      itemBuilder: (context, index) => SettingItem(settingItems[index]['icon'],settingItems[index]['text'])),
+                ),
+              )
+            ],
+          ),
+        ),
       ),
     );
   }

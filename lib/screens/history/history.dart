@@ -8,9 +8,12 @@ import 'package:demo_flutter/screens/withdrawalHistory/widgets/historyListContai
 import 'package:demo_flutter/utils/app_utils/extensions/color_extension.dart';
 import 'package:flutter/material.dart';
 
+import '../../generated/l10n.dart';
+
 
 
 class History extends StatelessWidget {
+  static const routeName='/history';
   History({Key? key}) : super(key: key);
 
   List items = [
@@ -77,7 +80,7 @@ class History extends StatelessWidget {
             children: [
             Image.asset(ImageVariables.historyImage),
               AppSize(height: 20,),
-              Text('No Data',style: headingTextStyle(context).copyWith(fontWeight: FontWeight.normal),)
+              Text(S.of(context).noData,style: headingTextStyle(context).copyWith(fontWeight: FontWeight.normal),)
           ],),
           
           

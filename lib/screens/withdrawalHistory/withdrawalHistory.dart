@@ -5,8 +5,10 @@ import 'package:flutter/material.dart';
 
 import '../../commonwidgets/appsize.dart';
 import '../../constants/textStyles.dart';
+import '../../generated/l10n.dart';
 
 class WithdrawalHistory extends StatelessWidget {
+  static const routeName='/withdrawalHistory';
   WithdrawalHistory({Key? key}) : super(key: key);
 
   List items = [
@@ -46,7 +48,7 @@ class WithdrawalHistory extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        appBar: SimpleAppbar(name: 'withdrawal History'),
+        appBar: SimpleAppbar(name: S.of(context).withdrawalHistory),
         body: Container(
           width: double.infinity,
           decoration: BoxDecoration(

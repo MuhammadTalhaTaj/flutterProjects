@@ -14,9 +14,10 @@ class SettingItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+
       decoration: BoxDecoration(
           color: context.colorScheme.onPrimaryContainer,
-          border: Border.all(color: Color(0xff495057))),
+          border: Border.all(color: Color(text!='Log out'?0xff495057:0xffdc3545))),
       padding: EdgeInsets.all(15),
 
       child: Column(
@@ -32,7 +33,7 @@ class SettingItem extends StatelessWidget {
           ),
           Text(
             text,
-            style: bodyTextStyle(context),
+            style: bodyTextStyle(context).copyWith(color: text!='Log out'?Colors.white:Color(0xffdc3545)),
           ),
         ],
       ),

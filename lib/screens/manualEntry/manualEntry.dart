@@ -7,14 +7,17 @@ import 'package:demo_flutter/imageVairableFiles/ImageVariableFiles.dart';
 import 'package:demo_flutter/utils/app_utils/extensions/color_extension.dart';
 import 'package:flutter/material.dart';
 
+import '../../generated/l10n.dart';
+
 class ManualEntry extends StatelessWidget {
+  static const routeName='/manualEntry';
   const ManualEntry({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return SafeArea(
         child: Scaffold(
-      appBar: SimpleAppbar(name: 'Manual Entry'),
+      appBar: SimpleAppbar(name: S.of(context).manualEntry),
       body: Container(
         width: double.infinity,
         decoration: BoxDecoration(
@@ -36,7 +39,7 @@ class ManualEntry extends StatelessWidget {
                 Align(
                   alignment: Alignment.centerLeft,
                   child: Text(
-                    'Entry 12 character coupon code',
+                    S.of(context).enter12,
                     style: bodyTextStyle(context),
                   ),
                 ),
@@ -53,7 +56,7 @@ class ManualEntry extends StatelessWidget {
               ],
             ),
             
-            CustomElivitedButton(onPress: (){},text: 'Claim Coupon',)
+            CustomElivitedButton(onPress: (){},text: S.of(context).claimCoupon,)
           ],
         ),
       ),

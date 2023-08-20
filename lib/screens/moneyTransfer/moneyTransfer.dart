@@ -9,7 +9,10 @@ import 'package:demo_flutter/screens/moneyTransfer/widgets/transferDetails.dart'
 import 'package:demo_flutter/utils/app_utils/extensions/color_extension.dart';
 import 'package:flutter/material.dart';
 
+import '../../generated/l10n.dart';
+
 class MoneyTransfer extends StatefulWidget {
+  static const routeName = '/moneyTransfer';
   const MoneyTransfer({Key? key}) : super(key: key);
 
   @override
@@ -23,7 +26,7 @@ class _MoneyTransferState extends State<MoneyTransfer> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        appBar: SimpleAppbar(name: 'Money Transfer',),
+        appBar: SimpleAppbar(name: S.of(context).moneyTransfer,),
         body: Container(
           decoration: BoxDecoration(
               gradient: LinearGradient(
@@ -52,7 +55,7 @@ class _MoneyTransferState extends State<MoneyTransfer> {
                     height: 20,
                   ),
                   Text(
-                    'Select Amount',
+                    S.of(context).selectAmount,
                     style: bodyTextStyle(context),
                   ),
                   AppSize(
@@ -128,22 +131,22 @@ class _MoneyTransferState extends State<MoneyTransfer> {
                   ),
                   TransferDetails(
                     imagePath: 'lib/icons/bankTransferIcon.png',
-                    upperText: 'Bank Transfer',
-                    lowerText: 'Click to select the bank account',
+                    upperText: S.of(context).bankTransfer,
+                    lowerText: S.of(context).clickToSelectBankAccount,
                   ),
                   AppSize(
                     height: 20,
                   ),
                   TransferDetails(
                     imagePath: 'lib/icons/upiTransferIcon.png',
-                    upperText: 'UPI Transfer',
-                    lowerText: 'Click to select Upi address',
+                    upperText: S.of(context).upiTransfer,
+                    lowerText: S.of(context).selectUpiAddress,
                   ),
                 ],
               ),
               CustomElivitedButton(
                 onPress: () {},
-                text: 'Submit',
+                text: S.of(context).submit,
               )
             ],
           ),

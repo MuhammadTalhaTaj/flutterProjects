@@ -7,7 +7,10 @@ import 'package:demo_flutter/utils/app_utils/extensions/color_extension.dart';
 import 'package:demo_flutter/utils/app_utils/extensions/screen_util_extension.dart';
 import 'package:flutter/material.dart';
 
+import '../../generated/l10n.dart';
+
 class ChangePin extends StatefulWidget {
+  static const routeName='/changeMPIN';
   const ChangePin({Key? key}) : super(key: key);
 
   @override
@@ -19,7 +22,7 @@ class _ChangePinState extends State<ChangePin> {
   Widget build(BuildContext context) {
     return SafeArea(
         child: Scaffold(
-      appBar: SimpleAppbar(name: 'Change MPIN'),
+      appBar: SimpleAppbar(name: S.of(context).changeMpin),
       body: Container(
         padding: EdgeInsets.all(15),
         width: double.infinity,
@@ -39,21 +42,21 @@ class _ChangePinState extends State<ChangePin> {
               children: [
                 AppSize(height: 10,),
                 Text(
-                  'Old MPIN',
+                  S.of(context).oldMpin,
                   style: bodyTextStyle(context),
                 ),
                 AppSize(height: 10,),
                 Center(child: CustomPinput(length: 4,boxWidth: 59,boxHeight: 59,width: 30,)),
                 AppSize(height: 15,),
                 Text(
-                  'Old MPIN',
+                  S.of(context).oldMpin,
                   style: bodyTextStyle(context),
                 ),
                 AppSize(height: 10,),
                 Center(child: CustomPinput(length: 4,boxWidth: 59,boxHeight: 59,width: 30,)),
                 AppSize(height: 15,),
                 Text(
-                  'Old MPIN',
+                  S.of(context).oldMpin,
                   style: bodyTextStyle(context),
                 ),
                 AppSize(height: 10,),
@@ -62,7 +65,7 @@ class _ChangePinState extends State<ChangePin> {
               ],
             ),
             
-            CustomElivitedButton(onPress: (){},text:'Change MPIN' ,)
+            CustomElivitedButton(onPress: (){},text:S.of(context).changeMpin ,)
           ],
         ),
       ),

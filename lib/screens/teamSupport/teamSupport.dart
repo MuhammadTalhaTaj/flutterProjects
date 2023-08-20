@@ -16,7 +16,7 @@ import '../../generated/l10n.dart';
 import '../../randomData/listRandomData.dart';
 
 class TeamSupport extends StatelessWidget {
-  static const routeName = '/sign-up';
+  static const routeName = '/teamSupport';
 
   const TeamSupport({Key? key}) : super(key: key);
 
@@ -24,7 +24,7 @@ class TeamSupport extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        appBar:SimpleAppbar(name: 'Team Support'),
+        appBar:SimpleAppbar(name: S.of(context).teamSupport),
         backgroundColor: context.colorScheme.background,
         body: Container(
           width: double.infinity,
@@ -62,14 +62,14 @@ class TeamSupport extends StatelessWidget {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
-                              'Team Contact',
+                              S.of(context).teamContact,
                               style: headingTextStyle(context),
                             ),
                             AppSize(
                               height: 10,
                             ),
                             Text(
-                              "Love to hear from you, let’s connect",
+                              S.of(context).loveToHearFrom,
                               style: subBodyTextStyle(),
                             ),
                             AppSize(
@@ -91,20 +91,20 @@ class TeamSupport extends StatelessWidget {
                               height: 15,
                             ),
                             Text(
-                              'Your Mail',
+                              S.of(context).yourMail,
                               style: bodyTextStyle(context),
                             ),
                             AppSize(
                               height: 10,
                             ),
                             CustomTextField(
-                              labelText: 'Enter mail',
+                              labelText: S.of(context).enterMail,
                             ),
                             AppSize(
                               height: 15,
                             ),
                             Text(
-                              'Your Message',
+                              S.of(context).yourMessage,
                               style: bodyTextStyle(context),
                             ),
                             AppSize(
@@ -114,14 +114,14 @@ class TeamSupport extends StatelessWidget {
                               height: 150,
                               width: double.infinity,
                               child: CustomTextField(
-                                labelText: 'Enter text..',
+                                labelText: S.of(context).enterText,
                               ),
                             ),
                             AppSize(
                               height: 15,
                             ),
                             Text(
-                              'Upload Image',
+                              S.of(context).uploadImage,
                               style: bodyTextStyle(context),
                             ),
                             AppSize(
@@ -137,7 +137,7 @@ class TeamSupport extends StatelessWidget {
                         Column(
                           children: [
                             CustomElivitedButton(
-                                text: 'Submit',
+                                text: S.of(context).submit,
                                 onPress: () {
                                   Navigator.push(
                                       context,

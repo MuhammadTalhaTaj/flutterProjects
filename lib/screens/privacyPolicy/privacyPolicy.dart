@@ -3,14 +3,17 @@ import 'package:demo_flutter/constants/textStyles.dart';
 import 'package:demo_flutter/utils/app_utils/extensions/color_extension.dart';
 import 'package:flutter/material.dart';
 
+import '../../generated/l10n.dart';
+
 class PrivacyPolicy extends StatelessWidget {
+  static const routeName='/privacyPolicy';
   const PrivacyPolicy({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        appBar: SimpleAppbar(name: 'Privacy Policy'),
+        appBar: SimpleAppbar(name: S.of(context).privacyPolicy),
         body: Container(
           padding: EdgeInsets.all(13),
           height: double.infinity,
@@ -24,8 +27,9 @@ class PrivacyPolicy extends StatelessWidget {
             ],
           )),
           child: Text(
-            'Lorem ipsum dolor sit amet consectetur. Vitae nunc dictumst semper enim bibendum in sed ipsum. Viverra egestas risus duis mi lectus morbi at sit sed. Arcu id eget dolor praesent vitae diam. Tempor semper nisl egestas neque bibendum commodo ultricies pellentesque aliquet. Tincidunt semper.\n\n'
-            'Lorem ipsum dolor sit amet consectetur. Vitae nunc dictumst semper enim bibendum in sed ipsum. Viverra egestas risus duis mi lectus morbi at sit sed. Arcu id eget dolor praesent vitae diam. Tempor semper nisl egestas neque bibendum commodo ultricies pellentesque aliquet. Tincidunt semper.Lorem ipsum dolor sit amet consectetur. Vitae nunc dictumst semper enim bibendum in sed ipsum. Viverra egestas risus duis mi lectus morbi at sit sed. Arcu id eget dolor praesent vitae diam. Tempor semper nisl egestas neque bibendum commodo ultricies pellentesque aliquet. Tincidunt semper.',
+            '${S.of(context).privacy1}\n\n${S.of(context).privacy2}'
+
+            ,
             style: subBodyTextStyle().copyWith(
               height: 1.5,
             ),

@@ -10,9 +10,12 @@ import 'package:demo_flutter/screens/withdrawalHistory/widgets/historyListContai
 import 'package:demo_flutter/utils/app_utils/extensions/color_extension.dart';
 import 'package:flutter/material.dart';
 
+import '../../generated/l10n.dart';
+
 
 
 class PaymentMethod extends StatelessWidget {
+  static const routeName='/paymentMethod';
   PaymentMethod({Key? key}) : super(key: key);
 
   List items = [
@@ -32,7 +35,7 @@ class PaymentMethod extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        appBar:SimpleAppbar(name: 'Payment method'),
+        appBar:SimpleAppbar(name: S.of(context).paymentMethod),
         body: Container(
           padding: EdgeInsets.all(15),
           width: double.infinity,
@@ -64,7 +67,7 @@ class PaymentMethod extends StatelessWidget {
                 ),
               ),
               AppSize(height: 20,),
-              DottedElevatedButton(),
+              DottedElevatedButton(text: S.of(context).uploadMethod,),
 
             ],
           )

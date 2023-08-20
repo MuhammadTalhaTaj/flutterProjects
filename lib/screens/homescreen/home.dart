@@ -1,6 +1,8 @@
 import 'package:demo_flutter/screens/congratulations/congratulation.dart';
 import 'package:demo_flutter/screens/failed/failed.dart';
+import 'package:demo_flutter/screens/history/history.dart';
 import 'package:demo_flutter/screens/language/language.dart';
+import 'package:demo_flutter/screens/notifications/notifications.dart';
 import 'package:demo_flutter/utils/app_utils/extensions/color_extension.dart';
 import 'package:flutter/material.dart';
 
@@ -11,6 +13,7 @@ import 'components/appbar.dart';
 import 'homeScreen.dart';
 
 class Home extends StatefulWidget {
+  static const routeName='/home';
   const Home({Key? key}) : super(key: key);
 
   @override
@@ -20,7 +23,7 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
   int cIndex=0;
   int val = 0;
-  List screens = [HomeScreen(),Failed(),Congratulation(),MoreSettings()];
+  List screens = [HomeScreen(),History(),Notifications(),MoreSettings()];
 
   @override
   Widget build(BuildContext context) {

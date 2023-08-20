@@ -380,10 +380,10 @@ class S {
     );
   }
 
-  /// `Upload Your Image`
+  /// `Upload Image`
   String get uploadImage {
     return Intl.message(
-      'Upload Your Image',
+      'Upload Image',
       name: 'uploadImage',
       desc: '',
       args: [],
@@ -625,6 +625,536 @@ class S {
     return Intl.message(
       'welcome to the loyalty app',
       name: 'welcomeToTheLoyaltyApp',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Edit Profile`
+  String get editProfile {
+    return Intl.message(
+      'Edit Profile',
+      name: 'editProfile',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Image Name`
+  String get imageName {
+    return Intl.message(
+      'Image Name',
+      name: 'imageName',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Do you want to ad pan card?`
+  String get doYouWantToAddPanCard {
+    return Intl.message(
+      'Do you want to ad pan card?',
+      name: 'doYouWantToAddPanCard',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Yes`
+  String get yes {
+    return Intl.message(
+      'Yes',
+      name: 'yes',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `No`
+  String get no {
+    return Intl.message(
+      'No',
+      name: 'no',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Money Transfer`
+  String get moneyTransfer {
+    return Intl.message(
+      'Money Transfer',
+      name: 'moneyTransfer',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Select Amount`
+  String get selectAmount {
+    return Intl.message(
+      'Select Amount',
+      name: 'selectAmount',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Bank Transfer`
+  String get bankTransfer {
+    return Intl.message(
+      'Bank Transfer',
+      name: 'bankTransfer',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Click to select the bank account`
+  String get clickToSelectBankAccount {
+    return Intl.message(
+      'Click to select the bank account',
+      name: 'clickToSelectBankAccount',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `UPI Transfer`
+  String get upiTransfer {
+    return Intl.message(
+      'UPI Transfer',
+      name: 'upiTransfer',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Click to select Upi address`
+  String get selectUpiAddress {
+    return Intl.message(
+      'Click to select Upi address',
+      name: 'selectUpiAddress',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Submit`
+  String get submit {
+    return Intl.message(
+      'Submit',
+      name: 'submit',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Change MPIN`
+  String get changeMpin {
+    return Intl.message(
+      'Change MPIN',
+      name: 'changeMpin',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Old MPIN`
+  String get oldMpin {
+    return Intl.message(
+      'Old MPIN',
+      name: 'oldMpin',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Withdrawal History`
+  String get withdrawalHistory {
+    return Intl.message(
+      'Withdrawal History',
+      name: 'withdrawalHistory',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Privacy Policy`
+  String get privacyPolicy {
+    return Intl.message(
+      'Privacy Policy',
+      name: 'privacyPolicy',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Lorem ipsum dolor sit amet consectetur. Vitae nunc dictumst semper enim bibendum in sed ipsum. Viverra egestas risus duis mi lectus morbi at sit sed. Arcu id eget dolor praesent vitae diam. Tempor semper nisl egestas neque bibendum commodo ultricies pellentesque aliquet. Tincidunt semper.`
+  String get privacy1 {
+    return Intl.message(
+      'Lorem ipsum dolor sit amet consectetur. Vitae nunc dictumst semper enim bibendum in sed ipsum. Viverra egestas risus duis mi lectus morbi at sit sed. Arcu id eget dolor praesent vitae diam. Tempor semper nisl egestas neque bibendum commodo ultricies pellentesque aliquet. Tincidunt semper.',
+      name: 'privacy1',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Lorem ipsum dolor sit amet consectetur. Vitae nunc dictumst semper enim bibendum in sed ipsum. Viverra egestas risus duis mi lectus morbi at sit sed. Arcu id eget dolor praesent vitae diam. Tempor semper nisl egestas neque bibendum commodo ultricies pellentesque aliquet. Tincidunt semper.Lorem ipsum dolor sit amet consectetur. Vitae nunc dictumst semper enim bibendum in sed ipsum. Viverra egestas risus duis mi lectus morbi at sit sed. Arcu id eget dolor praesent vitae diam. Tempor semper nisl egestas neque bibendum commodo ultricies pellentesque aliquet. Tincidunt semper.`
+  String get privacy2 {
+    return Intl.message(
+      'Lorem ipsum dolor sit amet consectetur. Vitae nunc dictumst semper enim bibendum in sed ipsum. Viverra egestas risus duis mi lectus morbi at sit sed. Arcu id eget dolor praesent vitae diam. Tempor semper nisl egestas neque bibendum commodo ultricies pellentesque aliquet. Tincidunt semper.Lorem ipsum dolor sit amet consectetur. Vitae nunc dictumst semper enim bibendum in sed ipsum. Viverra egestas risus duis mi lectus morbi at sit sed. Arcu id eget dolor praesent vitae diam. Tempor semper nisl egestas neque bibendum commodo ultricies pellentesque aliquet. Tincidunt semper.',
+      name: 'privacy2',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Team Support`
+  String get teamSupport {
+    return Intl.message(
+      'Team Support',
+      name: 'teamSupport',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Team Contact`
+  String get teamContact {
+    return Intl.message(
+      'Team Contact',
+      name: 'teamContact',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Love to hear from you, let’s connect`
+  String get loveToHearFrom {
+    return Intl.message(
+      'Love to hear from you, let’s connect',
+      name: 'loveToHearFrom',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Your Mail`
+  String get yourMail {
+    return Intl.message(
+      'Your Mail',
+      name: 'yourMail',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter mail`
+  String get enterMail {
+    return Intl.message(
+      'Enter mail',
+      name: 'enterMail',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Your Message`
+  String get yourMessage {
+    return Intl.message(
+      'Your Message',
+      name: 'yourMessage',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter text..`
+  String get enterText {
+    return Intl.message(
+      'Enter text..',
+      name: 'enterText',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Log out`
+  String get logOut {
+    return Intl.message(
+      'Log out',
+      name: 'logOut',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Are you sure you want to log out`
+  String get logout1 {
+    return Intl.message(
+      'Are you sure you want to log out',
+      name: 'logout1',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `from this application?`
+  String get logout2 {
+    return Intl.message(
+      'from this application?',
+      name: 'logout2',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `'Something Wrong 😒'`
+  String get someThingWentWrong {
+    return Intl.message(
+      '\'Something Wrong 😒\'',
+      name: 'someThingWentWrong',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Lorem ipsum dolor sit amet consectetur.`
+  String get loremIpsum {
+    return Intl.message(
+      'Lorem ipsum dolor sit amet consectetur.',
+      name: 'loremIpsum',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Successfully 🥳`
+  String get successfully {
+    return Intl.message(
+      'Successfully 🥳',
+      name: 'successfully',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Lorem ipsum dolor sit amet consectetur.`
+  String get Loremdolor {
+    return Intl.message(
+      'Lorem ipsum dolor sit amet consectetur.',
+      name: 'Loremdolor',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Cancel`
+  String get cancel {
+    return Intl.message(
+      'Cancel',
+      name: 'cancel',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Clear all notifications`
+  String get clearAllNotification {
+    return Intl.message(
+      'Clear all notifications',
+      name: 'clearAllNotification',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Clear`
+  String get clear {
+    return Intl.message(
+      'Clear',
+      name: 'clear',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `TDS Summary`
+  String get tdsSummary {
+    return Intl.message(
+      'TDS Summary',
+      name: 'tdsSummary',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Total Earned`
+  String get totalEarned {
+    return Intl.message(
+      'Total Earned',
+      name: 'totalEarned',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Deducted`
+  String get deducted {
+    return Intl.message(
+      'Deducted',
+      name: 'deducted',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Transferred`
+  String get transferred {
+    return Intl.message(
+      'Transferred',
+      name: 'transferred',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `No Data`
+  String get noData {
+    return Intl.message(
+      'No Data',
+      name: 'noData',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Manual Entry`
+  String get manualEntry {
+    return Intl.message(
+      'Manual Entry',
+      name: 'manualEntry',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Entry 12 character coupon code`
+  String get enter12 {
+    return Intl.message(
+      'Entry 12 character coupon code',
+      name: 'enter12',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Claim Coupon`
+  String get claimCoupon {
+    return Intl.message(
+      'Claim Coupon',
+      name: 'claimCoupon',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `QR Code`
+  String get qrCode {
+    return Intl.message(
+      'QR Code',
+      name: 'qrCode',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Payment method`
+  String get paymentMethod {
+    return Intl.message(
+      'Payment method',
+      name: 'paymentMethod',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Upload Method`
+  String get uploadMethod {
+    return Intl.message(
+      'Upload Method',
+      name: 'uploadMethod',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Connection Lose!`
+  String get connectionLose {
+    return Intl.message(
+      'Connection Lose!',
+      name: 'connectionLose',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please check your internet`
+  String get conn1 {
+    return Intl.message(
+      'Please check your internet',
+      name: 'conn1',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `connection and try again`
+  String get conn2 {
+    return Intl.message(
+      'connection and try again',
+      name: 'conn2',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Try Again`
+  String get tryAgain {
+    return Intl.message(
+      'Try Again',
+      name: 'tryAgain',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Server error!`
+  String get serverError {
+    return Intl.message(
+      'Server error!',
+      name: 'serverError',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please check your internet`
+  String get server1 {
+    return Intl.message(
+      'Please check your internet',
+      name: 'server1',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `connection and try again`
+  String get server2 {
+    return Intl.message(
+      'connection and try again',
+      name: 'server2',
       desc: '',
       args: [],
     );

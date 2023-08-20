@@ -1,14 +1,22 @@
 import 'package:demo_flutter/commonwidgets/nameAppbar.dart';
 import 'package:demo_flutter/constants/textStyles.dart';
+import 'package:demo_flutter/screens/changePin/changePin.dart';
+import 'package:demo_flutter/screens/editProfile/editProfile.dart';
+import 'package:demo_flutter/screens/moneyTransfer/moneyTransfer.dart';
 import 'package:demo_flutter/screens/more_setting/widgets/settingItem.dart';
+import 'package:demo_flutter/screens/popUps/logoutPopup.dart';
+import 'package:demo_flutter/screens/privacyPolicy/privacyPolicy.dart';
+import 'package:demo_flutter/screens/teamSupport/teamSupport.dart';
+import 'package:demo_flutter/screens/withdrawalHistory/withdrawalHistory.dart';
 import 'package:demo_flutter/utils/app_utils/extensions/color_extension.dart';
 import 'package:flutter/material.dart';
 
 import '../../commonwidgets/appsize.dart';
-
-
+import '../popUps/somethineWentWrongPopup.dart';
+import '../popUps/successfulPopUp.dart';
 
 class MoreSettings extends StatelessWidget {
+  static const routeName='/moreSettings';
   MoreSettings({Key? key}) : super(key: key);
 
   List settingItems = [
@@ -21,10 +29,18 @@ class MoreSettings extends StatelessWidget {
     {'icon': 'lib/icons/logout.png', 'text': 'Log out'}
   ];
 
+  List NavigationsScreens = [
+    EditProfile.routeName,
+    MoneyTransfer.routeName,
+    ChangePin.routeName,
+    WithdrawalHistory.routeName,
+    PrivacyPolicy.routeName,
+    TeamSupport.routeName
+  ];
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
-
       child: Scaffold(
         appBar: NameAppbar(),
         body: Container(
@@ -36,21 +52,30 @@ class MoreSettings extends StatelessWidget {
           ])),
           child: Column(
             children: [
-
               Expanded(
-                child: AppSize(
-                  width: double.infinity,
-                  height: 400,
-                  child: GridView.builder(
-                      itemCount: settingItems.length,
+                child: GridView.builder(
+                    itemCount: settingItems.length,
+                    gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
+                        childAspectRatio: 3 / 1.8,
+                        crossAxisSpacing: 10,
+                        mainAxisSpacing: 10,
+                        maxCrossAxisExtent: 200),
+                    itemBuilder: (context, index) => GestureDetector(
+                        onTap: () {
+                          if (index!= 6) {
+                          Navigator.pushNamed(context,NavigationsScreens[index] );
+                          }
+                          else{
+                            showDialog(context: context, builder: (BuildContext context) {
 
-                      gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
+                              return LogoutPopup();
+                            },);
+                          }
+                        },
 
-                          childAspectRatio: 3/ 1.8,
-                          crossAxisSpacing: 10,
-                          mainAxisSpacing: 10, maxCrossAxisExtent: 200),
-                      itemBuilder: (context, index) => SettingItem(settingItems[index]['icon'],settingItems[index]['text'])),
-                ),
+
+                        child: SettingItem(settingItems[index]['icon'],
+                            settingItems[index]['text']))),
               )
             ],
           ),
@@ -59,4 +84,3 @@ class MoreSettings extends StatelessWidget {
     );
   }
 }
-

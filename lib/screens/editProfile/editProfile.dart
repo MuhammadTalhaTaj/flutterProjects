@@ -15,7 +15,7 @@ import '../../generated/l10n.dart';
 import '../../randomData/listRandomData.dart';
 
 class EditProfile extends StatefulWidget {
-  static const routeName = '/sign-up2';
+  static const routeName = '/editProfile';
 
   const EditProfile({Key? key}) : super(key: key);
 
@@ -97,7 +97,7 @@ class _EditProfileState extends State<EditProfile> {
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   Text(
-                                    'Edit Profile',
+                                    S.of(context).editProfile,
                                     style: headingTextStyle(context),
                                   ),
                                   AppSize(
@@ -127,7 +127,7 @@ class _EditProfileState extends State<EditProfile> {
                                                   MainAxisAlignment.center,
                                               children: [
                                                 Text(
-                                                  'Image Name',
+                                                  S.of(context).imageName,
                                                   style: bodyTextStyle(context),
                                                 ),
                                                 AppSize(
@@ -258,7 +258,7 @@ class _EditProfileState extends State<EditProfile> {
                                     height: 15,
                                   ),
                                   Text(
-                                    'Do you want to ad pan card?',
+                                    S.of(context).doYouWantToAddPanCard,
                                     style: bodyTextStyle(context),
                                   ),
 
@@ -279,7 +279,7 @@ class _EditProfileState extends State<EditProfile> {
                                             },
                                           ),
                                           Text(
-                                            'Yes',
+                                            S.of(context).yes,
                                             style: bodyTextStyle(context),
                                           ),
                                         ],
@@ -296,7 +296,7 @@ class _EditProfileState extends State<EditProfile> {
                                             },
                                           ),
                                           Text(
-                                            'No',
+                                            S.of(context).no,
                                             style: bodyTextStyle(context),
                                           ),
                                         ],

@@ -1,6 +1,7 @@
 import 'package:demo_flutter/commonwidgets/cusotmDropdown.dart';
 import 'package:demo_flutter/constants/textStyles.dart';
 import 'package:demo_flutter/imageVairableFiles/ImageVariableFiles.dart';
+import 'package:demo_flutter/screens/homescreen/homeScreen.dart';
 import 'package:demo_flutter/screens/signIn/signIn.dart';
 import 'package:demo_flutter/utils/app_utils/extensions/color_extension.dart';
 import 'package:flutter/material.dart';
@@ -8,6 +9,7 @@ import 'package:flutter/material.dart';
 import '../../commonwidgets/appsize.dart';
 import '../../commonwidgets/customElevetedButton.dart';
 import '../../generated/l10n.dart';
+import '../homescreen/home.dart';
 
 class Congratulation extends StatelessWidget {
   static const routeName='congratulation';
@@ -62,7 +64,7 @@ class Congratulation extends StatelessWidget {
                 child: CustomElivitedButton(
                   text: S.of(context).continue1,
                   onPress: () {
-                    Navigator.pushNamed(context, SignIn.routeName);
+                    Navigator.pushNamed(context, Home.routeName);
 
                   },
                 )),

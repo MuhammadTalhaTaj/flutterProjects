@@ -5,7 +5,10 @@ import 'package:demo_flutter/imageVairableFiles/ImageVariableFiles.dart';
 import 'package:demo_flutter/utils/app_utils/extensions/color_extension.dart';
 import 'package:flutter/material.dart';
 
+import '../../generated/l10n.dart';
+
 class ConnectionLost extends StatelessWidget {
+  static const routeName='/connectionLost';
   const ConnectionLost({Key? key}) : super(key: key);
 
   @override
@@ -28,11 +31,11 @@ class ConnectionLost extends StatelessWidget {
           children: [
             Image.asset(ImageVariables.connectionLostImage),
             AppSize(height: 10,),
-            Text('Connection Lose!',style: headingTextStyle(context),),
+            Text(S.of(context).connectionLose,style: headingTextStyle(context),),
             AppSize(height: 10,),
-            Text('Please check your internet\nconnection and try again',style: subBodyTextStyle(),textAlign: TextAlign.center,),
+            Text('${S.of(context).conn1}\n${S.of(context).conn2}',style: subBodyTextStyle(),textAlign: TextAlign.center,),
             AppSize(height: 10,),
-            AppSize(width: 159,height: 47, child: CustomElivitedButton(onPress: (){},backgroundColor: context.colorScheme.onPrimaryContainer,text: 'Try Again',textColor: context.colorScheme.primary,))
+            AppSize(width: 159,height: 47, child: CustomElivitedButton(onPress: (){},backgroundColor: context.colorScheme.onPrimaryContainer,text: S.of(context).tryAgain,textColor: context.colorScheme.primary,))
 
 
 

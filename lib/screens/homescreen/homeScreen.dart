@@ -10,6 +10,7 @@ import 'components/picshorizontalcontainer.dart';
 import 'components/slidercontainer.dart';
 
 class HomeScreen extends StatelessWidget {
+  static const routeName='/homeScreen';
   const HomeScreen({
     super.key,
   });

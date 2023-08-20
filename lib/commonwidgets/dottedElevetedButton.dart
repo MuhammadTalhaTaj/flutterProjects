@@ -6,7 +6,9 @@ import '../constants/textStyles.dart';
 import 'appsize.dart';
 
 class DottedElevatedButton extends StatelessWidget {
-  const DottedElevatedButton({Key? key}) : super(key: key);
+  String text;
+
+  DottedElevatedButton({this.text='Upload image'});
 
   @override
   Widget build(BuildContext context) {
@@ -35,7 +37,7 @@ class DottedElevatedButton extends StatelessWidget {
                 width: 5,
               ),
               Text(
-                'Upload image',
+                text,
                 style: bodyTextStyle(context),
               ),
             ],

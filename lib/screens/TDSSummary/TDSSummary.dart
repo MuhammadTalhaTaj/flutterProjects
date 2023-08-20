@@ -6,7 +6,10 @@ import 'package:demo_flutter/screens/TDSSummary/widgets/tdsListContainer.dart';
 import 'package:demo_flutter/utils/app_utils/extensions/color_extension.dart';
 import 'package:flutter/material.dart';
 
+import '../../generated/l10n.dart';
+
 class TDSSummary extends StatelessWidget {
+  static const routeName='/tdsSummary';
    TDSSummary({Key? key}) : super(key: key);
 
   List items = [
@@ -38,7 +41,7 @@ class TDSSummary extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
         child: Scaffold(
-      appBar: SimpleAppbar(name: 'TDS Summary'),
+      appBar: SimpleAppbar(name: S.of(context).tdsSummary),
       body: Container(
         padding: EdgeInsets.all(13),
         decoration: BoxDecoration(
@@ -53,9 +56,9 @@ class TDSSummary extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-            PointsContainer(color: Color(0xff198754), upperText: '96', lowerText: 'Total Earned'),
-            PointsContainer(color: Color(0xffdc3545), upperText: '99', lowerText: 'Deducted'),
-            PointsContainer(color: Color(0xff0d6efd), upperText: '56', lowerText: 'Transferred'),
+            PointsContainer(color: Color(0xff198754), upperText: '96', lowerText: S.of(context).totalEarned),
+            PointsContainer(color: Color(0xffdc3545), upperText: '99', lowerText: S.of(context).deducted),
+            PointsContainer(color: Color(0xff0d6efd), upperText: '56', lowerText: S.of(context).transferred),
 
 
 

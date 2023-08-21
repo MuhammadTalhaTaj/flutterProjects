@@ -1,5 +1,6 @@
 import 'package:demo_flutter/commonwidgets/nameAppbar.dart';
 import 'package:demo_flutter/constants/textStyles.dart';
+import 'package:demo_flutter/screens/TDSSummary/TDSSummary.dart';
 import 'package:demo_flutter/screens/changePin/changePin.dart';
 import 'package:demo_flutter/screens/editProfile/editProfile.dart';
 import 'package:demo_flutter/screens/moneyTransfer/moneyTransfer.dart';
@@ -16,16 +17,18 @@ import '../popUps/somethineWentWrongPopup.dart';
 import '../popUps/successfulPopUp.dart';
 
 class MoreSettings extends StatelessWidget {
-  static const routeName='/moreSettings';
+  static const routeName = '/moreSettings';
+
   MoreSettings({Key? key}) : super(key: key);
 
   List settingItems = [
     {'icon': 'lib/icons/edit.png', 'text': 'Edit Profile'},
     {'icon': 'lib/icons/moneyTransfer.png', 'text': 'Money Transfer'},
     {'icon': 'lib/icons/changeMpin.png', 'text': 'Change MPIN'},
-    {'icon': 'lib/icons/withdrawalHis.png', 'text': 'Withdrawal His'},
+    {'icon': 'lib/icons/withdrawalHis.png', 'text': 'Withdrawal History'},
     {'icon': 'lib/icons/privacyPolicy.png', 'text': 'Privacy Policy'},
     {'icon': 'lib/icons/teamSupport.png', 'text': 'Team Support'},
+    {'icon': 'lib/icons/summaryIcon.png', 'text': 'TDS Summary'},
     {'icon': 'lib/icons/logout.png', 'text': 'Log out'}
   ];
 
@@ -35,7 +38,8 @@ class MoreSettings extends StatelessWidget {
     ChangePin.routeName,
     WithdrawalHistory.routeName,
     PrivacyPolicy.routeName,
-    TeamSupport.routeName
+    TeamSupport.routeName,
+    TDSSummary.routeName
   ];
 
   @override
@@ -55,25 +59,25 @@ class MoreSettings extends StatelessWidget {
               Expanded(
                 child: GridView.builder(
                     itemCount: settingItems.length,
-                    gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
+                    gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
                         childAspectRatio: 3 / 1.8,
                         crossAxisSpacing: 10,
                         mainAxisSpacing: 10,
                         maxCrossAxisExtent: 200),
                     itemBuilder: (context, index) => GestureDetector(
                         onTap: () {
-                          if (index!= 6) {
-                          Navigator.pushNamed(context,NavigationsScreens[index] );
-                          }
-                          else{
-                            showDialog(context: context, builder: (BuildContext context) {
-
-                              return LogoutPopup();
-                            },);
+                          if (index != 7) {
+                            Navigator.pushNamed(
+                                context, NavigationsScreens[index]);
+                          } else {
+                            showDialog(
+                              context: context,
+                              builder: (BuildContext context) {
+                                return LogoutPopup();
+                              },
+                            );
                           }
                         },
-
-
                         child: SettingItem(settingItems[index]['icon'],
                             settingItems[index]['text']))),
               )

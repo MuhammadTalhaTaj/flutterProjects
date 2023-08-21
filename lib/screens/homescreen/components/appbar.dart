@@ -1,3 +1,5 @@
+import 'package:demo_flutter/commonwidgets/appsize.dart';
+import 'package:demo_flutter/constants/textStyles.dart';
 import 'package:flutter/material.dart';
 
 
@@ -96,7 +98,7 @@ class FABBottomAppBarState extends State<FABBottomAppBar> {
     Color color = _selectedIndex == index ? widget.selectedColor : widget.color;
     return Expanded(
       child: SizedBox(
-        height: widget.height,
+        height:70,
         child: Material(
           type: MaterialType.transparency,
           child: InkWell(
@@ -105,11 +107,17 @@ class FABBottomAppBarState extends State<FABBottomAppBar> {
               mainAxisSize: MainAxisSize.min,
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
-                Icon(item.iconData, color: color, size: widget.iconSize),
-                Text(
-                  item.text,
-                  style: TextStyle(color: color),
-                )
+                AppSize(height: 7,),
+                Icon(item.iconData,color: color),
+                AppSize(height: 7,),
+
+                Flexible(
+                  child: Text(
+                    item.text,
+                    style:TextStyle(color: color,fontSize: 12),
+                  ),
+                ),
+                AppSize(height: 3,),
               ],
             ),
           ),

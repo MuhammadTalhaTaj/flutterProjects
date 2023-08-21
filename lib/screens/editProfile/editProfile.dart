@@ -59,6 +59,7 @@ class _EditProfileState extends State<EditProfile> {
                   //snap: true,
                   floating: false,
                   pinned: false,
+                  elevation: 0,
 
                   //  width: double.infinity,
                   expandedHeight: context.heightWithoutSafeArea * 0.33,

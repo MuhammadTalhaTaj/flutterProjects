@@ -23,6 +23,7 @@ import 'package:demo_flutter/screens/popUps/somethineWentWrongPopup.dart';
 import 'package:demo_flutter/screens/popUps/successfulPopUp.dart';
 import 'package:demo_flutter/screens/privacyPolicy/privacyPolicy.dart';
 import 'package:demo_flutter/screens/qrCode/qrCode.dart';
+import 'package:demo_flutter/screens/qrView/qrView.dart';
 import 'package:demo_flutter/screens/serverError/serverError.dart';
 import 'package:demo_flutter/screens/signIn/signIn.dart';
 import 'package:demo_flutter/screens/signUp/signUp2.dart';
@@ -84,6 +85,7 @@ class MyApp extends StatelessWidget {
         HomeScreen.routeName: (ctx) => HomeScreen(),
         MoreSettings.routeName: (ctx) => MoreSettings(),
         Home.routeName:(ctx)=>Home(),
+        QRScanner.routeName:(ctx)=>QRScanner(),
       },
     );
   }

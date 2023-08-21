@@ -1,8 +1,10 @@
+import 'package:demo_flutter/bottomBarIcons/my_flutter_app_icons.dart';
 import 'package:demo_flutter/screens/congratulations/congratulation.dart';
 import 'package:demo_flutter/screens/failed/failed.dart';
 import 'package:demo_flutter/screens/history/history.dart';
 import 'package:demo_flutter/screens/language/language.dart';
 import 'package:demo_flutter/screens/notifications/notifications.dart';
+import 'package:demo_flutter/screens/qrView/qrView.dart';
 import 'package:demo_flutter/utils/app_utils/extensions/color_extension.dart';
 import 'package:flutter/material.dart';
 
@@ -35,7 +37,7 @@ class _HomeState extends State<Home> {
         bottomNavigationBar: FABBottomAppBar(
           centerItemText: '',
           color: Colors.grey,
-          backgroundColor: Color(0xFF281125),
+          backgroundColor: context.colorScheme.onPrimaryContainer,
           selectedColor: Colors.white,
           notchedShape: CircularNotchedRectangle(),
           onTabSelected: ((index) {
@@ -44,23 +46,21 @@ class _HomeState extends State<Home> {
             });
           }),
           items: [
-            FABBottomAppBarItem(iconData: Icons.home_filled, text: S.of(context).home),
-            FABBottomAppBarItem(iconData: Icons.history, text: S.of(context).history),
+            FABBottomAppBarItem(iconData: MyFlutterApp.homebottomicon, text: S.of(context).home),
+            FABBottomAppBarItem(iconData: MyFlutterApp.historybottomicon, text: S.of(context).history),
             FABBottomAppBarItem(
-                iconData: Icons.notifications, text: S.of(context).notification),
-            FABBottomAppBarItem(iconData: Icons.more_horiz, text: S.of(context).more),
+                iconData: MyFlutterApp.notificatinonbottomicon, text: S.of(context).notification),
+            FABBottomAppBarItem(iconData: MyFlutterApp.settingbottomicon, text: S.of(context).more),
           ],
         ),
         // body: _list[_page],
         floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
         floatingActionButton: FloatingActionButton(
-          backgroundColor: Colors.white,
-          onPressed: () {},
-          child: Icon(
-            Icons.settings_overscan,
-            color: Color(0xFF281125),
-            size: 35,
-          ),
+          backgroundColor:cIndex==0?Color(0xffff6671): Colors.white,
+          onPressed: () {
+            Navigator.pushNamed(context, QRScanner.routeName);
+          },
+          child: Image.asset(cIndex==0?'lib/icons/scanIcon.png':'lib/icons/scanBlackIcon.png'),
           elevation: 0,
         ),
       ),

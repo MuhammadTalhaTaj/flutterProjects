@@ -49,109 +49,125 @@ class SignIn extends StatelessWidget {
                       borderRadius:const  BorderRadius.only(
                           topLeft: Radius.circular(35),
                           topRight: Radius.circular(35))),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            S.of(context).welcome,
-                            style: headingTextStyle(context),
-                          ),
-                          AppSize(
-                            height: 10,
-                          ),
-                          Text(
-                            S.of(context).welcomeBack,
-                            style: subBodyTextStyle(),
-                          ),
-                          AppSize(
-                            height: 20,
-                          ),
-                          Text(
-                            S.of(context).selectUserType,
-                            style: bodyTextStyle(context),
-                          ),
-                          AppSize(
-                            height: 10,
-                          ),
-
-                          //Todo remove hint text when change
-
-                          CustomDropDownButton(
-                            list: listUserType,
-                            onPressed: (value) {},
-                            color: context.colorScheme.onPrimaryContainer,
-                            hint: S.of(context).selectType,
-                          ),
-                          AppSize(
-                            height: 15,
-                          ),
-                          Text(
-                            S.of(context).mobileNumber,
-                            style: bodyTextStyle(context),
-                          ),
-                          AppSize(
-                            height: 10,
-                          ),
-                          CustomTextField(
-                            labelText: S.of(context).enterNumber,
-                          ),
-                          AppSize(
-                            height: 10,
-                          ),
-                          Align(
-                            alignment: Alignment.centerRight,
-                            child: Text(
-                              S.of(context).forgotMpin,
-                              style: subBodyTextStyle(),
-                            ),
-                          ),
-                        ],
-                      ),
-                      Column(
-                        children: [
-                          CustomElivitedButton(
-                              text: S.of(context).getStarted,
-                              onPress: () {
-                                Navigator.pushNamed(context, OTP.routeName);
-                              }),
-                          AppSize(
-                            height: 10,
-                          ),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Text(
-                                S.of(context).youNeverWorkWithUs,
-                                style: subBodyTextStyle(),
-                              ),
-                              AppSize(
-                                width: 5,
-                              ),
-                              GestureDetector(
-                                  onTap: () {
-                                    Navigator.pushNamed(
-                                        context, SignUp.routeName);
-                                  },
-                                  child: Text(
-                                    S.of(context).signUp,
-                                    style: bodyTextStyle(context),
-                                  ))
-                            ],
-                          )
-                        ],
-                      )
-                    ],
-                  ),
+                  child:context.height<650? SingleChildScrollView(child: BottomContainer()):BottomContainer(),
                 )
               ],
             ),
           ),
         ),
       ),
+    );
+  }
+}
+
+
+
+//______________Bottom Container___________//
+class BottomContainer extends StatelessWidget {
+  const BottomContainer({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              S.of(context).welcome,
+              style: headingTextStyle(context),
+            ),
+            AppSize(
+              height: 10,
+            ),
+            Text(
+              S.of(context).welcomeBack,
+              style: subBodyTextStyle(),
+            ),
+            AppSize(
+              height: 20,
+            ),
+            Text(
+              S.of(context).selectUserType,
+              style: bodyTextStyle(context),
+            ),
+            AppSize(
+              height: 10,
+            ),
+
+
+
+            CustomDropDownButton(
+              list: listUserType,
+              onPressed: (value) {},
+              color: context.colorScheme.onPrimaryContainer,
+              hint: S.of(context).selectType,
+            ),
+            AppSize(
+              height: 15,
+            ),
+            Text(
+              S.of(context).mobileNumber,
+              style: bodyTextStyle(context),
+            ),
+            AppSize(
+              height: 10,
+            ),
+            CustomTextField(
+              labelText: S.of(context).enterNumber,
+            ),
+            AppSize(
+              height: 10,
+            ),
+            Align(
+              alignment: Alignment.centerRight,
+              child: Text(
+                S.of(context).forgotMpin,
+                style: subBodyTextStyle(),
+              ),
+            ),
+
+            AppSize(height: 15,)
+          ],
+        ),
+        Column(
+          children: [
+            CustomElivitedButton(
+                text: S.of(context).getStarted,
+                onPress: () {
+                  Navigator.pushNamed(context, OTP.routeName);
+                }),
+            AppSize(
+              height: 10,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(
+                  S.of(context).youNeverWorkWithUs,
+                  style: subBodyTextStyle(),
+                ),
+                AppSize(
+                  width: 5,
+                ),
+                GestureDetector(
+                    onTap: () {
+                      Navigator.pushNamed(
+                          context, SignUp.routeName);
+                    },
+                    child: Text(
+                      S.of(context).signUp,
+                      style: bodyTextStyle(context),
+                    ))
+              ],
+            )
+          ],
+        )
+      ],
     );
   }
 }

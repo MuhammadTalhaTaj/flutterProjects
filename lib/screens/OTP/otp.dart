@@ -22,11 +22,8 @@ class OTP extends StatefulWidget {
 }
 
 class _OTPState extends State<OTP> {
-
   @override
   Widget build(BuildContext context) {
-
-
     return SafeArea(
       child: Scaffold(
         body: Container(
@@ -55,101 +52,117 @@ class _OTPState extends State<OTP> {
                       borderRadius: const BorderRadius.only(
                           topLeft: Radius.circular(35),
                           topRight: Radius.circular(35))),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              S.of(context).enterOtp,
-                              style: headingTextStyle(context),
-                            ),
-                            AppSize(
-                              height: 10,
-                            ),
-                            Text(
-                              S.of(context).weSentOtp,
-                              style: subBodyTextStyle(),
-                            ),
-                            AppSize(
-                              height: 20,
-                            ),
-
-                            Text(
-                              S.of(context).enterOtp,
-                              style: bodyTextStyle(context),
-                            ),
-                            AppSize(
-                              height: 10,
-                            ),
-                            const SizedBox(
-                              width: double.infinity,
-                                child: CustomPinput(length: 6,boxHeight: 45,boxWidth: 45,)),
-
-
-                          ]),
-                      AppSize(
-                        height: 10,
-                      ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.end,
-                        children: [
-                          Text(
-                            '01:20',
-                            style: TextStyle(color: context.colorScheme.error),
-                          ),
-                          AppSize(
-                            width: 10,
-                          ),
-                          Text(
-                            S.of(context).resend,
-                            style: subBodyTextStyle(),
-                          ),
-                        ],
-                      ),
-                      Column(
-                        children: [
-                          CustomElivitedButton(
-                              text: S.of(context).continue1,
-                              onPress: () {
-                                Navigator.pushNamed(context, SignUp2.routeName);
-                              }),
-                          AppSize(
-                            height: 10,
-                          ),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Text(
-                                S.of(context).youNeverWorkWithUs,
-                                style: subBodyTextStyle(),
-                              ),
-                              AppSize(
-                                width: 5,
-                              ),
-                              GestureDetector(
-                                  onTap: () {
-                                    Navigator.pushNamed(
-                                        context, SignUp.routeName);
-                                  },
-                                  child: Text(
-                                    S.of(context).signUp,
-                                    style: bodyTextStyle(context),
-                                  ))
-                            ],
-                          )
-                        ],
-                      )
-                    ],
-                  ),
+                  child: context.height < 650
+                      ? SingleChildScrollView(child: BottomContainer())
+                      : BottomContainer(),
                 )
               ],
             ),
           ),
         ),
       ),
+    );
+  }
+}
+
+class BottomContainer extends StatelessWidget {
+  const BottomContainer({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              S.of(context).enterOtp,
+              style: headingTextStyle(context),
+            ),
+            AppSize(
+              height: 10,
+            ),
+            Text(
+              S.of(context).weSentOtp,
+              style: subBodyTextStyle(),
+            ),
+            AppSize(
+              height: 20,
+            ),
+            Text(
+              S.of(context).enterOtp,
+              style: bodyTextStyle(context),
+            ),
+            AppSize(
+              height: 10,
+            ),
+            const SizedBox(
+              width: double.infinity,
+              child: CustomPinput(
+                length: 6,
+                boxHeight: 45,
+                boxWidth: 45,
+              ),
+            ),
+            AppSize(height: 15,),
+          ],
+        ),
+        AppSize(
+          height: 10,
+        ),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.end,
+          children: [
+            Text(
+              '01:20',
+              style: TextStyle(color: context.colorScheme.error),
+            ),
+            AppSize(
+              width: 10,
+            ),
+            Text(
+              S.of(context).resend,
+              style: subBodyTextStyle(),
+            ),
+          ],
+        ),
+        Column(
+          children: [
+            CustomElivitedButton(
+                text: S.of(context).continue1,
+                onPress: () {
+                  Navigator.pushNamed(context, SignUp2.routeName);
+                }),
+            AppSize(
+              height: 10,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(
+                  S.of(context).youNeverWorkWithUs,
+                  style: subBodyTextStyle(),
+                ),
+                AppSize(
+                  width: 5,
+                ),
+                GestureDetector(
+                    onTap: () {
+                      Navigator.pushNamed(context, SignUp.routeName);
+                    },
+                    child: Text(
+                      S.of(context).signUp,
+                      style: bodyTextStyle(context),
+                    ))
+              ],
+            )
+          ],
+        )
+      ],
     );
   }
 }

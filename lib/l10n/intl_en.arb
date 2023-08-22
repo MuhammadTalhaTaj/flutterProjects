@@ -2,7 +2,7 @@
   "@@locale": "en_US",
   "appName": "Loyalty Flutter",
   "Language": "Language",
-  "selectLanguage" : "Please select language to continue",
+  "selectLanguageToContinue" : "Please select language to continue",
    "getStarted" : "Get Started",
 
 

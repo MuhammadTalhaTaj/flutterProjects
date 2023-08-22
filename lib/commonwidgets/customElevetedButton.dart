@@ -1,4 +1,5 @@
 
+import 'package:demo_flutter/utils/app_utils/extensions/screen_util_extension.dart';
 import 'package:flutter/material.dart';
 
 class CustomElivitedButton extends StatelessWidget {
@@ -23,18 +24,23 @@ class CustomElivitedButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      width: double.infinity,
-      height: 58,
-      child: ElevatedButton(
-        onPressed: onPress,
-        style: ElevatedButton.styleFrom(
-        backgroundColor: backgroundColor,
-            shape: const RoundedRectangleBorder(borderRadius: BorderRadius.zero)),
-        child:imageData==''? Text(
-          text,
-          style:  TextStyle(fontSize: fontSize, fontWeight: FontWeight.bold,color: textColor),
-        ):Image.asset(imageData),
+    return ConstrainedBox(
+      constraints: BoxConstraints(
+          minHeight: 50
+      ),
+      child: SizedBox(
+        width: double.infinity,
+        height: context.height*0.065,
+        child: ElevatedButton(
+          onPressed: onPress,
+          style: ElevatedButton.styleFrom(
+          backgroundColor: backgroundColor,
+              shape: const RoundedRectangleBorder(borderRadius: BorderRadius.zero)),
+          child:imageData==''? Text(
+            text,
+            style:  TextStyle(fontSize: fontSize, fontWeight: FontWeight.bold,color: textColor),
+          ):Image.asset(imageData),
+        ),
       ),
     );
   }

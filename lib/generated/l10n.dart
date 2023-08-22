@@ -70,11 +70,11 @@ class S {
     );
   }
 
-  /// `Select Language`
-  String get selectLanguage {
+  /// `Please select language to continue`
+  String get selectLanguageToContinue {
     return Intl.message(
-      'Select Language',
-      name: 'selectLanguage',
+      'Please select language to continue',
+      name: 'selectLanguageToContinue',
       desc: '',
       args: [],
     );
@@ -175,6 +175,16 @@ class S {
     return Intl.message(
       'Select Type',
       name: 'selectType',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Select Language`
+  String get selectLanguage {
+    return Intl.message(
+      'Select Language',
+      name: 'selectLanguage',
       desc: '',
       args: [],
     );

@@ -50,107 +50,123 @@ class SignUp extends StatelessWidget {
                       borderRadius: const BorderRadius.only(
                           topLeft: Radius.circular(35),
                           topRight: Radius.circular(35))),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            S.of(context).createAccount,
-                            style: headingTextStyle(context),
-                          ),
-                          AppSize(
-                            height: 10,
-                          ),
-                          Text(
-                            S.of(context).fillAllDetailsToCreateAccount,
-                            style: subBodyTextStyle(),
-                          ),
-                          AppSize(
-                            height: 20,
-                          ),
-                          Text(
-                            S.of(context).selectUserType,
-                            style: bodyTextStyle(context),
-                          ),
-                          AppSize(
-                            height: 10,
-                          ),
-                          CustomDropDownButton(
-                            list: listUserType,
-                            onPressed: (value) {},
-                            color: context.colorScheme.onPrimaryContainer,
-                            hint: 'Select Type',
-                          ),
-                          AppSize(
-                            height: 15,
-                          ),
-                          Text(
-                            S.of(context).mobileNumber,
-                            style: bodyTextStyle(context),
-                          ),
-                          AppSize(
-                            height: 10,
-                          ),
-                          CustomTextField(
-                            labelText: S.of(context).enterNumber,
-                          ),
-                          AppSize(
-                            height: 10,
-                          ),
-                        ],
-                      ),
-                      Column(
-                        children: [
-                          CustomElivitedButton(
-                              text: S.of(context).getStarted,
-                              onPress: () {
-                                Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                      builder: (context) => OTP(),
-                                    ));
-                              }),
-                          AppSize(
-                            height: 10,
-                          ),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Text(
-                                S.of(context).alreadyMemberWithUs,
-                                style: subBodyTextStyle(),
-                              ),
-                              AppSize(
-                                width: 5,
-                              ),
-                              GestureDetector(
-                                  onTap: () {
-                                    Navigator.push(
-                                        context,
-                                        MaterialPageRoute(
-                                          builder: (context) => SignIn(),
-                                        ),);
-                                  },
-                                  child: Text(
-                                    S.of(context).logIn,
-                                    style: bodyTextStyle(context),
-                                  ),
-                              )
-                            ],
-                          )
-                        ],
-                      )
-                    ],
-                  ),
+                  child: context.height < 650
+                      ? SingleChildScrollView(
+                          child: BottomContainer(),
+                        )
+                      : BottomContainer(),
                 )
               ],
             ),
           ),
         ),
       ),
+    );
+  }
+}
+
+class BottomContainer extends StatelessWidget {
+  const BottomContainer({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              S.of(context).createAccount,
+              style: headingTextStyle(context),
+            ),
+            AppSize(
+              height: 10,
+            ),
+            Text(
+              S.of(context).fillAllDetailsToCreateAccount,
+              style: subBodyTextStyle(),
+            ),
+            AppSize(
+              height: 20,
+            ),
+            Text(
+              S.of(context).selectUserType,
+              style: bodyTextStyle(context),
+            ),
+            AppSize(
+              height: 10,
+            ),
+            CustomDropDownButton(
+              list: listUserType,
+              onPressed: (value) {},
+              color: context.colorScheme.onPrimaryContainer,
+              hint: 'Select Type',
+            ),
+            AppSize(
+              height: 15,
+            ),
+            Text(
+              S.of(context).mobileNumber,
+              style: bodyTextStyle(context),
+            ),
+            AppSize(
+              height: 10,
+            ),
+            CustomTextField(
+              labelText: S.of(context).enterNumber,
+            ),
+            AppSize(
+              height: 10,
+            ),
+          ],
+        ),
+        Column(
+          children: [
+            CustomElivitedButton(
+                text: S.of(context).getStarted,
+                onPress: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => OTP(),
+                      ));
+                }),
+            AppSize(
+              height: 10,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(
+                  S.of(context).alreadyMemberWithUs,
+                  style: subBodyTextStyle(),
+                ),
+                AppSize(
+                  width: 5,
+                ),
+                GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => SignIn(),
+                      ),
+                    );
+                  },
+                  child: Text(
+                    S.of(context).logIn,
+                    style: bodyTextStyle(context),
+                  ),
+                )
+              ],
+            )
+          ],
+        )
+      ],
     );
   }
 }

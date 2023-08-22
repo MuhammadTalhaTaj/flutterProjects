@@ -13,7 +13,8 @@ import '../../commonwidgets/customElevetedButton.dart';
 import '../../generated/l10n.dart';
 
 class Language extends StatelessWidget {
-  static const routeName='/language';
+  static const routeName = '/language';
+
   const Language({Key? key}) : super(key: key);
 
   @override
@@ -22,80 +23,93 @@ class Language extends StatelessWidget {
     //   statusBarColor: context.colorScheme.background, //or set color with: Color(0xFF0000FF)
     // ));
 
-
-
     return SafeArea(
       child: Scaffold(
         backgroundColor: context.colorScheme.background,
         body: Container(
-
-          decoration:  BoxDecoration(
+          height: double.infinity,
+          decoration: BoxDecoration(
               gradient: LinearGradient(
             begin: Alignment.centerLeft,
-
-            colors: [context.colorScheme.background, context.colorScheme.onBackground],
+            colors: [
+              context.colorScheme.background,
+              context.colorScheme.onBackground
+            ],
           )),
           padding: const EdgeInsets.all(20),
+          child: context.isPatriot
+              ? const Body()
+              : const SingleChildScrollView(
+                  child: Body(),
+                ),
+        ),
+      ),
+    );
+  }
+}
+
+
+class Body extends StatelessWidget {
+  const Body({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Center(
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              AppSize(
-                height: context.height * 0.1,
+              Image.asset(
+                ImageVariables.languageImage,
+                // Adjust the height as needed
               ),
-              Center(
-                child: Container(
-                  child: Column(
-                    children: [
-
-                      Image.asset(
-                        ImageVariables.languageImage,
-                        // Adjust the height as needed
-                      ),
-                      Text(
-
-                        S.of(context).Language,
-                        style: headingTextStyle(context),
-                      ),
-                      AppSize(
-                        height: 10,
-                      ),
-                      Text(
-                        S.of(context).selectLanguage,
-                        style: subBodyTextStyle(),
-                      ),
-
-                      AppSize(
-                        height: 20,
-                      ),
-                      AppSize(
-                          height: 58,
-                          width: double.infinity,
-
-                          child: CustomDropDownButton(list:listLanguages,onPressed:  (value) {},
-
-                              color: context.colorScheme.primaryContainer,hint: S.of(context).selectLanguage,),),
-                    ],
-                  ),
+              Text(
+                S.of(context).Language,
+                style: headingTextStyle(context),
+              ),
+              AppSize(
+                height: 10,
+              ),
+              Text(
+                S.of(context).selectLanguageToContinue,
+                style: subBodyTextStyle(),
+              ),
+              AppSize(
+                height: 20,
+              ),
+              AppSize(
+                height: 58,
+                width: double.infinity,
+                child: CustomDropDownButton(
+                  list: listLanguages,
+                  onPressed: (value) {},
+                  color: context.colorScheme.primaryContainer,
+                  hint: S.of(context).selectLanguage,
                 ),
               ),
-
-              Spacer(),
-              Align(
-                  alignment: Alignment.bottomCenter,
-                  child: CustomElivitedButton(
-                    text: S.of(context).getStarted,
-                    onPress: () {
-                      Navigator.pushNamed(context, SignIn.routeName);
-
-
-                      Navigator.push(context, MaterialPageRoute(builder: (context) => SignIn(),));
-                    },
-                  ),
-              ),
+              AppSize(
+                height: 15,
+              )
             ],
           ),
         ),
-      ),
+        if (context.isPatriot) Spacer(),
+        CustomElivitedButton(
+          text: S.of(context).getStarted,
+          onPress: () {
+            Navigator.pushNamed(context, SignIn.routeName);
+
+            Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => SignIn(),
+                ));
+          },
+        ),
+      ],
     );
   }
 }

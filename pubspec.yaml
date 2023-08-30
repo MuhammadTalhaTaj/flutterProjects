@@ -46,6 +46,7 @@ dependencies:
   pinput: ^3.0.0
   # TODO : add description why you have used plugin.
   qr_code_scanner: ^1.0.1
+  device_preview: ^1.1.0
 
 dev_dependencies:
   flutter_test:
@@ -102,3 +103,5 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
+dependency_overrides:
+  intl: any

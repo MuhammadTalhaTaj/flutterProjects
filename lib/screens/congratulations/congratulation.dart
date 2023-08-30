@@ -4,7 +4,6 @@ import 'package:demo_flutter/imageVairableFiles/ImageVariableFiles.dart';
 import 'package:demo_flutter/screens/homescreen/homeScreen.dart';
 import 'package:demo_flutter/screens/signIn/signIn.dart';
 import 'package:demo_flutter/utils/app_utils/extensions/color_extension.dart';
-import 'package:demo_flutter/utils/app_utils/extensions/screen_util_extension.dart';
 import 'package:flutter/material.dart';
 
 import '../../commonwidgets/appsize.dart';
@@ -74,7 +73,6 @@ class Congratulation extends StatelessWidget {
                 ),
               ),
             ),
-            Spacer(),
             Align(
                 alignment: Alignment.bottomCenter,
                 child: CustomElivitedButton(
@@ -83,6 +81,7 @@ class Congratulation extends StatelessWidget {
                       .continue1,
                   onPress: () {
                     Navigator.pushNamed(context, Home.routeName);
+
                   },
                 )),
           ],

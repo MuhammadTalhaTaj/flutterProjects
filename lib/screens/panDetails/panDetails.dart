@@ -49,106 +49,125 @@ class PanUpdate extends StatelessWidget {
                       borderRadius: const BorderRadius.only(
                           topLeft: Radius.circular(35),
                           topRight: Radius.circular(35))),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            S.of(context).addPanDetails,
-                            style: headingTextStyle(context),
-                          ),
-                          AppSize(
-                            height: 10,
-                          ),
-                          Text(
-                            S.of(context).pleaseEnterPanDetails,
-                            style: subBodyTextStyle(),
-                          ),
-                          AppSize(
-                            height: 20,
-                          ),
-                          Text(
-                            S.of(context).panNumber,
-                            style: bodyTextStyle(context),
-                          ),
-                          AppSize(
-                            height: 10,
-                          ),
-                          CustomTextField(
-                            labelText: S.of(context).enterNumber,
-                          ),
-                          AppSize(
-                            height: 10,
-                          ),
-                          RichText(
-                            text: TextSpan(
-                              text: S.of(context).note,
-                              style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  color: context.colorScheme.error),
-                              children: [
-                                TextSpan(
-                                    text: S.of(context).loremIspumdolor,
-                                    style: TextStyle(
-                                        fontWeight: FontWeight.normal))
-                              ],
-                            ),
-                          ),
-                          AppSize(
-                            height: 25,
-                          ),
-                          Text(
-                            S.of(context).uploadImage,
-                            style: bodyTextStyle(context),
-                          ),
-                          AppSize(
-                            height: 10,
-                          ),
 
-                          DottedElevatedButton(),
+                  //when the height is less then 650 then it should scroll otherwise there can be problem in size so thats why add this logic
 
-
-                        ],
-                      ),
-                      Column(
-                        children: [
-                          CustomElivitedButton(
-                              text: S.of(context).continue1,
-                              onPress: () {
-                                Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                      builder: (context) => Congratulation(),
-                                    ));
-                              }),
-                          AppSize(
-                            height: 15,
-                          ),
-                          GestureDetector(
-                              onTap: () {
-                                Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                      builder: (context) => SignIn(),
-                                    ));
-                              },
-                              child: Text(
-                                S.of(context).skip,
-                                style: bodyTextStyle(context),
-                              ))
-                        ],
-                      )
-                    ],
-                  ),
+                  child: context.height < 650
+                      ? SingleChildScrollView(
+                          child: BottomContainer(),
+                        )
+                      : BottomContainer(),
                 )
               ],
             ),
           ),
         ),
       ),
+    );
+  }
+}
+
+
+
+class BottomContainer extends StatelessWidget {
+  const BottomContainer({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              S.of(context).addPanDetails,
+              style: headingTextStyle(context),
+            ),
+            AppSize(
+              height: 10,
+            ),
+            Text(
+              S.of(context).pleaseEnterPanDetails,
+              style: subBodyTextStyle(),
+            ),
+            AppSize(
+              height: 20,
+            ),
+            Text(
+              S.of(context).panNumber,
+              style: bodyTextStyle(context),
+            ),
+            AppSize(
+              height: 10,
+            ),
+            CustomTextField(
+              labelText: S.of(context).enterNumber,
+            ),
+            AppSize(
+              height: 10,
+            ),
+            RichText(
+              text: TextSpan(
+                text: S.of(context).note,
+                style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    color: context.colorScheme.error),
+                children: [
+                  TextSpan(
+                      text: S.of(context).loremIspumdolor,
+                      style: TextStyle(fontWeight: FontWeight.normal))
+                ],
+              ),
+            ),
+            AppSize(
+              height: 25,
+            ),
+            Text(
+              S.of(context).uploadImage,
+              style: bodyTextStyle(context),
+            ),
+            AppSize(
+              height: 10,
+            ),
+            DottedElevatedButton(),
+            AppSize(
+              height: 15,
+            )
+          ],
+        ),
+        Column(
+          children: [
+            CustomElivitedButton(
+                text: S.of(context).continue1,
+                onPress: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => Congratulation(),
+                      ));
+                }),
+            AppSize(
+              height: 15,
+            ),
+            GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => SignIn(),
+                      ));
+                },
+                child: Text(
+                  S.of(context).skip,
+                  style: bodyTextStyle(context),
+                ))
+          ],
+        )
+      ],
     );
   }
 }

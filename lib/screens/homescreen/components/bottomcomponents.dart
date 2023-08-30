@@ -8,26 +8,24 @@ class BottomComponent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  Flexible(
-      child: Container(
-        height: 100,
-        width: 90,
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            ClipRRect(
-              borderRadius: BorderRadius.circular(29.0),
-              child: Card(
-                elevation: 10,
-                color: context.colorScheme.surface,
-                child: Padding(
-                    padding: EdgeInsets.all(15),
-                    child: Image.asset(iconPath)),
-              ),
+    return  Container(
+      height: 100,
+      width: 90,
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          ClipRRect(
+            borderRadius: BorderRadius.circular(29.0),
+            child: Card(
+              elevation: 10,
+              color: context.colorScheme.surface,
+              child: Padding(
+                  padding: EdgeInsets.all(15),
+                  child: Image.asset(iconPath)),
             ),
-            Text('$text',style: TextStyle(color: Colors.white70),)
-          ],
-        ),
+          ),
+          Text('$text',style: TextStyle(color: Colors.white70),)
+        ],
       ),
     );
   }

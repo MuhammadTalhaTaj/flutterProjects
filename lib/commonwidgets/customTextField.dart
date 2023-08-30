@@ -1,4 +1,5 @@
 import 'package:demo_flutter/utils/app_utils/extensions/color_extension.dart';
+import 'package:demo_flutter/utils/app_utils/extensions/screen_util_extension.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -33,32 +34,39 @@ class _CustomTextFieldState extends State<CustomTextField> {
   Widget build(BuildContext context) {
     // _controller.text = widget.editedText;
 
-    return Container(
-      color: context.colorScheme.onPrimaryContainer,
-      width: double.infinity,
-      child: TextField(
-        controller: _controller,
-        style: TextStyle(
-          fontSize: widget.editedTextSize,
-          color: Colors.white,
-        ),
-        textAlign: widget.textAlignCenter ? TextAlign.center : TextAlign.start,
-        decoration: InputDecoration(
-          hintText: widget.labelText,
-          hintStyle: const TextStyle(color: Colors.white70, fontSize: 18),
-          fillColor: Colors.white24,
-          border: const OutlineInputBorder(
-            borderSide: BorderSide(color: Colors.white70),
-            borderRadius: BorderRadius.all(
-              Radius.circular(0.0),
+    return ConstrainedBox(
+      constraints: BoxConstraints(
+        minHeight: 50
+      ),
+      child: Container(
+              height: context.height*0.065,
+
+        color: context.colorScheme.onPrimaryContainer,
+        width: double.infinity,
+        child: TextField(
+          controller: _controller,
+          style: TextStyle(
+            fontSize: widget.editedTextSize,
+            color: Colors.white,
+          ),
+          textAlign: widget.textAlignCenter ? TextAlign.center : TextAlign.start,
+          decoration: InputDecoration(
+            hintText: widget.labelText,
+            hintStyle: const TextStyle(color: Colors.white70, fontSize: 18),
+            fillColor: Colors.white24,
+            border: const OutlineInputBorder(
+              borderSide: BorderSide(color: Colors.white70),
+              borderRadius: BorderRadius.all(
+                Radius.circular(0.0),
+              ),
             ),
           ),
+          onChanged: (newValue) {
+            setState(() {
+              widget.editedText = newValue;
+            });
+          },
         ),
-        onChanged: (newValue) {
-          setState(() {
-            widget.editedText = newValue;
-          });
-        },
       ),
     );
   }

@@ -1,4 +1,5 @@
 import 'package:demo_flutter/commonwidgets/appsize.dart';
+import 'package:demo_flutter/constants/textStyles.dart';
 import 'package:demo_flutter/utils/app_utils/extensions/color_extension.dart';
 import 'package:flutter/material.dart';
 
@@ -10,6 +11,7 @@ class NameAppbar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
+      automaticallyImplyLeading: false,
         elevation: 0,
         flexibleSpace: Container(
           decoration: BoxDecoration(
@@ -20,9 +22,10 @@ class NameAppbar extends StatelessWidget implements PreferredSizeWidget {
             ],
           )),
           height: 100,
-          padding: EdgeInsets.all(13),
+          padding: const EdgeInsets.all(13),
           width: double.infinity,
           child: Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Column(
@@ -30,17 +33,14 @@ class NameAppbar extends StatelessWidget implements PreferredSizeWidget {
                 children: [
                   Text(
                     S.of(context).heyJohn,
-                    style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 33,
-                        color: Colors.white),
+                    style: headingTextStyle(context)
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 5,
                   ),
                   Text(
                     S.of(context).welcomeToTheLoyaltyApp,
-                    style: TextStyle(color: Colors.white70),
+                    style: bodyTextStyle(context),
                   )
                 ],
               ),
@@ -65,9 +65,9 @@ class NameAppbar extends StatelessWidget implements PreferredSizeWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                      SizedBox(height: 23,width: 23, child: Image.asset('lib/icons/star.png',fit: BoxFit.fill,)),
-                      Text(
+                       Text(
                         '1562',
-                        style: TextStyle(color: Colors.white, fontSize: 18),
+                        style: bodyTextStyle(context).copyWith(fontSize: 20),
                       )
                     ],
                   ),

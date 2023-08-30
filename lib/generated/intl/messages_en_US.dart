@@ -118,6 +118,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "selectCity": MessageLookupByLibrary.simpleMessage("Select City"),
         "selectLanguage":
             MessageLookupByLibrary.simpleMessage("Select Language"),
+        "selectLanguageToContinue": MessageLookupByLibrary.simpleMessage(
+            "Please select language to continue"),
         "selectState": MessageLookupByLibrary.simpleMessage("Select State"),
         "selectType": MessageLookupByLibrary.simpleMessage("Select Type"),
         "selectUpiAddress":

@@ -19,9 +19,9 @@ const lightColorScheme = ColorScheme(
   errorContainer: Color(0xFFFFDAD6),
   onError: Color(0xFFFFFFFF),
   onErrorContainer: Color(0xFF410002),
-  ////////use for backgroundgradient
+  //////// use for backgroundgradient
   background: Color(0xFF493548),
-  onBackground:Color(0xff1f071e),
+  onBackground: Color(0xff1f071e),
 
   /////////
   surface: Color(0xFF331C31),

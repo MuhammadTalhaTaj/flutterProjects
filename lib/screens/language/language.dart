@@ -13,7 +13,8 @@ import '../../commonwidgets/customElevetedButton.dart';
 import '../../generated/l10n.dart';
 
 class Language extends StatelessWidget {
-  static const routeName='/language';
+  static const routeName = '/language';
+
   const Language({Key? key}) : super(key: key);
 
   @override
@@ -22,18 +23,17 @@ class Language extends StatelessWidget {
     //   statusBarColor: context.colorScheme.background, //or set color with: Color(0xFF0000FF)
     // ));
 
-
-
     return SafeArea(
       child: Scaffold(
         backgroundColor: context.colorScheme.background,
         body: Container(
-
-          decoration:  BoxDecoration(
+          decoration: BoxDecoration(
               gradient: LinearGradient(
             begin: Alignment.centerLeft,
-
-            colors: [context.colorScheme.background, context.colorScheme.onBackground],
+            colors: [
+              context.colorScheme.background,
+              context.colorScheme.onBackground
+            ],
           )),
           padding: const EdgeInsets.all(20),
           child: Column(
@@ -46,13 +46,11 @@ class Language extends StatelessWidget {
                 child: Container(
                   child: Column(
                     children: [
-
                       Image.asset(
                         ImageVariables.languageImage,
                         // Adjust the height as needed
                       ),
                       Text(
-
                         S.of(context).Language,
                         style: headingTextStyle(context),
                       ),
@@ -63,34 +61,38 @@ class Language extends StatelessWidget {
                         S.of(context).selectLanguage,
                         style: subBodyTextStyle(),
                       ),
-
                       AppSize(
                         height: 20,
                       ),
                       AppSize(
-                          height: 58,
-                          width: double.infinity,
-
-                          child: CustomDropDownButton(list:listLanguages,onPressed:  (value) {},
-
-                              color: context.colorScheme.primaryContainer,hint: S.of(context).selectLanguage,),),
+                        height: 58,
+                        width: double.infinity,
+                        child: CustomDropDownButton(
+                          list: listLanguages,
+                          onPressed: (value) {},
+                          color: context.colorScheme.primaryContainer,
+                          hint: S.of(context).selectLanguage,
+                        ),
+                      ),
                     ],
                   ),
                 ),
               ),
-
-              Spacer(),
+              const Spacer(),
               Align(
-                  alignment: Alignment.bottomCenter,
-                  child: CustomElivitedButton(
-                    text: S.of(context).getStarted,
-                    onPress: () {
-                      Navigator.pushNamed(context, SignIn.routeName);
+                alignment: Alignment.bottomCenter,
+                child: CustomElivitedButton(
+                  text: S.of(context).getStarted,
+                  onPress: () {
+                    Navigator.pushNamed(context, SignIn.routeName);
 
-
-                      Navigator.push(context, MaterialPageRoute(builder: (context) => SignIn(),));
-                    },
-                  ),
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => SignIn(),
+                        ));
+                  },
+                ),
               ),
             ],
           ),

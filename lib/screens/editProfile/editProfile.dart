@@ -55,6 +55,7 @@ class _EditProfileState extends State<EditProfile> {
           )),
           child: CustomScrollView(
             slivers: [
+              //todo : use app bar from other file
               SliverAppBar(
                   //snap: true,
                   floating: false,
@@ -67,6 +68,7 @@ class _EditProfileState extends State<EditProfile> {
                     decoration: BoxDecoration(
                         gradient: LinearGradient(
                       // begin: Alignment.centerLeft,
+                      //todo : don't use static colors.
                       colors: [Color(0xFF483548), Color(0xff1e051a)],
                     )),
                     child: Image.asset(ImageVariables.signUp2Image),
@@ -85,6 +87,7 @@ class _EditProfileState extends State<EditProfile> {
                   child: Column(
                     children: [
                       const Icon(
+                        //todo : change arrow to different icon
                         Icons.arrow_upward,
                         color: Colors.white,
                       ),
@@ -99,12 +102,14 @@ class _EditProfileState extends State<EditProfile> {
                                 children: [
                                   Text(
                                     S.of(context).editProfile,
+                                    //todo : use navigator key to not pass context.
                                     style: headingTextStyle(context),
                                   ),
                                   AppSize(
                                     height: 10,
                                   ),
                                   Container(
+                                    //todo : don't use static height
                                     height: 78,
                                     width: double.infinity,
                                     child: Row(
@@ -114,6 +119,7 @@ class _EditProfileState extends State<EditProfile> {
                                         Row(
                                           children: [
                                             Image.asset(
+                                              // Todo : change image path
                                               'assets/images/person.jpg',
                                               width: 78,
                                               height: double.infinity,
@@ -145,6 +151,7 @@ class _EditProfileState extends State<EditProfile> {
                                         Row(
                                           children: [
                                             Image.asset(
+                                                //todo : change path from lib to assets/icon and move all icons in assets and use path from variable file
                                                 'lib/icons/uploadIcon.png'),
                                             AppSize(
                                               width: 5,
@@ -262,16 +269,13 @@ class _EditProfileState extends State<EditProfile> {
                                     S.of(context).doYouWantToAddPanCard,
                                     style: bodyTextStyle(context),
                                   ),
-
                                   Row(
                                     mainAxisAlignment: MainAxisAlignment.start,
                                     children: <Widget>[
                                       Row(
                                         children: <Widget>[
                                           Radio<bool>(
-
                                             activeColor: Colors.blue,
-
                                             value: true,
                                             groupValue: isYesSelected,
                                             onChanged: (value) {
@@ -306,7 +310,9 @@ class _EditProfileState extends State<EditProfile> {
                                   ),
                                 ],
                               ),
-                              AppSize(height: 30,),
+                              AppSize(
+                                height: 30,
+                              ),
                               Column(
                                 children: [
                                   CustomElivitedButton(
@@ -321,7 +327,6 @@ class _EditProfileState extends State<EditProfile> {
                                   AppSize(
                                     height: 10,
                                   ),
-
                                   Row(
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     children: [

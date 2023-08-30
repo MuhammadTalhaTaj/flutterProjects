@@ -8,7 +8,8 @@ import 'package:flutter/material.dart';
 import '../../generated/l10n.dart';
 
 class ConnectionLost extends StatelessWidget {
-  static const routeName='/connectionLost';
+  static const routeName = '/connectionLost';
+
   const ConnectionLost({Key? key}) : super(key: key);
 
   @override
@@ -30,16 +31,34 @@ class ConnectionLost extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Image.asset(ImageVariables.connectionLostImage),
-            AppSize(height: 10,),
-            Text(S.of(context).connectionLose,style: headingTextStyle(context),),
-            AppSize(height: 10,),
-            Text('${S.of(context).conn1}\n${S.of(context).conn2}',style: subBodyTextStyle(),textAlign: TextAlign.center,),
-            AppSize(height: 10,),
-            AppSize(width: 159,height: 47, child: CustomElivitedButton(onPress: (){},backgroundColor: context.colorScheme.onPrimaryContainer,text: S.of(context).tryAgain,textColor: context.colorScheme.primary,))
-
-
-
-
+            AppSize(
+              height: 10,
+            ),
+            Text(
+              S.of(context).connectionLose,
+              style: headingTextStyle(context),
+            ),
+            AppSize(
+              height: 10,
+            ),
+            Text(
+              '${S.of(context).conn1}\n${S.of(context).conn2}',
+              style: subBodyTextStyle(),
+              textAlign: TextAlign.center,
+            ),
+            AppSize(
+              height: 10,
+            ),
+            //todo : don't use this much of static height use media query.
+            AppSize(
+                width: 159,
+                height: 47,
+                child: CustomElivitedButton(
+                  onPress: () {},
+                  backgroundColor: context.colorScheme.onPrimaryContainer,
+                  text: S.of(context).tryAgain,
+                  textColor: context.colorScheme.primary,
+                ))
           ],
         ),
       ),

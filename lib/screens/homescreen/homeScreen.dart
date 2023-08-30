@@ -41,9 +41,11 @@ class HomeScreen extends StatelessWidget {
                 AppSize(
                   height: context.isPatriot ? 160 : 200,
                   width: context.width * 1,
-                  child: PicHorizontalContainer(),
+                  child: const PicHorizontalContainer(),
                 ),
-                AppSize(height: 15,),
+                AppSize(
+                  height: 15,
+                ),
                 Padding(
                   padding: EdgeInsets.all(13),
                   child: Row(
@@ -58,7 +60,6 @@ class HomeScreen extends StatelessWidget {
                           activeColor: Color(0xff248d5d),
                           bottomText: S.of(context).availablePoints,
                           iconColor: Color(0xff248d5d),
-
                         ),
                       ),
                       AppSize(
@@ -75,7 +76,6 @@ class HomeScreen extends StatelessWidget {
                     ],
                   ),
                 ),
-
                 Padding(
                   padding: EdgeInsets.all(13),
                   child: Row(
@@ -128,7 +128,10 @@ class HomeScreen extends StatelessWidget {
                       children: [
                         Flexible(
                           child: GestureDetector(
-                              onTap:(){Navigator.pushNamed(context, ManualEntry.routeName);},
+                            onTap: () {
+                              Navigator.pushNamed(
+                                  context, ManualEntry.routeName);
+                            },
                             child: BottomComponent(
                               iconPath: 'lib/icons/elementplus.png',
                               text: S.of(context).entry,
@@ -137,7 +140,10 @@ class HomeScreen extends StatelessWidget {
                         ),
                         Flexible(
                           child: GestureDetector(
-                            onTap: (){Navigator.pushNamed(context, PaymentMethod.routeName);},
+                            onTap: () {
+                              Navigator.pushNamed(
+                                  context, PaymentMethod.routeName);
+                            },
                             child: BottomComponent(
                               iconPath: 'lib/icons/cardedit.png',
                               text: S.of(context).methods,
@@ -146,17 +152,21 @@ class HomeScreen extends StatelessWidget {
                         ),
                         Flexible(
                           child: GestureDetector(
-                            onTap: (){Navigator.pushNamed(context, ChangePin.routeName);},
+                            onTap: () {
+                              Navigator.pushNamed(context, ChangePin.routeName);
+                            },
                             child: BottomComponent(
                               iconPath: 'lib/icons/lock.png',
                               text: S.of(context).mpin,
                             ),
                           ),
                         ),
-
                         Flexible(
                           child: GestureDetector(
-                            onTap: (){Navigator.pushNamed(context, TeamSupport.routeName);},
+                            onTap: () {
+                              Navigator.pushNamed(
+                                  context, TeamSupport.routeName);
+                            },
                             child: BottomComponent(
                               iconPath: 'lib/icons/securityuser.png',
                               text: S.of(context).help,

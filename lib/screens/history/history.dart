@@ -10,10 +10,9 @@ import 'package:flutter/material.dart';
 
 import '../../generated/l10n.dart';
 
-
-
 class History extends StatelessWidget {
-  static const routeName='/history';
+  static const routeName = '/history';
+
   History({Key? key}) : super(key: key);
 
   List items = [
@@ -22,38 +21,36 @@ class History extends StatelessWidget {
       'date': 'May 2023, 11:30 PM',
       'code': 'category',
       'imagePath': 'lib/icons/histIcon.png',
-      'rightNumber':'+58'
+      'rightNumber': '+58'
     },
     {
       'name': 'UPI Transfer',
       'date': 'May 2023, 11:30 PM',
       'code': 'category',
       'imagePath': 'lib/icons/histIcon.png',
-      'rightNumber':'+58'
-
+      'rightNumber': '+58'
     },
     {
       'name': 'HDFC Bank',
       'date': 'May 2023, 11:30 PM',
       'code': 'category',
       'imagePath': 'lib/icons/histIcon.png',
-      'rightNumber':'+58'
+      'rightNumber': '+58'
     },
     {
       'name': 'UPI Transfer',
       'date': 'May 2023, 11:30 PM',
       'code': 'category',
       'imagePath': 'lib/icons/histIcon.png',
-      'rightNumber':'+58'
+      'rightNumber': '+58'
     }
-
   ];
 
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        appBar:NameAppbar(),
+        appBar: NameAppbar(),
         body: Container(
           width: double.infinity,
           decoration: BoxDecoration(
@@ -64,26 +61,33 @@ class History extends StatelessWidget {
               context.colorScheme.onBackground
             ],
           )),
-          child:items.length!=0? ListView.builder(
-            itemBuilder: (context, index) {
-              return OnlyHistoryListContainer(
-                  imagePath: items[index]['imagePath'],
-                  name: items[index]['name'],
-                  date: items[index]['date'],
-                  code: items[index]['code'],
-                rightNumber: items[index]['rightNumber'],
-              );
-            },
-            itemCount: items.length,
-          ):Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-            Image.asset(ImageVariables.historyImage),
-              AppSize(height: 20,),
-              Text(S.of(context).noData,style: headingTextStyle(context).copyWith(fontWeight: FontWeight.normal),)
-          ],),
-          
-          
+          child: items.length != 0
+              ? ListView.builder(
+                  itemBuilder: (context, index) {
+                    return OnlyHistoryListContainer(
+                      imagePath: items[index]['imagePath'],
+                      name: items[index]['name'],
+                      date: items[index]['date'],
+                      code: items[index]['code'],
+                      rightNumber: items[index]['rightNumber'],
+                    );
+                  },
+                  itemCount: items.length,
+                )
+              : Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Image.asset(ImageVariables.historyImage),
+                    AppSize(
+                      height: 20,
+                    ),
+                    Text(
+                      S.of(context).noData,
+                      style: headingTextStyle(context)
+                          .copyWith(fontWeight: FontWeight.normal),
+                    )
+                  ],
+                ),
         ),
       ),
     );

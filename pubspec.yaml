@@ -44,6 +44,7 @@ dependencies:
   # for adding some util functions
   get: ^4.6.5
   pinput: ^3.0.0
+  # TODO : add description why you have used plugin.
   qr_code_scanner: ^1.0.1
 
 dev_dependencies:
@@ -85,9 +86,9 @@ flutter:
   # list giving the asset and other descriptors for the font. For
   # example:
   fonts:
-    - family:  MyFlutterApp
+    - family: MyFlutterApp
       fonts:
-       - asset: assets/fonts/MyFlutterApp.ttf
+        - asset: assets/fonts/MyFlutterApp.ttf
   #   - family: Schyler
   #     fonts:
   #       - asset: fonts/Schyler-Regular.ttf

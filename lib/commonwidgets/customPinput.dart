@@ -8,7 +8,13 @@ class CustomPinput extends StatefulWidget {
   final double boxHeight;
   final double boxWidth;
 
-  const CustomPinput({Key? key, required this.length,  this.width=14,  this.boxHeight=39,  this.boxWidth=41}) : super(key: key);
+  const CustomPinput(
+      {Key? key,
+      required this.length,
+      this.width = 14,
+      this.boxHeight = 39,
+      this.boxWidth = 41})
+      : super(key: key);
 
   @override
   State<CustomPinput> createState() => _CustomPinputState();
@@ -27,6 +33,7 @@ class _CustomPinputState extends State<CustomPinput> {
     focusNode.dispose();
     super.dispose();
   }
+
   @override
   Widget build(BuildContext context) {
     const focusedBorderColor = Color.fromRGBO(23, 171, 144, 1);
@@ -34,7 +41,6 @@ class _CustomPinputState extends State<CustomPinput> {
     const borderColor = Color(0xffCAC4CA);
 
     final defaultPinTheme = PinTheme(
-
       width: widget.boxWidth,
       height: widget.boxHeight,
       textStyle: const TextStyle(
@@ -43,33 +49,28 @@ class _CustomPinputState extends State<CustomPinput> {
       ),
       decoration: BoxDecoration(
         color: context.colorScheme.onPrimaryContainer,
-
         borderRadius: BorderRadius.circular(0),
         border: Border.all(color: borderColor),
       ),
     );
-    return  Pinput(
-
+    return Pinput(
       length: widget.length,
       controller: pinController,
       focusNode: focusNode,
-      androidSmsAutofillMethod:
-      AndroidSmsAutofillMethod.smsUserConsentApi,
+      androidSmsAutofillMethod: AndroidSmsAutofillMethod.smsUserConsentApi,
       listenForMultipleSmsOnAndroid: true,
       defaultPinTheme: defaultPinTheme,
-      separatorBuilder: (index) =>
-       SizedBox(width: widget.width),
+      separatorBuilder: (index) => SizedBox(width: widget.width),
+      //todo : this will solve responsive ness issue which we discussed in 1st meeting.
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       validator: (value) {
-        return value == '2222'
-            ? null
-            : 'Pin is incorrect';
+        return value == '2222' ? null : 'Pin is incorrect';
       },
       // onClipboardFound: (value) {
       //   debugPrint('onClipboardFound: $value');
       //   pinController.setText(value);
       // },
-      hapticFeedbackType:
-      HapticFeedbackType.lightImpact,
+      hapticFeedbackType: HapticFeedbackType.lightImpact,
       onCompleted: (pin) {
         debugPrint('onCompleted: $pin');
       },
@@ -80,8 +81,6 @@ class _CustomPinputState extends State<CustomPinput> {
         mainAxisAlignment: MainAxisAlignment.end,
         children: [
           Container(
-
-
             margin: const EdgeInsets.only(bottom: 9),
             width: 22,
             height: 1,
@@ -90,15 +89,13 @@ class _CustomPinputState extends State<CustomPinput> {
         ],
       ),
       focusedPinTheme: defaultPinTheme.copyWith(
-        decoration:
-        defaultPinTheme.decoration!.copyWith(
+        decoration: defaultPinTheme.decoration!.copyWith(
           borderRadius: BorderRadius.circular(8),
           border: Border.all(color: focusedBorderColor),
         ),
       ),
       submittedPinTheme: defaultPinTheme.copyWith(
-        decoration:
-        defaultPinTheme.decoration!.copyWith(
+        decoration: defaultPinTheme.decoration!.copyWith(
           color: fillColor,
           borderRadius: BorderRadius.circular(19),
           border: Border.all(color: focusedBorderColor),

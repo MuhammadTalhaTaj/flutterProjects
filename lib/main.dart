@@ -46,15 +46,16 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData(
-          colorScheme: lightColorScheme,
-          radioTheme: RadioThemeData(
-            fillColor: MaterialStateColor.resolveWith((states) => Colors.white),
-          )),
+        colorScheme: lightColorScheme,
+        radioTheme: RadioThemeData(
+          fillColor: MaterialStateColor.resolveWith((states) => Colors.white),
+        ),
+      ),
       localizationsDelegates: const [
         S.delegate,
       ],
       supportedLocales: S.delegate.supportedLocales,
-      home: Language(),
+      home: const Language(),
       routes: {
         SignIn.routeName: (ctx) => SignIn(),
         SignUp.routeName: (ctx) => SignUp(),
@@ -84,8 +85,8 @@ class MyApp extends StatelessWidget {
         ServerError.routeName: (ctx) => ServerError(),
         HomeScreen.routeName: (ctx) => HomeScreen(),
         MoreSettings.routeName: (ctx) => MoreSettings(),
-        Home.routeName:(ctx)=>Home(),
-        QRScanner.routeName:(ctx)=>QRScanner(),
+        Home.routeName: (ctx) => Home(),
+        QRScanner.routeName: (ctx) => QRScanner(),
       },
     );
   }

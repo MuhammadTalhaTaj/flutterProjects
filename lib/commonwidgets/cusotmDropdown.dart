@@ -39,7 +39,6 @@ class _CustomDropDownButtonState extends State<CustomDropDownButton> {
         hint:Text(widget.selected==''?widget.hint:widget.selected,style:  TextStyle(fontSize: 20,color: Colors.white),),
         isExpanded: true,
         underline: Container(),
-
         value: selectedValue,
         icon: Container(height: 50,child: Image.asset('lib/icons/Vector.png'),),
         // icon: const Icon(Icons.arrow_drop_down_sharp,color: Colors.white,size: 40),
@@ -53,8 +52,6 @@ class _CustomDropDownButtonState extends State<CustomDropDownButton> {
         },
         items: widget.list.map<DropdownMenuItem<String>>((String value) {
           return DropdownMenuItem<String>(
-
-
             value: value,
             child: Text(
               value,

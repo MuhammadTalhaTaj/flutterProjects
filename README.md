@@ -6,3 +6,5 @@ A new Flutter project.
 
 flutter pub run intl_utils:generate
 
+# Todo: 
+

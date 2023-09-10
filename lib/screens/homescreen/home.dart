@@ -15,7 +15,8 @@ import 'components/appbar.dart';
 import 'homeScreen.dart';
 
 class Home extends StatefulWidget {
-  static const routeName='/home';
+  static const routeName = '/home';
+
   const Home({Key? key}) : super(key: key);
 
   @override
@@ -23,9 +24,9 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-  int cIndex=0;
+  int cIndex = 0;
   int val = 0;
-  List screens = [HomeScreen(),History(),Notifications(),MoreSettings()];
+  List screens = [HomeScreen(), History(), Notifications(), MoreSettings()];
 
   @override
   Widget build(BuildContext context) {
@@ -42,25 +43,37 @@ class _HomeState extends State<Home> {
           notchedShape: CircularNotchedRectangle(),
           onTabSelected: ((index) {
             setState(() {
-              cIndex=index;
+              cIndex = index;
             });
           }),
           items: [
-            FABBottomAppBarItem(iconData: MyFlutterApp.homebottomicon, text: S.of(context).home),
-            FABBottomAppBarItem(iconData: MyFlutterApp.historybottomicon, text: S.of(context).history),
+            FABBottomAppBarItem(iconData: MyFlutterApp.homebottomicon, text: S
+                .of(context)
+                .home),
             FABBottomAppBarItem(
-                iconData: MyFlutterApp.notificatinonbottomicon, text: S.of(context).notification),
-            FABBottomAppBarItem(iconData: MyFlutterApp.settingbottomicon, text: S.of(context).more),
+                iconData: MyFlutterApp.historybottomicon, text: S
+                .of(context)
+                .history),
+            FABBottomAppBarItem(
+                iconData: MyFlutterApp.notificatinonbottomicon, text: S
+                .of(context)
+                .notification),
+            FABBottomAppBarItem(
+                iconData: MyFlutterApp.settingbottomicon, text: S
+                .of(context)
+                .more),
           ],
         ),
         // body: _list[_page],
         floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
         floatingActionButton: FloatingActionButton(
-          backgroundColor:cIndex==0?Color(0xffff6671): Colors.white,
+          backgroundColor: cIndex == 0 ? Color(0xffff6671) : Colors.white,
           onPressed: () {
             Navigator.pushNamed(context, QRScanner.routeName);
           },
-          child: Image.asset(cIndex==0?'lib/icons/scanIcon.png':'lib/icons/scanBlackIcon.png'),
+          child: Image.asset(cIndex == 0
+              ? 'lib/icons/scanIcon.png'
+              : 'lib/icons/scanBlackIcon.png'),
           elevation: 0,
         ),
       ),

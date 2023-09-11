@@ -38,6 +38,7 @@ class HomeScreen extends StatelessWidget {
           ])),
           //   padding: EdgeInsets.only(bottom: 20.w),
           child: SingleChildScrollView(
+            //vvvv
             child: Column(
               children: [
                 AppSize(

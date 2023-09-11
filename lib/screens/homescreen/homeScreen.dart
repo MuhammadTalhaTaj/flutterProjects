@@ -1,5 +1,8 @@
 import 'package:demo_flutter/commonwidgets/appsize.dart';
 import 'package:demo_flutter/commonwidgets/nameAppbar.dart';
+import 'package:demo_flutter/constants/app_padding.dart';
+import 'package:demo_flutter/constants/app_spacer_constants.dart';
+import 'package:demo_flutter/constants/textStyles.dart';
 import 'package:demo_flutter/screens/changePin/changePin.dart';
 import 'package:demo_flutter/screens/manualEntry/manualEntry.dart';
 import 'package:demo_flutter/screens/paymentMethod/paymentMethod.dart';
@@ -7,6 +10,7 @@ import 'package:demo_flutter/screens/teamSupport/teamSupport.dart';
 import 'package:demo_flutter/utils/app_utils/extensions/color_extension.dart';
 import 'package:demo_flutter/utils/app_utils/extensions/screen_util_extension.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../generated/l10n.dart';
 import 'components/bottomcomponents.dart';
@@ -25,35 +29,36 @@ class HomeScreen extends StatelessWidget {
     return SafeArea(
       child: Scaffold(
         appBar: NameAppbar(),
-        body: SingleChildScrollView(
-          child: Container(
-            decoration: BoxDecoration(
-                gradient: LinearGradient(colors: [
-              context.colorScheme.background,
-              context.colorScheme.onBackground
-            ])),
-            padding: EdgeInsets.only(bottom: 20),
+        body: Container(
+          height: double.infinity,
+          decoration: BoxDecoration(
+              gradient: LinearGradient(colors: [
+            context.colorScheme.background,
+            context.colorScheme.onBackground
+          ])),
+          //   padding: EdgeInsets.only(bottom: 20.w),
+          child: SingleChildScrollView(
             child: Column(
               children: [
                 AppSize(
-                  height: 10,
+                  height: 20.h,
                 ),
                 AppSize(
-                  height: context.isPatriot ? 160 : 200,
-                  width: context.width * 1,
+                  height: context.isPatriot ? 160.h : 200.h,
+                  width: 1.sw,
                   child: const PicHorizontalContainer(),
                 ),
                 AppSize(
-                  height: 15,
+                  height: 15.h,
                 ),
                 Padding(
-                  padding: EdgeInsets.all(13),
+                  padding: padding13,
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       AppSize(
-                        height: 130,
-                        width: 160,
+                        height: 130.h,
+                        width: 160.w,
                         child: SliderContainer(
                           number: 124,
                           iconPath: 'lib/icons/checkIcon.png',
@@ -63,8 +68,8 @@ class HomeScreen extends StatelessWidget {
                         ),
                       ),
                       AppSize(
-                        height: 130,
-                        width: 160,
+                        height: 130.h,
+                        width: 160.w,
                         child: SliderContainer(
                           number: 45,
                           iconPath: 'lib/icons/redeemedIcon.png',
@@ -77,13 +82,13 @@ class HomeScreen extends StatelessWidget {
                   ),
                 ),
                 Padding(
-                  padding: EdgeInsets.all(13),
+                  padding: padding13,
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       AppSize(
-                        height: 130,
-                        width: 160,
+                        height: 130.h,
+                        width: 160.w,
                         child: SliderContainer(
                           number: 96,
                           iconPath: 'lib/icons/process.png',
@@ -93,8 +98,8 @@ class HomeScreen extends StatelessWidget {
                         ),
                       ),
                       AppSize(
-                        height: 130,
-                        width: 160,
+                        height: 130.h,
+                        width: 160.w,
                         child: SliderContainer(
                           number: 124,
                           iconPath: 'lib/icons/tax.png',
@@ -106,23 +111,21 @@ class HomeScreen extends StatelessWidget {
                     ],
                   ),
                 ),
-                AppSize(
-                  height: 13,
-                ),
+
                 Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 13),
+                  padding: paddingH13,
                   child: Align(
                       alignment: Alignment.centerLeft,
                       child: Text(
                         S.of(context).others,
-                        style: TextStyle(color: Colors.white),
+                        style: bodyTextStyle(context),
                       )),
                 ),
-                AppSize(
-                  height: 13,
-                ),
+
+                AppSpacer.p12(),
+
                 Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 13),
+                  padding: paddingH13,
                   child: Flexible(
                     child: Row(
                       children: [
@@ -176,7 +179,10 @@ class HomeScreen extends StatelessWidget {
                       ],
                     ),
                   ),
-                )
+                ),
+                ColumnDivider(
+                  space: 20.h,
+                ),
               ],
             ),
           ),

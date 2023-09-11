@@ -2,6 +2,7 @@ import 'package:demo_flutter/utils/app_utils/extensions/color_extension.dart';
 import 'package:demo_flutter/utils/app_utils/extensions/screen_util_extension.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CustomTextField extends StatefulWidget {
   String editedText;
@@ -39,20 +40,20 @@ class _CustomTextFieldState extends State<CustomTextField> {
         minHeight: 50
       ),
       child: Container(
-              height: context.height*0.065,
+              height: 58.h,
 
         color: context.colorScheme.onPrimaryContainer,
         width: double.infinity,
         child: TextField(
           controller: _controller,
           style: TextStyle(
-            fontSize: widget.editedTextSize,
+            fontSize: widget.editedTextSize.sp,
             color: Colors.white,
           ),
           textAlign: widget.textAlignCenter ? TextAlign.center : TextAlign.start,
           decoration: InputDecoration(
             hintText: widget.labelText,
-            hintStyle: const TextStyle(color: Colors.white70, fontSize: 18),
+            hintStyle:  TextStyle(color: Colors.white70, fontSize: 18.sp),
             fillColor: Colors.white24,
             border: const OutlineInputBorder(
               borderSide: BorderSide(color: Colors.white70),

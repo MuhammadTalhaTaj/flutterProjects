@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 
 
@@ -28,7 +29,7 @@ class _CustomDropDownButtonState extends State<CustomDropDownButton> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 58,
+      height: 58.h,
       padding: EdgeInsets.all(15),
       decoration: BoxDecoration(
 
@@ -36,11 +37,12 @@ class _CustomDropDownButtonState extends State<CustomDropDownButton> {
           color: widget.color
       ),
       child: DropdownButton<String>(
-        hint:Text(widget.selected==''?widget.hint:widget.selected,style:  TextStyle(fontSize: 20,color: Colors.white),),
+        dropdownColor: widget.color,
+        hint:Text(widget.selected==''?widget.hint:widget.selected,style:  TextStyle(fontSize: 20.sp,color: Colors.white),),
         isExpanded: true,
         underline: Container(),
         value: selectedValue,
-        icon: Container(height: 50,child: Image.asset('lib/icons/Vector.png'),),
+        icon: Container(height: 15.h,child: Image.asset('lib/icons/Vector.png',fit: BoxFit.fill,),),
         // icon: const Icon(Icons.arrow_drop_down_sharp,color: Colors.white,size: 40),
         elevation: 16,
         style: const TextStyle(color: Colors.black),
@@ -52,10 +54,12 @@ class _CustomDropDownButtonState extends State<CustomDropDownButton> {
         },
         items: widget.list.map<DropdownMenuItem<String>>((String value) {
           return DropdownMenuItem<String>(
+
+
             value: value,
             child: Text(
               value,
-              style: TextStyle(fontSize: 20,color: Colors.white),
+              style: TextStyle(fontSize: 20.sp,color: Colors.white),
             ),
           );
         }).toList(),

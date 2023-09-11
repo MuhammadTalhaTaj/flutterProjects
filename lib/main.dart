@@ -30,18 +30,32 @@ import 'package:demo_flutter/screens/signUp/signUp2.dart';
 import 'package:demo_flutter/screens/signUp/signup.dart';
 import 'package:demo_flutter/screens/teamSupport/teamSupport.dart';
 import 'package:demo_flutter/screens/withdrawalHistory/withdrawalHistory.dart';
+import 'package:device_preview/device_preview.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'generated/l10n.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-void main() => runApp(MyApp());
+void main() => runApp(
+  DevicePreview(
+    enabled: !kReleaseMode,
+    builder: (context) => MyApp(), // Wrap your app
+  ),
+);
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    return ScreenUtilInit(
+        designSize: const Size(375, 812),
+    minTextAdapt: true,
+    splitScreenMode: true,
+    useInheritedMediaQuery: true,
+    // Use builder only if you need to use library outside ScreenUtilInit context
+    builder: (_ , child) {
     return MaterialApp(
       theme: ThemeData(
         colorScheme: lightColorScheme,
@@ -52,8 +66,14 @@ class MyApp extends StatelessWidget {
       localizationsDelegates: const [
         S.delegate,
       ],
+
+
       supportedLocales: S.delegate.supportedLocales,
       home: const Language(),
+
+
+
+
       routes: {
         SignIn.routeName: (ctx) => SignIn(),
         SignUp.routeName: (ctx) => SignUp(),
@@ -86,6 +106,5 @@ class MyApp extends StatelessWidget {
         Home.routeName: (ctx) => Home(),
         QRScanner.routeName: (ctx) => QRScanner(),
       },
-    );
-  }
-}
+    );});
+}}

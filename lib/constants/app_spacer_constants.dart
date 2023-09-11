@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 class AppSpacer extends StatelessWidget {
   const AppSpacer._({Key? key, this.h, this.w}) : super(key: key);
 
@@ -51,9 +51,10 @@ class AppSpacer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
     return SizedBox(
-      width: w,
-      height: h,
+      width: w?.w,
+      height: h?.h,
     );
   }
 }

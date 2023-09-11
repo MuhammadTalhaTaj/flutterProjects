@@ -4,6 +4,7 @@ import 'package:demo_flutter/constants/textStyles.dart';
 import 'package:demo_flutter/imageVairableFiles/ImageVariableFiles.dart';
 import 'package:demo_flutter/utils/app_utils/extensions/color_extension.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../generated/l10n.dart';
 
@@ -49,10 +50,10 @@ class ConnectionLost extends StatelessWidget {
             AppSize(
               height: 10,
             ),
-            //todo : don't use this much of static height use media query.
+
             AppSize(
-                width: 159,
-                height: 47,
+                width: 159.w,
+                height: 47.h,
                 child: CustomElivitedButton(
                   onPress: () {},
                   backgroundColor: context.colorScheme.onPrimaryContainer,

@@ -2,6 +2,7 @@ import 'package:demo_flutter/utils/app_utils/extensions/color_extension.dart';
 import 'package:demo_flutter/utils/app_utils/extensions/screen_util_extension.dart';
 import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../constants/textStyles.dart';
 import 'appsize.dart';
@@ -23,7 +24,7 @@ class DottedElevatedButton extends StatelessWidget {
         ),
         child: Container(
           color: context.colorScheme.onPrimaryContainer,
-          height: context.height*0.06,
+          height: 58.h,
           width: double.infinity,
           child: ElevatedButton(
             style: ElevatedButton.styleFrom(
@@ -36,10 +37,10 @@ class DottedElevatedButton extends StatelessWidget {
                 Icon(
                   Icons.add,
                   color: Colors.white,
-                  size: 20,
+                  size: 20.sp,
                 ),
                 AppSize(
-                  width: 5,
+                  width: 5.w,
                 ),
                 Text(
                   text,

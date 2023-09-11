@@ -10,6 +10,7 @@ import 'package:demo_flutter/screens/signIn/signIn.dart';
 import 'package:demo_flutter/utils/app_utils/extensions/color_extension.dart';
 import 'package:demo_flutter/utils/app_utils/extensions/screen_util_extension.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../commonwidgets/appsize.dart';
 import '../../commonwidgets/customTextField.dart';
@@ -40,7 +41,7 @@ class SignUp2 extends StatelessWidget {
                   pinned: false,
 
                   //  width: double.infinity,
-                  expandedHeight: context.heightWithoutSafeArea * 0.33,
+                  expandedHeight: 0.33.sh,
                   flexibleSpace: Container(
                     decoration: BoxDecoration(
                         gradient: LinearGradient(
@@ -54,7 +55,7 @@ class SignUp2 extends StatelessWidget {
                 child: Container(
                   padding: EdgeInsets.all(20),
                   width: double.infinity,
-                  height: context.height * 0.67,
+                  height: 0.67.sh,
                   decoration: BoxDecoration(
                       color: Color(0xff35192f),
                       borderRadius: BorderRadius.only(
@@ -75,105 +76,105 @@ class SignUp2 extends StatelessWidget {
                                 children: [
                                   Text(S.of(context).welcome,style: headingTextStyle(context),),
                                   AppSize(
-                                    height: 10,
+                                    height: 10.h,
                                   ),
                                   Text(
                                     S.of(context).welcomePleaseSignInTOContinue,
                                     style: subBodyTextStyle(),
                                   ),
                                   AppSize(
-                                    height: 20,
+                                    height: 20.h,
                                   ),
                                   Text(
                                     S.of(context).selectUserType,
                                     style: bodyTextStyle(context),
                                   ),
                                   AppSize(
-                                    height: 10,
+                                    height: 10.h,
                                   ),
                                   CustomDropDownButton(
                                     list: listUserType, onPressed:(value) {},color:context.colorScheme.onPrimaryContainer,hint: S.of(context).selectType,),
                                   AppSize(
-                                    height: 15,
+                                    height: 15.h,
                                   ),
                                   Text(
                                     S.of(context).yourName,
                                     style: bodyTextStyle(context),
                                   ),
                                   AppSize(
-                                    height: 10,
+                                    height: 10.h,
                                   ),
                                   CustomTextField(
                                     labelText: S.of(context).enterNumber,
                                   ),
                                   AppSize(
-                                    height: 15,
+                                    height: 15.h,
                                   ),
                                   Text(
                                     S.of(context).mobileNumber,
                                     style: bodyTextStyle(context),
                                   ),
                                   AppSize(
-                                    height: 10,
+                                    height: 10.h,
                                   ),
                                   CustomTextField(
                                     labelText: S.of(context).enterNumber,
                                   ),
                                   AppSize(
-                                    height: 15,
+                                    height: 15.h,
                                   ),
                                   Text(
                                     S.of(context).workShopName,
                                     style: bodyTextStyle(context),
                                   ),
                                   AppSize(
-                                    height: 10,
+                                    height: 10.h,
                                   ),
                                   CustomTextField(
                                     labelText: S.of(context).enterName,
                                   ),
                                   AppSize(
-                                    height: 15,
+                                    height: 15.h,
                                   ),
                                   Text(
                                     S.of(context).roadName,
                                     style: bodyTextStyle(context),
                                   ),
                                   AppSize(
-                                    height: 10,
+                                    height: 10.h,
                                   ),
                                   CustomTextField(
                                     labelText: S.of(context).enterName,
                                   ),
                                   AppSize(
-                                    height: 15,
+                                    height: 15.h,
                                   ),
                                   Text(
                                     S.of(context).pinCode,
                                     style: bodyTextStyle(context),
                                   ),
                                   AppSize(
-                                    height: 10,
+                                    height: 10.h,
                                   ),
                                   CustomTextField(
                                     labelText: S.of(context).enterCode,
                                   ),
                                   AppSize(
-                                    height: 15,
+                                    height: 15.h,
                                   ),
                                   Text(
                                     S.of(context).yourState,
                                     style: bodyTextStyle(context),
                                   ),
                                   AppSize(
-                                    height: 10,
+                                    height: 10.h,
                                   ),
                                   CustomDropDownButton(
                                      list: listStates,
                                           onPressed: (value) {},
                                      color: context.colorScheme.onPrimaryContainer,hint: S.of(context).selectState,),
                                   AppSize(
-                                    height: 15,
+                                    height: 15.h,
                                   ),
 
                                   Text(
@@ -181,14 +182,14 @@ class SignUp2 extends StatelessWidget {
                                     style: bodyTextStyle(context),
                                   ),
                                   AppSize(
-                                    height: 10,
+                                    height: 10.h,
                                   ),
                                   CustomDropDownButton(
                                    list:listCities,
                                          onPressed: (value) {},
                                       color:context.colorScheme.onPrimaryContainer,hint: S.of(context).selectCity,),
                                   AppSize(
-                                    height: 15,
+                                    height: 15.h,
                                   ),
 
 
@@ -206,7 +207,7 @@ class SignUp2 extends StatelessWidget {
                                             ));
                                       }),
                                   AppSize(
-                                    height: 10,
+                                    height: 10.h,
                                   ),
                                   Row(
                                     mainAxisAlignment: MainAxisAlignment.center,
@@ -215,7 +216,7 @@ class SignUp2 extends StatelessWidget {
                                         S.of(context).alreadyMemberWithUs,
                                         style: subBodyTextStyle(),
                                       ),
-                                      AppSize(width: 5,),
+                                      AppSize(width: 5.w,),
                                       GestureDetector(
                                           onTap: () {
                                             Navigator.push(

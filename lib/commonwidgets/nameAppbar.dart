@@ -2,6 +2,7 @@ import 'package:demo_flutter/commonwidgets/appsize.dart';
 import 'package:demo_flutter/constants/textStyles.dart';
 import 'package:demo_flutter/utils/app_utils/extensions/color_extension.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../generated/l10n.dart';
 
@@ -21,8 +22,8 @@ class NameAppbar extends StatelessWidget implements PreferredSizeWidget {
               context.colorScheme.onBackground
             ],
           )),
-          height: 100,
-          padding: const EdgeInsets.all(13),
+          height: 100.h,
+          padding:  EdgeInsets.all(13.w),
           width: double.infinity,
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -35,8 +36,8 @@ class NameAppbar extends StatelessWidget implements PreferredSizeWidget {
                     S.of(context).heyJohn,
                     style: headingTextStyle(context)
                   ),
-                  const SizedBox(
-                    height: 5,
+                   SizedBox(
+                    height: 5.h,
                   ),
                   Text(
                     S.of(context).welcomeToTheLoyaltyApp,
@@ -58,16 +59,16 @@ class NameAppbar extends StatelessWidget implements PreferredSizeWidget {
                   borderRadius: BorderRadius.circular(
                       10), // Adjust the value for roundness
                 ),
-                width: 100,
+                width: 100.w,
                 child: Padding(
-                  padding: EdgeInsets.all(10),
+                  padding: EdgeInsets.all(10.w),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                     SizedBox(height: 23,width: 23, child: Image.asset('lib/icons/star.png',fit: BoxFit.fill,)),
+                     SizedBox(height: 23.h,width: 23.w, child: Image.asset('lib/icons/star.png',fit: BoxFit.fill,)),
                        Text(
                         '1562',
-                        style: bodyTextStyle(context).copyWith(fontSize: 20),
+                        style: bodyTextStyle(context).copyWith(fontSize: 20.sp),
                       )
                     ],
                   ),
@@ -80,5 +81,5 @@ class NameAppbar extends StatelessWidget implements PreferredSizeWidget {
 
   @override
   // TODO: implement preferredSize
-  Size get preferredSize => const Size.fromHeight(100);
+  Size get preferredSize =>  Size.fromHeight(100.h);
 }

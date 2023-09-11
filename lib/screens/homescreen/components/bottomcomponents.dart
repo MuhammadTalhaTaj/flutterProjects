@@ -1,5 +1,7 @@
+import 'package:demo_flutter/constants/textStyles.dart';
 import 'package:demo_flutter/utils/app_utils/extensions/color_extension.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class BottomComponent extends StatelessWidget {
   final String iconPath;
@@ -9,8 +11,8 @@ class BottomComponent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return  Container(
-      height: 100,
-      width: 90,
+      height: 110.h,
+      width: 90.w,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
@@ -21,10 +23,10 @@ class BottomComponent extends StatelessWidget {
               color: context.colorScheme.surface,
               child: Padding(
                   padding: EdgeInsets.all(15),
-                  child: Image.asset(iconPath)),
+                  child: Image.asset(iconPath,fit:BoxFit.fill,height: 40.h,width: 40.w,)),
             ),
           ),
-          Text('$text',style: TextStyle(color: Colors.white70),)
+          Text('$text',style: subBodyTextStyle(),)
         ],
       ),
     );

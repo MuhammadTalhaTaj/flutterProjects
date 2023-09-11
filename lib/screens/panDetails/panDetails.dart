@@ -10,6 +10,7 @@ import 'package:demo_flutter/utils/app_utils/extensions/color_extension.dart';
 import 'package:demo_flutter/utils/app_utils/extensions/screen_util_extension.dart';
 import 'package:flutter/material.dart';
 import 'package:dotted_border/dotted_border.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../commonwidgets/appsize.dart';
 import '../../commonwidgets/customTextField.dart';
 import '../../generated/l10n.dart';
@@ -37,13 +38,13 @@ class PanUpdate extends StatelessWidget {
             child: Column(
               children: [
                 Container(
-                  height: context.heightWithoutSafeArea * 0.33,
+                  height: 0.33.sh,
                   child: Image.asset(ImageVariables.panDetailsImage),
                 ),
                 Container(
-                  padding: const EdgeInsets.all(20),
+                  padding:  EdgeInsets.all(20.w),
                   width: double.infinity,
-                  height: context.heightWithoutSafeArea * 0.67,
+                  height: 0.67.sh,
                   decoration: BoxDecoration(
                       color: context.colorScheme.primaryContainer,
                       borderRadius: const BorderRadius.only(
@@ -95,14 +96,14 @@ class BottomContainer extends StatelessWidget {
               style: subBodyTextStyle(),
             ),
             AppSize(
-              height: 20,
+              height: 20.h,
             ),
             Text(
               S.of(context).panNumber,
               style: bodyTextStyle(context),
             ),
             AppSize(
-              height: 10,
+              height: 10.h,
             ),
             CustomTextField(
               labelText: S.of(context).enterNumber,
@@ -124,18 +125,18 @@ class BottomContainer extends StatelessWidget {
               ),
             ),
             AppSize(
-              height: 25,
+              height: 25.h,
             ),
             Text(
               S.of(context).uploadImage,
               style: bodyTextStyle(context),
             ),
             AppSize(
-              height: 10,
+              height: 10.h,
             ),
             DottedElevatedButton(),
             AppSize(
-              height: 15,
+              height: 15.h,
             )
           ],
         ),
@@ -151,7 +152,7 @@ class BottomContainer extends StatelessWidget {
                       ));
                 }),
             AppSize(
-              height: 15,
+              height: 15.h,
             ),
             GestureDetector(
                 onTap: () {

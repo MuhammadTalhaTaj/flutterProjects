@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CustomElivitedButton extends StatelessWidget {
   String text;
@@ -23,7 +24,7 @@ class CustomElivitedButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       width: double.infinity,
-      height: 58,
+      height: 58.h,
       child: ElevatedButton(
         onPressed: onPress,
         style: ElevatedButton.styleFrom(
@@ -35,7 +36,7 @@ class CustomElivitedButton extends StatelessWidget {
                 text,
                 //todo : change text style from style file.
                 style: TextStyle(
-                    fontSize: fontSize,
+                    fontSize: fontSize.sp,
                     fontWeight: FontWeight.bold,
                     color: textColor),
               )

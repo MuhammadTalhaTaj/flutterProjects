@@ -8,8 +8,10 @@ import 'package:demo_flutter/utils/app_utils/extensions/color_extension.dart';
 import 'package:demo_flutter/utils/app_utils/extensions/screen_util_extension.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../commonwidgets/customElevetedButton.dart';
+import '../../constants/app_padding.dart';
 import '../../generated/l10n.dart';
 
 class Language extends StatelessWidget {
@@ -35,7 +37,10 @@ class Language extends StatelessWidget {
               context.colorScheme.onBackground
             ],
           )),
-          padding: const EdgeInsets.all(20),
+
+          padding: padding16,
+           //padding:EdgeInsets.all(16.w),
+
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
@@ -46,26 +51,30 @@ class Language extends StatelessWidget {
                 child: Container(
                   child: Column(
                     children: [
-                      Image.asset(
-                        ImageVariables.languageImage,
-                        // Adjust the height as needed
+                      SizedBox(
+                        height: 300.h,
+                        child: Image.asset(
+                          ImageVariables.languageImage,
+                          fit: BoxFit.fill,
+                          // Adjust the height as needed
+                        ),
                       ),
                       Text(
                         S.of(context).Language,
                         style: headingTextStyle(context),
                       ),
                       AppSize(
-                        height: 10,
+                        height: 10.h,
                       ),
                       Text(
                         S.of(context).selectLanguage,
                         style: subBodyTextStyle(),
                       ),
                       AppSize(
-                        height: 20,
+                        height: 20.h,
                       ),
                       AppSize(
-                        height: 58,
+                        height: 58.h,
                         width: double.infinity,
                         child: CustomDropDownButton(
                           list: listLanguages,

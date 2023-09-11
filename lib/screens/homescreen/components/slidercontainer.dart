@@ -1,5 +1,7 @@
+import 'package:demo_flutter/constants/textStyles.dart';
 import 'package:demo_flutter/utils/app_utils/extensions/color_extension.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class SliderContainer extends StatefulWidget {
   final Color activeColor;
@@ -27,7 +29,7 @@ class _SliderContainerState extends State<SliderContainer> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.all(13),
+      padding: EdgeInsets.all(13.w),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(15),
         color: context.colorScheme.primaryContainer,
@@ -41,7 +43,7 @@ class _SliderContainerState extends State<SliderContainer> {
               Text(
                 '${widget.number}',
                 style: TextStyle(
-                    fontSize: 30,
+                    fontSize: 30.sp,
                     fontWeight: FontWeight.bold,
                     color: Colors.white),
               ),
@@ -50,9 +52,9 @@ class _SliderContainerState extends State<SliderContainer> {
                   borderRadius: BorderRadius.all(Radius.circular(5)),
                   color: widget.iconColor,
                 ),
-                width: 40,
-                height: 40,
-                child: Center(child: Image.asset(widget.iconPath)),
+                width: 40.w,
+                height: 40.h,
+                child: Center(child: Image.asset(widget.iconPath,fit: BoxFit.fill,),),
               ),
             ],
           ),
@@ -66,8 +68,8 @@ class _SliderContainerState extends State<SliderContainer> {
                     thumbColor: widget.activeColor,
                     overlayColor: Color(0x29E83D66),
                     //trackHeight: 4.0,
-                    thumbShape: RoundSliderThumbShape(enabledThumbRadius: 7.0),
-                    overlayShape: RoundSliderOverlayShape(overlayRadius: 5.0),
+                    thumbShape: RoundSliderThumbShape(enabledThumbRadius: 7.0.sp),
+                    overlayShape: RoundSliderOverlayShape(overlayRadius: 5.0.sp),
                   ),
                   child: Slider(
                     value: val.toDouble(),
@@ -83,13 +85,13 @@ class _SliderContainerState extends State<SliderContainer> {
               ),
               Text(
                 '$val%',
-                style: TextStyle(color: Colors.white70),
+                style: subBodyTextStyle(),
               ),
             ],
           ),
           Text(
             '${widget.bottomText}',
-            style: TextStyle(color: Colors.white70),
+            style: subBodyTextStyle(),
           ),
         ],
       ),

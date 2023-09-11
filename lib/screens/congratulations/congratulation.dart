@@ -6,6 +6,7 @@ import 'package:demo_flutter/screens/signIn/signIn.dart';
 import 'package:demo_flutter/utils/app_utils/extensions/color_extension.dart';
 import 'package:demo_flutter/utils/app_utils/extensions/screen_util_extension.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../commonwidgets/appsize.dart';
 import '../../commonwidgets/customElevetedButton.dart';
@@ -19,8 +20,7 @@ class Congratulation extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    //todo : use context.height or width anywhere to use media query.
-    Size size = MediaQuery.of(context).size;
+
     return Scaffold(
       backgroundColor: Theme.of(context).colorScheme.background,
       body: Container(
@@ -32,15 +32,15 @@ class Congratulation extends StatelessWidget {
             context.colorScheme.background,
             context.colorScheme.onBackground
           ],
-          // TODO : Use comma between 2 parenthesis everywhere
-        )),
+
+        ),),
         padding: const EdgeInsets.all(20),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             AppSize(
               //todo : use media query like this.
-              height: context.height * 0.25,
+              height: 0.3.sh,
             ),
             Center(
               child: Container(
@@ -65,6 +65,7 @@ class Congratulation extends StatelessWidget {
                 ),
               ),
             ),
+            Spacer(),
             Align(
                 alignment: Alignment.bottomCenter,
                 child: CustomElivitedButton(
@@ -73,6 +74,7 @@ class Congratulation extends StatelessWidget {
                     Navigator.pushNamed(context, Home.routeName);
                   },
                 )),
+            ColumnDivider(),
           ],
         ),
       ),

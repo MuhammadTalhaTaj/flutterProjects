@@ -7,6 +7,7 @@ import 'package:demo_flutter/screens/signUp/signup.dart';
 import 'package:demo_flutter/utils/app_utils/extensions/color_extension.dart';
 import 'package:demo_flutter/utils/app_utils/extensions/screen_util_extension.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:pinput/pinput.dart';
 import '../../commonwidgets/appsize.dart';
 import '../../commonwidgets/customTextField.dart';
@@ -40,13 +41,17 @@ class _OTPState extends State<OTP> {
             child: Column(
               children: [
                 Container(
-                  height: context.heightWithoutSafeArea * 0.5,
+                 // height: context.heightWithoutSafeArea * 0.5,
+                height: 0.33.sh,
+
                   child: Image.asset(ImageVariables.otpImage),
                 ),
                 Container(
-                  padding: const EdgeInsets.all(20),
+                  padding:  EdgeInsets.all(20.w),
                   width: double.infinity,
-                  height: context.heightWithoutSafeArea * 0.5,
+               //   height: context.heightWithoutSafeArea * 0.5,
+                  height: 0.67.sh,
+
                   decoration: BoxDecoration(
                       color: context.colorScheme.primaryContainer,
                       borderRadius: const BorderRadius.only(
@@ -84,36 +89,37 @@ class BottomContainer extends StatelessWidget {
               style: headingTextStyle(context),
             ),
             AppSize(
-              height: 10,
+              height: 10.h,
             ),
             Text(
               S.of(context).weSentOtp,
               style: subBodyTextStyle(),
             ),
             AppSize(
-              height: 20,
+              height: 20.h,
             ),
             Text(
               S.of(context).enterOtp,
               style: bodyTextStyle(context),
             ),
             AppSize(
-              height: 10,
+              height: 10.h,
             ),
-            const SizedBox(
+
+             SizedBox(
               width: double.infinity,
               child: CustomPinput(
                 length: 6,
-                boxHeight: 45,
-                boxWidth: 45,
+                boxHeight: 45.h,
+                boxWidth: 45.w,
               ),
             ),
-            AppSize(height: 15,),
+         //   AppSize(height: 15.h,),
           ],
         ),
-        AppSize(
-          height: 10,
-        ),
+        // AppSize(
+        //   height: 10.h,
+        // ),
         Row(
           mainAxisAlignment: MainAxisAlignment.end,
           children: [
@@ -122,7 +128,7 @@ class BottomContainer extends StatelessWidget {
               style: TextStyle(color: context.colorScheme.error),
             ),
             AppSize(
-              width: 10,
+              width: 10.w,
             ),
             Text(
               S.of(context).resend,
@@ -138,7 +144,7 @@ class BottomContainer extends StatelessWidget {
                   Navigator.pushNamed(context, SignUp2.routeName);
                 }),
             AppSize(
-              height: 10,
+              height: 10.h,
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,

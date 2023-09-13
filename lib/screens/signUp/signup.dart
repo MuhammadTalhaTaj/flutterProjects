@@ -10,6 +10,7 @@ import 'package:demo_flutter/utils/app_utils/extensions/screen_util_extension.da
 import 'package:flutter/material.dart';
 
 import '../../commonwidgets/customTextField.dart';
+import '../../constants/app_padding.dart';
 import '../../generated/l10n.dart';
 import '../../randomData/listRandomData.dart';
 
@@ -42,7 +43,7 @@ class SignUp extends StatelessWidget {
                   child: Image.asset(ImageVariables.signUpImage),
                 ),
                 Container(
-                  padding: const EdgeInsets.all(20),
+                  padding: padding16,
                   width: double.infinity,
                   height: context.heightWithoutSafeArea * 0.67,
                   decoration: BoxDecoration(

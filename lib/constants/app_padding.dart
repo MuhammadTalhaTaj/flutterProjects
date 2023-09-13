@@ -7,7 +7,9 @@ import 'app_inset_constants.dart';
 const EdgeInsets padding0 = EdgeInsets.zero;
  EdgeInsets padding4 = EdgeInsets.all(4.sp);
  EdgeInsets padding8 = EdgeInsets.all(8.sp);
- EdgeInsets padding13=EdgeInsets.all(13.sp);
+EdgeInsets padding10= EdgeInsets.all(10.sp);
+
+EdgeInsets padding13=EdgeInsets.all(13.sp);
  EdgeInsets padding15=EdgeInsets.all(15.sp);
  EdgeInsets padding16 = EdgeInsets.all(16.sp);
  EdgeInsets padding24 = EdgeInsets.all(24.sp);

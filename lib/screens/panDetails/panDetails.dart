@@ -13,6 +13,7 @@ import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../commonwidgets/appsize.dart';
 import '../../commonwidgets/customTextField.dart';
+import '../../constants/app_padding.dart';
 import '../../generated/l10n.dart';
 
 class PanUpdate extends StatelessWidget {
@@ -42,7 +43,7 @@ class PanUpdate extends StatelessWidget {
                   child: Image.asset(ImageVariables.panDetailsImage),
                 ),
                 Container(
-                  padding:  EdgeInsets.all(20.w),
+                  padding: padding16,
                   width: double.infinity,
                   height: 0.67.sh,
                   decoration: BoxDecoration(

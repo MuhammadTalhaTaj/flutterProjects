@@ -1,4 +1,6 @@
+import 'package:demo_flutter/constants/app_padding.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../constants/textStyles.dart';
 
@@ -14,9 +16,9 @@ class PointsContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.all(8),
-      width: 104,
-      height: 74,
+      padding: padding8,
+       width: 104.w,
+       height: 74.h,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(15),
         color: color,

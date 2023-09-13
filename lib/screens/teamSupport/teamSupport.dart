@@ -2,6 +2,7 @@ import 'package:demo_flutter/commonwidgets/appsize.dart';
 import 'package:demo_flutter/commonwidgets/cusotmDropdown.dart';
 import 'package:demo_flutter/commonwidgets/customElevetedButton.dart';
 import 'package:demo_flutter/commonwidgets/simpleAppbar.dart';
+import 'package:demo_flutter/constants/app_spacer_constants.dart';
 import 'package:demo_flutter/constants/textStyles.dart';
 import 'package:demo_flutter/imageVairableFiles/ImageVariableFiles.dart';
 import 'package:demo_flutter/screens/OTP/otp.dart';
@@ -9,6 +10,7 @@ import 'package:demo_flutter/screens/signIn/signIn.dart';
 import 'package:demo_flutter/utils/app_utils/extensions/color_extension.dart';
 import 'package:demo_flutter/utils/app_utils/extensions/screen_util_extension.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../commonwidgets/customTextField.dart';
 import '../../commonwidgets/dottedElevetedButton.dart';
@@ -37,123 +39,100 @@ class TeamSupport extends StatelessWidget {
               ],
             ),
           ),
-          child: SingleChildScrollView(
-            child: Column(
-              children: [
-                Container(
-                  height: context.heightWithoutSafeAreaAndAppbar * 0.3,
-                  child: Image.asset(ImageVariables.teamSupportImage),
-                ),
-                Container(
-                  padding: const EdgeInsets.all(20),
-                  width: double.infinity,
-                  height: context.heightWithoutSafeAreaAndAppbar * 0.7,
-                  decoration: BoxDecoration(
-                      color: context.colorScheme.primaryContainer,
-                      borderRadius: const BorderRadius.only(
-                          topLeft: Radius.circular(35),
-                          topRight: Radius.circular(35))),
-                  child: SingleChildScrollView(
+          child: Column(
+            children: [
+              SizedBox(
+                height: 0.3.sh,
+                child: Image.asset(ImageVariables.teamSupportImage,fit: BoxFit.fill,),
+              ),
+              Expanded(
+                child: SingleChildScrollView(
+                  child: Container(
+                    padding: const EdgeInsets.all(20),
+                    width: double.infinity,
+                  //  height: 0.7.sh,
+                    decoration: BoxDecoration(
+                        color: context.colorScheme.primaryContainer,
+                        borderRadius: const BorderRadius.only(
+                            topLeft: Radius.circular(35),
+                            topRight: Radius.circular(35))),
                     child: Column(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              S.of(context).teamContact,
-                              style: headingTextStyle(context),
-                            ),
-                            AppSize(
-                              height: 10,
-                            ),
-                            Text(
-                              S.of(context).loveToHearFrom,
-                              style: subBodyTextStyle(),
-                            ),
-                            AppSize(
-                              height: 25,),
-
-
-
-                            Text(
-                              S.of(context).yourName,
-                              style: bodyTextStyle(context),
-                            ),
-                            AppSize(
-                              height: 10,
-                            ),
-                            CustomTextField(
-                              labelText: S.of(context).enterName,
-                            ),
-                            AppSize(
-                              height: 15,
-                            ),
-                            Text(
-                              S.of(context).yourMail,
-                              style: bodyTextStyle(context),
-                            ),
-                            AppSize(
-                              height: 10,
-                            ),
-                            CustomTextField(
-                              labelText: S.of(context).enterMail,
-                            ),
-                            AppSize(
-                              height: 15,
-                            ),
-                            Text(
-                              S.of(context).yourMessage,
-                              style: bodyTextStyle(context),
-                            ),
-                            AppSize(
-                              height: 10,
-                            ),
-                            AppSize(
-                              height: 150,
-                              width: double.infinity,
-                              child: CustomTextField(
-                                labelText: S.of(context).enterText,
-                              ),
-                            ),
-                            AppSize(
-                              height: 15,
-                            ),
-                            Text(
-                              S.of(context).uploadImage,
-                              style: bodyTextStyle(context),
-                            ),
-                            AppSize(
-                              height: 10,
-                            ),
-                            DottedElevatedButton(),
-                            AppSize(
-                              height: 30,
-                            )
-
-                          ],
+                        Text(
+                          S.of(context).teamContact,
+                          style: headingTextStyle(context),
                         ),
-                        Column(
-                          children: [
-                            CustomElivitedButton(
-                                text: S.of(context).submit,
-                                onPress: () {
-                                  Navigator.push(
-                                      context,
-                                      MaterialPageRoute(
-                                        builder: (context) => OTP(),
-                                      ));
-                                }),
+                        AppSpacer.p10(),
+                        Text(
+                          S.of(context).loveToHearFrom,
+                          style: subBodyTextStyle(),
+                        ),
+                        AppSpacer.p24(),
 
-                          ],
-                        )
+
+                        Text(
+                          S.of(context).yourName,
+                          style: bodyTextStyle(context),
+                        ),
+                        AppSpacer.p10(),
+
+                        CustomTextField(
+                          labelText: S.of(context).enterName,
+                        ),
+                        AppSpacer.p15(),
+
+                        Text(
+                          S.of(context).yourMail,
+                          style: bodyTextStyle(context),
+                        ),
+                        AppSpacer.p10(),
+
+                        CustomTextField(
+                          labelText: S.of(context).enterMail,
+                        ),
+                        AppSpacer.p15(),
+
+                        Text(
+                          S.of(context).yourMessage,
+                          style: bodyTextStyle(context),
+                        ),
+                        AppSpacer.p10(),
+
+                        AppSize(
+                          height: 150,
+                          width: double.infinity,
+                          child: CustomTextField(
+                            labelText: S.of(context).enterText,
+                          ),
+                        ),
+                        AppSpacer.p15(),
+
+                        Text(
+                          S.of(context).uploadImage,
+                          style: bodyTextStyle(context),
+                        ),
+                        AppSpacer.p10(),
+
+                        DottedElevatedButton(),
+                        AppSpacer.p32(),
+
+                        CustomElivitedButton(
+                            text: S.of(context).submit,
+                            onPress: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => OTP(),
+                                  ));
+                            }),
+
                       ],
                     ),
                   ),
-                )
-              ],
-            ),
+                ),
+              )
+            ],
           ),
         ),
       ),

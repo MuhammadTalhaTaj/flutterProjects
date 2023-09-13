@@ -6,11 +6,15 @@ import 'package:demo_flutter/constants/textStyles.dart';
 import 'package:demo_flutter/imageVairableFiles/ImageVariableFiles.dart';
 import 'package:demo_flutter/utils/app_utils/extensions/color_extension.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../../constants/app_padding.dart';
+import '../../constants/app_spacer_constants.dart';
 import '../../generated/l10n.dart';
 
 class ManualEntry extends StatelessWidget {
-  static const routeName='/manualEntry';
+  static const routeName = '/manualEntry';
+
   const ManualEntry({Key? key}) : super(key: key);
 
   @override
@@ -28,14 +32,13 @@ class ManualEntry extends StatelessWidget {
             context.colorScheme.onBackground
           ],
         )),
-        padding: const EdgeInsets.all(15),
+        padding: padding15,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Column(
-
               children: [
-                Image.asset(ImageVariables.manualEntryImage),
+                SizedBox(height: 200.h,child: Image.asset(ImageVariables.manualEntryImage,fit: BoxFit.fill,)),
                 Align(
                   alignment: Alignment.centerLeft,
                   child: Text(
@@ -43,20 +46,28 @@ class ManualEntry extends StatelessWidget {
                     style: bodyTextStyle(context),
                   ),
                 ),
-                AppSize(height: 5,),
+               AppSpacer.p5(),
                 AppSize(
-                  height: 58,
+                  height: 58.h,
                   width: double.infinity,
                   child: CustomTextField(
                     labelText: '#### #### ####',
                   ),
                 ),
-                AppSize(height: 20,),
-                AppSize(height: 94,width: double.infinity, child: Image.asset(ImageVariables.couponImage,fit: BoxFit.fill,))
+               AppSpacer.p20(),
+                AppSize(
+                    height: 94.h,
+                    width: double.infinity,
+                    child: Image.asset(
+                      ImageVariables.couponImage,
+                      fit: BoxFit.fill,
+                    ))
               ],
             ),
-            
-            CustomElivitedButton(onPress: (){},text: S.of(context).claimCoupon,)
+            CustomElivitedButton(
+              onPress: () {},
+              text: S.of(context).claimCoupon,
+            )
           ],
         ),
       ),

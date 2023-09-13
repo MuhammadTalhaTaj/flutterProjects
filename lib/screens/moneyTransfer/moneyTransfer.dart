@@ -2,6 +2,7 @@ import 'package:demo_flutter/commonwidgets/appsize.dart';
 import 'package:demo_flutter/commonwidgets/customElevetedButton.dart';
 import 'package:demo_flutter/commonwidgets/customTextField.dart';
 import 'package:demo_flutter/commonwidgets/simpleAppbar.dart';
+import 'package:demo_flutter/constants/app_spacer_constants.dart';
 import 'package:demo_flutter/constants/textStyles.dart';
 import 'package:demo_flutter/imageVairableFiles/ImageVariableFiles.dart';
 import 'package:demo_flutter/screens/moneyTransfer/widgets/slider.dart';
@@ -9,7 +10,9 @@ import 'package:demo_flutter/screens/moneyTransfer/widgets/transferDetails.dart'
 import 'package:demo_flutter/utils/app_utils/extensions/color_extension.dart';
 import 'package:demo_flutter/utils/app_utils/extensions/screen_util_extension.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../../constants/app_padding.dart';
 import '../../generated/l10n.dart';
 
 class MoneyTransfer extends StatefulWidget {
@@ -37,7 +40,7 @@ class _MoneyTransferState extends State<MoneyTransfer> {
               context.colorScheme.onBackground
             ],
           )),
-          padding:  EdgeInsets.all(15),
+          padding:  padding15,
           child: context.isPatriot?Body():SingleChildScrollView(
             child: Body(),
           )
@@ -66,31 +69,27 @@ class _BodyState extends State<Body> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             SizedBox(
-              height: 88,
+              height: 88.h,
               width: double.infinity,
               child: Image.asset(
                 ImageVariables.moneyTransferImage,
                 fit: BoxFit.fill,
               ),
             ),
-            AppSize(
-              height: 20,
-            ),
+           AppSpacer.p10(),
             Text(
               S.of(context).selectAmount,
               style: bodyTextStyle(context),
             ),
-            AppSize(
-              height: 10,
-            ),
+            AppSpacer.p10(),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Expanded(
                   flex: 1,
                   child: AppSize(
-                    height: 58,
-                    width: 58,
+                    height: 58.h,
+                    width: 58.w,
                     child: CustomElivitedButton(
                       text: '-',
                       onPress: () {
@@ -102,28 +101,28 @@ class _BodyState extends State<Body> {
                           .colorScheme
                           .onPrimaryContainer,
                       textColor: Colors.white,
-                      fontSize: 30,
+                      fontSize: 30.sp,
                     ),
                   ),
                 ),
-                AppSize(width: 10,),
+                AppSpacer.p10(),
                 Expanded(
                   flex: 3,
                   child: AppSize(
-                      width: 200,
-                      height: 58,
+                      width: 200.w,
+                      height: 58.h,
                       child: CustomTextField(
                         editedText: '\$${_value.toStringAsFixed(0)}',
                         textAlignCenter: true,
-                        editedTextSize: 23,
+                        editedTextSize: 23.sp,
                       )),
                 ),
-                AppSize(width: 10,),
+                AppSpacer.p10(),
                 Expanded(
                   flex: 1,
                   child: AppSize(
-                    height: 58,
-                    width: 58,
+                    height: 58.h,
+                    width: 58.w,
                     child: CustomElivitedButton(
                       text: '+',
                       onPress: () {
@@ -135,32 +134,26 @@ class _BodyState extends State<Body> {
                           .colorScheme
                           .onPrimaryContainer,
                       textColor: Colors.white,
-                      fontSize: 30,
+                      fontSize: 30.sp,
                     ),
                   ),
                 ),
               ],
             ),
-            AppSize(
-              height: 25,
-            ),
+            AppSpacer.p24(),
             CustomSlider(valueChanged: (v) {
 
               setState(() {
                 _value = v;
               });
             }),
-            AppSize(
-              height: 20,
-            ),
+            AppSpacer.p20(),
             TransferDetails(
               imagePath: 'lib/icons/bankTransferIcon.png',
               upperText: S.of(context).bankTransfer,
               lowerText: S.of(context).clickToSelectBankAccount,
             ),
-            AppSize(
-              height: 20,
-            ),
+            AppSpacer.p20(),
             TransferDetails(
               imagePath: 'lib/icons/upiTransferIcon.png',
               upperText: S.of(context).upiTransfer,

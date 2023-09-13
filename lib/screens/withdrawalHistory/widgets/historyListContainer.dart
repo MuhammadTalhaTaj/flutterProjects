@@ -1,7 +1,10 @@
 import 'package:demo_flutter/utils/app_utils/extensions/color_extension.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../commonwidgets/appsize.dart';
+import '../../../constants/app_padding.dart';
+import '../../../constants/app_spacer_constants.dart';
 import '../../../constants/textStyles.dart';
 import '../withdrawalHistory.dart';
 
@@ -24,7 +27,7 @@ class HistoryListContainer extends StatelessWidget {
     return Container(
       margin: EdgeInsets.all( 10),
       padding: EdgeInsets.all(13),
-      height: 100,
+      //height: 100,
       width: double.infinity,
       decoration: BoxDecoration(
           border: Border.all(
@@ -36,8 +39,8 @@ class HistoryListContainer extends StatelessWidget {
           Row(
             children: [
               Container(
-                width: 48,
-                height: 51,
+                width: 48.w,
+                height: 51.h,
                 color: context.colorScheme.primaryContainer,
                 child: Center(
 
@@ -45,9 +48,7 @@ class HistoryListContainer extends StatelessWidget {
                 ),
               ),
 
-              AppSize(
-                width: 10,
-              ),
+              AppSpacer.p10(),
               Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -56,22 +57,18 @@ class HistoryListContainer extends StatelessWidget {
                     name,
                     style: bodyTextStyle(context),
                   ),
-                  AppSize(
-                    height: 5,
-                  ),
+                  AppSpacer.p4(),
                   Text(
                    date,
                     style: subBodyTextStyle(),
                   ),
-                  AppSize(
-                    height: 8,
-                  ),
+                  AppSpacer.p8(),
                   Container(
-                    padding: EdgeInsets.symmetric(horizontal: 7),
+                    padding: padding8,
                     color:  context.colorScheme.primaryContainer,
                     child: Text(
                       code,
-                      style: subBodyTextStyle().copyWith(fontSize: 12),
+                      style: subBodyTextStyle().copyWith(fontSize: 12.sp),
                     ),
                   )
                 ],

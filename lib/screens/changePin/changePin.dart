@@ -7,6 +7,7 @@ import 'package:demo_flutter/constants/textStyles.dart';
 import 'package:demo_flutter/utils/app_utils/extensions/color_extension.dart';
 import 'package:demo_flutter/utils/app_utils/extensions/screen_util_extension.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../constants/app_padding.dart';
 import '../../generated/l10n.dart';
@@ -26,7 +27,7 @@ class _ChangePinState extends State<ChangePin> {
         child: Scaffold(
       appBar: SimpleAppbar(name: S.of(context).changeMpin),
       body: Container(
-        // TODO : dont use static padding
+
         // padding: EdgeInsets.all(15),
         padding: padding16,
         width: double.infinity,
@@ -44,8 +45,7 @@ class _ChangePinState extends State<ChangePin> {
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                //Todo : use app spacer insted of app size change it to every where
-                AppSpacer.p8(),
+                AppSpacer.p10(),
                 // AppSize(
                 //   height: 10,
                 // ),
@@ -53,50 +53,41 @@ class _ChangePinState extends State<ChangePin> {
                   S.of(context).oldMpin,
                   style: bodyTextStyle(context),
                 ),
-                AppSize(
-                  height: 10,
-                ),
+                AppSpacer.p10(),
+
                 Center(
                     child: CustomPinput(
                   length: 4,
-                  boxWidth: 59,
-                  boxHeight: 59,
-                  width: 30,
+                  boxWidth: 59.w,
+                  boxHeight: 59.h,
+                  width: 30.w,
                 )),
-                AppSize(
-                  height: 15,
-                ),
+               AppSpacer.p15(),
                 Text(
                   S.of(context).oldMpin,
                   style: bodyTextStyle(context),
                 ),
-                AppSize(
-                  height: 10,
-                ),
+               AppSpacer.p10(),
                 Center(
                     child: CustomPinput(
-                  length: 4,
-                  boxWidth: 59,
-                  boxHeight: 59,
-                  width: 30,
-                )),
-                AppSize(
-                  height: 15,
-                ),
+                      length: 4,
+                      boxWidth: 59.w,
+                      boxHeight: 59.h,
+                      width: 30.w,
+                    )),
+               AppSpacer.p15(),
                 Text(
                   S.of(context).oldMpin,
                   style: bodyTextStyle(context),
                 ),
-                AppSize(
-                  height: 10,
-                ),
+                AppSpacer.p10(),
                 Center(
                     child: CustomPinput(
-                  length: 4,
-                  boxWidth: 59,
-                  boxHeight: 59,
-                  width: 30,
-                )),
+                      length: 4,
+                      boxWidth: 59.w,
+                      boxHeight: 59.h,
+                      width: 30.w,
+                    )),
               ],
             ),
             CustomElivitedButton(

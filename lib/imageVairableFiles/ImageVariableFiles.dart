@@ -18,6 +18,7 @@ class ImageVariables{
   static const String connectionLostImage='assets/images/connectionLost.png';
   static const String serverErrorImage='assets/images/serverError.png';
   static const String notification1Image='assets/images/notification1.png';
+  static const String personImage='assets/images/person.jpg';
 
 
 

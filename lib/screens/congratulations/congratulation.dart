@@ -10,6 +10,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../commonwidgets/appsize.dart';
 import '../../commonwidgets/customElevetedButton.dart';
+import '../../constants/app_padding.dart';
 import '../../generated/l10n.dart';
 import '../homescreen/home.dart';
 
@@ -34,12 +35,11 @@ class Congratulation extends StatelessWidget {
           ],
 
         ),),
-        padding: const EdgeInsets.all(20),
+        padding: padding16,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             AppSize(
-              //todo : use media query like this.
               height: 0.3.sh,
             ),
             Center(
@@ -74,7 +74,7 @@ class Congratulation extends StatelessWidget {
                     Navigator.pushNamed(context, Home.routeName);
                   },
                 )),
-            ColumnDivider(),
+            const ColumnDivider(),
           ],
         ),
       ),

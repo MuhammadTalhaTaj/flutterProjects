@@ -11,6 +11,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../commonwidgets/appsize.dart';
 import '../../commonwidgets/customTextField.dart';
+import '../../constants/app_padding.dart';
 import '../../generated/l10n.dart';
 import '../signUp/signup.dart';
 
@@ -44,7 +45,7 @@ class SignIn extends StatelessWidget {
 
 
               Container(
-                padding: EdgeInsets.all(20.w),
+                padding: padding16,
                 width: double.infinity,
                 height: 0.67.sh,
                 decoration: BoxDecoration(

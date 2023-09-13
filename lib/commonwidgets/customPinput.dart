@@ -61,7 +61,6 @@ class _CustomPinputState extends State<CustomPinput> {
       listenForMultipleSmsOnAndroid: true,
       defaultPinTheme: defaultPinTheme,
       separatorBuilder: (index) => SizedBox(width: widget.width),
-      //todo : this will solve responsive ness issue which we discussed in 1st meeting.
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       validator: (value) {
         return value == '2222' ? null : 'Pin is incorrect';

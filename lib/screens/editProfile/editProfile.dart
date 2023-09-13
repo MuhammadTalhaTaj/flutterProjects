@@ -1,5 +1,6 @@
 import 'package:demo_flutter/commonwidgets/cusotmDropdown.dart';
 import 'package:demo_flutter/commonwidgets/customElevetedButton.dart';
+import 'package:demo_flutter/constants/app_spacer_constants.dart';
 import 'package:demo_flutter/constants/textStyles.dart';
 import 'package:demo_flutter/imageVairableFiles/ImageVariableFiles.dart';
 import 'package:demo_flutter/screens/OTP/otp.dart';
@@ -8,6 +9,7 @@ import 'package:demo_flutter/screens/signIn/signIn.dart';
 import 'package:demo_flutter/utils/app_utils/extensions/color_extension.dart';
 import 'package:demo_flutter/utils/app_utils/extensions/screen_util_extension.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../commonwidgets/appsize.dart';
 import '../../commonwidgets/customTextField.dart';
@@ -68,8 +70,8 @@ class _EditProfileState extends State<EditProfile> {
                     decoration: BoxDecoration(
                         gradient: LinearGradient(
                       // begin: Alignment.centerLeft,
-                      //todo : don't use static colors.
-                      colors: [Color(0xFF483548), Color(0xff1e051a)],
+                      colors: [ context.colorScheme.background,
+                        context.colorScheme.onBackground],
                     )),
                     child: Image.asset(ImageVariables.signUp2Image),
                   )),
@@ -109,8 +111,8 @@ class _EditProfileState extends State<EditProfile> {
                                     height: 10,
                                   ),
                                   Container(
-                                    //todo : don't use static height
-                                    height: 78,
+
+                                    height: 78.h,
                                     width: double.infinity,
                                     child: Row(
                                       mainAxisAlignment:
@@ -119,14 +121,12 @@ class _EditProfileState extends State<EditProfile> {
                                         Row(
                                           children: [
                                             Image.asset(
-                                              // Todo : change image path
-                                              'assets/images/person.jpg',
-                                              width: 78,
+
+                                              ImageVariables.personImage,
+                                              width: 78.w,
                                               height: double.infinity,
                                             ),
-                                            AppSize(
-                                              width: 7,
-                                            ),
+                                            AppSpacer.p8(),
                                             Column(
                                               crossAxisAlignment:
                                                   CrossAxisAlignment.start,
@@ -137,9 +137,7 @@ class _EditProfileState extends State<EditProfile> {
                                                   S.of(context).imageName,
                                                   style: bodyTextStyle(context),
                                                 ),
-                                                AppSize(
-                                                  height: 3,
-                                                ),
+                                                AppSpacer.p4(),
                                                 Text(
                                                   'format.jpg',
                                                   style: subBodyTextStyle(),
@@ -163,81 +161,57 @@ class _EditProfileState extends State<EditProfile> {
                                       ],
                                     ),
                                   ),
-                                  AppSize(
-                                    height: 25,
-                                  ),
+                                  AppSpacer.p24(),
                                   Text(
                                     S.of(context).yourName,
                                     style: bodyTextStyle(context),
                                   ),
-                                  AppSize(
-                                    height: 10,
-                                  ),
+                                  AppSpacer.p10(),
                                   CustomTextField(
                                     editedText: "Brooklyn Simmons",
                                   ),
-                                  AppSize(
-                                    height: 15,
-                                  ),
+                                  AppSpacer.p15(),
                                   Text(
                                     S.of(context).mobileNumber,
                                     style: bodyTextStyle(context),
                                   ),
-                                  AppSize(
-                                    height: 10,
-                                  ),
+                                  AppSpacer.p10(),
                                   CustomTextField(
                                     editedText: '(629)555-0129',
                                   ),
-                                  AppSize(
-                                    height: 15,
-                                  ),
+                                  AppSpacer.p15(),
                                   Text(
                                     S.of(context).workShopName,
                                     style: bodyTextStyle(context),
                                   ),
-                                  AppSize(
-                                    height: 10,
-                                  ),
+                                  AppSpacer.p10(),
                                   CustomTextField(
                                     editedText: 'Floyd Miles',
                                   ),
-                                  AppSize(
-                                    height: 15,
-                                  ),
+                                  AppSpacer.p15(),
                                   Text(
                                     S.of(context).roadName,
                                     style: bodyTextStyle(context),
                                   ),
-                                  AppSize(
-                                    height: 10,
-                                  ),
+                                  AppSpacer.p10(),
                                   CustomTextField(
                                     editedText: 'Jane Cooper',
                                   ),
-                                  AppSize(
-                                    height: 15,
-                                  ),
+                                  AppSpacer.p15(),
                                   Text(
                                     S.of(context).pinCode,
                                     style: bodyTextStyle(context),
                                   ),
-                                  AppSize(
-                                    height: 10,
-                                  ),
+                                  AppSpacer.p10(),
                                   CustomTextField(
                                     editedText: '740',
                                   ),
-                                  AppSize(
-                                    height: 15,
-                                  ),
+                                  AppSpacer.p15(),
                                   Text(
                                     S.of(context).yourState,
                                     style: bodyTextStyle(context),
                                   ),
-                                  AppSize(
-                                    height: 10,
-                                  ),
+                                  AppSpacer.p10(),
                                   CustomDropDownButton(
                                     list: listStates,
                                     onPressed: (value) {},
@@ -245,16 +219,12 @@ class _EditProfileState extends State<EditProfile> {
                                         context.colorScheme.onPrimaryContainer,
                                     selected: 'Basic Cooper',
                                   ),
-                                  AppSize(
-                                    height: 15,
-                                  ),
+                                  AppSpacer.p15(),
                                   Text(
                                     S.of(context).yourCity,
                                     style: bodyTextStyle(context),
                                   ),
-                                  AppSize(
-                                    height: 10,
-                                  ),
+                                  AppSpacer.p10(),
                                   CustomDropDownButton(
                                     list: listCities,
                                     onPressed: (value) {},
@@ -262,9 +232,7 @@ class _EditProfileState extends State<EditProfile> {
                                         context.colorScheme.onPrimaryContainer,
                                     selected: 'Devon Lane',
                                   ),
-                                  AppSize(
-                                    height: 15,
-                                  ),
+                                  AppSpacer.p15(),
                                   Text(
                                     S.of(context).doYouWantToAddPanCard,
                                     style: bodyTextStyle(context),
@@ -310,9 +278,7 @@ class _EditProfileState extends State<EditProfile> {
                                   ),
                                 ],
                               ),
-                              AppSize(
-                                height: 30,
-                              ),
+                              AppSpacer.p32(),
                               Column(
                                 children: [
                                   CustomElivitedButton(
@@ -324,9 +290,7 @@ class _EditProfileState extends State<EditProfile> {
                                               builder: (context) => PanUpdate(),
                                             ));
                                       }),
-                                  AppSize(
-                                    height: 10,
-                                  ),
+                                  AppSpacer.p10(),
                                   Row(
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     children: [
@@ -334,9 +298,7 @@ class _EditProfileState extends State<EditProfile> {
                                         S.of(context).alreadyMemberWithUs,
                                         style: subBodyTextStyle(),
                                       ),
-                                      AppSize(
-                                        width: 5,
-                                      ),
+                                      AppSpacer.p5(),
                                       GestureDetector(
                                           onTap: () {
                                             Navigator.push(

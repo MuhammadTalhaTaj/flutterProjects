@@ -1,11 +1,14 @@
 import 'package:demo_flutter/commonwidgets/appsize.dart';
 import 'package:demo_flutter/commonwidgets/customElevetedButton.dart';
 import 'package:demo_flutter/commonwidgets/nameAppbar.dart';
+import 'package:demo_flutter/constants/app_padding.dart';
 import 'package:demo_flutter/constants/textStyles.dart';
 import 'package:demo_flutter/imageVairableFiles/ImageVariableFiles.dart';
 import 'package:demo_flutter/utils/app_utils/extensions/color_extension.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../../constants/app_spacer_constants.dart';
 import '../../generated/l10n.dart';
 
 class Notifications extends StatelessWidget {
@@ -33,8 +36,8 @@ class Notifications extends StatelessWidget {
           children: [
             Container(
               color: context.colorScheme.primaryContainer,
-              padding: EdgeInsets.all(8),
-              height: 40,
+              padding: padding8,
+            //  height: 40.h,
               //width: double.infinity,
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -44,12 +47,12 @@ class Notifications extends StatelessWidget {
                     style: bodyTextStyle(context),
                   ),
                   AppSize(
-                    height: 25,
-                    width: 63,
+                    height: 25.h,
+                    width: 63.w,
                     child: CustomElivitedButton(
                       onPress: () {},
                       text: S.of(context).clear,
-                      fontSize: 12,
+                      fontSize: 12.sp,
                       backgroundColor: context.colorScheme.onPrimaryContainer,
                       textColor: context.colorScheme.primary,
                     ),
@@ -57,12 +60,13 @@ class Notifications extends StatelessWidget {
                 ],
               ),
             ),
-            AppSize(height: 20,),
+            AppSpacer.p20(),
+
             Expanded(
               child: ListView.builder(
                 itemBuilder: (context, index) {
                   return Container(
-                    height: 225,
+                  //  height: 225,
                     decoration: BoxDecoration(
                       border: Border.all(color: Color(0xff3e2530),width: 1.5),
                     ),
@@ -74,16 +78,16 @@ class Notifications extends StatelessWidget {
                         Container(
                           width: double.infinity,
                           color:context.colorScheme.primaryContainer,
-                          padding: EdgeInsets.all(11),
-                          height: 50,
-                          child:Text('15 june 2022',style: bodyTextStyle(context).copyWith(fontSize: 20),),
+                          padding: padding10,
+                        //  height: 50,
+                          child:Text('15 june 2022',style: bodyTextStyle(context).copyWith(fontSize: 20.sp),),
 
                         ),
                     Container(
 
-                      height: 80,
+                     // height: 80,
                       width: double.infinity,
-                      padding: EdgeInsets.all(10),
+                      padding: padding10,
 
 
                       child: Row(
@@ -93,15 +97,14 @@ class Notifications extends StatelessWidget {
                           Row(
                             children: [
                               Container(
-                                width: 69,
-                                height: 51,
+                                width: 69.w,
+                                height: 51.h,
                                 color: context.colorScheme.primaryContainer,
                                 child: Image.asset(ImageVariables.notification1Image,fit: BoxFit.fill,),
                               ),
 
-                              AppSize(
-                                width: 10,
-                              ),
+                              AppSpacer.p10(),
+
                               Column(
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -110,9 +113,7 @@ class Notifications extends StatelessWidget {
                                     'Know your mechanic',
                                     style: bodyTextStyle(context),
                                   ),
-                                  AppSize(
-                                    height: 5,
-                                  ),
+                                 AppSpacer.p4(),
                                   Text(
                                     '25 April, 2023',
                                     style: subBodyTextStyle(),
@@ -128,9 +129,9 @@ class Notifications extends StatelessWidget {
                          Divider(indent: 15, color: context.colorScheme.primaryContainer,height: 2,thickness: 1.5,endIndent: 15,),
                         Container(
 
-                          height: 80,
+                        //  height: 80,
                           width: double.infinity,
-                          padding: EdgeInsets.all(10),
+                          padding: padding10,
 
 
                           child: Row(
@@ -140,15 +141,14 @@ class Notifications extends StatelessWidget {
                               Row(
                                 children: [
                                   Container(
-                                    width: 69,
-                                    height: 51,
+                                    width: 69.w,
+                                    height: 51.h,
                                     color: context.colorScheme.primaryContainer,
                                     child: Image.asset(ImageVariables.notification1Image,fit: BoxFit.fill,),
                                   ),
 
-                                  AppSize(
-                                    width: 10,
-                                  ),
+                                  AppSpacer.p10(),
+
                                   Column(
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -157,9 +157,8 @@ class Notifications extends StatelessWidget {
                                         'Know your mechanic',
                                         style: bodyTextStyle(context),
                                       ),
-                                      AppSize(
-                                        height: 5,
-                                      ),
+                                      AppSpacer.p5(),
+
                                       Text(
                                         '25 April, 2023',
                                         style: subBodyTextStyle(),

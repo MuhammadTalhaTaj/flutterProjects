@@ -1,5 +1,8 @@
+import 'package:demo_flutter/constants/app_padding.dart';
+import 'package:demo_flutter/constants/app_spacer_constants.dart';
 import 'package:demo_flutter/utils/app_utils/extensions/color_extension.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../constants/textStyles.dart';
 import 'appsize.dart';
@@ -14,9 +17,9 @@ class SimpleAppbar extends StatelessWidget implements PreferredSizeWidget{
       automaticallyImplyLeading: false,
       elevation: 0,
       flexibleSpace: Container(
-        padding: const EdgeInsets.all(7),
+        padding: padding8,
         width: double.infinity,
-        height: const Size.fromHeight(kToolbarHeight).height,
+        height: 60.h,
         decoration: BoxDecoration(
             gradient: LinearGradient(colors: [
               context.colorScheme.background,
@@ -27,8 +30,8 @@ class SimpleAppbar extends StatelessWidget implements PreferredSizeWidget{
             GestureDetector(
               onTap: (){Navigator.pop(context);},
               child: Container(
-                height: 44,
-                width: 44,
+                height: 44.h,
+                width: 44.w,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(15),
                   border: Border.all(
@@ -41,7 +44,7 @@ class SimpleAppbar extends StatelessWidget implements PreferredSizeWidget{
                     )),
               ),
             ),
-            AppSize(width: 15,),
+            AppSpacer.p15(),
             Text(name,style: headingTextStyle(context).copyWith(fontWeight: FontWeight.normal),)
           ],
         ),
@@ -50,6 +53,5 @@ class SimpleAppbar extends StatelessWidget implements PreferredSizeWidget{
   }
 
   @override
-  // TODO: implement preferredSize
-  Size get preferredSize => const Size.fromHeight(kToolbarHeight);
+  Size get preferredSize =>  Size.fromHeight(60.h);
 }

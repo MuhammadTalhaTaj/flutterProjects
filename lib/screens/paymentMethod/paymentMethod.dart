@@ -9,7 +9,10 @@ import 'package:demo_flutter/screens/paymentMethod/widgets/paymentMethodList.dar
 import 'package:demo_flutter/screens/withdrawalHistory/widgets/historyListContainer.dart';
 import 'package:demo_flutter/utils/app_utils/extensions/color_extension.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../../constants/app_padding.dart';
+import '../../constants/app_spacer_constants.dart';
 import '../../generated/l10n.dart';
 
 
@@ -37,7 +40,7 @@ class PaymentMethod extends StatelessWidget {
       child: Scaffold(
         appBar:SimpleAppbar(name: S.of(context).paymentMethod),
         body: Container(
-          padding: EdgeInsets.all(15),
+          padding: padding15,
           width: double.infinity,
           decoration: BoxDecoration(
               gradient: LinearGradient(
@@ -51,7 +54,7 @@ class PaymentMethod extends StatelessWidget {
             children: [
               AppSize(
                 // As we have maximum two methods
-                height: items.length==1?110:230,
+                height: items.length==1?125.h:245.h,
                 width: double.infinity,
                 child: ListView.builder(
                   itemBuilder: (context, index) {
@@ -66,7 +69,7 @@ class PaymentMethod extends StatelessWidget {
                   itemCount: items.length,
                 ),
               ),
-              AppSize(height: 20,),
+             AppSpacer.p20(),
               DottedElevatedButton(text: S.of(context).uploadMethod,),
 
             ],

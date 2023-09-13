@@ -11,6 +11,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:pinput/pinput.dart';
 import '../../commonwidgets/appsize.dart';
 import '../../commonwidgets/customTextField.dart';
+import '../../constants/app_padding.dart';
 import '../../generated/l10n.dart';
 
 class OTP extends StatefulWidget {
@@ -47,7 +48,7 @@ class _OTPState extends State<OTP> {
                   child: Image.asset(ImageVariables.otpImage),
                 ),
                 Container(
-                  padding:  EdgeInsets.all(20.w),
+                  padding: padding16,
                   width: double.infinity,
                //   height: context.heightWithoutSafeArea * 0.5,
                   height: 0.67.sh,

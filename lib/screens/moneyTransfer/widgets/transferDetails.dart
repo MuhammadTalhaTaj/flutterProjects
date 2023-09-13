@@ -1,7 +1,10 @@
+import 'package:demo_flutter/constants/app_padding.dart';
 import 'package:demo_flutter/utils/app_utils/extensions/color_extension.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../commonwidgets/appsize.dart';
+import '../../../constants/app_spacer_constants.dart';
 import '../../../constants/textStyles.dart';
 
 class TransferDetails extends StatefulWidget {
@@ -24,8 +27,8 @@ class _TransferDetailsState extends State<TransferDetails> {
       clipBehavior: Clip.none,
       children: [
         Container(
-          padding: EdgeInsets.all(13),
-          height: 88,
+          padding: padding13,
+         // height: 88,
           width: double.infinity,
           decoration: BoxDecoration(
               border: Border.all(
@@ -34,16 +37,14 @@ class _TransferDetailsState extends State<TransferDetails> {
           child: Row(
             children: [
               Container(
-                width: 48,
-                height: 51,
+                width: 48.w,
+                height: 51.h,
                 color: context.colorScheme.primaryContainer,
                 child: Center(
                   child: Image.asset(widget.imagePath),
                 ),
               ),
-              AppSize(
-                width: 5,
-              ),
+              AppSpacer.p4(),
               Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -53,9 +54,7 @@ class _TransferDetailsState extends State<TransferDetails> {
                     widget.upperText,
                     style: bodyTextStyle(context),
                   ),
-                  AppSize(
-                    height: 5,
-                  ),
+                  AppSpacer.p4(),
                   Text(
                     widget.lowerText,
                     style: subBodyTextStyle(),
@@ -66,11 +65,11 @@ class _TransferDetailsState extends State<TransferDetails> {
           ),
         ),
         Positioned(
-          bottom: 70,
-          right: -5,
+          bottom: 60.sp,
+          right: -4.sp,
           child: Container(
-            height: 23,
-            width: 23,
+            height: 23.h,
+            width: 23.w,
             child: GestureDetector(
               onTap: () {
                 setState(() {

@@ -22,7 +22,7 @@ class NameAppbar extends StatelessWidget implements PreferredSizeWidget {
               context.colorScheme.onBackground
             ],
           )),
-          height: 100.h,
+       //   height: 100.h,
           padding:  EdgeInsets.all(13.w),
           width: double.infinity,
           child: Row(
@@ -80,6 +80,5 @@ class NameAppbar extends StatelessWidget implements PreferredSizeWidget {
   }
 
   @override
-  // TODO: implement preferredSize
-  Size get preferredSize =>  Size.fromHeight(100.h);
+  Size get preferredSize =>  Size.fromHeight(105.h);
 }

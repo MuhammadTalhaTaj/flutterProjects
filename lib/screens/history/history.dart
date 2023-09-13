@@ -8,6 +8,7 @@ import 'package:demo_flutter/screens/withdrawalHistory/widgets/historyListContai
 import 'package:demo_flutter/utils/app_utils/extensions/color_extension.dart';
 import 'package:flutter/material.dart';
 
+import '../../constants/app_spacer_constants.dart';
 import '../../generated/l10n.dart';
 
 class History extends StatelessWidget {
@@ -78,9 +79,8 @@ class History extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Image.asset(ImageVariables.historyImage),
-                    AppSize(
-                      height: 20,
-                    ),
+                    AppSpacer.p20(),
+
                     Text(
                       S.of(context).noData,
                       style: headingTextStyle(context)

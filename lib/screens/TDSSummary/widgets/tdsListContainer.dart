@@ -1,7 +1,10 @@
 import 'package:demo_flutter/utils/app_utils/extensions/color_extension.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../commonwidgets/appsize.dart';
+import '../../../constants/app_padding.dart';
+import '../../../constants/app_spacer_constants.dart';
 import '../../../constants/textStyles.dart';
 
 class TdsListContainer extends StatelessWidget {
@@ -29,8 +32,8 @@ class TdsListContainer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       margin: EdgeInsets.symmetric(vertical: 10),
-      padding: EdgeInsets.all(13),
-      height: 113,
+      padding: padding13,
+     // height: 113,
       width: double.infinity,
       decoration: BoxDecoration(
           border: Border.all(
@@ -42,17 +45,15 @@ class TdsListContainer extends StatelessWidget {
           Row(
             children: [
               Container(
-                width: 48,
-                height: 51,
+                width: 48.w,
+                height: 51.h,
                 color: context.colorScheme.primaryContainer,
                 child: Center(
                   //TODO image will be change later
-                  child: Image.asset(imagePath),
+                  child: Image.asset(imagePath,fit: BoxFit.fill,),
                 ),
               ),
-              AppSize(
-                width: 10,
-              ),
+              AppSpacer.p10(),
               Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -61,9 +62,7 @@ class TdsListContainer extends StatelessWidget {
                     name,
                     style: bodyTextStyle(context),
                   ),
-                  AppSize(
-                    height: 5,
-                  ),
+                  AppSpacer.p4(),
                   Text(
                     date,
                     style: subBodyTextStyle(),
@@ -76,7 +75,7 @@ class TdsListContainer extends StatelessWidget {
           Column(
             children: [
               pointsContainer(color: Color(0xff198754), Points: rightNumber1),
-              AppSize(height: 7,),
+              AppSpacer.p8(),
               pointsContainer(color: Color(0xffdc3545), Points: rightNumber2),
               AppSize(height: 10,width:70,child: Divider(color: Color(0xff343a40)),),
               pointsContainer(color: Color(0xff0d6efd), Points: rightNumber3),
@@ -103,8 +102,8 @@ class pointsContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 22,
-        width: 43,
+      height: 22.h,
+        width: 43.w,
         decoration: BoxDecoration(
           color: color,
           borderRadius: BorderRadius.circular(10)

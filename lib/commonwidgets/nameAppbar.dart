@@ -1,4 +1,5 @@
 import 'package:demo_flutter/commonwidgets/appsize.dart';
+import 'package:demo_flutter/constants/app_padding.dart';
 import 'package:demo_flutter/constants/textStyles.dart';
 import 'package:demo_flutter/utils/app_utils/extensions/color_extension.dart';
 import 'package:flutter/material.dart';
@@ -14,16 +15,18 @@ class NameAppbar extends StatelessWidget implements PreferredSizeWidget {
     return AppBar(
       automaticallyImplyLeading: false,
         elevation: 0,
+        backgroundColor: Colors.transparent,
         flexibleSpace: Container(
-          decoration: BoxDecoration(
-              gradient: LinearGradient(
-            colors: [
-              context.colorScheme.background,
-              context.colorScheme.onBackground
-            ],
-          )),
+          color: Colors.transparent,
+          // decoration: BoxDecoration(
+          // color: context.colorScheme.background,
+          // image:  DecorationImage(
+          //
+          //   image: Image.asset('assets/images/backgroundImage.png').image,
+          //   fit: BoxFit.cover,
+          // ),),
        //   height: 100.h,
-          padding:  EdgeInsets.all(13.w),
+          padding:  padding13,
           width: double.infinity,
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.start,

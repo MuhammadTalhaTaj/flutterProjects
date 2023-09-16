@@ -37,12 +37,16 @@ import 'generated/l10n.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-void main() => runApp(
-  DevicePreview(
-    enabled: !kReleaseMode,
-    builder: (context) => MyApp(), // Wrap your app
-  ),
-);
+void main() =>
+    runApp(
+    const MyApp());
+  //   runApp(
+  // DevicePreview(
+  //   enabled: !kReleaseMode,
+  //   builder: (context) =>
+  //       MyApp(), // Wrap your app
+  // ),
+//);
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
@@ -58,6 +62,7 @@ class MyApp extends StatelessWidget {
     builder: (_ , child) {
     return MaterialApp(
       theme: ThemeData(
+        scaffoldBackgroundColor:const Color(0xff1B021A),
         colorScheme: lightColorScheme,
         radioTheme: RadioThemeData(
           fillColor: MaterialStateColor.resolveWith((states) => Colors.white),

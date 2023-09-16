@@ -4,7 +4,7 @@ const lightColorScheme = ColorScheme(
   brightness: Brightness.light,
   primary: Color(0xFFFFFFFF),
   onPrimary: Colors.black,
-  primaryContainer: Color(0xff35192f),
+  primaryContainer: Color(0xff311A30),
   onPrimaryContainer: Color(0xff1B021A),
   secondary:Colors.blue,
   //Color(0xFF006874),
@@ -20,7 +20,7 @@ const lightColorScheme = ColorScheme(
   onError: Color(0xFFFFFFFF),
   onErrorContainer: Color(0xFF410002),
   //////// use for backgroundgradient
-  background: Color(0xFF493548),
+  background: Color(0xff1B021A),
   onBackground: Color(0xff1f071e),
 
   /////////

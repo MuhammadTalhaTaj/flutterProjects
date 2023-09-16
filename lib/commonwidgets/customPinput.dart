@@ -80,7 +80,7 @@ class _CustomPinputState extends State<CustomPinput> {
         mainAxisAlignment: MainAxisAlignment.end,
         children: [
           Container(
-            margin: const EdgeInsets.only(bottom: 9),
+           margin: const EdgeInsets.only(bottom: 9),
             width: 22,
             height: 1,
             color: focusedBorderColor,

@@ -32,13 +32,12 @@ class _ChangePinState extends State<ChangePin> {
         padding: padding16,
         width: double.infinity,
         decoration: BoxDecoration(
-            gradient: LinearGradient(
-          // begin: Alignment.centerLeft,
-          colors: [
-            context.colorScheme.background,
-            context.colorScheme.onBackground
-          ],
-        )),
+          color: context.colorScheme.background,
+          image:  DecorationImage(
+
+            image: Image.asset('assets/images/backgroundImage.png').image,
+            fit: BoxFit.cover,
+          ),),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [

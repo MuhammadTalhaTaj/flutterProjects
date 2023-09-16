@@ -1,5 +1,6 @@
 import 'package:demo_flutter/commonwidgets/customElevetedButton.dart';
 import 'package:demo_flutter/commonwidgets/customPinput.dart';
+import 'package:demo_flutter/constants/app_spacer_constants.dart';
 import 'package:demo_flutter/constants/textStyles.dart';
 import 'package:demo_flutter/imageVairableFiles/ImageVariableFiles.dart';
 import 'package:demo_flutter/screens/signUp/signUp2.dart';
@@ -26,42 +27,41 @@ class OTP extends StatefulWidget {
 class _OTPState extends State<OTP> {
   @override
   Widget build(BuildContext context) {
+    double height=1.sh-MediaQuery.of(context).viewPadding.top;
+
     return SafeArea(
       child: Scaffold(
         body: Container(
           width: double.infinity,
           decoration: BoxDecoration(
-              gradient: LinearGradient(
-            // begin: Alignment.centerLeft,
-            colors: [
-              context.colorScheme.background,
-              context.colorScheme.onBackground
-            ],
-          )),
+            color: context.colorScheme.background,
+            image: DecorationImage(
+              image: Image.asset('assets/images/backgroundImage.png').image,
+              fit: BoxFit.cover,
+            ),
+          ),
           child: SingleChildScrollView(
             child: Column(
               children: [
-                Container(
-                 // height: context.heightWithoutSafeArea * 0.5,
-                height: 0.33.sh,
+                SizedBox(
+                  // height: context.heightWithoutSafeArea * 0.5,
+                  height: 0.33*height,
 
                   child: Image.asset(ImageVariables.otpImage),
                 ),
                 Container(
                   padding: padding16,
                   width: double.infinity,
-               //   height: context.heightWithoutSafeArea * 0.5,
-                  height: 0.67.sh,
+                  //   height: context.heightWithoutSafeArea * 0.5,
+                  height: 0.67*height,
 
                   decoration: BoxDecoration(
-                      color: context.colorScheme.primaryContainer,
+                      color:  context.colorScheme.primaryContainer.withOpacity(0.3),
                       borderRadius: const BorderRadius.only(
                           topLeft: Radius.circular(35),
                           topRight: Radius.circular(35))),
-                  child: context.height < 650
-                      ? SingleChildScrollView(child: BottomContainer())
-                      : BottomContainer(),
-                )
+                  child: BottomContainer(),
+                ),
               ],
             ),
           ),
@@ -79,6 +79,7 @@ class BottomContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
+      //mainAxisSize: MainAxisSize.max,
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -89,25 +90,20 @@ class BottomContainer extends StatelessWidget {
               S.of(context).enterOtp,
               style: headingTextStyle(context),
             ),
-            AppSize(
-              height: 10.h,
-            ),
+            AppSpacer.p10(),
             Text(
               S.of(context).weSentOtp,
               style: subBodyTextStyle(),
             ),
-            AppSize(
-              height: 20.h,
-            ),
+            AppSpacer.p20(),
+
             Text(
               S.of(context).enterOtp,
               style: bodyTextStyle(context),
             ),
-            AppSize(
-              height: 10.h,
-            ),
+            AppSpacer.p10(),
 
-             SizedBox(
+            SizedBox(
               width: double.infinity,
               child: CustomPinput(
                 length: 6,
@@ -115,28 +111,29 @@ class BottomContainer extends StatelessWidget {
                 boxWidth: 45.w,
               ),
             ),
-         //   AppSize(height: 15.h,),
+            AppSpacer.p20(),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                Text(
+                  '01:20',
+                  style: TextStyle(color: context.colorScheme.error),
+                ),
+                AppSpacer.p10(),
+                Text(
+                  S.of(context).resend,
+                  style: subBodyTextStyle(),
+                ),
+              ],
+            ),
+
+            //   AppSize(height: 15.h,),
           ],
         ),
-        // AppSize(
-        //   height: 10.h,
-        // ),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.end,
-          children: [
-            Text(
-              '01:20',
-              style: TextStyle(color: context.colorScheme.error),
-            ),
-            AppSize(
-              width: 10.w,
-            ),
-            Text(
-              S.of(context).resend,
-              style: subBodyTextStyle(),
-            ),
-          ],
-        ),
+
+
+
+
         Column(
           children: [
             CustomElivitedButton(
@@ -144,9 +141,7 @@ class BottomContainer extends StatelessWidget {
                 onPress: () {
                   Navigator.pushNamed(context, SignUp2.routeName);
                 }),
-            AppSize(
-              height: 10.h,
-            ),
+            AppSpacer.p10(),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -154,9 +149,7 @@ class BottomContainer extends StatelessWidget {
                   S.of(context).youNeverWorkWithUs,
                   style: subBodyTextStyle(),
                 ),
-                AppSize(
-                  width: 5,
-                ),
+                AppSpacer.p5(),
                 GestureDetector(
                     onTap: () {
                       Navigator.pushNamed(context, SignUp.routeName);

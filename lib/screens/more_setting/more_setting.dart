@@ -1,4 +1,6 @@
 import 'package:demo_flutter/commonwidgets/nameAppbar.dart';
+import 'package:demo_flutter/constants/app_padding.dart';
+import 'package:demo_flutter/constants/app_spacer_constants.dart';
 import 'package:demo_flutter/constants/textStyles.dart';
 import 'package:demo_flutter/screens/TDSSummary/TDSSummary.dart';
 import 'package:demo_flutter/screens/changePin/changePin.dart';
@@ -48,14 +50,18 @@ class MoreSettings extends StatelessWidget {
       child: Scaffold(
         appBar: NameAppbar(),
         body: Container(
-          padding: EdgeInsets.all(13),
+          padding:paddingH13,
           decoration: BoxDecoration(
-              gradient: LinearGradient(colors: [
-            context.colorScheme.background,
-            context.colorScheme.onBackground
-          ])),
+            color: context.colorScheme.background,
+            image:  DecorationImage(
+
+              image: Image.asset('assets/images/backgroundImage.png').image,
+              fit: BoxFit.cover,
+            ),),
           child: Column(
+
             children: [
+              AppSpacer.p10(),
               Expanded(
                 child: GridView.builder(
                     itemCount: settingItems.length,

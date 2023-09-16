@@ -18,7 +18,7 @@ class PointsContainer extends StatelessWidget {
     return Container(
       padding: padding8,
        width: 104.w,
-       height: 74.h,
+
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(15),
         color: color,

@@ -1,5 +1,6 @@
 import 'package:demo_flutter/commonwidgets/appsize.dart';
 import 'package:demo_flutter/commonwidgets/simpleAppbar.dart';
+import 'package:demo_flutter/constants/app_padding.dart';
 import 'package:demo_flutter/constants/textStyles.dart';
 import 'package:demo_flutter/screens/TDSSummary/widgets/pointsContainer.dart';
 import 'package:demo_flutter/screens/TDSSummary/widgets/tdsListContainer.dart';
@@ -43,15 +44,14 @@ class TDSSummary extends StatelessWidget {
         child: Scaffold(
       appBar: SimpleAppbar(name: S.of(context).tdsSummary),
       body: Container(
-        padding: EdgeInsets.all(13),
+        padding: padding13,
         decoration: BoxDecoration(
-          gradient: LinearGradient(
-            colors: [
-              context.colorScheme.background,
-              context.colorScheme.onBackground
-            ],
-          ),
-        ),
+          color: context.colorScheme.background,
+          image:  DecorationImage(
+
+            image: Image.asset('assets/images/backgroundImage.png').image,
+            fit: BoxFit.cover,
+          ),),
         child: Column(children: [
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -59,11 +59,6 @@ class TDSSummary extends StatelessWidget {
             PointsContainer(color: Color(0xff198754), upperText: '96', lowerText: S.of(context).totalEarned),
             PointsContainer(color: Color(0xffdc3545), upperText: '99', lowerText: S.of(context).deducted),
             PointsContainer(color: Color(0xff0d6efd), upperText: '56', lowerText: S.of(context).transferred),
-
-
-
-
-
           ],),
           AppSize(height: 20,),
           Expanded(

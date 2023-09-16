@@ -1,6 +1,8 @@
 import 'package:demo_flutter/commonwidgets/appsize.dart';
 import 'package:demo_flutter/constants/textStyles.dart';
+import 'package:demo_flutter/utils/app_utils/extensions/color_extension.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 
 
@@ -74,12 +76,12 @@ class FABBottomAppBarState extends State<FABBottomAppBar> {
   Widget _buildMiddleTabItem() {
     return Expanded(
       child: SizedBox(
-        height: widget.height,
+        height: widget.height.h,
         child: Column(
           mainAxisSize: MainAxisSize.min,
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            SizedBox(height: widget.iconSize),
+            SizedBox(height: widget.iconSize.sp),
             Text(
               widget.centerItemText ?? '',
               style: TextStyle(color: widget.color),
@@ -98,8 +100,9 @@ class FABBottomAppBarState extends State<FABBottomAppBar> {
     Color color = _selectedIndex == index ? widget.selectedColor : widget.color;
     return Expanded(
       child: SizedBox(
-        height:70,
+        height:70.h,
         child: Material(
+          //color: context.colorScheme.primaryContainer.withOpacity(0.3),
           type: MaterialType.transparency,
           child: InkWell(
             onTap: () => onPressed(index),
@@ -107,17 +110,17 @@ class FABBottomAppBarState extends State<FABBottomAppBar> {
               mainAxisSize: MainAxisSize.min,
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
-                AppSize(height: 7,),
-                Icon(item.iconData,color: color),
-                AppSize(height: 7,),
+                AppSize(height: 7.h,),
+                Icon(item.iconData,color: color,size: widget.iconSize.sp,),
+                AppSize(height: 7.h,),
 
                 Flexible(
                   child: Text(
                     item.text,
-                    style:TextStyle(color: color,fontSize: 12),
+                    style:TextStyle(color: color,fontSize: 12.sp),
                   ),
                 ),
-                AppSize(height: 3,),
+                AppSize(height: 3.h,),
               ],
             ),
           ),

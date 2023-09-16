@@ -4,6 +4,7 @@ import 'package:demo_flutter/constants/app_spacer_constants.dart';
 import 'package:demo_flutter/constants/textStyles.dart';
 import 'package:demo_flutter/imageVairableFiles/ImageVariableFiles.dart';
 import 'package:demo_flutter/screens/OTP/otp.dart';
+import 'package:demo_flutter/screens/congratulations/congratulation.dart';
 import 'package:demo_flutter/screens/panDetails/panDetails.dart';
 import 'package:demo_flutter/screens/signIn/signIn.dart';
 import 'package:demo_flutter/utils/app_utils/extensions/color_extension.dart';
@@ -26,7 +27,7 @@ class EditProfile extends StatefulWidget {
 }
 
 class _EditProfileState extends State<EditProfile> {
-  bool isYesSelected = false;
+  bool isYesSelected = true;
 
   bool isNoSelected = false;
 
@@ -48,41 +49,36 @@ class _EditProfileState extends State<EditProfile> {
       child: Scaffold(
         body: Container(
           decoration: BoxDecoration(
-              gradient: LinearGradient(
-            // begin: Alignment.centerLeft,
-            colors: [
-              context.colorScheme.background,
-              context.colorScheme.onBackground
-            ],
-          )),
+           color: context.colorScheme.background,
+            image:  DecorationImage(
+
+              image: Image.asset('assets/images/backgroundImage.png').image,
+              fit: BoxFit.cover,
+            ),),
           child: CustomScrollView(
             slivers: [
               //todo : use app bar from other file
               SliverAppBar(
+                automaticallyImplyLeading: false,
                   //snap: true,
                   floating: false,
                   pinned: false,
                   elevation: 0,
+                  backgroundColor: Colors.transparent,
 
-                  //  width: double.infinity,
                   expandedHeight: context.heightWithoutSafeArea * 0.33,
                   flexibleSpace: Container(
-                    decoration: BoxDecoration(
-                        gradient: LinearGradient(
-                      // begin: Alignment.centerLeft,
-                      colors: [ context.colorScheme.background,
-                        context.colorScheme.onBackground],
-                    )),
+                    color: Colors.transparent,
                     child: Image.asset(ImageVariables.signUp2Image),
                   )),
               SliverFillRemaining(
                 hasScrollBody: true,
                 child: Container(
-                  padding: const EdgeInsets.all(20),
+                  padding:  EdgeInsets.only(right: 15.w,left: 15.w,top: 15.h),
                   width: double.infinity,
                   height: context.height * 0.67,
-                  decoration: const BoxDecoration(
-                      color: Color(0xff35192f),
+                  decoration:  BoxDecoration(
+                      color: context.colorScheme.primaryContainer.withOpacity(0.3),
                       borderRadius: BorderRadius.only(
                           topLeft: Radius.circular(35),
                           topRight: Radius.circular(35))),
@@ -177,6 +173,7 @@ class _EditProfileState extends State<EditProfile> {
                                   ),
                                   AppSpacer.p10(),
                                   CustomTextField(
+                                    keyBoardtype: TextInputType.number,
                                     editedText: '(629)555-0129',
                                   ),
                                   AppSpacer.p15(),
@@ -204,6 +201,7 @@ class _EditProfileState extends State<EditProfile> {
                                   ),
                                   AppSpacer.p10(),
                                   CustomTextField(
+                                    keyBoardtype: TextInputType.number,
                                     editedText: '740',
                                   ),
                                   AppSpacer.p15(),
@@ -282,12 +280,12 @@ class _EditProfileState extends State<EditProfile> {
                               Column(
                                 children: [
                                   CustomElivitedButton(
-                                      text: S.of(context).getStarted,
+                                      text: S.of(context).editProfile,
                                       onPress: () {
                                         Navigator.push(
                                             context,
                                             MaterialPageRoute(
-                                              builder: (context) => PanUpdate(),
+                                              builder: (context) =>isYesSelected? PanUpdate():Congratulation(),
                                             ));
                                       }),
                                   AppSpacer.p10(),

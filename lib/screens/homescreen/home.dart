@@ -7,6 +7,7 @@ import 'package:demo_flutter/screens/notifications/notifications.dart';
 import 'package:demo_flutter/screens/qrView/qrView.dart';
 import 'package:demo_flutter/utils/app_utils/extensions/color_extension.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../generated/l10n.dart';
 import '../more_setting/more_setting.dart';
@@ -38,7 +39,7 @@ class _HomeState extends State<Home> {
         bottomNavigationBar: FABBottomAppBar(
           centerItemText: '',
           color: Colors.grey,
-          backgroundColor: context.colorScheme.onPrimaryContainer,
+          backgroundColor: context.colorScheme.primaryContainer.withOpacity(0.3),
           selectedColor: Colors.white,
           notchedShape: CircularNotchedRectangle(),
           onTabSelected: ((index) {
@@ -67,13 +68,16 @@ class _HomeState extends State<Home> {
         // body: _list[_page],
         floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
         floatingActionButton: FloatingActionButton(
+
+
+
           backgroundColor: cIndex == 0 ? Color(0xffff6671) : Colors.white,
           onPressed: () {
             Navigator.pushNamed(context, QRScanner.routeName);
           },
           child: Image.asset(cIndex == 0
               ? 'lib/icons/scanIcon.png'
-              : 'lib/icons/scanBlackIcon.png'),
+              : 'lib/icons/scanBlackIcon.png',),
           elevation: 0,
         ),
       ),

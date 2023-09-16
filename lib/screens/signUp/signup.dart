@@ -1,6 +1,7 @@
 import 'package:demo_flutter/commonwidgets/appsize.dart';
 import 'package:demo_flutter/commonwidgets/cusotmDropdown.dart';
 import 'package:demo_flutter/commonwidgets/customElevetedButton.dart';
+import 'package:demo_flutter/constants/app_spacer_constants.dart';
 import 'package:demo_flutter/constants/textStyles.dart';
 import 'package:demo_flutter/imageVairableFiles/ImageVariableFiles.dart';
 import 'package:demo_flutter/screens/OTP/otp.dart';
@@ -27,14 +28,12 @@ class SignUp extends StatelessWidget {
         body: Container(
           width: double.infinity,
           decoration: BoxDecoration(
-            gradient: LinearGradient(
-              // begin: Alignment.centerLeft,
-              colors: [
-                context.colorScheme.background,
-                context.colorScheme.onBackground
-              ],
-            ),
-          ),
+            color: context.colorScheme.background,
+            image:  DecorationImage(
+
+              image: Image.asset('assets/images/backgroundImage.png').image,
+              fit: BoxFit.cover,
+            ),),
           child: SingleChildScrollView(
             child: Column(
               children: [
@@ -47,7 +46,7 @@ class SignUp extends StatelessWidget {
                   width: double.infinity,
                   height: context.heightWithoutSafeArea * 0.67,
                   decoration: BoxDecoration(
-                      color: context.colorScheme.primaryContainer,
+                      color: context.colorScheme.primaryContainer.withOpacity(0.3),
                       borderRadius: const BorderRadius.only(
                           topLeft: Radius.circular(35),
                           topRight: Radius.circular(35))),
@@ -84,45 +83,33 @@ class BottomContainer extends StatelessWidget {
               S.of(context).createAccount,
               style: headingTextStyle(context),
             ),
-            AppSize(
-              height: 10,
-            ),
+           AppSpacer.p10(),
             Text(
               S.of(context).fillAllDetailsToCreateAccount,
               style: subBodyTextStyle(),
             ),
-            AppSize(
-              height: 20,
-            ),
+            AppSpacer.p10(),
             Text(
               S.of(context).selectUserType,
               style: bodyTextStyle(context),
             ),
-            AppSize(
-              height: 10,
-            ),
+            AppSpacer.p10(),
             CustomDropDownButton(
               list: listUserType,
               onPressed: (value) {},
               color: context.colorScheme.onPrimaryContainer,
               hint: 'Select Type',
             ),
-            AppSize(
-              height: 15,
-            ),
+            AppSpacer.p10(),
             Text(
               S.of(context).mobileNumber,
               style: bodyTextStyle(context),
             ),
-            AppSize(
-              height: 10,
-            ),
+            AppSpacer.p10(),
             CustomTextField(
               labelText: S.of(context).enterNumber,
             ),
-            AppSize(
-              height: 10,
-            ),
+            AppSpacer.p10(),
           ],
         ),
         Column(
@@ -136,9 +123,7 @@ class BottomContainer extends StatelessWidget {
                         builder: (context) => OTP(),
                       ));
                 }),
-            AppSize(
-              height: 10,
-            ),
+            AppSpacer.p10(),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -146,9 +131,7 @@ class BottomContainer extends StatelessWidget {
                   S.of(context).alreadyMemberWithUs,
                   style: subBodyTextStyle(),
                 ),
-                AppSize(
-                  width: 5,
-                ),
+                AppSpacer.p5(),
                 GestureDetector(
                   onTap: () {
                     Navigator.push(

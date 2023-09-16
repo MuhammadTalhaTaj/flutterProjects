@@ -7,9 +7,9 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../generated/l10n.dart';
 
-class somethingWentWrongIcons extends StatelessWidget {
+class ValidatorPopup extends StatelessWidget {
   static const routeName='/somethingWentWrong';
-  const somethingWentWrongIcons({Key? key}) : super(key: key);
+  const ValidatorPopup({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -24,19 +24,18 @@ class somethingWentWrongIcons extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-          Image.asset('lib/icons/cancelIcon.png'),
-          Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-            Text(S.of(context).someThingWentWrong,style: bodyTextStyle(context),),
-            AppSize(height: 2.h,),
-            Text(S.of(context).loremIpsum,style: subBodyTextStyle().copyWith(fontSize: 12.sp),)
-          ],),
+            Image.asset('lib/icons/cancelIcon.png'),
+            Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text('Kindly Enter Correct Input',style: bodyTextStyle(context),),
+
+              ],),
             Align(
-              alignment: Alignment.topRight,
+                alignment: Alignment.topRight,
                 child: GestureDetector(onTap: (){Navigator.pop(context);}, child: Image.asset('lib/icons/crossIcon.png')))
-        ],),
+          ],),
       ),
     );
   }

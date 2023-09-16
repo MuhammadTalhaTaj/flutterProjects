@@ -32,26 +32,24 @@ class HomeScreen extends StatelessWidget {
         body: Container(
           height: double.infinity,
           decoration: BoxDecoration(
-              gradient: LinearGradient(colors: [
-            context.colorScheme.background,
-            context.colorScheme.onBackground
-          ])),
+            color: context.colorScheme.background,
+            image:  DecorationImage(
+
+              image: Image.asset('assets/images/backgroundImage.png').image,
+              fit: BoxFit.cover,
+            ),),
           //   padding: EdgeInsets.only(bottom: 20.w),
           child: SingleChildScrollView(
             //vvvv
             child: Column(
               children: [
-                AppSize(
-                  height: 20.h,
-                ),
+               AppSpacer.p20(),
                 AppSize(
                   height: context.isPatriot ? 160.h : 200.h,
                   width: 1.sw,
                   child: const PicHorizontalContainer(),
                 ),
-                AppSize(
-                  height: 15.h,
-                ),
+                AppSpacer.p15(),
                 Padding(
                   padding: padding13,
                   child: Row(
@@ -127,63 +125,59 @@ class HomeScreen extends StatelessWidget {
 
                 Padding(
                   padding: paddingH13,
-                  child: Flexible(
-                    child: Row(
-                      children: [
-                        Flexible(
-                          child: GestureDetector(
-                            onTap: () {
-                              Navigator.pushNamed(
-                                  context, ManualEntry.routeName);
-                            },
-                            child: BottomComponent(
-                              iconPath: 'lib/icons/elementplus.png',
-                              text: S.of(context).entry,
-                            ),
+                  child: Row(
+                    children: [
+                      Flexible(
+                        child: GestureDetector(
+                          onTap: () {
+                            Navigator.pushNamed(
+                                context, ManualEntry.routeName);
+                          },
+                          child: BottomComponent(
+                            iconPath: 'lib/icons/elementplus.png',
+                            text: S.of(context).entry,
                           ),
                         ),
-                        Flexible(
-                          child: GestureDetector(
-                            onTap: () {
-                              Navigator.pushNamed(
-                                  context, PaymentMethod.routeName);
-                            },
-                            child: BottomComponent(
-                              iconPath: 'lib/icons/cardedit.png',
-                              text: S.of(context).methods,
-                            ),
+                      ),
+                      Flexible(
+                        child: GestureDetector(
+                          onTap: () {
+                            Navigator.pushNamed(
+                                context, PaymentMethod.routeName);
+                          },
+                          child: BottomComponent(
+                            iconPath: 'lib/icons/cardedit.png',
+                            text: S.of(context).methods,
                           ),
                         ),
-                        Flexible(
-                          child: GestureDetector(
-                            onTap: () {
-                              Navigator.pushNamed(context, ChangePin.routeName);
-                            },
-                            child: BottomComponent(
-                              iconPath: 'lib/icons/lock.png',
-                              text: S.of(context).mpin,
-                            ),
+                      ),
+                      Flexible(
+                        child: GestureDetector(
+                          onTap: () {
+                            Navigator.pushNamed(context, ChangePin.routeName);
+                          },
+                          child: BottomComponent(
+                            iconPath: 'lib/icons/lock.png',
+                            text: S.of(context).mpin,
                           ),
                         ),
-                        Flexible(
-                          child: GestureDetector(
-                            onTap: () {
-                              Navigator.pushNamed(
-                                  context, TeamSupport.routeName);
-                            },
-                            child: BottomComponent(
-                              iconPath: 'lib/icons/securityuser.png',
-                              text: S.of(context).help,
-                            ),
+                      ),
+                      Flexible(
+                        child: GestureDetector(
+                          onTap: () {
+                            Navigator.pushNamed(
+                                context, TeamSupport.routeName);
+                          },
+                          child: BottomComponent(
+                            iconPath: 'lib/icons/securityuser.png',
+                            text: S.of(context).help,
                           ),
                         ),
-                      ],
-                    ),
+                      ),
+                    ],
                   ),
                 ),
-                ColumnDivider(
-                  space: 20.h,
-                ),
+                AppSpacer.p20(),
               ],
             ),
           ),

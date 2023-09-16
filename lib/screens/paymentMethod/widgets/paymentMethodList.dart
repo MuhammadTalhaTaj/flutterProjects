@@ -14,10 +14,11 @@ class PaymentMethodListContainer extends StatelessWidget {
   final String date;
   final String code;
   final String rightNumber;
+  final VoidCallback onPress;
 
   const PaymentMethodListContainer({
     super.key,
-    required this.imagePath, required this.name, required this.date, required this.code, required this.rightNumber,
+    required this.imagePath, required this.name, required this.date, required this.code, required this.rightNumber, required this.onPress,
   });
 
 
@@ -27,7 +28,7 @@ class PaymentMethodListContainer extends StatelessWidget {
     return Container(
       margin: EdgeInsets.symmetric(vertical: 10),
       padding: padding13,
-      height: 110.h,
+
       width: double.infinity,
       decoration: BoxDecoration(
           border: Border.all(
@@ -76,7 +77,9 @@ class PaymentMethodListContainer extends StatelessWidget {
               )
             ],
           ),
-          Image.asset('lib/icons/deleteIcon2.png'),
+          GestureDetector(
+            onTap: onPress,
+              child: Image.asset('lib/icons/deleteIcon2.png')),
 
         ],
       ),

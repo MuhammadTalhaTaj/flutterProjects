@@ -11,33 +11,38 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../constants/app_spacer_constants.dart';
 import '../../generated/l10n.dart';
 
-class Notifications extends StatelessWidget {
+class Notifications extends StatefulWidget {
   static const routeName='/notifications';
   const Notifications({Key? key}) : super(key: key);
 
+  @override
+  State<Notifications> createState() => _NotificationsState();
+}
+
+class _NotificationsState extends State<Notifications> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: NameAppbar(),
       body: Container(
         decoration: BoxDecoration(
-            gradient: LinearGradient(
-          begin: Alignment.centerLeft,
-          colors: [
+          color: context.colorScheme.background,
+          image:  DecorationImage(
 
-            context.colorScheme.background,
-            context.colorScheme.onBackground
-          ],
-        )),
+            image: Image.asset('assets/images/backgroundImage.png').image,
+            fit: BoxFit.cover,
+          ),),
         height: double.infinity,
         width: double.infinity,
         padding: EdgeInsets.only(right: 13, left: 13, bottom: 13),
         child: Column(
+
           children: [
+            AppSpacer.p10(),
             Container(
               color: context.colorScheme.primaryContainer,
               padding: padding8,
-            //  height: 40.h,
+             //height: 40.h,
               //width: double.infinity,
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -50,7 +55,12 @@ class Notifications extends StatelessWidget {
                     height: 25.h,
                     width: 63.w,
                     child: CustomElivitedButton(
-                      onPress: () {},
+                      onPress: () {
+                        setState(() {
+
+
+                        });
+                      },
                       text: S.of(context).clear,
                       fontSize: 12.sp,
                       backgroundColor: context.colorScheme.onPrimaryContainer,
@@ -97,8 +107,7 @@ class Notifications extends StatelessWidget {
                           Row(
                             children: [
                               Container(
-                                width: 69.w,
-                                height: 51.h,
+
                                 color: context.colorScheme.primaryContainer,
                                 child: Image.asset(ImageVariables.notification1Image,fit: BoxFit.fill,),
                               ),
@@ -141,8 +150,7 @@ class Notifications extends StatelessWidget {
                               Row(
                                 children: [
                                   Container(
-                                    width: 69.w,
-                                    height: 51.h,
+
                                     color: context.colorScheme.primaryContainer,
                                     child: Image.asset(ImageVariables.notification1Image,fit: BoxFit.fill,),
                                   ),

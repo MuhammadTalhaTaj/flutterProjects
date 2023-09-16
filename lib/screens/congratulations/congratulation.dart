@@ -26,15 +26,12 @@ class Congratulation extends StatelessWidget {
       backgroundColor: Theme.of(context).colorScheme.background,
       body: Container(
         decoration: BoxDecoration(
-            gradient: LinearGradient(
-          begin: Alignment.centerLeft,
+          color: context.colorScheme.background,
+          image:  DecorationImage(
 
-          colors: [
-            context.colorScheme.background,
-            context.colorScheme.onBackground
-          ],
-
-        ),),
+            image: Image.asset('assets/images/backgroundImage.png').image,
+            fit: BoxFit.cover,
+          ),),
         padding: padding16,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,

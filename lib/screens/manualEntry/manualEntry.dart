@@ -24,46 +24,52 @@ class ManualEntry extends StatelessWidget {
       appBar: SimpleAppbar(name: S.of(context).manualEntry),
       body: Container(
         width: double.infinity,
-        decoration: BoxDecoration(
-            gradient: LinearGradient(
-          begin: Alignment.centerLeft,
-          colors: [
-            context.colorScheme.background,
-            context.colorScheme.onBackground
-          ],
-        )),
+ decoration: BoxDecoration(
+        color: context.colorScheme.background,
+        image:  DecorationImage(
+
+          image: Image.asset('assets/images/backgroundImage.png').image,
+          fit: BoxFit.cover,
+        ),),
         padding: padding15,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Column(
-              children: [
-                SizedBox(height: 200.h,child: Image.asset(ImageVariables.manualEntryImage,fit: BoxFit.fill,)),
-                Align(
-                  alignment: Alignment.centerLeft,
-                  child: Text(
-                    S.of(context).enter12,
-                    style: bodyTextStyle(context),
-                  ),
+            Expanded(
+              child: SingleChildScrollView(
+                child: Column(
+                  children: [
+                    SizedBox(height: 200.h,child: Image.asset(ImageVariables.manualEntryImage,fit: BoxFit.fill,)),
+                    Align(
+                      alignment: Alignment.centerLeft,
+                      child: Text(
+                        S.of(context).enter12,
+                        style: bodyTextStyle(context),
+                      ),
+                    ),
+                   AppSpacer.p5(),
+                    AppSize(
+                      height: 58.h,
+                      width: double.infinity,
+                      child: CustomTextField(
+                        keyBoardtype: TextInputType.number,
+                        labelText: '#### #### ####',
+                      ),
+                    ),
+                   AppSpacer.p20(),
+                    AppSize(
+                        height: 94.h,
+                        width: double.infinity,
+                        child: Image.asset(
+                          ImageVariables.couponImage,
+                          fit: BoxFit.fill,
+                        ))
+                  ],
                 ),
-               AppSpacer.p5(),
-                AppSize(
-                  height: 58.h,
-                  width: double.infinity,
-                  child: CustomTextField(
-                    labelText: '#### #### ####',
-                  ),
-                ),
-               AppSpacer.p20(),
-                AppSize(
-                    height: 94.h,
-                    width: double.infinity,
-                    child: Image.asset(
-                      ImageVariables.couponImage,
-                      fit: BoxFit.fill,
-                    ))
-              ],
+              ),
             ),
+
+
             CustomElivitedButton(
               onPress: () {},
               text: S.of(context).claimCoupon,

@@ -17,10 +17,15 @@ import '../../generated/l10n.dart';
 
 
 
-class PaymentMethod extends StatelessWidget {
+class PaymentMethod extends StatefulWidget {
   static const routeName='/paymentMethod';
   PaymentMethod({Key? key}) : super(key: key);
 
+  @override
+  State<PaymentMethod> createState() => _PaymentMethodState();
+}
+
+class _PaymentMethodState extends State<PaymentMethod> {
   List items = [
     {
       'name': 'Bank Account',
@@ -42,19 +47,18 @@ class PaymentMethod extends StatelessWidget {
         body: Container(
           padding: padding15,
           width: double.infinity,
-          decoration: BoxDecoration(
-              gradient: LinearGradient(
-            // begin: Alignment.centerLeft,
-            colors: [
-              context.colorScheme.background,
-              context.colorScheme.onBackground
-            ],
-          )),
+            decoration: BoxDecoration(
+              color: context.colorScheme.background,
+              image:  DecorationImage(
+
+                image: Image.asset('assets/images/backgroundImage.png').image,
+                fit: BoxFit.cover,
+              ),),
           child: Column(
             children: [
               AppSize(
                 // As we have maximum two methods
-                height: items.length==1?125.h:245.h,
+                height:items.isNotEmpty?items.length==1?125.h:245.h:0.h,
                 width: double.infinity,
                 child: ListView.builder(
                   itemBuilder: (context, index) {
@@ -64,6 +68,12 @@ class PaymentMethod extends StatelessWidget {
                         date: items[index]['date'],
                         code: items[index]['code'],
                       rightNumber: items[index]['rightNumber'],
+                      onPress: (){
+                          setState(() {
+                            items.removeAt(index);
+                          });
+
+                      },
                     );
                   },
                   itemCount: items.length,
@@ -74,8 +84,8 @@ class PaymentMethod extends StatelessWidget {
 
             ],
           )
-          
-          
+
+
         ),
       ),
     );

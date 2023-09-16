@@ -9,6 +9,9 @@ class CustomTextField extends StatefulWidget {
   String labelText;
   bool textAlignCenter;
   double editedTextSize;
+  var keyBoardtype;
+  ValueChanged<String>? callback;
+
 
   CustomTextField({
     Key? key,
@@ -16,6 +19,8 @@ class CustomTextField extends StatefulWidget {
     this.editedText = "",
     this.textAlignCenter = false,
     this.editedTextSize = 20,
+    this.keyBoardtype=TextInputType.text,
+    this.callback,
   }) : super(key: key);
 
   @override
@@ -45,6 +50,7 @@ class _CustomTextFieldState extends State<CustomTextField> {
         color: context.colorScheme.onPrimaryContainer,
         width: double.infinity,
         child: TextField(
+          keyboardType: widget.keyBoardtype,
           controller: _controller,
           style: TextStyle(
             fontSize: widget.editedTextSize.sp,
@@ -63,6 +69,8 @@ class _CustomTextFieldState extends State<CustomTextField> {
             ),
           ),
           onChanged: (newValue) {
+            widget.callback!(newValue);
+
             setState(() {
               widget.editedText = newValue;
             });

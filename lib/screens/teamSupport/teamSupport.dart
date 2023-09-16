@@ -31,14 +31,12 @@ class TeamSupport extends StatelessWidget {
         body: Container(
           width: double.infinity,
           decoration: BoxDecoration(
-            gradient: LinearGradient(
-              // begin: Alignment.centerLeft,
-              colors: [
-                context.colorScheme.background,
-                context.colorScheme.onBackground
-              ],
-            ),
-          ),
+            color: context.colorScheme.background,
+            image:  DecorationImage(
+
+              image: Image.asset('assets/images/backgroundImage.png').image,
+              fit: BoxFit.cover,
+            ),),
           child: Column(
             children: [
               SizedBox(
@@ -52,7 +50,7 @@ class TeamSupport extends StatelessWidget {
                     width: double.infinity,
                   //  height: 0.7.sh,
                     decoration: BoxDecoration(
-                        color: context.colorScheme.primaryContainer,
+                        color: context.colorScheme.primaryContainer.withOpacity(0.3),
                         borderRadius: const BorderRadius.only(
                             topLeft: Radius.circular(35),
                             topRight: Radius.circular(35))),

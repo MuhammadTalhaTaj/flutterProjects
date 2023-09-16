@@ -29,14 +29,18 @@ class SignUp2 extends StatelessWidget {
     return SafeArea(
       child: Scaffold(
         body: Container(
-          decoration: BoxDecoration(
-              gradient: LinearGradient(
-            // begin: Alignment.centerLeft,
-            colors: [context.colorScheme.background, context.colorScheme.onBackground],
-          )),
+            decoration: BoxDecoration(
+              color: context.colorScheme.background,
+              image:  DecorationImage(
+
+                image: Image.asset('assets/images/backgroundImage.png').image,
+                fit: BoxFit.cover,
+              ),),
           child: CustomScrollView(
             slivers: [
               SliverAppBar(
+                automaticallyImplyLeading: false,
+                backgroundColor: Colors.transparent,
                 //snap: true,
                   floating: false,
                   pinned: false,
@@ -44,11 +48,7 @@ class SignUp2 extends StatelessWidget {
                   //  width: double.infinity,
                   expandedHeight: 0.33.sh,
                   flexibleSpace: Container(
-                    decoration: BoxDecoration(
-                        gradient: LinearGradient(
-                          // begin: Alignment.centerLeft,
-                          colors: [Color(0xFF483548), Color(0xff1e051a)],
-                        )),
+
                     child: Image.asset(ImageVariables.signUp2Image),
                   )),
               SliverFillRemaining(
@@ -58,7 +58,7 @@ class SignUp2 extends StatelessWidget {
                   width: double.infinity,
                   height: 0.67.sh,
                   decoration: BoxDecoration(
-                      color: Color(0xff35192f),
+                      color: context.colorScheme.primaryContainer.withOpacity(0.3),
                       borderRadius: BorderRadius.only(
                           topLeft: Radius.circular(35),
                           topRight: Radius.circular(35))),
@@ -106,12 +106,14 @@ class SignUp2 extends StatelessWidget {
                                     height: 10.h,
                                   ),
                                   CustomTextField(
-                                    labelText: S.of(context).enterNumber,
+
+                                    labelText: S.of(context).enterName,
                                   ),
                                   AppSize(
                                     height: 15.h,
                                   ),
                                   Text(
+
                                     S.of(context).mobileNumber,
                                     style: bodyTextStyle(context),
                                   ),
@@ -119,6 +121,7 @@ class SignUp2 extends StatelessWidget {
                                     height: 10.h,
                                   ),
                                   CustomTextField(
+                                    keyBoardtype: TextInputType.number,
                                     labelText: S.of(context).enterNumber,
                                   ),
                                   AppSize(
@@ -158,6 +161,7 @@ class SignUp2 extends StatelessWidget {
                                     height: 10.h,
                                   ),
                                   CustomTextField(
+                                    keyBoardtype: TextInputType.number,
                                     labelText: S.of(context).enterCode,
                                   ),
                                   AppSize(

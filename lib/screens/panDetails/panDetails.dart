@@ -23,31 +23,32 @@ class PanUpdate extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double height=1.sh-MediaQuery.of(context).viewPadding.top;
+
     return SafeArea(
       child: Scaffold(
         body: Container(
           width: double.infinity,
-          decoration: BoxDecoration(
-              gradient: LinearGradient(
-            // begin: Alignment.centerLeft,
-            colors: [
-              context.colorScheme.background,
-              context.colorScheme.onBackground
-            ],
-          )),
+         decoration: BoxDecoration(
+          color: context.colorScheme.background,
+          image:  DecorationImage(
+
+            image: Image.asset('assets/images/backgroundImage.png').image,
+            fit: BoxFit.cover,
+          ),),
           child: SingleChildScrollView(
             child: Column(
               children: [
                 Container(
-                  height: 0.33.sh,
+                  height: 0.33*height,
                   child: Image.asset(ImageVariables.panDetailsImage),
                 ),
                 Container(
                   padding: padding16,
                   width: double.infinity,
-                  height: 0.67.sh,
+                  height: 0.67*height,
                   decoration: BoxDecoration(
-                      color: context.colorScheme.primaryContainer,
+                      color: context.colorScheme.primaryContainer.withOpacity(0.4),
                       borderRadius: const BorderRadius.only(
                           topLeft: Radius.circular(35),
                           topRight: Radius.circular(35))),
@@ -107,6 +108,7 @@ class BottomContainer extends StatelessWidget {
               height: 10.h,
             ),
             CustomTextField(
+                    keyBoardtype: TextInputType.number,
               labelText: S.of(context).enterNumber,
             ),
             AppSize(

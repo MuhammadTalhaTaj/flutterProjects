@@ -30,13 +30,12 @@ class Language extends StatelessWidget {
         backgroundColor: context.colorScheme.background,
         body: Container(
           decoration: BoxDecoration(
-              gradient: LinearGradient(
-            begin: Alignment.centerLeft,
-            colors: [
-              context.colorScheme.background,
-              context.colorScheme.onBackground
-            ],
-          )),
+            color: context.colorScheme.background,
+            image:  DecorationImage(
+
+              image: Image.asset('assets/images/backgroundImage.png').image,
+              fit: BoxFit.cover,
+            ),),
 
           padding: padding16,
            //padding:EdgeInsets.all(16.w),

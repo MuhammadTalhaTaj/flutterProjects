@@ -38,15 +38,15 @@ import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 void main() =>
+    // runApp(
+    // const MyApp());
     runApp(
-    const MyApp());
-  //   runApp(
-  // DevicePreview(
-  //   enabled: !kReleaseMode,
-  //   builder: (context) =>
-  //       MyApp(), // Wrap your app
-  // ),
-//);
+  DevicePreview(
+    enabled: !kReleaseMode,
+    builder: (context) =>
+        MyApp(), // Wrap your app
+  ),
+);
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);

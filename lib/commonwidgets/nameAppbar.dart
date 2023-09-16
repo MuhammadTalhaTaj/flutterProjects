@@ -69,10 +69,14 @@ class NameAppbar extends StatelessWidget implements PreferredSizeWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                      SizedBox(height: 23.h,width: 23.w, child: Image.asset('lib/icons/star.png',fit: BoxFit.fill,)),
-                       Text(
-                        '1562',
-                        style: bodyTextStyle(context).copyWith(fontSize: 20.sp),
-                      )
+                       FittedBox(
+                         fit: BoxFit.cover,
+                         child: Text(
+                          '8877',
+                          style: TextStyle(color: Colors.white),
+                          //style: bodyTextStyle(context).copyWith(fontSize: 20),
+                      ),
+                       )
                     ],
                   ),
                 ),

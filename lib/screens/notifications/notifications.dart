@@ -1,3 +1,5 @@
+
+
 import 'package:demo_flutter/commonwidgets/appsize.dart';
 import 'package:demo_flutter/commonwidgets/customElevetedButton.dart';
 import 'package:demo_flutter/commonwidgets/nameAppbar.dart';
@@ -23,6 +25,7 @@ class _NotificationsState extends State<Notifications> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      extendBodyBehindAppBar: true,
       appBar: NameAppbar(),
       body: Container(
         decoration: BoxDecoration(
@@ -38,7 +41,7 @@ class _NotificationsState extends State<Notifications> {
         child: Column(
 
           children: [
-            AppSpacer.p10(),
+            SizedBox(height: 90.h,),
             Container(
               color: context.colorScheme.primaryContainer,
               padding: padding8,
@@ -73,119 +76,121 @@ class _NotificationsState extends State<Notifications> {
             AppSpacer.p20(),
 
             Expanded(
-              child: ListView.builder(
-                itemBuilder: (context, index) {
-                  return Container(
-                  //  height: 225,
-                    decoration: BoxDecoration(
-                      border: Border.all(color: Color(0xff3e2530),width: 1.5),
-                    ),
+              child: MediaQuery.removePadding(context: context,
+                child: ListView.builder(
+                  itemBuilder: (context, index) {
+                    return Container(
+                    //  height: 225,
+                      decoration: BoxDecoration(
+                        border: Border.all(color: Color(0xff3e2530),width: 1.5),
+                      ),
 
-                    margin: EdgeInsets.symmetric(vertical: 10),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Container(
-                          width: double.infinity,
-                          color:context.colorScheme.primaryContainer,
-                          padding: padding10,
-                        //  height: 50,
-                          child:Text('15 june 2022',style: bodyTextStyle(context).copyWith(fontSize: 20.sp),),
-
-                        ),
-                    Container(
-
-                     // height: 80,
-                      width: double.infinity,
-                      padding: padding10,
-
-
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      margin: EdgeInsets.symmetric(vertical: 10),
+                      child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Row(
-                            children: [
-                              Container(
+                          Container(
+                            width: double.infinity,
+                            color:context.colorScheme.primaryContainer,
+                            padding: padding10,
+                          //  height: 50,
+                            child:Text('15 june 2022',style: bodyTextStyle(context).copyWith(fontSize: 20.sp),),
 
-                                color: context.colorScheme.primaryContainer,
-                                child: Image.asset(ImageVariables.notification1Image,fit: BoxFit.fill,),
-                              ),
-
-                              AppSpacer.p10(),
-
-                              Column(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Text(
-                                    'Know your mechanic',
-                                    style: bodyTextStyle(context),
-                                  ),
-                                 AppSpacer.p4(),
-                                  Text(
-                                    '25 April, 2023',
-                                    style: subBodyTextStyle(),
-                                  ),
-
-                                ],
-                              )
-                            ],
                           ),
+                      Container(
+
+                       // height: 80,
+                        width: double.infinity,
+                        padding: padding10,
+
+
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Row(
+                              children: [
+                                Container(
+
+                                  color: context.colorScheme.primaryContainer,
+                                  child: Image.asset(ImageVariables.notification1Image,fit: BoxFit.fill,),
+                                ),
+
+                                AppSpacer.p10(),
+
+                                Column(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text(
+                                      'Know your mechanic',
+                                      style: bodyTextStyle(context),
+                                    ),
+                                   AppSpacer.p4(),
+                                    Text(
+                                      '25 April, 2023',
+                                      style: subBodyTextStyle(),
+                                    ),
+
+                                  ],
+                                )
+                              ],
+                            ),
+                          ],
+                        ),
+                      ),
+                           Divider(indent: 15, color: context.colorScheme.primaryContainer,height: 2,thickness: 1.5,endIndent: 15,),
+                          Container(
+
+                          //  height: 80,
+                            width: double.infinity,
+                            padding: padding10,
+
+
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Row(
+                                  children: [
+                                    Container(
+
+                                      color: context.colorScheme.primaryContainer,
+                                      child: Image.asset(ImageVariables.notification1Image,fit: BoxFit.fill,),
+                                    ),
+
+                                    AppSpacer.p10(),
+
+                                    Column(
+                                      mainAxisAlignment: MainAxisAlignment.center,
+                                      crossAxisAlignment: CrossAxisAlignment.start,
+                                      children: [
+                                        Text(
+                                          'Know your mechanic',
+                                          style: bodyTextStyle(context),
+                                        ),
+                                        AppSpacer.p5(),
+
+                                        Text(
+                                          '25 April, 2023',
+                                          style: subBodyTextStyle(),
+                                        ),
+
+                                      ],
+                                    )
+                                  ],
+                                ),
+                              ],
+                            ),
+                          ),
+
+
                         ],
                       ),
-                    ),
-                         Divider(indent: 15, color: context.colorScheme.primaryContainer,height: 2,thickness: 1.5,endIndent: 15,),
-                        Container(
-
-                        //  height: 80,
-                          width: double.infinity,
-                          padding: padding10,
-
-
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Row(
-                                children: [
-                                  Container(
-
-                                    color: context.colorScheme.primaryContainer,
-                                    child: Image.asset(ImageVariables.notification1Image,fit: BoxFit.fill,),
-                                  ),
-
-                                  AppSpacer.p10(),
-
-                                  Column(
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    crossAxisAlignment: CrossAxisAlignment.start,
-                                    children: [
-                                      Text(
-                                        'Know your mechanic',
-                                        style: bodyTextStyle(context),
-                                      ),
-                                      AppSpacer.p5(),
-
-                                      Text(
-                                        '25 April, 2023',
-                                        style: subBodyTextStyle(),
-                                      ),
-
-                                    ],
-                                  )
-                                ],
-                              ),
-                            ],
-                          ),
-                        ),
-
-
-                      ],
-                    ),
-                  );
-                },
-                itemCount: 5,
+                    );
+                  },
+                  itemCount: 5,
+                ),
               ),
             )
           ],

@@ -14,17 +14,14 @@ class SimpleAppbar extends StatelessWidget implements PreferredSizeWidget{
   @override
   Widget build(BuildContext context) {
     return AppBar(
+      backgroundColor: Colors.transparent,
       automaticallyImplyLeading: false,
       elevation: 0,
       flexibleSpace: Container(
-        padding: padding8,
+        padding: padding4,
         width: double.infinity,
-        height: 60.h,
-        decoration: BoxDecoration(
-            gradient: LinearGradient(colors: [
-              context.colorScheme.background,
-              context.colorScheme.onBackground
-            ])),
+       height: 80.h,
+
         child: Row(
           children: [
             GestureDetector(
@@ -35,17 +32,21 @@ class SimpleAppbar extends StatelessWidget implements PreferredSizeWidget{
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(15),
                   border: Border.all(
+                    width: 2.w,
                       color: context.colorScheme.primaryContainer),
                 ),
                 child: Center(
                     child: Icon(
+                      size: 25.sp,
                       Icons.arrow_back_ios_new,
                       color: context.colorScheme.primary,
                     )),
               ),
             ),
             AppSpacer.p15(),
-            Text(name,style: headingTextStyle(context).copyWith(fontWeight: FontWeight.normal),)
+            FittedBox(
+                fit: BoxFit.scaleDown,
+                child: Text(name,style: headingTextStyle(context).copyWith(fontWeight: FontWeight.normal),))
           ],
         ),
       ),
@@ -53,5 +54,5 @@ class SimpleAppbar extends StatelessWidget implements PreferredSizeWidget{
   }
 
   @override
-  Size get preferredSize =>  Size.fromHeight(60.h);
+  Size get preferredSize =>  Size.fromHeight(80.h);
 }

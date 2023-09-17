@@ -25,6 +25,7 @@ class _ChangePinState extends State<ChangePin> {
   Widget build(BuildContext context) {
     return SafeArea(
         child: Scaffold(
+          extendBodyBehindAppBar: true,
       appBar: SimpleAppbar(name: S.of(context).changeMpin),
       body: Container(
 
@@ -39,60 +40,68 @@ class _ChangePinState extends State<ChangePin> {
             fit: BoxFit.cover,
           ),),
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                AppSpacer.p10(),
-                // AppSize(
-                //   height: 10,
-                // ),
-                Text(
-                  S.of(context).oldMpin,
-                  style: bodyTextStyle(context),
-                ),
-                AppSpacer.p10(),
+            SizedBox(height: 70.h,),
+            Expanded(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
 
-                Center(
-                    child: CustomPinput(
-                  length: 4,
-                  boxWidth: 59.w,
-                  boxHeight: 59.h,
-                  width: 30.w,
-                )),
-               AppSpacer.p15(),
-                Text(
-                  S.of(context).oldMpin,
-                  style: bodyTextStyle(context),
-                ),
-               AppSpacer.p10(),
-                Center(
-                    child: CustomPinput(
-                      length: 4,
-                      boxWidth: 59.w,
-                      boxHeight: 59.h,
-                      width: 30.w,
-                    )),
-               AppSpacer.p15(),
-                Text(
-                  S.of(context).oldMpin,
-                  style: bodyTextStyle(context),
-                ),
-                AppSpacer.p10(),
-                Center(
-                    child: CustomPinput(
-                      length: 4,
-                      boxWidth: 59.w,
-                      boxHeight: 59.h,
-                      width: 30.w,
-                    )),
-              ],
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      AppSpacer.p10(),
+                      // AppSize(
+                      //   height: 10,
+                      // ),
+                      Text(
+                        S.of(context).oldMpin,
+                        style: bodyTextStyle(context),
+                      ),
+                      AppSpacer.p10(),
+
+                      Center(
+                          child: CustomPinput(
+                        length: 4,
+                        boxWidth: 59.w,
+                        boxHeight: 59.h,
+                        width: 30.w,
+                      )),
+                     AppSpacer.p15(),
+                      Text(
+                        S.of(context).oldMpin,
+                        style: bodyTextStyle(context),
+                      ),
+                     AppSpacer.p10(),
+                      Center(
+                          child: CustomPinput(
+                            length: 4,
+                            boxWidth: 59.w,
+                            boxHeight: 59.h,
+                            width: 30.w,
+                          )),
+                     AppSpacer.p15(),
+                      Text(
+                        S.of(context).oldMpin,
+                        style: bodyTextStyle(context),
+                      ),
+                      AppSpacer.p10(),
+                      Center(
+                          child: CustomPinput(
+                            length: 4,
+                            boxWidth: 59.w,
+                            boxHeight: 59.h,
+                            width: 30.w,
+                          )),
+                    ],
+                  ),
+                  CustomElivitedButton(
+                    onPress: () {},
+                    text: S.of(context).changeMpin,
+                  )
+                ],
+              ),
             ),
-            CustomElivitedButton(
-              onPress: () {},
-              text: S.of(context).changeMpin,
-            )
           ],
         ),
       ),

@@ -117,9 +117,7 @@ class BottomContainer extends StatelessWidget {
             RichText(
               text: TextSpan(
                 text: S.of(context).note,
-                style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    color: context.colorScheme.error),
+                style: alertTextStyle(),
                 children: [
                   TextSpan(
                       text: S.of(context).loremIspumdolor,

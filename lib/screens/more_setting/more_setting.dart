@@ -48,6 +48,7 @@ class MoreSettings extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        extendBodyBehindAppBar: true,
         appBar: NameAppbar(),
         body: Container(
           padding:paddingH13,

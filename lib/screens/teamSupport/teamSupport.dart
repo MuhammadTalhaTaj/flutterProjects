@@ -26,6 +26,7 @@ class TeamSupport extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        extendBodyBehindAppBar: true,
         appBar:SimpleAppbar(name: S.of(context).teamSupport),
         backgroundColor: context.colorScheme.background,
         body: Container(
@@ -39,6 +40,7 @@ class TeamSupport extends StatelessWidget {
             ),),
           child: Column(
             children: [
+              SizedBox(height: 40.h,),
               SizedBox(
                 height: 0.3.sh,
                 child: Image.asset(ImageVariables.teamSupportImage,fit: BoxFit.fill,),
@@ -101,6 +103,8 @@ class TeamSupport extends StatelessWidget {
                           height: 150,
                           width: double.infinity,
                           child: CustomTextField(
+                            maxlines: 5,
+
                             labelText: S.of(context).enterText,
                           ),
                         ),

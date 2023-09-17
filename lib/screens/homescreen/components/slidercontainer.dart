@@ -5,7 +5,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class SliderContainer extends StatefulWidget {
   final Color activeColor;
-  final number;
+  final int number;
   final String iconPath;
   final bottomText;
   final iconColor;
@@ -13,7 +13,7 @@ class SliderContainer extends StatefulWidget {
   const SliderContainer(
       {Key? key,
       required this.activeColor,
-      this.number,
+      required this.number,
       required this.iconPath,
       this.bottomText,
       this.iconColor})
@@ -72,13 +72,13 @@ class _SliderContainerState extends State<SliderContainer> {
                     overlayShape: RoundSliderOverlayShape(overlayRadius: 5.0.sp),
                   ),
                   child: Slider(
-                    value: val.toDouble(),
+                    value: 25.0,
                     min: 0,
                     max: 100,
                     onChanged: (double newHeight) {
-                      setState(() {
-                        val = newHeight.round();
-                      });
+                      // setState(() {
+                      //   val = newHeight.round();
+                      // });
                     },
                   ),
                 ),

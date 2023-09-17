@@ -28,6 +28,7 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        extendBodyBehindAppBar: true,
         appBar: NameAppbar(),
         body: Container(
           height: double.infinity,
@@ -39,147 +40,156 @@ class HomeScreen extends StatelessWidget {
               fit: BoxFit.cover,
             ),),
           //   padding: EdgeInsets.only(bottom: 20.w),
-          child: SingleChildScrollView(
-            //vvvv
-            child: Column(
-              children: [
-               AppSpacer.p20(),
-                AppSize(
-                  height: context.isPatriot ? 160.h : 200.h,
-                  width: 1.sw,
-                  child: const PicHorizontalContainer(),
-                ),
-                AppSpacer.p15(),
-                Padding(
-                  padding: padding13,
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          child: Column(
+
+            children: [
+              SizedBox(height: 80.h,),
+              Expanded(
+                child: SingleChildScrollView(
+                  //vvvv
+                  child: Column(
                     children: [
+                     AppSpacer.p20(),
                       AppSize(
-                        height: 130.h,
-                        width: 160.w,
-                        child: SliderContainer(
-                          number: 124,
-                          iconPath: 'lib/icons/checkIcon.png',
-                          activeColor: Color(0xff248d5d),
-                          bottomText: S.of(context).availablePoints,
-                          iconColor: Color(0xff248d5d),
+                        height: context.isPatriot ? 160.h : 200.h,
+                        width: 1.sw,
+                        child: const PicHorizontalContainer(),
+                      ),
+                      AppSpacer.p15(),
+                      Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 13.w,vertical: 13.h),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            AppSize(
+                              height: 130.h,
+                              width: 160.w,
+                              child: SliderContainer(
+                                number: 35,
+                                iconPath: 'lib/icons/checkIcon.png',
+                                activeColor: Color(0xff248d5d),
+                                bottomText: S.of(context).availablePoints,
+                                iconColor: Color(0xff248d5d),
+                              ),
+                            ),
+                            AppSize(
+                              height: 130.h,
+                              width: 160.w,
+                              child: SliderContainer(
+                                number: 15,
+                                iconPath: 'lib/icons/redeemedIcon.png',
+                                activeColor: Color(0xff0d6efd),
+                                bottomText: S.of(context).redeemedPoint,
+                                iconColor: Color(0xff0d6efd),
+                              ),
+                            ),
+                          ],
                         ),
                       ),
-                      AppSize(
-                        height: 130.h,
-                        width: 160.w,
-                        child: SliderContainer(
-                          number: 45,
-                          iconPath: 'lib/icons/redeemedIcon.png',
-                          activeColor: Color(0xff0d6efd),
-                          bottomText: S.of(context).redeemedPoint,
-                          iconColor: Color(0xff0d6efd),
+                      Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 13.w,vertical: 13.h),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            AppSize(
+                              height: 130.h,
+                              width: 160.w,
+                              child: SliderContainer(
+                                number: 20,
+                                iconPath: 'lib/icons/process.png',
+                                activeColor: Color(0xfffd7314),
+                                bottomText: S.of(context).inProcessPoint,
+                                iconColor: Color(0xfffd7314),
+                              ),
+                            ),
+                            AppSize(
+                              height: 130.h,
+                              width: 160.w,
+                              child: SliderContainer(
+                                number: 30,
+                                iconPath: 'lib/icons/tax.png',
+                                activeColor: Color(0xffdc3545),
+                                bottomText: S.of(context).texDeducted,
+                                iconColor: Color(0xffdc3545),
+                              ),
+                            ),
+                          ],
                         ),
                       ),
+
+                      Padding(
+                          padding: EdgeInsets.symmetric(horizontal: 13.w,vertical: 13.h),
+
+                        child: Align(
+                            alignment: Alignment.centerLeft,
+                            child: Text(
+                              S.of(context).others,
+                              style: bodyTextStyle(context),
+                            )),
+                      ),
+
+                      AppSpacer.p12(),
+
+                      Padding(
+                        padding: paddingH13,
+                        child: Row(
+                          children: [
+                            Flexible(
+                              child: GestureDetector(
+                                onTap: () {
+                                  Navigator.pushNamed(
+                                      context, ManualEntry.routeName);
+                                },
+                                child: BottomComponent(
+                                  iconPath: 'lib/icons/elementplus.png',
+                                  text: S.of(context).entry,
+                                ),
+                              ),
+                            ),
+                            Flexible(
+                              child: GestureDetector(
+                                onTap: () {
+                                  Navigator.pushNamed(
+                                      context, PaymentMethod.routeName);
+                                },
+                                child: BottomComponent(
+                                  iconPath: 'lib/icons/cardedit.png',
+                                  text: S.of(context).methods,
+                                ),
+                              ),
+                            ),
+                            Flexible(
+                              child: GestureDetector(
+                                onTap: () {
+                                  Navigator.pushNamed(context, ChangePin.routeName);
+                                },
+                                child: BottomComponent(
+                                  iconPath: 'lib/icons/lock.png',
+                                  text: S.of(context).mpin,
+                                ),
+                              ),
+                            ),
+                            Flexible(
+                              child: GestureDetector(
+                                onTap: () {
+                                  Navigator.pushNamed(
+                                      context, TeamSupport.routeName);
+                                },
+                                child: BottomComponent(
+                                  iconPath: 'lib/icons/securityuser.png',
+                                  text: S.of(context).help,
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                      AppSpacer.p20(),
                     ],
                   ),
                 ),
-                Padding(
-                  padding: padding13,
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      AppSize(
-                        height: 130.h,
-                        width: 160.w,
-                        child: SliderContainer(
-                          number: 96,
-                          iconPath: 'lib/icons/process.png',
-                          activeColor: Color(0xfffd7314),
-                          bottomText: S.of(context).inProcessPoint,
-                          iconColor: Color(0xfffd7314),
-                        ),
-                      ),
-                      AppSize(
-                        height: 130.h,
-                        width: 160.w,
-                        child: SliderContainer(
-                          number: 124,
-                          iconPath: 'lib/icons/tax.png',
-                          activeColor: Color(0xffdc3545),
-                          bottomText: S.of(context).texDeducted,
-                          iconColor: Color(0xffdc3545),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-
-                Padding(
-                  padding: paddingH13,
-                  child: Align(
-                      alignment: Alignment.centerLeft,
-                      child: Text(
-                        S.of(context).others,
-                        style: bodyTextStyle(context),
-                      )),
-                ),
-
-                AppSpacer.p12(),
-
-                Padding(
-                  padding: paddingH13,
-                  child: Row(
-                    children: [
-                      Flexible(
-                        child: GestureDetector(
-                          onTap: () {
-                            Navigator.pushNamed(
-                                context, ManualEntry.routeName);
-                          },
-                          child: BottomComponent(
-                            iconPath: 'lib/icons/elementplus.png',
-                            text: S.of(context).entry,
-                          ),
-                        ),
-                      ),
-                      Flexible(
-                        child: GestureDetector(
-                          onTap: () {
-                            Navigator.pushNamed(
-                                context, PaymentMethod.routeName);
-                          },
-                          child: BottomComponent(
-                            iconPath: 'lib/icons/cardedit.png',
-                            text: S.of(context).methods,
-                          ),
-                        ),
-                      ),
-                      Flexible(
-                        child: GestureDetector(
-                          onTap: () {
-                            Navigator.pushNamed(context, ChangePin.routeName);
-                          },
-                          child: BottomComponent(
-                            iconPath: 'lib/icons/lock.png',
-                            text: S.of(context).mpin,
-                          ),
-                        ),
-                      ),
-                      Flexible(
-                        child: GestureDetector(
-                          onTap: () {
-                            Navigator.pushNamed(
-                                context, TeamSupport.routeName);
-                          },
-                          child: BottomComponent(
-                            iconPath: 'lib/icons/securityuser.png',
-                            text: S.of(context).help,
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-                AppSpacer.p20(),
-              ],
-            ),
+              ),
+            ],
           ),
         ),
       ),

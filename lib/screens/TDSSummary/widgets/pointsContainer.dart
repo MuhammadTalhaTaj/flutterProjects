@@ -28,11 +28,11 @@ class PointsContainer extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Text(upperText,style: headingTextStyle(context),),
-          // FittedBox(
-          //     fit: BoxFit.scaleDown,
-              //child:
+          FittedBox(
+              fit: BoxFit.scaleDown,
+              child:
               Text(lowerText,style: subBodyTextStyle(),)
-    //),
+    ),
 
         ],),
     );

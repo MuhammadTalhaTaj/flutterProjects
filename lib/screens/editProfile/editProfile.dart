@@ -66,10 +66,10 @@ class _EditProfileState extends State<EditProfile> {
                   elevation: 0,
                   backgroundColor: Colors.transparent,
 
-                  expandedHeight: context.heightWithoutSafeArea * 0.33,
+                  expandedHeight:  0.33.sh,
                   flexibleSpace: Container(
                     color: Colors.transparent,
-                    child: Image.asset(ImageVariables.signUp2Image),
+                    child: Image.asset(ImageVariables.signUp2Image,fit: BoxFit.fitHeight,),
                   )),
               SliverFillRemaining(
                 hasScrollBody: true,

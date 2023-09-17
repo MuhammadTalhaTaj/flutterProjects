@@ -14,6 +14,12 @@ TextStyle headingTextStyle(BuildContext context) {
   );
 }
 
+TextStyle alertTextStyle(){
+  return TextStyle(
+      fontWeight: FontWeight.bold,
+      color:  Color(0xFFFD7E14),fontSize: 14.sp);
+}
+
 
 TextStyle bodyTextStyle(context) {
   return TextStyle(

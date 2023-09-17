@@ -43,6 +43,7 @@ class _PaymentMethodState extends State<PaymentMethod> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        extendBodyBehindAppBar: true,
         appBar:SimpleAppbar(name: S.of(context).paymentMethod),
         body: Container(
           padding: padding15,
@@ -56,27 +57,32 @@ class _PaymentMethodState extends State<PaymentMethod> {
               ),),
           child: Column(
             children: [
-              AppSize(
-                // As we have maximum two methods
-                height:items.isNotEmpty?items.length==1?125.h:245.h:0.h,
-                width: double.infinity,
-                child: ListView.builder(
-                  itemBuilder: (context, index) {
-                    return PaymentMethodListContainer(
-                        imagePath: items[index]['imagePath'],
-                        name: items[index]['name'],
-                        date: items[index]['date'],
-                        code: items[index]['code'],
-                      rightNumber: items[index]['rightNumber'],
-                      onPress: (){
-                          setState(() {
-                            items.removeAt(index);
-                          });
+              SizedBox(height:10.h),
 
-                      },
-                    );
-                  },
-                  itemCount: items.length,
+              SizedBox(
+                // As we have maximum two methods
+              //  height:items.isNotEmpty?items.length==1?110.h:245.h:0.h,
+                width: double.infinity,
+                child: SingleChildScrollView(
+                  child: ListView.builder(
+                    shrinkWrap: true,
+                    itemBuilder: (context, index) {
+                      return PaymentMethodListContainer(
+                          imagePath: items[index]['imagePath'],
+                          name: items[index]['name'],
+                          date: items[index]['date'],
+                          code: items[index]['code'],
+                        rightNumber: items[index]['rightNumber'],
+                        onPress: (){
+                            setState(() {
+                              items.removeAt(index);
+                            });
+
+                        },
+                      );
+                    },
+                    itemCount: items.length,
+                  ),
                 ),
               ),
              AppSpacer.p20(),

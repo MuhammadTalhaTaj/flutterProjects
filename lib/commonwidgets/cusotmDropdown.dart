@@ -1,3 +1,4 @@
+import 'package:demo_flutter/constants/app_padding.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -30,39 +31,46 @@ class _CustomDropDownButtonState extends State<CustomDropDownButton> {
   Widget build(BuildContext context) {
     return Container(
       height: 58.h,
-      padding: EdgeInsets.all(15),
+      padding: paddingH13,
       decoration: BoxDecoration(
 
           // border: Border.all( color:Colors.grey,width: 0,),
           color: widget.color
       ),
-      child: DropdownButton<String>(
-        dropdownColor: widget.color,
-        hint:Text(widget.selected==''?widget.hint:widget.selected,style:  TextStyle(fontSize: 20.sp,color: Colors.white),),
-        isExpanded: true,
-        underline: Container(),
-        value: selectedValue,
-        icon: Container(height: 15.h,child: Image.asset('lib/icons/Vector.png',fit: BoxFit.fill,),),
-        // icon: const Icon(Icons.arrow_drop_down_sharp,color: Colors.white,size: 40),
-        elevation: 16,
-        style: const TextStyle(color: Colors.black),
-        onChanged: (value) {
-          setState(() {
-            selectedValue = value;
-          });
-          widget.onPressed(value!);
-        },
-        items: widget.list.map<DropdownMenuItem<String>>((String value) {
-          return DropdownMenuItem<String>(
+      child: DropdownButtonHideUnderline(
+
+        child: DropdownButton<String>(
+          itemHeight: 50.h,
 
 
-            value: value,
-            child: Text(
-              value,
-              style: TextStyle(fontSize: 20.sp,color: Colors.white),
-            ),
-          );
-        }).toList(),
+          dropdownColor: widget.color,
+          hint:Text(widget.selected==''?widget.hint:widget.selected,style:  TextStyle(fontSize: 20.sp,color: Colors.white),),
+          isExpanded: true,
+
+          value: selectedValue,
+          icon: SizedBox(height: 15.h,child: Image.asset('lib/icons/Vector.png',fit: BoxFit.fill,),),
+          // icon: const Icon(Icons.arrow_drop_down_sharp,color: Colors.white,size: 40),
+          elevation: 16,
+          style: TextStyle(color: Colors.white,fontSize: 20.sp),
+          onChanged: (value) {
+            setState(() {
+              selectedValue = value;
+            });
+            widget.onPressed(value!);
+          },
+          items: widget.list.map<DropdownMenuItem<String>>((String value) {
+            return DropdownMenuItem<String>(
+
+              alignment: Alignment.centerLeft,
+
+              value: value,
+              child: Text(
+                value,
+                style: TextStyle(fontSize: 20.sp,color: Colors.white),
+              ),
+            );
+          }).toList(),
+        ),
       ),
     );
   }

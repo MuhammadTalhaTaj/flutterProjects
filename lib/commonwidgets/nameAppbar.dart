@@ -1,5 +1,6 @@
 import 'package:demo_flutter/commonwidgets/appsize.dart';
 import 'package:demo_flutter/constants/app_padding.dart';
+import 'package:demo_flutter/constants/app_spacer_constants.dart';
 import 'package:demo_flutter/constants/textStyles.dart';
 import 'package:demo_flutter/utils/app_utils/extensions/color_extension.dart';
 import 'package:flutter/material.dart';
@@ -26,13 +27,14 @@ class NameAppbar extends StatelessWidget implements PreferredSizeWidget {
           //   fit: BoxFit.cover,
           // ),),
        //   height: 100.h,
-          padding:  padding13,
-          width: double.infinity,
+          padding:  padding10,
+          //width: double.infinity,
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Column(
+                mainAxisSize: MainAxisSize.max,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
@@ -48,9 +50,11 @@ class NameAppbar extends StatelessWidget implements PreferredSizeWidget {
                   )
                 ],
               ),
+
               Container(
+                padding: padding10,
                 decoration: BoxDecoration(
-                  color: Color(0xC9270F26),
+                  color: const Color(0xC9270F26),
                   boxShadow: [
                     BoxShadow(
                       color: Colors.grey.withOpacity(0.5),
@@ -62,23 +66,25 @@ class NameAppbar extends StatelessWidget implements PreferredSizeWidget {
                   borderRadius: BorderRadius.circular(
                       10), // Adjust the value for roundness
                 ),
-                width: 100.w,
-                child: Padding(
-                  padding: EdgeInsets.all(10.w),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                     SizedBox(height: 23.h,width: 23.w, child: Image.asset('lib/icons/star.png',fit: BoxFit.fill,)),
-                       FittedBox(
-                         fit: BoxFit.cover,
+               // width: 100.w,
+                child: Row(
+                  //mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                   SizedBox(height: 23.h,width: 23.w, child: Image.asset('lib/icons/star.png',fit: BoxFit.fill,)),
+                     AppSpacer.p5(),
+                     SizedBox(
+                       width: 55.w,
+                       height: 23.h,
+                       child: FittedBox(
+                         fit: BoxFit.scaleDown,
                          child: Text(
-                          '8877',
-                          style: TextStyle(color: Colors.white),
-                          //style: bodyTextStyle(context).copyWith(fontSize: 20),
-                      ),
-                       )
-                    ],
-                  ),
+                          '989770',
+                          //style: TextStyle(color: Colors.white),
+                          style: bodyTextStyle(context).copyWith(fontSize: 20.sp),
+                    ),
+                       ),
+                     )
+                  ],
                 ),
               ),
             ],

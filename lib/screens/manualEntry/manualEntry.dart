@@ -21,6 +21,7 @@ class ManualEntry extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
         child: Scaffold(
+          extendBodyBehindAppBar: true,
       appBar: SimpleAppbar(name: S.of(context).manualEntry),
       body: Container(
         width: double.infinity,
@@ -35,6 +36,7 @@ class ManualEntry extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
+            SizedBox(height: 80.h,),
             Expanded(
               child: SingleChildScrollView(
                 child: Column(

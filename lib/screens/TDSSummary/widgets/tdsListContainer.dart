@@ -109,10 +109,13 @@ class pointsContainer extends StatelessWidget {
           borderRadius: BorderRadius.circular(10)
         ),
         child: Center(
-          child: Text(
+          child: FittedBox(
+            fit:BoxFit.scaleDown ,
+            child: Text(
       Points,
       style: bodyTextStyle(context).copyWith(color: Color(0xff20c997)),
     ),
+          ),
         ));
   }
 }

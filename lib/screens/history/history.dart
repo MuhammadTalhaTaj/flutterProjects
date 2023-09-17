@@ -51,6 +51,7 @@ class History extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        extendBodyBehindAppBar: true,
         appBar: NameAppbar(),
         body: Container(
           width: double.infinity,

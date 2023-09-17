@@ -11,6 +11,7 @@ class CustomTextField extends StatefulWidget {
   double editedTextSize;
   var keyBoardtype;
   ValueChanged<String>? callback;
+  int maxlines;
 
 
   CustomTextField({
@@ -21,6 +22,7 @@ class CustomTextField extends StatefulWidget {
     this.editedTextSize = 20,
     this.keyBoardtype=TextInputType.text,
     this.callback,
+    this.maxlines=1,
   }) : super(key: key);
 
   @override
@@ -45,36 +47,45 @@ class _CustomTextFieldState extends State<CustomTextField> {
         minHeight: 50
       ),
       child: Container(
-              height: 58.h,
+              height: 58.sp,
+
 
         color: context.colorScheme.onPrimaryContainer,
         width: double.infinity,
-        child: TextField(
-          keyboardType: widget.keyBoardtype,
-          controller: _controller,
-          style: TextStyle(
-            fontSize: widget.editedTextSize.sp,
-            color: Colors.white,
-          ),
-          textAlign: widget.textAlignCenter ? TextAlign.center : TextAlign.start,
-          decoration: InputDecoration(
-            hintText: widget.labelText,
-            hintStyle:  TextStyle(color: Colors.white70, fontSize: 18.sp),
-            fillColor: Colors.white24,
-            border: const OutlineInputBorder(
-              borderSide: BorderSide(color: Colors.white70),
-              borderRadius: BorderRadius.all(
-                Radius.circular(0.0),
+        child: Align(
+          alignment: Alignment.centerLeft,
+          child: TextField(
+
+          maxLines:widget.maxlines,
+            //expands: true,
+
+            keyboardType: widget.keyBoardtype,
+            controller: _controller,
+            style: TextStyle(
+              fontSize: widget.editedTextSize.sp,
+              color: Colors.white,
+            ),
+            textAlign: widget.textAlignCenter ? TextAlign.center : TextAlign.start,
+            decoration: InputDecoration(
+             // constraints: BoxConstraints(minHeight: 68.h),
+              hintText: widget.labelText,
+              hintStyle:  TextStyle(color: Colors.white70, fontSize: 20.sp),
+             // fillColor: Colors.white24,
+              border: const OutlineInputBorder(
+                borderSide: BorderSide(color: Colors.white70),
+                borderRadius: BorderRadius.all(
+                  Radius.circular(0.0),
+                ),
               ),
             ),
-          ),
-          onChanged: (newValue) {
-            widget.callback!(newValue);
+            onChanged: (newValue) {
+              widget.callback!(newValue);
 
-            setState(() {
-              widget.editedText = newValue;
-            });
-          },
+              setState(() {
+                widget.editedText = newValue;
+              });
+            },
+          ),
         ),
       ),
     );

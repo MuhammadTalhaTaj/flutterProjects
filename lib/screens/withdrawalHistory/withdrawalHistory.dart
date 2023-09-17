@@ -42,23 +42,24 @@ class WithdrawalHistory extends StatelessWidget {
       'rightNumber':'58'
     }
 
+
   ];
 
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        extendBodyBehindAppBar: true,
         appBar: SimpleAppbar(name: S.of(context).withdrawalHistory),
         body: Container(
           width: double.infinity,
           decoration: BoxDecoration(
-              gradient: LinearGradient(
-            // begin: Alignment.centerLeft,
-            colors: [
-              context.colorScheme.background,
-              context.colorScheme.onBackground
-            ],
-          )),
+            color: context.colorScheme.background,
+            image:  DecorationImage(
+
+              image: Image.asset('assets/images/backgroundImage.png').image,
+              fit: BoxFit.cover,
+            ),),
           child: ListView.builder(
             itemBuilder: (context, index) {
               return HistoryListContainer(

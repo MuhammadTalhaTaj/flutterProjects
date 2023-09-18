@@ -13,6 +13,7 @@ import 'package:demo_flutter/screens/teamSupport/teamSupport.dart';
 import 'package:demo_flutter/screens/withdrawalHistory/withdrawalHistory.dart';
 import 'package:demo_flutter/utils/app_utils/extensions/color_extension.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../commonwidgets/appsize.dart';
 import '../popUps/somethineWentWrongPopup.dart';
@@ -62,31 +63,33 @@ class MoreSettings extends StatelessWidget {
           child: Column(
 
             children: [
-              AppSpacer.p10(),
+             SizedBox(height: 90.h,),
               Expanded(
-                child: GridView.builder(
-                    itemCount: settingItems.length,
-                    gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
-                        childAspectRatio: 3 / 1.8,
-                        crossAxisSpacing: 10,
-                        mainAxisSpacing: 10,
-                        maxCrossAxisExtent: 200),
-                    itemBuilder: (context, index) => GestureDetector(
-                        onTap: () {
-                          if (index != 7) {
-                            Navigator.pushNamed(
-                                context, NavigationsScreens[index]);
-                          } else {
-                            showDialog(
-                              context: context,
-                              builder: (BuildContext context) {
-                                return LogoutPopup();
-                              },
-                            );
-                          }
-                        },
-                        child: SettingItem(settingItems[index]['icon'],
-                            settingItems[index]['text']))),
+                child: MediaQuery.removePadding(context: context,
+                  child: GridView.builder(
+                      itemCount: settingItems.length,
+                      gridDelegate:  SliverGridDelegateWithMaxCrossAxisExtent(
+                          childAspectRatio: 3 / 1.8,
+                          crossAxisSpacing: 10,
+                          mainAxisSpacing: 10,
+                          maxCrossAxisExtent: 200),
+                      itemBuilder: (context, index) => GestureDetector(
+                          onTap: () {
+                            if (index != 7) {
+                              Navigator.pushNamed(
+                                  context, NavigationsScreens[index]);
+                            } else {
+                              showDialog(
+                                context: context,
+                                builder: (BuildContext context) {
+                                  return LogoutPopup();
+                                },
+                              );
+                            }
+                          },
+                          child: SettingItem(settingItems[index]['icon'],
+                              settingItems[index]['text']))),
+                ),
               )
             ],
           ),

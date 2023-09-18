@@ -49,7 +49,7 @@ class Congratulation extends StatelessWidget {
                     ),
                     Text(
                       S.of(context).congratulations,
-                      style: headingTextStyle(context),
+                      style: headingTextStyle(),
                     ),
                     AppSize(
                       height: 10,

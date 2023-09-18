@@ -29,7 +29,7 @@ class somethingWentWrongIcons extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-            Text(S.of(context).someThingWentWrong,style: bodyTextStyle(context),),
+            Text(S.of(context).someThingWentWrong,style: bodyTextStyle(),),
             AppSize(height: 2.h,),
             Text(S.of(context).loremIpsum,style: subBodyTextStyle().copyWith(fontSize: 12.sp),)
           ],),

@@ -46,7 +46,7 @@ class Failed extends StatelessWidget {
                         ),
                         Text(
                           S.of(context).oop,
-                          style: headingTextStyle(context),
+                          style: headingTextStyle(),
                         ),
                         AppSize(
                           height: 10,

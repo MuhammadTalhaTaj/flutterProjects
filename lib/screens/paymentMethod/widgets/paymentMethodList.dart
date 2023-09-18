@@ -57,7 +57,7 @@ class PaymentMethodListContainer extends StatelessWidget {
                 children: [
                   Text(
                     name,
-                    style: bodyTextStyle(context),
+                    style: bodyTextStyle(),
                   ),
                  AppSpacer.p4(),
                   Text(

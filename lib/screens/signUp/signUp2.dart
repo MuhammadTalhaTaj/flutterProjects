@@ -75,7 +75,7 @@ class SignUp2 extends StatelessWidget {
                               Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  Text(S.of(context).welcome,style: headingTextStyle(context),),
+                                  Text(S.of(context).welcome,style: headingTextStyle(),),
                                   AppSize(
                                     height: 10.h,
                                   ),
@@ -88,7 +88,7 @@ class SignUp2 extends StatelessWidget {
                                   ),
                                   Text(
                                     S.of(context).selectUserType,
-                                    style: bodyTextStyle(context),
+                                    style: bodyTextStyle(),
                                   ),
                                   AppSize(
                                     height: 10.h,
@@ -100,7 +100,7 @@ class SignUp2 extends StatelessWidget {
                                   ),
                                   Text(
                                     S.of(context).yourName,
-                                    style: bodyTextStyle(context),
+                                    style: bodyTextStyle(),
                                   ),
                                   AppSize(
                                     height: 10.h,
@@ -115,7 +115,7 @@ class SignUp2 extends StatelessWidget {
                                   Text(
 
                                     S.of(context).mobileNumber,
-                                    style: bodyTextStyle(context),
+                                    style: bodyTextStyle(),
                                   ),
                                   AppSize(
                                     height: 10.h,
@@ -129,7 +129,7 @@ class SignUp2 extends StatelessWidget {
                                   ),
                                   Text(
                                     S.of(context).workShopName,
-                                    style: bodyTextStyle(context),
+                                    style: bodyTextStyle(),
                                   ),
                                   AppSize(
                                     height: 10.h,
@@ -142,7 +142,7 @@ class SignUp2 extends StatelessWidget {
                                   ),
                                   Text(
                                     S.of(context).roadName,
-                                    style: bodyTextStyle(context),
+                                    style: bodyTextStyle(),
                                   ),
                                   AppSize(
                                     height: 10.h,
@@ -155,7 +155,7 @@ class SignUp2 extends StatelessWidget {
                                   ),
                                   Text(
                                     S.of(context).pinCode,
-                                    style: bodyTextStyle(context),
+                                    style: bodyTextStyle(),
                                   ),
                                   AppSize(
                                     height: 10.h,
@@ -169,7 +169,7 @@ class SignUp2 extends StatelessWidget {
                                   ),
                                   Text(
                                     S.of(context).yourState,
-                                    style: bodyTextStyle(context),
+                                    style: bodyTextStyle(),
                                   ),
                                   AppSize(
                                     height: 10.h,
@@ -184,7 +184,7 @@ class SignUp2 extends StatelessWidget {
 
                                   Text(
                                     S.of(context).yourCity,
-                                    style: bodyTextStyle(context),
+                                    style: bodyTextStyle(),
                                   ),
                                   AppSize(
                                     height: 10.h,
@@ -232,7 +232,7 @@ class SignUp2 extends StatelessWidget {
                                           },
                                           child: Text(
                                             S.of(context).logIn,
-                                            style: bodyTextStyle(context),
+                                            style: bodyTextStyle(),
                                           ))
                                     ],
                                   )

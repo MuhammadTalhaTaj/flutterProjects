@@ -52,7 +52,7 @@ class _TransferDetailsState extends State<TransferDetails> {
 
                   Text(
                     widget.upperText,
-                    style: bodyTextStyle(context),
+                    style: bodyTextStyle(),
                   ),
                   AppSpacer.p4(),
                   Text(

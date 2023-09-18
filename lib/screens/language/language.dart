@@ -60,7 +60,7 @@ class Language extends StatelessWidget {
                       ),
                       Text(
                         S.of(context).Language,
-                        style: headingTextStyle(context),
+                        style: headingTextStyle(),
                       ),
                       AppSize(
                         height: 10.h,

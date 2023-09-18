@@ -1,6 +1,7 @@
 import 'package:demo_flutter/commonwidgets/cusotmDropdown.dart';
 import 'package:demo_flutter/commonwidgets/customElevetedButton.dart';
 import 'package:demo_flutter/constants/app_spacer_constants.dart';
+import 'package:demo_flutter/constants/snackbar.dart';
 import 'package:demo_flutter/constants/textStyles.dart';
 import 'package:demo_flutter/imageVairableFiles/ImageVariableFiles.dart';
 import 'package:demo_flutter/randomData/listRandomData.dart';
@@ -16,6 +17,7 @@ import '../../commonwidgets/appsize.dart';
 import '../../commonwidgets/customTextField.dart';
 import '../../constants/app_padding.dart';
 import '../../generated/l10n.dart';
+import '../../utils/app_utils/validators/form_validator.dart';
 import '../popUps/somethineWentWrongPopup.dart';
 import '../signUp/signup.dart';
 
@@ -86,7 +88,7 @@ class _SignInState extends State<SignIn> {
                           AppSpacer.p10(),
                           Text(
                             S.of(context).welcome,
-                            style: headingTextStyle(context),
+                            style: headingTextStyle(),
                           ),
                           AppSpacer.p10(),
                           Text(
@@ -96,7 +98,7 @@ class _SignInState extends State<SignIn> {
                           AppSpacer.p20(),
                           Text(
                             S.of(context).selectUserType,
-                            style: bodyTextStyle(context),
+                            style: bodyTextStyle(),
                           ),
                           AppSpacer.p10(),
 
@@ -109,7 +111,7 @@ class _SignInState extends State<SignIn> {
                           AppSpacer.p15(),
                           Text(
                             S.of(context).mobileNumber,
-                            style: bodyTextStyle(context),
+                            style: bodyTextStyle(),
                           ),
                           AppSpacer.p10(),
                           CustomTextField(
@@ -144,9 +146,13 @@ class _SignInState extends State<SignIn> {
                           CustomElivitedButton(
                               text: S.of(context).getStarted,
                               onPress: () {
+                                print (myNumber.isMobileValid());
+
 
                                 if(myNumber.length<10){
-                                  showDialog(context: context, builder: (context) => ValidatorPopup(),);
+
+                                  ScaffoldMessenger.of(context).showSnackBar(customSnackBar);
+                                 // showDialog(context: context, builder: (context) => ValidatorPopup(),);
                                   return;
                                 }
                                 Navigator.pushNamed(context, OTP.routeName);
@@ -161,13 +167,16 @@ class _SignInState extends State<SignIn> {
                               ),
                               AppSpacer.p5(),
                               GestureDetector(
+
                                   onTap: () {
+
+
                                     Navigator.pushNamed(
                                         context, SignUp.routeName);
                                   },
                                   child: Text(
                                     S.of(context).signUp,
-                                    style: bodyTextStyle(context),
+                                    style: bodyTextStyle(),
                                   ))
                             ],
                           ),
@@ -185,4 +194,6 @@ class _SignInState extends State<SignIn> {
     );
 
   }
+
+
 }

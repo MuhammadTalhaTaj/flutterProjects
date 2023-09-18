@@ -46,7 +46,7 @@ class ManualEntry extends StatelessWidget {
                       alignment: Alignment.centerLeft,
                       child: Text(
                         S.of(context).enter12,
-                        style: bodyTextStyle(context),
+                        style: bodyTextStyle(),
                       ),
                     ),
                    AppSpacer.p5(),

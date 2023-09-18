@@ -55,7 +55,7 @@ class HistoryListContainer extends StatelessWidget {
                 children: [
                   Text(
                     name,
-                    style: bodyTextStyle(context),
+                    style: bodyTextStyle(),
                   ),
                   AppSpacer.p4(),
                   Text(
@@ -75,7 +75,7 @@ class HistoryListContainer extends StatelessWidget {
               )
             ],
           ),
-          Text(rightNumber,style: bodyTextStyle(context).copyWith(color: context.colorScheme.error),)
+          Text(rightNumber,style: bodyTextStyle().copyWith(color: context.colorScheme.error),)
         ],
       ),
     );

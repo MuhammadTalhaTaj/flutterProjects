@@ -81,7 +81,7 @@ class BottomContainer extends StatelessWidget {
           children: [
             Text(
               S.of(context).createAccount,
-              style: headingTextStyle(context),
+              style: headingTextStyle(),
             ),
            AppSpacer.p10(),
             Text(
@@ -91,7 +91,7 @@ class BottomContainer extends StatelessWidget {
             AppSpacer.p10(),
             Text(
               S.of(context).selectUserType,
-              style: bodyTextStyle(context),
+              style: bodyTextStyle(),
             ),
             AppSpacer.p10(),
             CustomDropDownButton(
@@ -103,7 +103,7 @@ class BottomContainer extends StatelessWidget {
             AppSpacer.p10(),
             Text(
               S.of(context).mobileNumber,
-              style: bodyTextStyle(context),
+              style: bodyTextStyle(),
             ),
             AppSpacer.p10(),
             CustomTextField(
@@ -143,7 +143,7 @@ class BottomContainer extends StatelessWidget {
                   },
                   child: Text(
                     S.of(context).logIn,
-                    style: bodyTextStyle(context),
+                    style: bodyTextStyle(),
                   ),
                 )
               ],

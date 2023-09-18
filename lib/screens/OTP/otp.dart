@@ -88,7 +88,7 @@ class BottomContainer extends StatelessWidget {
           children: [
             Text(
               S.of(context).enterOtp,
-              style: headingTextStyle(context),
+              style: headingTextStyle(),
             ),
             AppSpacer.p10(),
             Text(
@@ -99,7 +99,7 @@ class BottomContainer extends StatelessWidget {
 
             Text(
               S.of(context).enterOtp,
-              style: bodyTextStyle(context),
+              style: bodyTextStyle(),
             ),
             AppSpacer.p10(),
 
@@ -156,7 +156,7 @@ class BottomContainer extends StatelessWidget {
                     },
                     child: Text(
                       S.of(context).signUp,
-                      style: bodyTextStyle(context),
+                      style: bodyTextStyle(),
                     ))
               ],
             )

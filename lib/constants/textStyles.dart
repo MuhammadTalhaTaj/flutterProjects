@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-TextStyle headingTextStyle(BuildContext context) {
+TextStyle headingTextStyle() {
   return TextStyle(
       fontFamily: 'DM Sans',
       fontSize: 30.sp,
@@ -21,7 +21,7 @@ TextStyle alertTextStyle(){
 }
 
 
-TextStyle bodyTextStyle(context) {
+TextStyle bodyTextStyle() {
   return TextStyle(
       fontFamily: 'DM Sans',
       fontSize: 16.sp,

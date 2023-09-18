@@ -60,7 +60,7 @@ class TdsListContainer extends StatelessWidget {
                 children: [
                   Text(
                     name,
-                    style: bodyTextStyle(context),
+                    style: bodyTextStyle(),
                   ),
                   AppSpacer.p4(),
                   Text(
@@ -113,7 +113,7 @@ class pointsContainer extends StatelessWidget {
             fit:BoxFit.scaleDown ,
             child: Text(
       Points,
-      style: bodyTextStyle(context).copyWith(color: Color(0xff20c997)),
+      style: bodyTextStyle().copyWith(color: Color(0xff20c997)),
     ),
           ),
         ));

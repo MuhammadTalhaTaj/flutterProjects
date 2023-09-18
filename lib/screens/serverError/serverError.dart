@@ -35,7 +35,7 @@ class ServerError extends StatelessWidget {
             ),
             Text(
               S.of(context).serverError,
-              style: headingTextStyle(context),
+              style: headingTextStyle(),
             ),
             AppSize(
               height: 10,

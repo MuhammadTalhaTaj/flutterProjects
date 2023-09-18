@@ -61,7 +61,7 @@ class TeamSupport extends StatelessWidget {
                       children: [
                         Text(
                           S.of(context).teamContact,
-                          style: headingTextStyle(context),
+                          style: headingTextStyle(),
                         ),
                         AppSpacer.p10(),
                         Text(
@@ -73,7 +73,7 @@ class TeamSupport extends StatelessWidget {
 
                         Text(
                           S.of(context).yourName,
-                          style: bodyTextStyle(context),
+                          style: bodyTextStyle(),
                         ),
                         AppSpacer.p10(),
 
@@ -84,7 +84,7 @@ class TeamSupport extends StatelessWidget {
 
                         Text(
                           S.of(context).yourMail,
-                          style: bodyTextStyle(context),
+                          style: bodyTextStyle(),
                         ),
                         AppSpacer.p10(),
 
@@ -95,7 +95,7 @@ class TeamSupport extends StatelessWidget {
 
                         Text(
                           S.of(context).yourMessage,
-                          style: bodyTextStyle(context),
+                          style: bodyTextStyle(),
                         ),
                         AppSpacer.p10(),
 
@@ -112,7 +112,7 @@ class TeamSupport extends StatelessWidget {
 
                         Text(
                           S.of(context).uploadImage,
-                          style: bodyTextStyle(context),
+                          style: bodyTextStyle(),
                         ),
                         AppSpacer.p10(),
 

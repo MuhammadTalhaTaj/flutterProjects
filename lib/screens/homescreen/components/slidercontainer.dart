@@ -1,6 +1,7 @@
 import 'package:demo_flutter/constants/textStyles.dart';
 import 'package:demo_flutter/utils/app_utils/extensions/color_extension.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class SliderContainer extends StatefulWidget {
@@ -40,13 +41,19 @@ class _SliderContainerState extends State<SliderContainer> {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text(
-                '${widget.number}',
-                style: TextStyle(
-                    fontSize: 30.sp,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.white),
+              Flexible(
+                child: FittedBox(
+                  fit: BoxFit.scaleDown,
+                  child: Text(
+                    '${widget.number}  ',
+                    style: TextStyle(
+                        fontSize: 30.sp,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white),
+                  ),
+                ),
               ),
+
               Container(
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.all(Radius.circular(5)),
@@ -54,7 +61,8 @@ class _SliderContainerState extends State<SliderContainer> {
                 ),
                 width: 40.w,
                 height: 40.h,
-                child: Center(child: Image.asset(widget.iconPath,fit: BoxFit.fill,),),
+                child: Center(
+                  child: Image.asset(widget.iconPath,fit: BoxFit.fill,),),
               ),
             ],
           ),
@@ -89,9 +97,16 @@ class _SliderContainerState extends State<SliderContainer> {
               ),
             ],
           ),
-          Text(
-            '${widget.bottomText}',
-            style: subBodyTextStyle(),
+          Flexible(
+
+            
+            child: FittedBox(
+              fit: BoxFit.scaleDown,
+              child: Text(
+                '${widget.bottomText}',
+                style: subBodyTextStyle(),
+              ),
+            ),
           ),
         ],
       ),

@@ -39,14 +39,14 @@ class NameAppbar extends StatelessWidget implements PreferredSizeWidget {
                 children: [
                   Text(
                     S.of(context).heyJohn,
-                    style: headingTextStyle(context)
+                    style: headingTextStyle()
                   ),
                    SizedBox(
                     height: 5.h,
                   ),
                   Text(
                     S.of(context).welcomeToTheLoyaltyApp,
-                    style: bodyTextStyle(context),
+                    style: bodyTextStyle(),
                   )
                 ],
               ),
@@ -80,7 +80,7 @@ class NameAppbar extends StatelessWidget implements PreferredSizeWidget {
                          child: Text(
                           '989770',
                           //style: TextStyle(color: Colors.white),
-                          style: bodyTextStyle(context).copyWith(fontSize: 20.sp),
+                          style: bodyTextStyle().copyWith(fontSize: 20.sp),
                     ),
                        ),
                      )

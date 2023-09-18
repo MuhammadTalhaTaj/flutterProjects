@@ -40,7 +40,7 @@ class _CustomDropDownButtonState extends State<CustomDropDownButton> {
       child: DropdownButtonHideUnderline(
 
         child: DropdownButton<String>(
-          itemHeight: 50.h,
+          itemHeight: 60.h,
 
 
           dropdownColor: widget.color,

@@ -7,6 +7,7 @@ import 'package:demo_flutter/screens/history/widgets/historyListContainer.dart';
 import 'package:demo_flutter/screens/withdrawalHistory/widgets/historyListContainer.dart';
 import 'package:demo_flutter/utils/app_utils/extensions/color_extension.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../constants/app_spacer_constants.dart';
 import '../../generated/l10n.dart';
@@ -62,32 +63,42 @@ class History extends StatelessWidget {
               image: Image.asset('assets/images/backgroundImage.png').image,
               fit: BoxFit.cover,
             ),),
-          child: items.length != 0
-              ? ListView.builder(
-                  itemBuilder: (context, index) {
-                    return OnlyHistoryListContainer(
-                      imagePath: items[index]['imagePath'],
-                      name: items[index]['name'],
-                      date: items[index]['date'],
-                      code: items[index]['code'],
-                      rightNumber: items[index]['rightNumber'],
-                    );
-                  },
-                  itemCount: items.length,
-                )
-              : Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Image.asset(ImageVariables.historyImage),
-                    AppSpacer.p20(),
+          child: Column(
 
-                    Text(
-                      S.of(context).noData,
-                      style: headingTextStyle(context)
-                          .copyWith(fontWeight: FontWeight.normal),
-                    )
-                  ],
-                ),
+            children: [
+              SizedBox(height: 80.h,),
+              items.length != 0
+                  ? Expanded(
+                    child: MediaQuery.removePadding(context: context,
+                      child: ListView.builder(
+                          itemBuilder: (context, index) {
+                            return OnlyHistoryListContainer(
+                              imagePath: items[index]['imagePath'],
+                              name: items[index]['name'],
+                              date: items[index]['date'],
+                              code: items[index]['code'],
+                              rightNumber: items[index]['rightNumber'],
+                            );
+                          },
+                          itemCount: items.length,
+                        ),
+                    ),
+                  )
+                  : Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Image.asset(ImageVariables.historyImage),
+                        AppSpacer.p20(),
+
+                        Text(
+                          S.of(context).noData,
+                          style: headingTextStyle()
+                              .copyWith(fontWeight: FontWeight.normal),
+                        )
+                      ],
+                    ),
+            ],
+          ),
         ),
       ),
     );

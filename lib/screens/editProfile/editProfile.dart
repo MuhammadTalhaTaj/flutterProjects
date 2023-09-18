@@ -101,7 +101,7 @@ class _EditProfileState extends State<EditProfile> {
                                   Text(
                                     S.of(context).editProfile,
                                     //todo : use navigator key to not pass context.
-                                    style: headingTextStyle(context),
+                                    style: headingTextStyle(),
                                   ),
                                   AppSize(
                                     height: 10,
@@ -131,7 +131,7 @@ class _EditProfileState extends State<EditProfile> {
                                               children: [
                                                 Text(
                                                   S.of(context).imageName,
-                                                  style: bodyTextStyle(context),
+                                                  style: bodyTextStyle(),
                                                 ),
                                                 AppSpacer.p4(),
                                                 Text(
@@ -160,7 +160,7 @@ class _EditProfileState extends State<EditProfile> {
                                   AppSpacer.p24(),
                                   Text(
                                     S.of(context).yourName,
-                                    style: bodyTextStyle(context),
+                                    style: bodyTextStyle(),
                                   ),
                                   AppSpacer.p10(),
                                   CustomTextField(
@@ -169,7 +169,7 @@ class _EditProfileState extends State<EditProfile> {
                                   AppSpacer.p15(),
                                   Text(
                                     S.of(context).mobileNumber,
-                                    style: bodyTextStyle(context),
+                                    style: bodyTextStyle(),
                                   ),
                                   AppSpacer.p10(),
                                   CustomTextField(
@@ -179,7 +179,7 @@ class _EditProfileState extends State<EditProfile> {
                                   AppSpacer.p15(),
                                   Text(
                                     S.of(context).workShopName,
-                                    style: bodyTextStyle(context),
+                                    style: bodyTextStyle(),
                                   ),
                                   AppSpacer.p10(),
                                   CustomTextField(
@@ -188,7 +188,7 @@ class _EditProfileState extends State<EditProfile> {
                                   AppSpacer.p15(),
                                   Text(
                                     S.of(context).roadName,
-                                    style: bodyTextStyle(context),
+                                    style: bodyTextStyle(),
                                   ),
                                   AppSpacer.p10(),
                                   CustomTextField(
@@ -197,7 +197,7 @@ class _EditProfileState extends State<EditProfile> {
                                   AppSpacer.p15(),
                                   Text(
                                     S.of(context).pinCode,
-                                    style: bodyTextStyle(context),
+                                    style: bodyTextStyle(),
                                   ),
                                   AppSpacer.p10(),
                                   CustomTextField(
@@ -207,7 +207,7 @@ class _EditProfileState extends State<EditProfile> {
                                   AppSpacer.p15(),
                                   Text(
                                     S.of(context).yourState,
-                                    style: bodyTextStyle(context),
+                                    style: bodyTextStyle(),
                                   ),
                                   AppSpacer.p10(),
                                   CustomDropDownButton(
@@ -220,7 +220,7 @@ class _EditProfileState extends State<EditProfile> {
                                   AppSpacer.p15(),
                                   Text(
                                     S.of(context).yourCity,
-                                    style: bodyTextStyle(context),
+                                    style: bodyTextStyle(),
                                   ),
                                   AppSpacer.p10(),
                                   CustomDropDownButton(
@@ -233,7 +233,7 @@ class _EditProfileState extends State<EditProfile> {
                                   AppSpacer.p15(),
                                   Text(
                                     S.of(context).doYouWantToAddPanCard,
-                                    style: bodyTextStyle(context),
+                                    style: bodyTextStyle(),
                                   ),
                                   Row(
                                     mainAxisAlignment: MainAxisAlignment.start,
@@ -251,7 +251,7 @@ class _EditProfileState extends State<EditProfile> {
                                           ),
                                           Text(
                                             S.of(context).yes,
-                                            style: bodyTextStyle(context),
+                                            style: bodyTextStyle(),
                                           ),
                                         ],
                                       ),
@@ -268,7 +268,7 @@ class _EditProfileState extends State<EditProfile> {
                                           ),
                                           Text(
                                             S.of(context).no,
-                                            style: bodyTextStyle(context),
+                                            style: bodyTextStyle(),
                                           ),
                                         ],
                                       ),
@@ -308,7 +308,7 @@ class _EditProfileState extends State<EditProfile> {
                                           },
                                           child: Text(
                                             S.of(context).logIn,
-                                            style: bodyTextStyle(context),
+                                            style: bodyTextStyle(),
                                           ))
                                     ],
                                   )

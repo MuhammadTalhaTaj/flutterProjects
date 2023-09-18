@@ -29,7 +29,7 @@ class SuccessfulPopup extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(S.of(context).successfully,style: bodyTextStyle(context),),
+                Text(S.of(context).successfully,style: bodyTextStyle(),),
                 AppSize(height: 2,),
                 Text(S.of(context).Loremdolor,style: subBodyTextStyle().copyWith(fontSize: 12),)
               ],),

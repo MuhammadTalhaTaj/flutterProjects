@@ -5,6 +5,7 @@ import 'package:demo_flutter/utils/app_utils/extensions/color_extension.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../../constants/app_spacer_constants.dart';
 import '../../generated/l10n.dart';
 
 class ValidatorPopup extends StatelessWidget {
@@ -13,30 +14,24 @@ class ValidatorPopup extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return AlertDialog(
-      contentPadding: EdgeInsets.all(0),
-      content: Container(
-        padding: EdgeInsets.all(10),
-        height: 80.h,
-        width: 350.w,
-        color: Color(0xffa30010),
-        child: Row(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Image.asset('lib/icons/cancelIcon.png'),
-            Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text('Kindly Enter Correct Input',style: bodyTextStyle(context),),
+    return SnackBar(
+      closeIconColor: Colors.white,
+      backgroundColor: Color(0xffa30010),
+      content:  Row(children: [
 
-              ],),
-            Align(
-                alignment: Alignment.topRight,
-                child: GestureDetector(onTap: (){Navigator.pop(context);}, child: Image.asset('lib/icons/crossIcon.png')))
-          ],),
-      ),
+        Image.asset('lib/icons/cancelIcon.png'),
+        AppSpacer.p8(),
+        Flexible(child: Text('Kindly Enter Correct Input',style: bodyTextStyle(),)),
+      ],),
+      showCloseIcon: true,
+
+
+      //action: SnackBarAction(label: 'Ok', onPressed: (){})
     );
+
+    // Find the ScaffoldMessenger in the widget tree
+    // and use it to show a SnackBar.
+
+    // showDialog(context: context, builder: (context) => ValidatorPopup(),);
   }
 }

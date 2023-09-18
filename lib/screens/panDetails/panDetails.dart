@@ -88,7 +88,7 @@ class BottomContainer extends StatelessWidget {
           children: [
             Text(
               S.of(context).addPanDetails,
-              style: headingTextStyle(context),
+              style: headingTextStyle(),
             ),
             AppSize(
               height: 10,
@@ -102,7 +102,7 @@ class BottomContainer extends StatelessWidget {
             ),
             Text(
               S.of(context).panNumber,
-              style: bodyTextStyle(context),
+              style: bodyTextStyle(),
             ),
             AppSize(
               height: 10.h,
@@ -112,7 +112,7 @@ class BottomContainer extends StatelessWidget {
               labelText: S.of(context).enterNumber,
             ),
             AppSize(
-              height: 10,
+              height: 10.h,
             ),
             RichText(
               text: TextSpan(
@@ -130,15 +130,13 @@ class BottomContainer extends StatelessWidget {
             ),
             Text(
               S.of(context).uploadImage,
-              style: bodyTextStyle(context),
+              style: bodyTextStyle(),
             ),
             AppSize(
               height: 10.h,
             ),
             DottedElevatedButton(),
-            AppSize(
-              height: 15.h,
-            )
+
           ],
         ),
         Column(
@@ -165,7 +163,7 @@ class BottomContainer extends StatelessWidget {
                 },
                 child: Text(
                   S.of(context).skip,
-                  style: bodyTextStyle(context),
+                  style: bodyTextStyle(),
                 ))
           ],
         )

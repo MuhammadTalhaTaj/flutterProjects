@@ -124,7 +124,7 @@ class HomeScreen extends StatelessWidget {
                             alignment: Alignment.centerLeft,
                             child: Text(
                               S.of(context).others,
-                              style: bodyTextStyle(context),
+                              style: bodyTextStyle(),
                             )),
                       ),
 

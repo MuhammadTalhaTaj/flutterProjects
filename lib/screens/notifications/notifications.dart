@@ -52,7 +52,7 @@ class _NotificationsState extends State<Notifications> {
                 children: [
                   Text(
                     S.of(context).clearAllNotification,
-                    style: bodyTextStyle(context),
+                    style: bodyTextStyle(),
                   ),
                   AppSize(
                     height: 25.h,
@@ -94,7 +94,7 @@ class _NotificationsState extends State<Notifications> {
                             color:context.colorScheme.primaryContainer,
                             padding: padding10,
                           //  height: 50,
-                            child:Text('15 june 2022',style: bodyTextStyle(context).copyWith(fontSize: 20.sp),),
+                            child:Text('15 june 2022',style: bodyTextStyle().copyWith(fontSize: 20.sp),),
 
                           ),
                       Container(
@@ -124,7 +124,7 @@ class _NotificationsState extends State<Notifications> {
                                   children: [
                                     Text(
                                       'Know your mechanic',
-                                      style: bodyTextStyle(context),
+                                      style: bodyTextStyle(),
                                     ),
                                    AppSpacer.p4(),
                                     Text(
@@ -167,7 +167,7 @@ class _NotificationsState extends State<Notifications> {
                                       children: [
                                         Text(
                                           'Know your mechanic',
-                                          style: bodyTextStyle(context),
+                                          style: bodyTextStyle(),
                                         ),
                                         AppSpacer.p5(),
 

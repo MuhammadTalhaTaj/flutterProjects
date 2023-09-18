@@ -46,7 +46,7 @@ class SimpleAppbar extends StatelessWidget implements PreferredSizeWidget{
             AppSpacer.p15(),
             FittedBox(
                 fit: BoxFit.scaleDown,
-                child: Text(name,style: headingTextStyle(context).copyWith(fontWeight: FontWeight.normal),))
+                child: Text(name,style: headingTextStyle().copyWith(fontWeight: FontWeight.normal),))
           ],
         ),
       ),

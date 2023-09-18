@@ -5,12 +5,15 @@ import 'package:demo_flutter/commonwidgets/simpleAppbar.dart';
 import 'package:demo_flutter/constants/app_spacer_constants.dart';
 import 'package:demo_flutter/constants/textStyles.dart';
 import 'package:demo_flutter/imageVairableFiles/ImageVariableFiles.dart';
+import 'package:demo_flutter/providers/transefer_money_provider.dart';
 import 'package:demo_flutter/screens/moneyTransfer/widgets/slider.dart';
 import 'package:demo_flutter/screens/moneyTransfer/widgets/transferDetails.dart';
 import 'package:demo_flutter/utils/app_utils/extensions/color_extension.dart';
 import 'package:demo_flutter/utils/app_utils/extensions/screen_util_extension.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:provider/provider.dart';
 
 import '../../constants/app_padding.dart';
 import '../../generated/l10n.dart';
@@ -73,85 +76,109 @@ class _BodyState extends State<Body> {
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  SizedBox(
-                    height: 88.h,
+                  Container(
+                    height:88.h ,
                     width: double.infinity,
-                    child: Image.asset(
-                      ImageVariables.moneyTransferImage,
-                      fit: BoxFit.fill,
+                    decoration:BoxDecoration(
+                     image: DecorationImage(
+                        image: Image.asset('assets/images/Search bar.png').image,
+                       fit: BoxFit.fill
+                      ),
+                    ),
+                    child: Container(
+                      padding:padding10,
+                      child: Row(
+                        children: [
+                          Image.asset('assets/images/Frame 13.png',height: 60.h,width:60.w,fit: BoxFit.fill,),
+                          AppSpacer.p8(),
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: [
+                            Text('Availble Points',style: bodyTextStyle().copyWith(fontSize: 19.sp),),
+                            Text('125',style: headingTextStyle(),)
+                          ],)
+                        ],
+                      )
                     ),
                   ),
                  AppSpacer.p10(),
                   Text(
                     S.of(context).selectAmount,
-                    style: bodyTextStyle(context),
+                    style: bodyTextStyle(),
                   ),
                   AppSpacer.p10(),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Expanded(
-                        flex: 1,
-                        child: AppSize(
-                          height: 58.h,
-                          width: 58.w,
-                          child: CustomElivitedButton(
-                            text: '-',
-                            onPress: () {
-                              setState(() {
-                                _value -= 1;
-                              });
-                            },
-                            backgroundColor: Theme.of(context)
-                                .colorScheme
-                                .onPrimaryContainer,
-                            textColor: Colors.white,
-                            fontSize: 30.sp,
-                          ),
-                        ),
-                      ),
-                      AppSpacer.p10(),
-                      Expanded(
-                        flex: 3,
-                        child: AppSize(
-                            width: 200.w,
+                  Consumer <TransferMoneyProvider>(builder: (context, value, child) {
+                  return  Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Expanded(
+                          flex: 1,
+                          child: AppSize(
                             height: 58.h,
-                            child: CustomTextField(
-                              editedText: '\$${_value.toStringAsFixed(0)}',
-                              textAlignCenter: true,
-                              editedTextSize: 23.sp,
-                            )),
-                      ),
-                      AppSpacer.p10(),
-                      Expanded(
-                        flex: 1,
-                        child: AppSize(
-                          height: 58.h,
-                          width: 58.w,
-                          child: CustomElivitedButton(
-                            text: '+',
-                            onPress: () {
-                              setState(() {
-                                _value += 1;
-                              });
-                            },
-                            backgroundColor: Theme.of(context)
-                                .colorScheme
-                                .onPrimaryContainer,
-                            textColor: Colors.white,
-                            fontSize: 30.sp,
+                            width: 58.w,
+                            child: CustomElivitedButton(
+                              text: '-',
+                              onPress: () {
+                               value.decrementValue();
+
+                              },
+                              backgroundColor: Theme.of(context)
+                                  .colorScheme
+                                  .onPrimaryContainer,
+                              textColor: Colors.white,
+                              fontSize: 30.sp,
+                            ),
                           ),
                         ),
-                      ),
-                    ],
-                  ),
-                  AppSpacer.p24(),
-                  CustomSlider(valueChanged: (v) {
+                        AppSpacer.p10(),
+                        Expanded(
 
-                    setState(() {
-                      _value = v;
+                          flex: 3,
+                          child: Container(
+                            height: 58.h,
+                               color:context.colorScheme.onPrimaryContainer,
+                            child: Center(
+                              child: FittedBox(
+                                fit:BoxFit.scaleDown,
+
+                                  child: Text('${value.value}',style: bodyTextStyle().copyWith(fontSize: 28.sp),)),
+                            ),
+                          ),
+                        ),
+                        AppSpacer.p10(),
+                        Expanded(
+                          flex: 1,
+                          child: AppSize(
+                            height: 58.h,
+                            width: 58.w,
+                            child: CustomElivitedButton(
+                              text: '+',
+                              onPress: () {
+                                value.incrementValue();
+                                print(value.value);
+                              },
+                              backgroundColor: Theme.of(context)
+                                  .colorScheme
+                                  .onPrimaryContainer,
+                              textColor: Colors.white,
+                              fontSize: 30.sp,
+                            ),
+                          ),
+                        ),
+                      ],
+                    );
+                  },),
+
+                  AppSpacer.p24(),
+                  Consumer <TransferMoneyProvider>(builder: (context, value, child) {
+                    return  CustomSlider(valueChanged: (v) {
+                      value.setValue(v.toInt());
+
                     });
-                  }),
+
+                  },),
+
                   AppSpacer.p20(),
                   TransferDetails(
                     imagePath: 'lib/icons/bankTransferIcon.png',

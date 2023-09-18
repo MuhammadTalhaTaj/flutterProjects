@@ -56,7 +56,7 @@ class OnlyHistoryListContainer extends StatelessWidget {
                 children: [
                   Text(
                     name,
-                    style: bodyTextStyle(context),
+                    style: bodyTextStyle(),
                   ),
                   AppSpacer.p5(),
 
@@ -78,7 +78,7 @@ class OnlyHistoryListContainer extends StatelessWidget {
               )
             ],
           ),
-          Text(rightNumber,style: bodyTextStyle(context).copyWith(color: Color(0xff20c997)),)
+          Text(rightNumber,style: bodyTextStyle().copyWith(color: Color(0xff20c997)),)
         ],
       ),
     );

@@ -37,7 +37,7 @@ class ConnectionLost extends StatelessWidget {
             ),
             Text(
               S.of(context).connectionLose,
-              style: headingTextStyle(context),
+              style: headingTextStyle(),
             ),
             AppSize(
               height: 10,

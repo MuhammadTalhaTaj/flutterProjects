@@ -44,7 +44,7 @@ class DottedElevatedButton extends StatelessWidget {
                 ),
                 Text(
                   text,
-                  style: bodyTextStyle(context),
+                  style: bodyTextStyle(),
                 ),
               ],
             ),

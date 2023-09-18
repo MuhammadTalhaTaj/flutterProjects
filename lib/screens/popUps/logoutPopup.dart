@@ -26,7 +26,7 @@ class LogoutPopup extends StatelessWidget {
               alignment: Alignment.centerLeft,
               child: Text(
                 S.of(context).logOut,
-                style: headingTextStyle(context).copyWith(fontSize: 24),
+                style: headingTextStyle().copyWith(fontSize: 24),
               ),
             ),
 

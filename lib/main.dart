@@ -1,5 +1,6 @@
 import 'package:demo_flutter/commonwidgets/dottedElevetedButton.dart';
 import 'package:demo_flutter/constants/color_schemes.g.dart';
+import 'package:demo_flutter/providers/transefer_money_provider.dart';
 import 'package:demo_flutter/screens/OTP/otp.dart';
 import 'package:demo_flutter/screens/TDSSummary/TDSSummary.dart';
 import 'package:demo_flutter/screens/changePin/changePin.dart';
@@ -33,6 +34,7 @@ import 'package:demo_flutter/screens/withdrawalHistory/withdrawalHistory.dart';
 import 'package:device_preview/device_preview.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'generated/l10n.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -60,56 +62,61 @@ class MyApp extends StatelessWidget {
     useInheritedMediaQuery: true,
     // Use builder only if you need to use library outside ScreenUtilInit context
     builder: (_ , child) {
-    return MaterialApp(
-      theme: ThemeData(
-        scaffoldBackgroundColor:const Color(0xff1B021A),
-        colorScheme: lightColorScheme,
-        radioTheme: RadioThemeData(
-          fillColor: MaterialStateColor.resolveWith((states) => Colors.white),
+    return ChangeNotifierProvider(
+
+      create: (_)=>TransferMoneyProvider(),
+      child: MaterialApp(
+        theme: ThemeData(
+          scaffoldBackgroundColor:const Color(0xff1B021A),
+          colorScheme: lightColorScheme,
+          radioTheme: RadioThemeData(
+            fillColor: MaterialStateColor.resolveWith((states) => Colors.white),
+          ),
         ),
+        localizationsDelegates: const [
+          S.delegate,
+        ],
+
+
+        supportedLocales: S.delegate.supportedLocales,
+        home: const Language(),
+
+
+
+
+
+        routes: {
+          SignIn.routeName: (ctx) => SignIn(),
+          SignUp.routeName: (ctx) => SignUp(),
+          SignUp2.routeName: (ctx) => SignUp2(),
+          OTP.routeName: (ctx) => OTP(),
+          PanUpdate.routeName: (ctx) => PanUpdate(),
+          Language.routeName: (ctx) => Language(),
+          Failed.routeName: (ctx) => Failed(),
+          Congratulation.routeName: (ctx) => Congratulation(),
+          EditProfile.routeName: (ctx) => EditProfile(),
+          MoneyTransfer.routeName: (ctx) => MoneyTransfer(),
+          ChangePin.routeName: (ctx) => ChangePin(),
+          WithdrawalHistory.routeName: (ctx) => WithdrawalHistory(),
+          PrivacyPolicy.routeName: (ctx) => PrivacyPolicy(),
+          TeamSupport.routeName: (ctx) => TeamSupport(),
+          LogoutPopup.routeName: (ctx) => LogoutPopup(),
+          History.routeName: (ctx) => History(),
+          Notifications.routeName: (ctx) => Notifications(),
+          TDSSummary.routeName: (ctx) => TDSSummary(),
+          ManualEntry.routeName: (ctx) => ManualEntry(),
+          QrCode.routeName: (ctx) => QrCode(),
+          PaymentMethod.routeName: (ctx) => PaymentMethod(),
+          ConnectionLost.routeName: (ctx) => ConnectionLost(),
+          QrCode.routeName: (ctx) => QrCode(),
+          SuccessfulPopup.routeName: (ctx) => SuccessfulPopup(),
+          somethingWentWrongIcons.routeName: (ctx) => somethingWentWrongIcons(),
+          ServerError.routeName: (ctx) => ServerError(),
+          HomeScreen.routeName: (ctx) => HomeScreen(),
+          MoreSettings.routeName: (ctx) => MoreSettings(),
+          Home.routeName: (ctx) => Home(),
+          QRScanner.routeName: (ctx) => QRScanner(),
+        },
       ),
-      localizationsDelegates: const [
-        S.delegate,
-      ],
-
-
-      supportedLocales: S.delegate.supportedLocales,
-      home: const Language(),
-
-
-
-
-      routes: {
-        SignIn.routeName: (ctx) => SignIn(),
-        SignUp.routeName: (ctx) => SignUp(),
-        SignUp2.routeName: (ctx) => SignUp2(),
-        OTP.routeName: (ctx) => OTP(),
-        PanUpdate.routeName: (ctx) => PanUpdate(),
-        Language.routeName: (ctx) => Language(),
-        Failed.routeName: (ctx) => Failed(),
-        Congratulation.routeName: (ctx) => Congratulation(),
-        EditProfile.routeName: (ctx) => EditProfile(),
-        MoneyTransfer.routeName: (ctx) => MoneyTransfer(),
-        ChangePin.routeName: (ctx) => ChangePin(),
-        WithdrawalHistory.routeName: (ctx) => WithdrawalHistory(),
-        PrivacyPolicy.routeName: (ctx) => PrivacyPolicy(),
-        TeamSupport.routeName: (ctx) => TeamSupport(),
-        LogoutPopup.routeName: (ctx) => LogoutPopup(),
-        History.routeName: (ctx) => History(),
-        Notifications.routeName: (ctx) => Notifications(),
-        TDSSummary.routeName: (ctx) => TDSSummary(),
-        ManualEntry.routeName: (ctx) => ManualEntry(),
-        QrCode.routeName: (ctx) => QrCode(),
-        PaymentMethod.routeName: (ctx) => PaymentMethod(),
-        ConnectionLost.routeName: (ctx) => ConnectionLost(),
-        QrCode.routeName: (ctx) => QrCode(),
-        SuccessfulPopup.routeName: (ctx) => SuccessfulPopup(),
-        somethingWentWrongIcons.routeName: (ctx) => somethingWentWrongIcons(),
-        ServerError.routeName: (ctx) => ServerError(),
-        HomeScreen.routeName: (ctx) => HomeScreen(),
-        MoreSettings.routeName: (ctx) => MoreSettings(),
-        Home.routeName: (ctx) => Home(),
-        QRScanner.routeName: (ctx) => QRScanner(),
-      },
     );});
 }}

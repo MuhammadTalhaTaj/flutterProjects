@@ -49,6 +49,7 @@ dependencies:
   device_preview: ^1.1.0
   flutter_screenutil:
   provider: ^6.0.5
+  flutter_svg:
 
 dev_dependencies:
   flutter_test:

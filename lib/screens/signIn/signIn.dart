@@ -12,6 +12,7 @@ import 'package:demo_flutter/utils/app_utils/extensions/color_extension.dart';
 import 'package:demo_flutter/utils/app_utils/extensions/screen_util_extension.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/svg.dart';
 
 import '../../commonwidgets/appsize.dart';
 import '../../commonwidgets/customTextField.dart';
@@ -65,7 +66,7 @@ class _SignInState extends State<SignIn> {
                        //height: context.heightWithoutSafeArea*0.33,
 
                   height:  height*0.33,
-                  child: Image.asset(ImageVariables.signInImage),
+                  child: SvgPicture.asset('assets/images/signinImage.svg'),
                 ),
 
 

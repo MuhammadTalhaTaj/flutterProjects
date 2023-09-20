@@ -30,6 +30,7 @@ import 'package:demo_flutter/screens/signIn/signIn.dart';
 import 'package:demo_flutter/screens/signUp/signUp2.dart';
 import 'package:demo_flutter/screens/signUp/signup.dart';
 import 'package:demo_flutter/screens/teamSupport/teamSupport.dart';
+import 'package:demo_flutter/screens/test.dart';
 import 'package:demo_flutter/screens/withdrawalHistory/withdrawalHistory.dart';
 import 'package:device_preview/device_preview.dart';
 import 'package:flutter/foundation.dart';
@@ -79,7 +80,7 @@ class MyApp extends StatelessWidget {
 
 
         supportedLocales: S.delegate.supportedLocales,
-        home: const Language(),
+        home: const Test(),
 
 
 

@@ -9,6 +9,7 @@ import 'package:demo_flutter/utils/app_utils/extensions/screen_util_extension.da
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 import '../../commonwidgets/customElevetedButton.dart';
 import '../../constants/app_padding.dart';
@@ -50,13 +51,11 @@ class Language extends StatelessWidget {
                 child: Container(
                   child: Column(
                     children: [
-                      SizedBox(
-                        height: 300.h,
-                        child: Image.asset(
-                          ImageVariables.languageImage,
-                          fit: BoxFit.fill,
-                          // Adjust the height as needed
-                        ),
+                      SvgPicture.asset(
+                        'assets/images/languageImage.svg',
+                        fit: BoxFit.cover,
+                        color: Colors.red,
+                        // Adjust the height as needed
                       ),
                       Text(
                         S.of(context).Language,

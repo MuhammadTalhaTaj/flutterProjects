@@ -66,8 +66,7 @@ class _SignInState extends State<SignIn> {
                        //height: context.heightWithoutSafeArea*0.33,
 
                   height:  height*0.33,
-                  child: SvgPicture.asset('assets/images/signinImage.svg'),
-                ),
+                  child: Image.asset(ImageVariables.signInImage,),),
 
 
                 Container(

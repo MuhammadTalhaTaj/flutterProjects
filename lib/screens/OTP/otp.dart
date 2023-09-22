@@ -13,6 +13,7 @@ import 'package:pinput/pinput.dart';
 import '../../commonwidgets/appsize.dart';
 import '../../commonwidgets/customTextField.dart';
 import '../../constants/app_padding.dart';
+import '../../constants/snackbar.dart';
 import '../../generated/l10n.dart';
 
 class OTP extends StatefulWidget {
@@ -25,6 +26,8 @@ class OTP extends StatefulWidget {
 }
 
 class _OTPState extends State<OTP> {
+
+
   @override
   Widget build(BuildContext context) {
     double height=1.sh-MediaQuery.of(context).viewPadding.top;
@@ -71,10 +74,18 @@ class _OTPState extends State<OTP> {
   }
 }
 
-class BottomContainer extends StatelessWidget {
-  const BottomContainer({
+class BottomContainer extends StatefulWidget {
+
+   BottomContainer({
     super.key,
   });
+
+  @override
+  State<BottomContainer> createState() => _BottomContainerState();
+}
+
+class _BottomContainerState extends State<BottomContainer> {
+  bool myOtp=false;
 
   @override
   Widget build(BuildContext context) {
@@ -109,6 +120,13 @@ class BottomContainer extends StatelessWidget {
                 length: 6,
                 boxHeight: 45.h,
                 boxWidth: 45.w,
+                valueChanged: (v){
+                  setState(() {
+                    myOtp=v;
+                  });
+
+
+                },
               ),
             ),
             AppSpacer.p20(),
@@ -137,8 +155,14 @@ class BottomContainer extends StatelessWidget {
         Column(
           children: [
             CustomElivitedButton(
+
                 text: S.of(context).continue1,
                 onPress: () {
+                  if(myOtp==false){
+                    ScaffoldMessenger.of(context).showSnackBar(customSnackBar);
+                    // showDialog(context: context, builder: (context) => ValidatorPopup(),);
+                    return;
+                  }
                   Navigator.pushNamed(context, SignUp2.routeName);
                 }),
             AppSpacer.p10(),

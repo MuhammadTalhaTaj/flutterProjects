@@ -7,13 +7,15 @@ class CustomPinput extends StatefulWidget {
   final double width;
   final double boxHeight;
   final double boxWidth;
+  final ValueChanged valueChanged;
+
 
   const CustomPinput(
       {Key? key,
       required this.length,
       this.width = 14,
       this.boxHeight = 39,
-      this.boxWidth = 41})
+      this.boxWidth = 41, required this.valueChanged})
       : super(key: key);
 
   @override
@@ -63,7 +65,17 @@ class _CustomPinputState extends State<CustomPinput> {
       separatorBuilder: (index) => SizedBox(width: widget.width),
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       validator: (value) {
-        return value == '2222' ? null : 'Pin is incorrect';
+        if(value=='222222'){
+          setState(() {
+            widget.valueChanged(true);
+          });
+
+        }
+        else{
+          widget.valueChanged(false);
+        }
+
+        return value == '222222'  ? null : 'Pin is incorrect';
       },
       // onClipboardFound: (value) {
       //   debugPrint('onClipboardFound: $value');

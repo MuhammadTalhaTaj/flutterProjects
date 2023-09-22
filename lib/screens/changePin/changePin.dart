@@ -10,6 +10,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../constants/app_padding.dart';
+import '../../constants/snackbar.dart';
 import '../../generated/l10n.dart';
 
 class ChangePin extends StatefulWidget {
@@ -21,6 +22,7 @@ class ChangePin extends StatefulWidget {
 }
 
 class _ChangePinState extends State<ChangePin> {
+  bool myOtp=false;
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -65,7 +67,7 @@ class _ChangePinState extends State<ChangePin> {
                         length: 4,
                         boxWidth: 59.w,
                         boxHeight: 59.h,
-                        width: 30.w,
+                        width: 30.w, valueChanged: (value) {  },
                       )),
                      AppSpacer.p15(),
                       Text(
@@ -78,7 +80,7 @@ class _ChangePinState extends State<ChangePin> {
                             length: 4,
                             boxWidth: 59.w,
                             boxHeight: 59.h,
-                            width: 30.w,
+                            width: 30.w, valueChanged: (value) {  },
                           )),
                      AppSpacer.p15(),
                       Text(
@@ -92,11 +94,20 @@ class _ChangePinState extends State<ChangePin> {
                             boxWidth: 59.w,
                             boxHeight: 59.h,
                             width: 30.w,
+                            valueChanged: (v){
+
+                            },
                           )),
                     ],
                   ),
                   CustomElivitedButton(
-                    onPress: () {},
+                    onPress: () {
+                      if(myOtp==false){
+                        ScaffoldMessenger.of(context).showSnackBar(customSnackBar);
+                        // showDialog(context: context, builder: (context) => ValidatorPopup(),);
+                        return;
+                      }
+                    },
                     text: S.of(context).changeMpin,
                   )
                 ],

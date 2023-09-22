@@ -8,12 +8,14 @@ import 'package:demo_flutter/screens/congratulations/congratulation.dart';
 import 'package:demo_flutter/screens/signIn/signIn.dart';
 import 'package:demo_flutter/utils/app_utils/extensions/color_extension.dart';
 import 'package:demo_flutter/utils/app_utils/extensions/screen_util_extension.dart';
+import 'package:demo_flutter/utils/app_utils/validators/form_validator.dart';
 import 'package:flutter/material.dart';
 import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../commonwidgets/appsize.dart';
 import '../../commonwidgets/customTextField.dart';
 import '../../constants/app_padding.dart';
+import '../../constants/snackbar.dart';
 import '../../generated/l10n.dart';
 
 class PanUpdate extends StatelessWidget {
@@ -72,10 +74,18 @@ class PanUpdate extends StatelessWidget {
 
 
 
-class BottomContainer extends StatelessWidget {
+class BottomContainer extends StatefulWidget {
+
   const BottomContainer({
     super.key,
   });
+
+  @override
+  State<BottomContainer> createState() => _BottomContainerState();
+}
+
+class _BottomContainerState extends State<BottomContainer> {
+  String panNumber='';
 
   @override
   Widget build(BuildContext context) {
@@ -108,6 +118,11 @@ class BottomContainer extends StatelessWidget {
               height: 10.h,
             ),
             CustomTextField(
+              callback: (v){
+                setState(() {
+                  panNumber=v;
+                });
+              },
                     keyBoardtype: TextInputType.number,
               labelText: S.of(context).enterNumber,
             ),
@@ -144,6 +159,19 @@ class BottomContainer extends StatelessWidget {
             CustomElivitedButton(
                 text: S.of(context).continue1,
                 onPress: () {
+                  if(panNumber.isPanValid()){
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => PanUpdate(),
+                        ));
+                  }
+
+                  else{
+                    ScaffoldMessenger.of(context).showSnackBar(customSnackBar);
+                    // showDialog(context: context, builder: (context) => ValidatorPopup(),);
+                    return;
+                  }
                   Navigator.push(
                       context,
                       MaterialPageRoute(

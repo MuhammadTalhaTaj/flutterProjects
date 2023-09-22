@@ -51,12 +51,7 @@ class Language extends StatelessWidget {
                 child: Container(
                   child: Column(
                     children: [
-                      SvgPicture.asset(
-                        'assets/images/languageImage.svg',
-                        fit: BoxFit.cover,
-                        color: Colors.red,
-                        // Adjust the height as needed
-                      ),
+                      Image.asset(ImageVariables.languageImage),
                       Text(
                         S.of(context).Language,
                         style: headingTextStyle(),

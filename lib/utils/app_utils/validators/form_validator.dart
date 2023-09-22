@@ -33,6 +33,14 @@ extension FormValidator on String {
     return length == 6;
   }
 
+  bool isPanValid() {
+    return length == 10;
+  }
+
+  bool isCouponValid() {
+    return length == 12;
+  }
+
   bool isCodeValid() {
     return length == 12 ||
         length == 16 ||

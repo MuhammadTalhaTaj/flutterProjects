@@ -84,11 +84,7 @@ class _EditProfileState extends State<EditProfile> {
                           topRight: Radius.circular(35))),
                   child: Column(
                     children: [
-                      const Icon(
-                        //todo : change arrow to different icon
-                        Icons.arrow_upward,
-                        color: Colors.white,
-                      ),
+                      Image.asset('lib/icons/barIcon.png',color: context.colorScheme.primary,height: 30.h,width: 60.w,fit: BoxFit.fitWidth,),
                       Expanded(
                         child: SingleChildScrollView(
                           child: Column(

@@ -5,18 +5,27 @@ import 'package:demo_flutter/commonwidgets/simpleAppbar.dart';
 import 'package:demo_flutter/constants/textStyles.dart';
 import 'package:demo_flutter/imageVairableFiles/ImageVariableFiles.dart';
 import 'package:demo_flutter/utils/app_utils/extensions/color_extension.dart';
+import 'package:demo_flutter/utils/app_utils/validators/form_validator.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../constants/app_padding.dart';
 import '../../constants/app_spacer_constants.dart';
+import '../../constants/snackbar.dart';
 import '../../generated/l10n.dart';
 
-class ManualEntry extends StatelessWidget {
+class ManualEntry extends StatefulWidget {
+
   static const routeName = '/manualEntry';
 
   const ManualEntry({Key? key}) : super(key: key);
 
+  @override
+  State<ManualEntry> createState() => _ManualEntryState();
+}
+
+class _ManualEntryState extends State<ManualEntry> {
+  String couponCode='';
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -56,6 +65,12 @@ class ManualEntry extends StatelessWidget {
                       child: CustomTextField(
                         keyBoardtype: TextInputType.number,
                         labelText: '#### #### ####',
+                        callback: (v){
+                          setState(() {
+                            couponCode=v;
+                          });
+
+                        },
                       ),
                     ),
                    AppSpacer.p20(),
@@ -73,7 +88,16 @@ class ManualEntry extends StatelessWidget {
 
 
             CustomElivitedButton(
-              onPress: () {},
+              onPress: () {
+                if(couponCode.isCouponValid()){
+
+                }
+                else{
+                  ScaffoldMessenger.of(context).showSnackBar(customSnackBar);
+                  // showDialog(context: context, builder: (context) => ValidatorPopup(),);
+                  return;
+                }
+              },
               text: S.of(context).claimCoupon,
             )
           ],

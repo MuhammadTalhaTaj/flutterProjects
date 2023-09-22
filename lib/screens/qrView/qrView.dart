@@ -1,6 +1,7 @@
 import 'dart:developer';
 import 'dart:io';
 
+import 'package:demo_flutter/commonwidgets/simpleAppbar.dart';
 import 'package:demo_flutter/screens/homescreen/home.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -46,6 +47,7 @@ class _QRScannerState extends State<QRScanner> {
 
 
     return Scaffold(
+      appBar: SimpleAppbar(name: 'Qr Scanner'),
       body: Column(
         children: <Widget>[
           Expanded(flex: 4, child: _buildQrView(context)),

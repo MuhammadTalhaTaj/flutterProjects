@@ -9,18 +9,33 @@ import 'package:demo_flutter/screens/panDetails/panDetails.dart';
 import 'package:demo_flutter/screens/signIn/signIn.dart';
 import 'package:demo_flutter/utils/app_utils/extensions/color_extension.dart';
 import 'package:demo_flutter/utils/app_utils/extensions/screen_util_extension.dart';
+import 'package:demo_flutter/utils/app_utils/validators/form_validator.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../commonwidgets/appsize.dart';
 import '../../commonwidgets/customTextField.dart';
 import '../../constants/app_padding.dart';
+import '../../constants/snackbar.dart';
 import '../../generated/l10n.dart';
 import '../../randomData/listRandomData.dart';
 
-class SignUp2 extends StatelessWidget {
+class SignUp2 extends StatefulWidget {
   static const routeName='/sign-up2';
+
   const SignUp2({Key? key}) : super(key: key);
+
+  @override
+  State<SignUp2> createState() => _SignUp2State();
+}
+
+class _SignUp2State extends State<SignUp2> {
+  String name='';
+  String number='';
+  String workShopName='';
+  String roadName='';
+  String pinCode='';
+
 
   @override
   Widget build(BuildContext context) {
@@ -54,7 +69,7 @@ class SignUp2 extends StatelessWidget {
               SliverFillRemaining(
                 hasScrollBody: true,
                 child: Container(
-                  padding: padding16,
+                  padding: padding13,
                   width: double.infinity,
                   height: 0.67.sh,
                   decoration: BoxDecoration(
@@ -64,7 +79,7 @@ class SignUp2 extends StatelessWidget {
                           topRight: Radius.circular(35))),
                   child: Column(
                     children: [
-                   Icon(Icons.arrow_upward,color: Colors.white,),
+                   Image.asset('lib/icons/barIcon.png',color: context.colorScheme.primary,width: 60.w,fit: BoxFit.fitWidth,height: 30.h,),
                       Expanded(
                         child: SingleChildScrollView(
 
@@ -108,6 +123,11 @@ class SignUp2 extends StatelessWidget {
                                   CustomTextField(
 
                                     labelText: S.of(context).enterName,
+                                    callback: (v){
+                                      setState(() {
+                                        name=v;
+                                      });
+                                    },
                                   ),
                                   AppSize(
                                     height: 15.h,
@@ -123,6 +143,11 @@ class SignUp2 extends StatelessWidget {
                                   CustomTextField(
                                     keyBoardtype: TextInputType.number,
                                     labelText: S.of(context).enterNumber,
+                                    callback: (v){
+                                      setState(() {
+                                        number=v;
+                                      });
+                                    },
                                   ),
                                   AppSize(
                                     height: 15.h,
@@ -136,6 +161,12 @@ class SignUp2 extends StatelessWidget {
                                   ),
                                   CustomTextField(
                                     labelText: S.of(context).enterName,
+
+                                    callback: (v){
+                                      setState(() {
+                                        workShopName=v;
+                                      });
+                                    },
                                   ),
                                   AppSize(
                                     height: 15.h,
@@ -149,6 +180,12 @@ class SignUp2 extends StatelessWidget {
                                   ),
                                   CustomTextField(
                                     labelText: S.of(context).enterName,
+
+                                    callback: (v){
+                                      setState(() {
+                                        roadName=v;
+                                      });
+                                    },
                                   ),
                                   AppSize(
                                     height: 15.h,
@@ -163,6 +200,12 @@ class SignUp2 extends StatelessWidget {
                                   CustomTextField(
                                     keyBoardtype: TextInputType.number,
                                     labelText: S.of(context).enterCode,
+
+                                    callback: (v){
+                                      setState(() {
+                                        pinCode=v;
+                                      });
+                                    },
                                   ),
                                   AppSize(
                                     height: 15.h,
@@ -205,11 +248,22 @@ class SignUp2 extends StatelessWidget {
                                   CustomElivitedButton(
                                       text: S.of(context).getStarted,
                                       onPress: () {
-                                        Navigator.push(
-                                            context,
-                                            MaterialPageRoute(
-                                              builder: (context) => PanUpdate(),
-                                            ));
+                                        if(name.isNameValid()&&number.isMobileValid()&&workShopName.isNameValid()&&roadName.isNameValid()&&pinCode.isMpinValid()){
+                                          Navigator.push(
+                                              context,
+                                              MaterialPageRoute(
+                                                builder: (context) => PanUpdate(),
+                                              ));
+                                        }
+
+                                        else{
+                                          ScaffoldMessenger.of(context).showSnackBar(customSnackBar);
+                                          // showDialog(context: context, builder: (context) => ValidatorPopup(),);
+                                          return;
+                                        }
+
+
+
                                       }),
                                   AppSize(
                                     height: 10.h,

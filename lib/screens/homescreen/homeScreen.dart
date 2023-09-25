@@ -3,6 +3,8 @@ import 'package:demo_flutter/commonwidgets/nameAppbar.dart';
 import 'package:demo_flutter/constants/app_padding.dart';
 import 'package:demo_flutter/constants/app_spacer_constants.dart';
 import 'package:demo_flutter/constants/textStyles.dart';
+import 'package:demo_flutter/icons_variables/icons_variables.dart';
+import 'package:demo_flutter/imageVairableFiles/ImageVariableFiles.dart';
 import 'package:demo_flutter/screens/changePin/changePin.dart';
 import 'package:demo_flutter/screens/manualEntry/manualEntry.dart';
 import 'package:demo_flutter/screens/paymentMethod/paymentMethod.dart';
@@ -29,14 +31,14 @@ class HomeScreen extends StatelessWidget {
     return SafeArea(
       child: Scaffold(
         extendBodyBehindAppBar: true,
-        appBar: NameAppbar(),
+        appBar: const NameAppbar(),
         body: Container(
           height: double.infinity,
           decoration: BoxDecoration(
             color: context.colorScheme.background,
             image:  DecorationImage(
 
-              image: Image.asset('assets/images/backgroundImage.png').image,
+              image: Image.asset(ImageVariables.backgroundImage).image,
               fit: BoxFit.cover,
             ),),
           //   padding: EdgeInsets.only(bottom: 20.w),
@@ -66,10 +68,10 @@ class HomeScreen extends StatelessWidget {
                               width: 160.w,
                               child: SliderContainer(
                                 number: 35,
-                                iconPath: 'lib/icons/checkIcon.png',
-                                activeColor: Color(0xff248d5d),
+                                iconPath: IconsVariables.checkIcon,
+                                activeColor: const Color(0xff248d5d),
                                 bottomText: S.of(context).availablePoints,
-                                iconColor: Color(0xff248d5d),
+                                iconColor: const Color(0xff248d5d),
                               ),
                             ),
                             AppSize(
@@ -77,10 +79,10 @@ class HomeScreen extends StatelessWidget {
                               width: 160.w,
                               child: SliderContainer(
                                 number: 15,
-                                iconPath: 'lib/icons/redeemedIcon.png',
-                                activeColor: Color(0xff0d6efd),
+                                iconPath: IconsVariables.redeemedIcon,
+                                activeColor: const Color(0xff0d6efd),
                                 bottomText: S.of(context).redeemedPoint,
-                                iconColor: Color(0xff0d6efd),
+                                iconColor: const Color(0xff0d6efd),
                               ),
                             ),
                           ],
@@ -96,10 +98,10 @@ class HomeScreen extends StatelessWidget {
                               width: 160.w,
                               child: SliderContainer(
                                 number: 20,
-                                iconPath: 'lib/icons/process.png',
-                                activeColor: Color(0xfffd7314),
+                                iconPath: IconsVariables.process,
+                                activeColor: const Color(0xfffd7314),
                                 bottomText: S.of(context).inProcessPoint,
-                                iconColor: Color(0xfffd7314),
+                                iconColor: const Color(0xfffd7314),
                               ),
                             ),
                             AppSize(
@@ -107,10 +109,10 @@ class HomeScreen extends StatelessWidget {
                               width: 160.w,
                               child: SliderContainer(
                                 number: 30,
-                                iconPath: 'lib/icons/tax.png',
-                                activeColor: Color(0xffdc3545),
+                                iconPath: IconsVariables.taxIcon,
+                                activeColor: const Color(0xffdc3545),
                                 bottomText: S.of(context).texDeducted,
-                                iconColor: Color(0xffdc3545),
+                                iconColor: const Color(0xffdc3545),
                               ),
                             ),
                           ],
@@ -141,7 +143,7 @@ class HomeScreen extends StatelessWidget {
                                       context, ManualEntry.routeName);
                                 },
                                 child: BottomComponent(
-                                  iconPath: 'lib/icons/elementplus.png',
+                                  iconPath: IconsVariables.elementPlusIcon,
                                   text: S.of(context).entry,
                                 ),
                               ),
@@ -153,7 +155,7 @@ class HomeScreen extends StatelessWidget {
                                       context, PaymentMethod.routeName);
                                 },
                                 child: BottomComponent(
-                                  iconPath: 'lib/icons/cardedit.png',
+                                  iconPath: IconsVariables.cardEditIcon,
                                   text: S.of(context).methods,
                                 ),
                               ),
@@ -164,7 +166,7 @@ class HomeScreen extends StatelessWidget {
                                   Navigator.pushNamed(context, ChangePin.routeName);
                                 },
                                 child: BottomComponent(
-                                  iconPath: 'lib/icons/lock.png',
+                                  iconPath: IconsVariables.lockIcon,
                                   text: S.of(context).mpin,
                                 ),
                               ),
@@ -176,7 +178,7 @@ class HomeScreen extends StatelessWidget {
                                       context, TeamSupport.routeName);
                                 },
                                 child: BottomComponent(
-                                  iconPath: 'lib/icons/securityuser.png',
+                                  iconPath: IconsVariables.securityUserIcon,
                                   text: S.of(context).help,
                                 ),
                               ),

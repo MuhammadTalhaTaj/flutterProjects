@@ -1,4 +1,3 @@
-import 'package:demo_flutter/commonwidgets/cusotmDropdown.dart';
 import 'package:demo_flutter/constants/textStyles.dart';
 import 'package:demo_flutter/imageVairableFiles/ImageVariableFiles.dart';
 import 'package:demo_flutter/screens/signIn/signIn.dart';
@@ -16,16 +15,17 @@ class Failed extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
+
     return Scaffold(
       backgroundColor: Theme.of(context).colorScheme.background,
       body: Container(
-        decoration:  BoxDecoration(
-            gradient: LinearGradient(
-              begin: Alignment.centerLeft,
+        decoration: BoxDecoration(
+          color: context.colorScheme.background,
+          image:  DecorationImage(
 
-              colors: [context.colorScheme.background, context.colorScheme.onBackground],
-            )),
+            image: Image.asset(ImageVariables.backgroundImage).image,
+            fit: BoxFit.cover,
+          ),),
         padding: const EdgeInsets.all(20),
         child: Stack(
           children: [

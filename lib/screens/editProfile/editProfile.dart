@@ -3,7 +3,6 @@ import 'package:demo_flutter/commonwidgets/customElevetedButton.dart';
 import 'package:demo_flutter/constants/app_spacer_constants.dart';
 import 'package:demo_flutter/constants/textStyles.dart';
 import 'package:demo_flutter/imageVairableFiles/ImageVariableFiles.dart';
-import 'package:demo_flutter/screens/OTP/otp.dart';
 import 'package:demo_flutter/screens/congratulations/congratulation.dart';
 import 'package:demo_flutter/screens/panDetails/panDetails.dart';
 import 'package:demo_flutter/screens/signIn/signIn.dart';
@@ -15,6 +14,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../commonwidgets/appsize.dart';
 import '../../commonwidgets/customTextField.dart';
 import '../../generated/l10n.dart';
+import '../../icons_variables/icons_variables.dart';
 import '../../randomData/listRandomData.dart';
 
 class EditProfile extends StatefulWidget {
@@ -79,12 +79,12 @@ class _EditProfileState extends State<EditProfile> {
                   height: context.height * 0.67,
                   decoration:  BoxDecoration(
                       color: context.colorScheme.primaryContainer.withOpacity(0.3),
-                      borderRadius: BorderRadius.only(
+                      borderRadius: const BorderRadius.only(
                           topLeft: Radius.circular(35),
                           topRight: Radius.circular(35))),
                   child: Column(
                     children: [
-                      Image.asset('lib/icons/barIcon.png',color: context.colorScheme.primary,height: 30.h,width: 60.w,fit: BoxFit.fitWidth,),
+                      Image.asset(IconsVariables.barIcon,color: context.colorScheme.primary,height: 30.h,width: 60.w,fit: BoxFit.fitWidth,),
                       Expanded(
                         child: SingleChildScrollView(
                           child: Column(
@@ -96,13 +96,12 @@ class _EditProfileState extends State<EditProfile> {
                                 children: [
                                   Text(
                                     S.of(context).editProfile,
-                                    //todo : use navigator key to not pass context.
                                     style: headingTextStyle(),
                                   ),
                                   AppSize(
                                     height: 10,
                                   ),
-                                  Container(
+                                  SizedBox(
 
                                     height: 78.h,
                                     width: double.infinity,
@@ -141,13 +140,12 @@ class _EditProfileState extends State<EditProfile> {
                                         Row(
                                           children: [
                                             Image.asset(
-                                                //todo : change path from lib to assets/icon and move all icons in assets and use path from variable file
-                                                'lib/icons/uploadIcon.png'),
+                                                IconsVariables.uploadIcon),
                                             AppSize(
                                               width: 5,
                                             ),
                                             Image.asset(
-                                                'lib/icons/deleteIcon.png')
+                                                IconsVariables.deleteIcon)
                                           ],
                                         )
                                       ],
@@ -281,7 +279,7 @@ class _EditProfileState extends State<EditProfile> {
                                         Navigator.push(
                                             context,
                                             MaterialPageRoute(
-                                              builder: (context) =>isYesSelected? PanUpdate():Congratulation(),
+                                              builder: (context) =>isYesSelected? const PanUpdate():const Congratulation(),
                                             ));
                                       }),
                                   AppSpacer.p10(),

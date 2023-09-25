@@ -1,16 +1,13 @@
-import 'package:demo_flutter/commonwidgets/cusotmDropdown.dart';
 import 'package:demo_flutter/commonwidgets/customElevetedButton.dart';
 import 'package:demo_flutter/commonwidgets/dottedElevetedButton.dart';
 import 'package:demo_flutter/constants/textStyles.dart';
 import 'package:demo_flutter/imageVairableFiles/ImageVariableFiles.dart';
-import 'package:demo_flutter/screens/OTP/otp.dart';
 import 'package:demo_flutter/screens/congratulations/congratulation.dart';
 import 'package:demo_flutter/screens/signIn/signIn.dart';
 import 'package:demo_flutter/utils/app_utils/extensions/color_extension.dart';
 import 'package:demo_flutter/utils/app_utils/extensions/screen_util_extension.dart';
 import 'package:demo_flutter/utils/app_utils/validators/form_validator.dart';
 import 'package:flutter/material.dart';
-import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../commonwidgets/appsize.dart';
 import '../../commonwidgets/customTextField.dart';
@@ -35,13 +32,13 @@ class PanUpdate extends StatelessWidget {
           color: context.colorScheme.background,
           image:  DecorationImage(
 
-            image: Image.asset('assets/images/backgroundImage.png').image,
+            image: Image.asset(ImageVariables.backgroundImage).image,
             fit: BoxFit.cover,
           ),),
           child: SingleChildScrollView(
             child: Column(
               children: [
-                Container(
+                SizedBox(
                   height: 0.33*height,
                   child: Image.asset(ImageVariables.panDetailsImage),
                 ),
@@ -58,10 +55,10 @@ class PanUpdate extends StatelessWidget {
                   //when the height is less then 650 then it should scroll otherwise there can be problem in size so thats why add this logic
 
                   child: context.height < 650
-                      ? SingleChildScrollView(
+                      ? const SingleChildScrollView(
                           child: BottomContainer(),
                         )
-                      : BottomContainer(),
+                      : const BottomContainer(),
                 )
               ],
             ),
@@ -136,7 +133,7 @@ class _BottomContainerState extends State<BottomContainer> {
                 children: [
                   TextSpan(
                       text: S.of(context).loremIspumdolor,
-                      style: TextStyle(fontWeight: FontWeight.normal))
+                      style: const TextStyle(fontWeight: FontWeight.normal))
                 ],
               ),
             ),
@@ -163,7 +160,7 @@ class _BottomContainerState extends State<BottomContainer> {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => PanUpdate(),
+                          builder: (context) => const PanUpdate(),
                         ));
                   }
 
@@ -175,7 +172,7 @@ class _BottomContainerState extends State<BottomContainer> {
                   Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => Congratulation(),
+                        builder: (context) => const Congratulation(),
                       ));
                 }),
             AppSize(

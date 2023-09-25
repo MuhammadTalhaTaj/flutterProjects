@@ -1,10 +1,6 @@
-import 'package:demo_flutter/commonwidgets/cusotmDropdown.dart';
 import 'package:demo_flutter/constants/textStyles.dart';
 import 'package:demo_flutter/imageVairableFiles/ImageVariableFiles.dart';
-import 'package:demo_flutter/screens/homescreen/homeScreen.dart';
-import 'package:demo_flutter/screens/signIn/signIn.dart';
 import 'package:demo_flutter/utils/app_utils/extensions/color_extension.dart';
-import 'package:demo_flutter/utils/app_utils/extensions/screen_util_extension.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -29,7 +25,7 @@ class Congratulation extends StatelessWidget {
           color: context.colorScheme.background,
           image:  DecorationImage(
 
-            image: Image.asset('assets/images/backgroundImage.png').image,
+            image: Image.asset(ImageVariables.backgroundImage).image,
             fit: BoxFit.cover,
           ),),
         padding: padding16,
@@ -62,7 +58,7 @@ class Congratulation extends StatelessWidget {
                 ),
               ),
             ),
-            Spacer(),
+            const Spacer(),
             Align(
                 alignment: Alignment.bottomCenter,
                 child: CustomElivitedButton(

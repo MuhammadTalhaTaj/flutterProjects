@@ -1,12 +1,9 @@
 import 'package:demo_flutter/utils/app_utils/extensions/color_extension.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
-import '../../../commonwidgets/appsize.dart';
 import '../../../constants/app_padding.dart';
 import '../../../constants/app_spacer_constants.dart';
 import '../../../constants/textStyles.dart';
-import '../withdrawalHistory.dart';
 
 class HistoryListContainer extends StatelessWidget {
   final String imagePath;
@@ -25,8 +22,8 @@ class HistoryListContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.all( 10),
-      padding: EdgeInsets.all(13),
+      margin: const EdgeInsets.all( 10),
+      padding: const EdgeInsets.all(13),
       //height: 100,
       width: double.infinity,
       decoration: BoxDecoration(

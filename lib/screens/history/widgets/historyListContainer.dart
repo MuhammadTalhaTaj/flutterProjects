@@ -3,10 +3,8 @@ import 'package:demo_flutter/utils/app_utils/extensions/color_extension.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../commonwidgets/appsize.dart';
 import '../../../constants/app_spacer_constants.dart';
 import '../../../constants/textStyles.dart';
-import '../history.dart';
 
 class OnlyHistoryListContainer extends StatelessWidget {
   final String imagePath;
@@ -25,7 +23,7 @@ class OnlyHistoryListContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.all( 10),
+      margin: const EdgeInsets.all( 10),
       padding: padding13,
       //height: 105.h,
       width: double.infinity,
@@ -78,7 +76,7 @@ class OnlyHistoryListContainer extends StatelessWidget {
               )
             ],
           ),
-          Text(rightNumber,style: bodyTextStyle().copyWith(color: Color(0xff20c997)),)
+          Text(rightNumber,style: bodyTextStyle().copyWith(color: const Color(0xff20c997)),)
         ],
       ),
     );

@@ -26,18 +26,18 @@ class _NotificationsState extends State<Notifications> {
   Widget build(BuildContext context) {
     return Scaffold(
       extendBodyBehindAppBar: true,
-      appBar: NameAppbar(),
+      appBar: const NameAppbar(),
       body: Container(
         decoration: BoxDecoration(
           color: context.colorScheme.background,
           image:  DecorationImage(
 
-            image: Image.asset('assets/images/backgroundImage.png').image,
+            image: Image.asset(ImageVariables.backgroundImage).image,
             fit: BoxFit.cover,
           ),),
         height: double.infinity,
         width: double.infinity,
-        padding: EdgeInsets.only(right: 13, left: 13, bottom: 13),
+        padding: const EdgeInsets.only(right: 13, left: 13, bottom: 13),
         child: Column(
 
           children: [
@@ -82,10 +82,10 @@ class _NotificationsState extends State<Notifications> {
                     return Container(
                     //  height: 225,
                       decoration: BoxDecoration(
-                        border: Border.all(color: Color(0xff3e2530),width: 1.5),
+                        border: Border.all(color: const Color(0xff3e2530),width: 1.5),
                       ),
 
-                      margin: EdgeInsets.symmetric(vertical: 10),
+                      margin: const EdgeInsets.symmetric(vertical: 10),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [

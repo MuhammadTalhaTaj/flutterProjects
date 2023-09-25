@@ -1,11 +1,10 @@
-import 'package:demo_flutter/commonwidgets/appsize.dart';
 import 'package:demo_flutter/commonwidgets/customElevetedButton.dart';
 import 'package:demo_flutter/commonwidgets/customPinput.dart';
 import 'package:demo_flutter/commonwidgets/simpleAppbar.dart';
 import 'package:demo_flutter/constants/app_spacer_constants.dart';
 import 'package:demo_flutter/constants/textStyles.dart';
+import 'package:demo_flutter/imageVairableFiles/ImageVariableFiles.dart';
 import 'package:demo_flutter/utils/app_utils/extensions/color_extension.dart';
-import 'package:demo_flutter/utils/app_utils/extensions/screen_util_extension.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -38,7 +37,7 @@ class _ChangePinState extends State<ChangePin> {
           color: context.colorScheme.background,
           image:  DecorationImage(
 
-            image: Image.asset('assets/images/backgroundImage.png').image,
+            image: Image.asset(ImageVariables.backgroundImage).image,
             fit: BoxFit.cover,
           ),),
         child: Column(

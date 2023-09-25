@@ -1,12 +1,7 @@
-import 'package:demo_flutter/commonwidgets/appsize.dart';
 import 'package:demo_flutter/commonwidgets/dottedElevetedButton.dart';
-import 'package:demo_flutter/commonwidgets/nameAppbar.dart';
 import 'package:demo_flutter/commonwidgets/simpleAppbar.dart';
-import 'package:demo_flutter/constants/textStyles.dart';
 import 'package:demo_flutter/imageVairableFiles/ImageVariableFiles.dart';
-import 'package:demo_flutter/screens/history/widgets/historyListContainer.dart';
 import 'package:demo_flutter/screens/paymentMethod/widgets/paymentMethodList.dart';
-import 'package:demo_flutter/screens/withdrawalHistory/widgets/historyListContainer.dart';
 import 'package:demo_flutter/utils/app_utils/extensions/color_extension.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -19,7 +14,7 @@ import '../../generated/l10n.dart';
 
 class PaymentMethod extends StatefulWidget {
   static const routeName='/paymentMethod';
-  PaymentMethod({Key? key}) : super(key: key);
+  const PaymentMethod({Key? key}) : super(key: key);
 
   @override
   State<PaymentMethod> createState() => _PaymentMethodState();
@@ -52,7 +47,7 @@ class _PaymentMethodState extends State<PaymentMethod> {
               color: context.colorScheme.background,
               image:  DecorationImage(
 
-                image: Image.asset('assets/images/backgroundImage.png').image,
+                image: Image.asset(ImageVariables.backgroundImage).image,
                 fit: BoxFit.cover,
               ),),
           child: Column(

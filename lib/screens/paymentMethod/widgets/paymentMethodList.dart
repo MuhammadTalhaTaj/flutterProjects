@@ -1,12 +1,11 @@
 import 'package:demo_flutter/constants/app_padding.dart';
 import 'package:demo_flutter/constants/app_spacer_constants.dart';
+import 'package:demo_flutter/icons_variables/icons_variables.dart';
 import 'package:demo_flutter/utils/app_utils/extensions/color_extension.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../commonwidgets/appsize.dart';
 import '../../../constants/textStyles.dart';
-import '../paymentMethod.dart';
 
 class PaymentMethodListContainer extends StatelessWidget {
   final String imagePath;
@@ -26,7 +25,7 @@ class PaymentMethodListContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.symmetric(vertical: 10),
+      margin: const EdgeInsets.symmetric(vertical: 10),
       padding: padding13,
 
       width: double.infinity,
@@ -79,7 +78,7 @@ class PaymentMethodListContainer extends StatelessWidget {
           ),
           GestureDetector(
             onTap: onPress,
-              child: Image.asset('lib/icons/deleteIcon2.png')),
+              child: Image.asset(IconsVariables.deleteIcon2)),
 
         ],
       ),

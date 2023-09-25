@@ -1,9 +1,9 @@
 import 'package:demo_flutter/commonwidgets/appsize.dart';
 import 'package:demo_flutter/commonwidgets/customElevetedButton.dart';
-import 'package:demo_flutter/commonwidgets/customTextField.dart';
 import 'package:demo_flutter/commonwidgets/simpleAppbar.dart';
 import 'package:demo_flutter/constants/app_spacer_constants.dart';
 import 'package:demo_flutter/constants/textStyles.dart';
+import 'package:demo_flutter/icons_variables/icons_variables.dart';
 import 'package:demo_flutter/imageVairableFiles/ImageVariableFiles.dart';
 import 'package:demo_flutter/providers/transefer_money_provider.dart';
 import 'package:demo_flutter/screens/moneyTransfer/widgets/slider.dart';
@@ -40,11 +40,11 @@ class _MoneyTransferState extends State<MoneyTransfer> {
               color: context.colorScheme.background,
               image:  DecorationImage(
 
-                image: Image.asset('assets/images/backgroundImage.png').image,
+                image: Image.asset(ImageVariables.backgroundImage).image,
                 fit: BoxFit.cover,
               ),),
           padding:  padding15,
-          child: context.isPatriot?Body():SingleChildScrollView(
+          child: context.isPatriot?const Body():const SingleChildScrollView(
             child: Body(),
           )
         ),
@@ -62,7 +62,7 @@ class Body extends StatefulWidget {
 }
 
 class _BodyState extends State<Body> {
-  double _value = 0;
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -81,7 +81,7 @@ class _BodyState extends State<Body> {
                     width: double.infinity,
                     decoration:BoxDecoration(
                      image: DecorationImage(
-                        image: Image.asset('assets/images/Search bar.png').image,
+                        image: Image.asset(ImageVariables.searchBarImage).image,
                        fit: BoxFit.fill
                       ),
                     ),
@@ -89,7 +89,7 @@ class _BodyState extends State<Body> {
                       padding:padding10,
                       child: Row(
                         children: [
-                          Image.asset('assets/images/Frame 13.png',height: 60.h,width:60.w,fit: BoxFit.fill,),
+                          Image.asset(ImageVariables.frame13,height: 60.h,width:60.w,fit: BoxFit.fill,),
                           AppSpacer.p8(),
                           Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
@@ -156,7 +156,6 @@ class _BodyState extends State<Body> {
                               text: '+',
                               onPress: () {
                                 value.incrementValue();
-                                print(value.value);
                               },
                               backgroundColor: Theme.of(context)
                                   .colorScheme
@@ -181,13 +180,13 @@ class _BodyState extends State<Body> {
 
                   AppSpacer.p20(),
                   TransferDetails(
-                    imagePath: 'lib/icons/bankTransferIcon.png',
+                    imagePath: IconsVariables.bankTransferIcon,
                     upperText: S.of(context).bankTransfer,
                     lowerText: S.of(context).clickToSelectBankAccount,
                   ),
                   AppSpacer.p20(),
                   TransferDetails(
-                    imagePath: 'lib/icons/upiTransferIcon.png',
+                    imagePath: IconsVariables.upiTransferIcon,
                     upperText: S.of(context).upiTransfer,
                     lowerText: S.of(context).selectUpiAddress,
                   ),

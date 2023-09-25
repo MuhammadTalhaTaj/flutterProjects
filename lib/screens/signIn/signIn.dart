@@ -6,26 +6,19 @@ import 'package:demo_flutter/constants/textStyles.dart';
 import 'package:demo_flutter/imageVairableFiles/ImageVariableFiles.dart';
 import 'package:demo_flutter/randomData/listRandomData.dart';
 import 'package:demo_flutter/screens/OTP/otp.dart';
-import 'package:demo_flutter/screens/popUps/logoutPopup.dart';
-import 'package:demo_flutter/screens/popUps/validatorPopUp.dart';
 import 'package:demo_flutter/utils/app_utils/extensions/color_extension.dart';
-import 'package:demo_flutter/utils/app_utils/extensions/screen_util_extension.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/svg.dart';
-
-import '../../commonwidgets/appsize.dart';
 import '../../commonwidgets/customTextField.dart';
 import '../../constants/app_padding.dart';
 import '../../generated/l10n.dart';
 import '../../utils/app_utils/validators/form_validator.dart';
-import '../popUps/somethineWentWrongPopup.dart';
 import '../signUp/signup.dart';
 
 class SignIn extends StatefulWidget {
   static const routeName = '/sign-in';
 
-   SignIn({Key? key}) : super(key: key);
+   const SignIn({Key? key}) : super(key: key);
 
   @override
   State<SignIn> createState() => _SignInState();
@@ -45,7 +38,7 @@ class _SignInState extends State<SignIn> {
             color: context.colorScheme.background,
             image:  DecorationImage(
 
-              image: Image.asset('assets/images/backgroundImage.png').image,
+              image: Image.asset(ImageVariables.backgroundImage).image,
               fit: BoxFit.cover,
             ),),
 
@@ -61,7 +54,7 @@ class _SignInState extends State<SignIn> {
           child: SingleChildScrollView(
             child: Column(
               children: [
-                Container(
+                SizedBox(
 
                        //height: context.heightWithoutSafeArea*0.33,
 
@@ -146,7 +139,7 @@ class _SignInState extends State<SignIn> {
                           CustomElivitedButton(
                               text: S.of(context).getStarted,
                               onPress: () {
-                                print (myNumber.isMobileValid());
+
 
 
                                 if(myNumber.length<10){

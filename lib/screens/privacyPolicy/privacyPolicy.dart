@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../generated/l10n.dart';
+import '../../imageVairableFiles/ImageVariableFiles.dart';
 
 class PrivacyPolicy extends StatelessWidget {
   static const routeName='/privacyPolicy';
@@ -17,14 +18,14 @@ class PrivacyPolicy extends StatelessWidget {
         extendBodyBehindAppBar: true,
         appBar: SimpleAppbar(name: S.of(context).privacyPolicy),
         body: Container(
-          padding: EdgeInsets.all(13),
+          padding: const EdgeInsets.all(13),
           height: double.infinity,
           width: double.infinity,
           decoration: BoxDecoration(
             color: context.colorScheme.background,
             image:  DecorationImage(
 
-              image: Image.asset('assets/images/backgroundImage.png').image,
+              image: Image.asset(ImageVariables.backgroundImage).image,
               fit: BoxFit.cover,
             ),),
           child: Column(

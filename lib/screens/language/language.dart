@@ -7,9 +7,7 @@ import 'package:demo_flutter/screens/signIn/signIn.dart';
 import 'package:demo_flutter/utils/app_utils/extensions/color_extension.dart';
 import 'package:demo_flutter/utils/app_utils/extensions/screen_util_extension.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
 import '../../commonwidgets/customElevetedButton.dart';
 import '../../constants/app_padding.dart';
@@ -34,7 +32,7 @@ class Language extends StatelessWidget {
             color: context.colorScheme.background,
             image:  DecorationImage(
 
-              image: Image.asset('assets/images/backgroundImage.png').image,
+              image: Image.asset(ImageVariables.backgroundImage).image,
               fit: BoxFit.cover,
             ),),
 

@@ -1,5 +1,6 @@
 class ImageVariables{
 
+  static const String backgroundImage='assets/images/backgroundImage.png';
   static const String languageImage='assets/images/languageImage.png';
   static const String signInImage='assets/images/signinImage.png';
   static const String signUpImage='assets/images/signup.png';
@@ -19,6 +20,9 @@ class ImageVariables{
   static const String serverErrorImage='assets/images/serverError.png';
   static const String notification1Image='assets/images/notification1.png';
   static const String personImage='assets/images/person.jpg';
+  static const String  searchBarImage='assets/images/Search bar.png';
+  static const String  frame13='assets/images/Frame 13.png';
+
 
 
 

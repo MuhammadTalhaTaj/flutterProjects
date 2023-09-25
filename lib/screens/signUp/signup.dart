@@ -1,4 +1,3 @@
-import 'package:demo_flutter/commonwidgets/appsize.dart';
 import 'package:demo_flutter/commonwidgets/cusotmDropdown.dart';
 import 'package:demo_flutter/commonwidgets/customElevetedButton.dart';
 import 'package:demo_flutter/constants/app_spacer_constants.dart';
@@ -31,13 +30,13 @@ class SignUp extends StatelessWidget {
             color: context.colorScheme.background,
             image:  DecorationImage(
 
-              image: Image.asset('assets/images/backgroundImage.png').image,
+              image: Image.asset(ImageVariables.backgroundImage).image,
               fit: BoxFit.cover,
             ),),
           child: SingleChildScrollView(
             child: Column(
               children: [
-                Container(
+                SizedBox(
                   height: context.heightWithoutSafeArea * 0.33,
                   child: Image.asset(ImageVariables.signUpImage),
                 ),
@@ -51,10 +50,10 @@ class SignUp extends StatelessWidget {
                           topLeft: Radius.circular(35),
                           topRight: Radius.circular(35))),
                   child: context.height < 650
-                      ? SingleChildScrollView(
+                      ? const SingleChildScrollView(
                           child: BottomContainer(),
                         )
-                      : BottomContainer(),
+                      : const BottomContainer(),
                 )
               ],
             ),
@@ -120,7 +119,7 @@ class BottomContainer extends StatelessWidget {
                   Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => OTP(),
+                        builder: (context) => const OTP(),
                       ));
                 }),
             AppSpacer.p10(),
@@ -137,7 +136,7 @@ class BottomContainer extends StatelessWidget {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => SignIn(),
+                        builder: (context) => const SignIn(),
                       ),
                     );
                   },

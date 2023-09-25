@@ -4,11 +4,9 @@ import 'package:demo_flutter/commonwidgets/cusotmDropdown.dart';
 import 'package:demo_flutter/commonwidgets/customElevetedButton.dart';
 import 'package:demo_flutter/constants/textStyles.dart';
 import 'package:demo_flutter/imageVairableFiles/ImageVariableFiles.dart';
-import 'package:demo_flutter/screens/OTP/otp.dart';
 import 'package:demo_flutter/screens/panDetails/panDetails.dart';
 import 'package:demo_flutter/screens/signIn/signIn.dart';
 import 'package:demo_flutter/utils/app_utils/extensions/color_extension.dart';
-import 'package:demo_flutter/utils/app_utils/extensions/screen_util_extension.dart';
 import 'package:demo_flutter/utils/app_utils/validators/form_validator.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -18,6 +16,7 @@ import '../../commonwidgets/customTextField.dart';
 import '../../constants/app_padding.dart';
 import '../../constants/snackbar.dart';
 import '../../generated/l10n.dart';
+import '../../icons_variables/icons_variables.dart';
 import '../../randomData/listRandomData.dart';
 
 class SignUp2 extends StatefulWidget {
@@ -48,7 +47,7 @@ class _SignUp2State extends State<SignUp2> {
               color: context.colorScheme.background,
               image:  DecorationImage(
 
-                image: Image.asset('assets/images/backgroundImage.png').image,
+                image: Image.asset(ImageVariables.backgroundImage).image,
                 fit: BoxFit.cover,
               ),),
           child: CustomScrollView(
@@ -74,12 +73,12 @@ class _SignUp2State extends State<SignUp2> {
                   height: 0.67.sh,
                   decoration: BoxDecoration(
                       color: context.colorScheme.primaryContainer.withOpacity(0.3),
-                      borderRadius: BorderRadius.only(
+                      borderRadius: const BorderRadius.only(
                           topLeft: Radius.circular(35),
                           topRight: Radius.circular(35))),
                   child: Column(
                     children: [
-                   Image.asset('lib/icons/barIcon.png',color: context.colorScheme.primary,width: 60.w,fit: BoxFit.fitWidth,height: 30.h,),
+                   Image.asset(IconsVariables.barIcon,color: context.colorScheme.primary,width: 60.w,fit: BoxFit.fitWidth,height: 30.h,),
                       Expanded(
                         child: SingleChildScrollView(
 
@@ -252,7 +251,7 @@ class _SignUp2State extends State<SignUp2> {
                                           Navigator.push(
                                               context,
                                               MaterialPageRoute(
-                                                builder: (context) => PanUpdate(),
+                                                builder: (context) => const PanUpdate(),
                                               ));
                                         }
 
@@ -281,7 +280,7 @@ class _SignUp2State extends State<SignUp2> {
                                             Navigator.push(
                                                 context,
                                                 MaterialPageRoute(
-                                                  builder: (context) => SignIn(),
+                                                  builder: (context) => const SignIn(),
                                                 ));
                                           },
                                           child: Text(

@@ -18,13 +18,12 @@ class ServerError extends StatelessWidget {
       body: Container(
         width: double.infinity,
         decoration: BoxDecoration(
-            gradient: LinearGradient(
-          begin: Alignment.centerLeft,
-          colors: [
-            context.colorScheme.background,
-            context.colorScheme.onBackground
-          ],
-        )),
+          color: context.colorScheme.background,
+          image:  DecorationImage(
+
+            image: Image.asset(ImageVariables.backgroundImage).image,
+            fit: BoxFit.cover,
+          ),),
         padding: const EdgeInsets.all(10),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,

@@ -31,7 +31,7 @@ class TdsListContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.symmetric(vertical: 10),
+      margin: const EdgeInsets.symmetric(vertical: 10),
       padding: padding13,
      // height: 113,
       width: double.infinity,
@@ -49,7 +49,7 @@ class TdsListContainer extends StatelessWidget {
                 height: 51.h,
                 color: context.colorScheme.primaryContainer,
                 child: Center(
-                  //TODO image will be change later
+
                   child: Image.asset(imagePath,fit: BoxFit.fill,),
                 ),
               ),
@@ -74,11 +74,11 @@ class TdsListContainer extends StatelessWidget {
           ),
           Column(
             children: [
-              pointsContainer(color: Color(0xff198754), Points: rightNumber1),
+              pointsContainer(color: const Color(0xff198754), points: rightNumber1),
               AppSpacer.p8(),
-              pointsContainer(color: Color(0xffdc3545), Points: rightNumber2),
-              AppSize(height: 10,width:70,child: Divider(color: Color(0xff343a40)),),
-              pointsContainer(color: Color(0xff0d6efd), Points: rightNumber3),
+              pointsContainer(color: const Color(0xffdc3545), points: rightNumber2),
+              AppSize(height: 10,width:70,child: const Divider(color: Color(0xff343a40)),),
+              pointsContainer(color: const Color(0xff0d6efd), points: rightNumber3),
 
 
             ],
@@ -91,10 +91,10 @@ class TdsListContainer extends StatelessWidget {
 
 class pointsContainer extends StatelessWidget {
   final Color color;
-  final String Points;
+  final String points;
   const pointsContainer({
     super.key,
-     required this.color, required this.Points,
+     required this.color, required this.points,
   });
 
 
@@ -112,8 +112,8 @@ class pointsContainer extends StatelessWidget {
           child: FittedBox(
             fit:BoxFit.scaleDown ,
             child: Text(
-      Points,
-      style: bodyTextStyle().copyWith(color: Color(0xff20c997)),
+      points,
+      style: bodyTextStyle().copyWith(color: const Color(0xff20c997)),
     ),
           ),
         ));

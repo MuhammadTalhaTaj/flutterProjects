@@ -38,7 +38,7 @@ class _ManualEntryState extends State<ManualEntry> {
         color: context.colorScheme.background,
         image:  DecorationImage(
 
-          image: Image.asset('assets/images/backgroundImage.png').image,
+          image: Image.asset(ImageVariables.backgroundImage).image,
           fit: BoxFit.cover,
         ),),
         padding: padding15,

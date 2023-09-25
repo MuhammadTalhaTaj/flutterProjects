@@ -1,29 +1,28 @@
 import 'package:demo_flutter/commonwidgets/simpleAppbar.dart';
+import 'package:demo_flutter/icons_variables/icons_variables.dart';
+import 'package:demo_flutter/imageVairableFiles/ImageVariableFiles.dart';
 import 'package:demo_flutter/screens/withdrawalHistory/widgets/historyListContainer.dart';
 import 'package:demo_flutter/utils/app_utils/extensions/color_extension.dart';
 import 'package:flutter/material.dart';
-
-import '../../commonwidgets/appsize.dart';
-import '../../constants/textStyles.dart';
 import '../../generated/l10n.dart';
 
 class WithdrawalHistory extends StatelessWidget {
   static const routeName='/withdrawalHistory';
   WithdrawalHistory({Key? key}) : super(key: key);
 
-  List items = [
+  final List items = [
     {
       'name': 'HDFC Bank',
       'date': 'May 2023, 11:30 PM',
       'code': '08080800',
-      'imagePath': 'lib/icons/bankTransferIcon.png',
+      'imagePath': IconsVariables.bankTransferIcon,
       'rightNumber':'58'
     },
     {
       'name': 'UPI Transfer',
       'date': 'May 2023, 11:30 PM',
       'code': '08080800@upi',
-      'imagePath': 'lib/icons/upiTransferIcon.png',
+      'imagePath': IconsVariables.upiTransferIcon,
       'rightNumber':'58'
 
     },
@@ -31,14 +30,14 @@ class WithdrawalHistory extends StatelessWidget {
       'name': 'HDFC Bank',
       'date': 'May 2023, 11:30 PM',
       'code': '08080800',
-      'imagePath': 'lib/icons/bankTransferIcon.png',
+      'imagePath': IconsVariables.bankTransferIcon,
       'rightNumber':'58'
     },
     {
       'name': 'UPI Transfer',
       'date': 'May 2023, 11:30 PM',
       'code': '08080800@upi',
-      'imagePath': 'lib/icons/upiTransferIcon.png',
+      'imagePath': IconsVariables.upiTransferIcon,
       'rightNumber':'58'
     }
 
@@ -57,7 +56,7 @@ class WithdrawalHistory extends StatelessWidget {
             color: context.colorScheme.background,
             image:  DecorationImage(
 
-              image: Image.asset('assets/images/backgroundImage.png').image,
+              image: Image.asset(ImageVariables.backgroundImage).image,
               fit: BoxFit.cover,
             ),),
           child: ListView.builder(

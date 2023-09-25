@@ -1,13 +1,12 @@
-import 'package:demo_flutter/commonwidgets/appsize.dart';
 import 'package:demo_flutter/commonwidgets/simpleAppbar.dart';
 import 'package:demo_flutter/constants/app_padding.dart';
-import 'package:demo_flutter/constants/textStyles.dart';
+import 'package:demo_flutter/icons_variables/icons_variables.dart';
+import 'package:demo_flutter/imageVairableFiles/ImageVariableFiles.dart';
 import 'package:demo_flutter/screens/TDSSummary/widgets/pointsContainer.dart';
 import 'package:demo_flutter/screens/TDSSummary/widgets/tdsListContainer.dart';
 import 'package:demo_flutter/utils/app_utils/extensions/color_extension.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
 import '../../generated/l10n.dart';
 
 class TDSSummary extends StatelessWidget {
@@ -19,7 +18,7 @@ class TDSSummary extends StatelessWidget {
         'name': 'ADLJLJ4546K',
       'date': 'May 2023, 11:30 PM',
       'code': 'category',
-      'imagePath': 'lib/icons/histIcon.png',
+      'imagePath': IconsVariables.histIcon,
       'rightNumber1':'56',
    'rightNumber2': '-23',
    'rightNumber3':'23'
@@ -29,7 +28,7 @@ class TDSSummary extends StatelessWidget {
       'name': 'UPI Transfer',
       'date': 'May 2023, 11:30 PM',
       'code': 'category',
-      'imagePath': 'lib/icons/histIcon.png',
+      'imagePath':  IconsVariables.histIcon,
       'rightNumber1':'56',
       'rightNumber2': '-23',
       'rightNumber3':'23'
@@ -52,7 +51,7 @@ class TDSSummary extends StatelessWidget {
           color: context.colorScheme.background,
           image:  DecorationImage(
 
-            image: Image.asset('assets/images/backgroundImage.png').image,
+            image: Image.asset(ImageVariables.backgroundImage).image,
             fit: BoxFit.cover,
           ),),
         child: Column(
@@ -63,9 +62,9 @@ class TDSSummary extends StatelessWidget {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                  PointsContainer(color: Color(0xff198754), upperText: '96', lowerText: S.of(context).totalEarned),
-                  PointsContainer(color: Color(0xffdc3545), upperText: '99', lowerText: S.of(context).deducted),
-                  PointsContainer(color: Color(0xff0d6efd), upperText: '56', lowerText: S.of(context).transferred),
+                  PointsContainer(color: const Color(0xff198754), upperText: '96', lowerText: S.of(context).totalEarned),
+                  PointsContainer(color: const Color(0xffdc3545), upperText: '99', lowerText: S.of(context).deducted),
+                  PointsContainer(color: const Color(0xff0d6efd), upperText: '56', lowerText: S.of(context).transferred),
                 ],),
 
                 Expanded(

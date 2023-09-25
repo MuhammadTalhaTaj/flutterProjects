@@ -6,12 +6,9 @@ import 'package:demo_flutter/imageVairableFiles/ImageVariableFiles.dart';
 import 'package:demo_flutter/screens/signUp/signUp2.dart';
 import 'package:demo_flutter/screens/signUp/signup.dart';
 import 'package:demo_flutter/utils/app_utils/extensions/color_extension.dart';
-import 'package:demo_flutter/utils/app_utils/extensions/screen_util_extension.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:pinput/pinput.dart';
-import '../../commonwidgets/appsize.dart';
-import '../../commonwidgets/customTextField.dart';
+
 import '../../constants/app_padding.dart';
 import '../../constants/snackbar.dart';
 import '../../generated/l10n.dart';
@@ -19,7 +16,7 @@ import '../../generated/l10n.dart';
 class OTP extends StatefulWidget {
   static const routeName = '/otp';
 
-  OTP({Key? key}) : super(key: key);
+  const OTP({Key? key}) : super(key: key);
 
   @override
   State<OTP> createState() => _OTPState();
@@ -39,7 +36,7 @@ class _OTPState extends State<OTP> {
           decoration: BoxDecoration(
             color: context.colorScheme.background,
             image: DecorationImage(
-              image: Image.asset('assets/images/backgroundImage.png').image,
+              image: Image.asset(ImageVariables.backgroundImage).image,
               fit: BoxFit.cover,
             ),
           ),
@@ -63,7 +60,7 @@ class _OTPState extends State<OTP> {
                       borderRadius: const BorderRadius.only(
                           topLeft: Radius.circular(35),
                           topRight: Radius.circular(35))),
-                  child: BottomContainer(),
+                  child: const BottomContainer(),
                 ),
               ],
             ),
@@ -76,7 +73,7 @@ class _OTPState extends State<OTP> {
 
 class BottomContainer extends StatefulWidget {
 
-   BottomContainer({
+   const BottomContainer({
     super.key,
   });
 

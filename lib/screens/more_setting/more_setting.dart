@@ -1,7 +1,8 @@
 import 'package:demo_flutter/commonwidgets/nameAppbar.dart';
 import 'package:demo_flutter/constants/app_padding.dart';
-import 'package:demo_flutter/constants/app_spacer_constants.dart';
-import 'package:demo_flutter/constants/textStyles.dart';
+
+import 'package:demo_flutter/icons_variables/icons_variables.dart';
+import 'package:demo_flutter/imageVairableFiles/ImageVariableFiles.dart';
 import 'package:demo_flutter/screens/TDSSummary/TDSSummary.dart';
 import 'package:demo_flutter/screens/changePin/changePin.dart';
 import 'package:demo_flutter/screens/editProfile/editProfile.dart';
@@ -15,9 +16,7 @@ import 'package:demo_flutter/utils/app_utils/extensions/color_extension.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../commonwidgets/appsize.dart';
-import '../popUps/somethineWentWrongPopup.dart';
-import '../popUps/successfulPopUp.dart';
+
 
 class MoreSettings extends StatelessWidget {
   static const routeName = '/moreSettings';
@@ -25,17 +24,17 @@ class MoreSettings extends StatelessWidget {
   MoreSettings({Key? key}) : super(key: key);
 
   List settingItems = [
-    {'icon': 'lib/icons/edit.png', 'text': 'Edit Profile'},
-    {'icon': 'lib/icons/moneyTransfer.png', 'text': 'Money Transfer'},
-    {'icon': 'lib/icons/changeMpin.png', 'text': 'Change MPIN'},
-    {'icon': 'lib/icons/withdrawalHis.png', 'text': 'Withdrawal History'},
-    {'icon': 'lib/icons/privacyPolicy.png', 'text': 'Privacy Policy'},
-    {'icon': 'lib/icons/teamSupport.png', 'text': 'Team Support'},
-    {'icon': 'lib/icons/summaryIcon.png', 'text': 'TDS Summary'},
-    {'icon': 'lib/icons/logout.png', 'text': 'Log out'}
+    {'icon': IconsVariables.editIcon, 'text': 'Edit Profile'},
+    {'icon': IconsVariables.moneyTransfer, 'text': 'Money Transfer'},
+    {'icon': IconsVariables.changeMpinIcon, 'text': 'Change MPIN'},
+    {'icon': IconsVariables.withdrawalHis, 'text': 'Withdrawal History'},
+    {'icon': IconsVariables.privacyPolicy, 'text': 'Privacy Policy'},
+    {'icon': IconsVariables.teamSupportIcon, 'text': 'Team Support'},
+    {'icon': IconsVariables.summaryIcon, 'text': 'TDS Summary'},
+    {'icon': IconsVariables.logout, 'text': 'Log out'}
   ];
 
-  List NavigationsScreens = [
+  List navigationsScreens = [
     EditProfile.routeName,
     MoneyTransfer.routeName,
     ChangePin.routeName,
@@ -50,14 +49,14 @@ class MoreSettings extends StatelessWidget {
     return SafeArea(
       child: Scaffold(
         extendBodyBehindAppBar: true,
-        appBar: NameAppbar(),
+        appBar: const NameAppbar(),
         body: Container(
           padding:paddingH13,
           decoration: BoxDecoration(
             color: context.colorScheme.background,
             image:  DecorationImage(
 
-              image: Image.asset('assets/images/backgroundImage.png').image,
+              image: Image.asset(ImageVariables.backgroundImage).image,
               fit: BoxFit.cover,
             ),),
           child: Column(
@@ -68,7 +67,7 @@ class MoreSettings extends StatelessWidget {
                 child: MediaQuery.removePadding(context: context,
                   child: GridView.builder(
                       itemCount: settingItems.length,
-                      gridDelegate:  SliverGridDelegateWithMaxCrossAxisExtent(
+                      gridDelegate:  const SliverGridDelegateWithMaxCrossAxisExtent(
                           childAspectRatio: 3 / 1.8,
                           crossAxisSpacing: 10,
                           mainAxisSpacing: 10,
@@ -77,12 +76,12 @@ class MoreSettings extends StatelessWidget {
                           onTap: () {
                             if (index != 7) {
                               Navigator.pushNamed(
-                                  context, NavigationsScreens[index]);
+                                  context, navigationsScreens[index]);
                             } else {
                               showDialog(
                                 context: context,
                                 builder: (BuildContext context) {
-                                  return LogoutPopup();
+                                  return const LogoutPopup();
                                 },
                               );
                             }

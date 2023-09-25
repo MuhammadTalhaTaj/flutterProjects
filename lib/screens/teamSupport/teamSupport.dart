@@ -1,21 +1,17 @@
 import 'package:demo_flutter/commonwidgets/appsize.dart';
-import 'package:demo_flutter/commonwidgets/cusotmDropdown.dart';
 import 'package:demo_flutter/commonwidgets/customElevetedButton.dart';
 import 'package:demo_flutter/commonwidgets/simpleAppbar.dart';
 import 'package:demo_flutter/constants/app_spacer_constants.dart';
 import 'package:demo_flutter/constants/textStyles.dart';
 import 'package:demo_flutter/imageVairableFiles/ImageVariableFiles.dart';
 import 'package:demo_flutter/screens/OTP/otp.dart';
-import 'package:demo_flutter/screens/signIn/signIn.dart';
 import 'package:demo_flutter/utils/app_utils/extensions/color_extension.dart';
-import 'package:demo_flutter/utils/app_utils/extensions/screen_util_extension.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../commonwidgets/customTextField.dart';
 import '../../commonwidgets/dottedElevetedButton.dart';
 import '../../generated/l10n.dart';
-import '../../randomData/listRandomData.dart';
 
 class TeamSupport extends StatelessWidget {
   static const routeName = '/teamSupport';
@@ -35,7 +31,7 @@ class TeamSupport extends StatelessWidget {
             color: context.colorScheme.background,
             image:  DecorationImage(
 
-              image: Image.asset('assets/images/backgroundImage.png').image,
+              image: Image.asset(ImageVariables.backgroundImage).image,
               fit: BoxFit.cover,
             ),),
           child: Column(
@@ -125,7 +121,7 @@ class TeamSupport extends StatelessWidget {
                               Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                    builder: (context) => OTP(),
+                                    builder: (context) => const OTP(),
                                   ));
                             }),
 

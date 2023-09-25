@@ -1,9 +1,7 @@
 import 'package:demo_flutter/constants/app_padding.dart';
-import 'package:demo_flutter/utils/app_utils/extensions/color_extension.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../commonwidgets/appsize.dart';
 import '../../../constants/textStyles.dart';
 
 class SettingItem extends StatelessWidget {
@@ -18,7 +16,7 @@ class SettingItem extends StatelessWidget {
       decoration: BoxDecoration(
         //  color: context.colorScheme.onPrimaryContainer,
           border: Border.all(
-              color: text != 'Log out' ?Color(0xff495057):Color(0xffdc3545))),
+              color: text != 'Log out' ?const Color(0xff495057):const Color(0xffdc3545))),
       padding: padding15,
       child: Column(
         mainAxisSize: MainAxisSize.min,
@@ -35,7 +33,7 @@ class SettingItem extends StatelessWidget {
               text,
               style: bodyTextStyle().copyWith(
                 fontSize: 14.sp,
-                  color: text != 'Log out' ? Colors.white : Color(0xffdc3545)),
+                  color: text != 'Log out' ? Colors.white : const Color(0xffdc3545)),
             ),
           ),
         ],

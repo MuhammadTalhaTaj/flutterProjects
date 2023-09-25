@@ -2,6 +2,8 @@ import 'package:demo_flutter/constants/app_padding.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../icons_variables/icons_variables.dart';
+
 
 
 class CustomDropDownButton extends StatefulWidget {
@@ -48,7 +50,7 @@ class _CustomDropDownButtonState extends State<CustomDropDownButton> {
           isExpanded: true,
 
           value: selectedValue,
-          icon: SizedBox(height: 15.h,child: Image.asset('lib/icons/Vector.png',fit: BoxFit.fill,),),
+          icon: SizedBox(height: 15.h,child: Image.asset(IconsVariables.vectorIcon,fit: BoxFit.fill,),),
           // icon: const Icon(Icons.arrow_drop_down_sharp,color: Colors.white,size: 40),
           elevation: 16,
           style: TextStyle(color: Colors.white,fontSize: 20.sp),

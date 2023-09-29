@@ -93,6 +93,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "moneyTransfer": MessageLookupByLibrary.simpleMessage("Money Transfer"),
         "more": MessageLookupByLibrary.simpleMessage("More"),
         "mpin": MessageLookupByLibrary.simpleMessage("MPIN"),
+        "newMPIN": MessageLookupByLibrary.simpleMessage("New MPIN"),
         "no": MessageLookupByLibrary.simpleMessage("No"),
         "noData": MessageLookupByLibrary.simpleMessage("No Data"),
         "note": MessageLookupByLibrary.simpleMessage("Note: "),
@@ -113,6 +114,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "qrCode": MessageLookupByLibrary.simpleMessage("QR Code"),
         "redeemedPoint": MessageLookupByLibrary.simpleMessage("Redeemed Point"),
         "resend": MessageLookupByLibrary.simpleMessage("Resend it"),
+        "retypeMPIN": MessageLookupByLibrary.simpleMessage("Retype MPIN"),
         "roadName": MessageLookupByLibrary.simpleMessage("Road Name"),
         "selectAmount": MessageLookupByLibrary.simpleMessage("Select Amount"),
         "selectCity": MessageLookupByLibrary.simpleMessage("Select City"),
@@ -144,6 +146,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "totalEarned": MessageLookupByLibrary.simpleMessage("Total Earned"),
         "transferred": MessageLookupByLibrary.simpleMessage("Transferred"),
         "tryAgain": MessageLookupByLibrary.simpleMessage("Try Again"),
+        "update": MessageLookupByLibrary.simpleMessage("Update"),
         "upiTransfer": MessageLookupByLibrary.simpleMessage("UPI Transfer"),
         "uploadImage": MessageLookupByLibrary.simpleMessage("Upload Image"),
         "uploadMethod": MessageLookupByLibrary.simpleMessage("Upload Method"),
@@ -154,6 +157,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "Welcome Back please sign in to continue"),
         "welcomePleaseSignInTOContinue": MessageLookupByLibrary.simpleMessage(
             "Welcome please sign in to continue"),
+        "welcomePleaseSignupTOContinue": MessageLookupByLibrary.simpleMessage(
+            "Welcome please sign up to continue"),
         "welcomeToTheLoyaltyApp":
             MessageLookupByLibrary.simpleMessage("welcome to the loyalty app"),
         "withdrawalHistory":

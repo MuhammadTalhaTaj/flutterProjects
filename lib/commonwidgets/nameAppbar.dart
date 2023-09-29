@@ -78,7 +78,7 @@ class NameAppbar extends StatelessWidget implements PreferredSizeWidget {
                        child: FittedBox(
                          fit: BoxFit.scaleDown,
                          child: Text(
-                          '989770',
+                          '150',
                           //style: TextStyle(color: Colors.white),
                           style: bodyTextStyle().copyWith(fontSize: 20.sp),
                     ),

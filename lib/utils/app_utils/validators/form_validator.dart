@@ -38,7 +38,7 @@ extension FormValidator on String {
   }
 
   bool isCouponValid() {
-    return length == 12;
+    return length == 14;
   }
 
   bool isCodeValid() {

@@ -1,4 +1,6 @@
+import 'package:demo_flutter/providers/transefer_money_provider.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 import '../../../commonwidgets/appsize.dart';
 
@@ -38,22 +40,20 @@ class _CustomSliderState extends State<CustomSlider> {
             color: Colors.black,
           ),
         ),
-        child: Slider(
-          value: _value,
-          min: 0,
-          max: 100,
-          divisions: 100,
-          label: '\$$_value',
-          onChanged: (nvalue) {
-            widget.valueChanged(nvalue);
-            setState(
-                  () {
-                 _value=nvalue;
+        child:Consumer <TransferMoneyProvider>(builder: (context, value, child) {
+          return Slider(
+            value: value.value.toDouble(),
+            min: 0,
+            max: 100,
+            divisions: 100,
+            label: '\$$_value',
+            onChanged: (nvalue) {
+              widget.valueChanged(nvalue);
+             value.setValue(nvalue.toInt());
+            },
+          );
+        },),
 
-              },
-            );
-          },
-        ),
       ),
     );
   }

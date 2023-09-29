@@ -19,9 +19,12 @@ class ImageVariables{
   static const String connectionLostImage='assets/images/connectionLost.png';
   static const String serverErrorImage='assets/images/serverError.png';
   static const String notification1Image='assets/images/notification1.png';
-  static const String personImage='assets/images/person.jpg';
+  static const String personImage='assets/images/person.jpeg';
   static const String  searchBarImage='assets/images/Search bar.png';
   static const String  frame13='assets/images/Frame 13.png';
+  static const String  notification2='assets/images/notification2.png';
+  static const String  notification3='assets/images/notification3.png';
+  static const String  notification4='assets/images/notification4.png';
 
 
 

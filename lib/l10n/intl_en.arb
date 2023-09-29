@@ -117,7 +117,11 @@
   "tryAgain":"Try Again",
   "serverError":"Server error!",
   "server1":"Please check your internet",
-  "server2":"connection and try again"
-"welcomePleaseSignupTOContinue":Welcome please sign up to continue
+  "server2":"connection and try again",
+  "welcomePleaseSignupTOContinue":"Welcome please sign up to continue",
+  "newMPIN":"New MPIN",
+  "retypeMPIN":"Retype MPIN",
+    "update":"Update"
+
 
 }

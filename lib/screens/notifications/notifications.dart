@@ -1,5 +1,7 @@
 
 
+import 'dart:ffi';
+
 import 'package:demo_flutter/commonwidgets/appsize.dart';
 import 'package:demo_flutter/commonwidgets/customElevetedButton.dart';
 import 'package:demo_flutter/commonwidgets/nameAppbar.dart';
@@ -54,20 +56,25 @@ class _NotificationsState extends State<Notifications> {
                     S.of(context).clearAllNotification,
                     style: bodyTextStyle(),
                   ),
-                  AppSize(
-                    height: 25.h,
-                    width: 63.w,
-                    child: CustomElivitedButton(
-                      onPress: () {
-                        setState(() {
+                  InkWell(
+                    onTap:(){
+                      print('object jjlkjlk');
+                    setState(() {
+                      clearNotification();
 
 
-                        });
-                      },
-                      text: S.of(context).clear,
-                      fontSize: 12.sp,
-                      backgroundColor: context.colorScheme.onPrimaryContainer,
-                      textColor: context.colorScheme.primary,
+                    });} ,
+                    child: AppSize(
+                      height: 55.h,
+                      width: 63.w,
+                      child: CustomElivitedButton(
+                        onPress: () {
+                        },
+                        text: S.of(context).clear,
+                        fontSize: 12.sp,
+                        backgroundColor: context.colorScheme.onPrimaryContainer,
+                        textColor: context.colorScheme.primary,
+                      ),
                     ),
                   )
                 ],
@@ -79,118 +86,74 @@ class _NotificationsState extends State<Notifications> {
               child: MediaQuery.removePadding(context: context,
                 child: ListView.builder(
                   itemBuilder: (context, index) {
-                    return Container(
-                    //  height: 225,
-                      decoration: BoxDecoration(
-                        border: Border.all(color: const Color(0xff3e2530),width: 1.5),
-                      ),
+                    final item = notificationData[index];
 
+                    return Container(
+                      decoration: BoxDecoration(
+                        border: Border.all(color: const Color(0xff3e2530), width: 1.5),
+                      ),
                       margin: const EdgeInsets.symmetric(vertical: 10),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Container(
                             width: double.infinity,
-                            color:context.colorScheme.primaryContainer,
+                            color: context.colorScheme.primaryContainer,
                             padding: padding10,
-                          //  height: 50,
-                            child:Text('15 june 2022',style: bodyTextStyle().copyWith(fontSize: 20.sp),),
-
-                          ),
-                      Container(
-
-                       // height: 80,
-                        width: double.infinity,
-                        padding: padding10,
-
-
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Row(
-                              children: [
-                                Container(
-
-                                  color: context.colorScheme.primaryContainer,
-                                  child: Image.asset(ImageVariables.notification1Image,fit: BoxFit.fill,),
-                                ),
-
-                                AppSpacer.p10(),
-
-                                Column(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Text(
-                                      'Know your mechanic',
-                                      style: bodyTextStyle(),
-                                    ),
-                                   AppSpacer.p4(),
-                                    Text(
-                                      '25 April, 2023',
-                                      style: subBodyTextStyle(),
-                                    ),
-
-                                  ],
-                                )
-                              ],
-                            ),
-                          ],
-                        ),
-                      ),
-                           Divider(indent: 15, color: context.colorScheme.primaryContainer,height: 2,thickness: 1.5,endIndent: 15,),
-                          Container(
-
-                          //  height: 80,
-                            width: double.infinity,
-                            padding: padding10,
-
-
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Row(
-                                  children: [
-                                    Container(
-
-                                      color: context.colorScheme.primaryContainer,
-                                      child: Image.asset(ImageVariables.notification1Image,fit: BoxFit.fill,),
-                                    ),
-
-                                    AppSpacer.p10(),
-
-                                    Column(
-                                      mainAxisAlignment: MainAxisAlignment.center,
-                                      crossAxisAlignment: CrossAxisAlignment.start,
-                                      children: [
-                                        Text(
-                                          'Know your mechanic',
-                                          style: bodyTextStyle(),
-                                        ),
-                                        AppSpacer.p5(),
-
-                                        Text(
-                                          '25 April, 2023',
-                                          style: subBodyTextStyle(),
-                                        ),
-
-                                      ],
-                                    )
-                                  ],
-                                ),
-                              ],
+                            child: Text(
+                              item.date,
+                              style: bodyTextStyle().copyWith(fontSize: 20.sp),
                             ),
                           ),
-
-
+                          for (final subItem in item.subItems)
+                            Container(
+                              width: double.infinity,
+                              padding: padding10,
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Row(
+                                    children: [
+                                      Container(
+                                        color: context.colorScheme.primaryContainer,
+                                        child: Image.asset(subItem.image, fit: BoxFit.fill),
+                                      ),
+                                      AppSpacer.p10(),
+                                      Column(
+                                        mainAxisAlignment: MainAxisAlignment.center,
+                                        crossAxisAlignment: CrossAxisAlignment.start,
+                                        children: [
+                                          Text(
+                                            subItem.title,
+                                            style: bodyTextStyle(),
+                                          ),
+                                          AppSpacer.p4(),
+                                          Text(
+                                            subItem.dateDetail,
+                                            style: subBodyTextStyle(),
+                                          ),
+                                        ],
+                                      )
+                                    ],
+                                  ),
+                                ],
+                              ),
+                            ),
+                          Divider(
+                            indent: 15,
+                            color: context.colorScheme.primaryContainer,
+                            height: 2,
+                            thickness: 1.5,
+                            endIndent: 15,
+                          ),
                         ],
                       ),
                     );
                   },
-                  itemCount: 5,
+                  itemCount: notificationData.length,
                 ),
+
               ),
             )
           ],
@@ -199,3 +162,70 @@ class _NotificationsState extends State<Notifications> {
     );
   }
 }
+
+
+
+
+class NotificationItem {
+  final String date;
+  final List<SubItem> subItems;
+
+  NotificationItem({
+    required this.date,
+    required this.subItems,
+  });
+}
+
+class SubItem {
+  final String title;
+  final String dateDetail;
+  final String image;
+
+  SubItem({
+    required this.title,
+    required this.dateDetail,
+    required this.image,
+  });
+}
+
+  void clearNotification(){
+  notificationData.clear();
+  print('clear');
+
+  }
+
+List<NotificationItem> notificationData = [
+  NotificationItem(
+    date: '15 June 2022',
+    subItems: [
+      SubItem(
+        title: 'Know your mechanic',
+        dateDetail: '25 April, 2023',
+        image: ImageVariables.notification1Image,
+      ),
+      SubItem(
+        title: 'Happen that',
+        dateDetail: '17 April, 2023',
+        image: ImageVariables.notification2,
+      ),
+
+    ],
+  ),
+  NotificationItem(
+    date: '22 June 2022',
+    subItems: [
+      SubItem(
+        title: 'Know your mechanic',
+        dateDetail: '25 April, 2023',
+        image: ImageVariables.notification3,
+      ),
+      SubItem(
+        title: 'Know your mechanic',
+        dateDetail: '25 April, 2023',
+        image: ImageVariables.notification4,
+      ),
+    ],
+  ),
+  // Add more data items as needed
+];
+

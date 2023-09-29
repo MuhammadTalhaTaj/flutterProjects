@@ -66,6 +66,10 @@ class _SliderContainerState extends State<SliderContainer> {
               ),
             ],
           ),
+
+
+
+          //___________________Slider Theme________________//
           Row(
             children: [
               Flexible(
@@ -80,7 +84,7 @@ class _SliderContainerState extends State<SliderContainer> {
                     overlayShape: RoundSliderOverlayShape(overlayRadius: 5.0.sp),
                   ),
                   child: Slider(
-                    value: 25.0,
+                    value: (widget.number*100)/150,
                     min: 0,
                     max: 100,
                     onChanged: (double newHeight) {
@@ -92,7 +96,7 @@ class _SliderContainerState extends State<SliderContainer> {
                 ),
               ),
               Text(
-                '$val%',
+                '${((widget.number*100)/150).toInt()}%',
                 style: subBodyTextStyle(),
               ),
             ],

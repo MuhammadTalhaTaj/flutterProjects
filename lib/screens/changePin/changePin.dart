@@ -70,7 +70,7 @@ class _ChangePinState extends State<ChangePin> {
                       )),
                      AppSpacer.p15(),
                       Text(
-                        S.of(context).oldMpin,
+                        S.of(context).newMPIN,
                         style: bodyTextStyle(),
                       ),
                      AppSpacer.p10(),
@@ -83,7 +83,7 @@ class _ChangePinState extends State<ChangePin> {
                           )),
                      AppSpacer.p15(),
                       Text(
-                        S.of(context).oldMpin,
+                        S.of(context).retypeMPIN,
                         style: bodyTextStyle(),
                       ),
                       AppSpacer.p10(),

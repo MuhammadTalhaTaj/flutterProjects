@@ -1169,6 +1169,46 @@ class S {
       args: [],
     );
   }
+
+  /// `Welcome please sign up to continue`
+  String get welcomePleaseSignupTOContinue {
+    return Intl.message(
+      'Welcome please sign up to continue',
+      name: 'welcomePleaseSignupTOContinue',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `New MPIN`
+  String get newMPIN {
+    return Intl.message(
+      'New MPIN',
+      name: 'newMPIN',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Retype MPIN`
+  String get retypeMPIN {
+    return Intl.message(
+      'Retype MPIN',
+      name: 'retypeMPIN',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Update`
+  String get update {
+    return Intl.message(
+      'Update',
+      name: 'update',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

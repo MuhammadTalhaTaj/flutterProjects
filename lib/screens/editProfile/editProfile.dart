@@ -5,6 +5,8 @@ import 'package:demo_flutter/constants/textStyles.dart';
 import 'package:demo_flutter/imageVairableFiles/ImageVariableFiles.dart';
 import 'package:demo_flutter/screens/congratulations/congratulation.dart';
 import 'package:demo_flutter/screens/panDetails/panDetails.dart';
+import 'package:demo_flutter/screens/popUps/somethineWentWrongPopup.dart';
+import 'package:demo_flutter/screens/popUps/successfulPopUp.dart';
 import 'package:demo_flutter/screens/signIn/signIn.dart';
 import 'package:demo_flutter/utils/app_utils/extensions/color_extension.dart';
 import 'package:demo_flutter/utils/app_utils/extensions/screen_util_extension.dart';
@@ -274,38 +276,17 @@ class _EditProfileState extends State<EditProfile> {
                               Column(
                                 children: [
                                   CustomElivitedButton(
-                                      text: S.of(context).editProfile,
+                                      text: S.of(context).update,
                                       onPress: () {
-                                        Navigator.push(
-                                            context,
-                                            MaterialPageRoute(
-                                              builder: (context) =>isYesSelected? const PanUpdate():const Congratulation(),
-                                            ));
+                                        showDialog(context: context, builder: (context) => SuccessfulPopup(),);
+                                        // Navigator.push(
+                                        //     context,
+                                        //     MaterialPageRoute(
+                                        //       builder: (context) =>isYesSelected? const PanUpdate():const Congratulation(),
+                                        //     ));
                                       }),
                                   AppSpacer.p10(),
-                                  Row(
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: [
-                                      Text(
-                                        S.of(context).alreadyMemberWithUs,
-                                        style: subBodyTextStyle(),
-                                      ),
-                                      AppSpacer.p5(),
-                                      GestureDetector(
-                                          onTap: () {
-                                            Navigator.push(
-                                                context,
-                                                MaterialPageRoute(
-                                                  builder: (context) =>
-                                                      SignIn(),
-                                                ));
-                                          },
-                                          child: Text(
-                                            S.of(context).logIn,
-                                            style: bodyTextStyle(),
-                                          ))
-                                    ],
-                                  )
+
                                 ],
                               )
                             ],

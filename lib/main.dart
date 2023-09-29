@@ -41,15 +41,15 @@ import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 void main() =>
-    // runApp(
-    // const MyApp());
     runApp(
-  DevicePreview(
-    enabled: !kReleaseMode,
-    builder: (context) =>
-        MyApp(), // Wrap your app
-  ),
-);
+    const MyApp());
+//     runApp(
+//   DevicePreview(
+//     enabled: !kReleaseMode,
+//     builder: (context) =>
+//         MyApp(), // Wrap your app
+//   ),
+// );
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
@@ -80,7 +80,7 @@ class MyApp extends StatelessWidget {
 
 
         supportedLocales: S.delegate.supportedLocales,
-        home: const Congratulation(),
+        home:  Notifications(),
 
 
 
@@ -111,7 +111,7 @@ class MyApp extends StatelessWidget {
           ConnectionLost.routeName: (ctx) => ConnectionLost(),
           QrCode.routeName: (ctx) => QrCode(),
           SuccessfulPopup.routeName: (ctx) => SuccessfulPopup(),
-          somethingWentWrongIcons.routeName: (ctx) => somethingWentWrongIcons(),
+          SomethingWentWrongPopup.routeName: (ctx) => SomethingWentWrongPopup(),
           ServerError.routeName: (ctx) => ServerError(),
           HomeScreen.routeName: (ctx) => HomeScreen(),
           MoreSettings.routeName: (ctx) => MoreSettings(),

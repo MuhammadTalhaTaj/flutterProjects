@@ -10,8 +10,10 @@ class CustomTextField extends StatefulWidget {
   bool textAlignCenter;
   double editedTextSize;
   var keyBoardtype;
+  bool spacer;
   ValueChanged<String>? callback;
   int maxlines;
+  var maxLength;
 
 
   CustomTextField({
@@ -23,6 +25,8 @@ class CustomTextField extends StatefulWidget {
     this.keyBoardtype=TextInputType.text,
     this.callback,
     this.maxlines=1,
+    this.spacer=false,
+    this.maxLength=500,
   }) : super(key: key);
 
   @override
@@ -56,8 +60,15 @@ class _CustomTextFieldState extends State<CustomTextField> {
           alignment: Alignment.centerLeft,
           child: TextField(
 
+            maxLength:widget.spacer==true?widget.maxLength:null,
+
+           inputFormatters: widget.spacer==true?[
+              FilteringTextInputFormatter.digitsOnly,
+              new CustomInputFormatter()
+            ]:[],
+
           maxLines:widget.maxlines,
-            //expands: true,
+
 
             keyboardType: widget.keyBoardtype,
             controller: _controller,
@@ -95,5 +106,35 @@ class _CustomTextFieldState extends State<CustomTextField> {
   void dispose() {
     _controller.dispose();
     super.dispose();
+  }
+}
+
+
+
+
+
+class CustomInputFormatter extends TextInputFormatter {
+  @override
+  TextEditingValue formatEditUpdate(TextEditingValue oldValue, TextEditingValue newValue) {
+    var text = newValue.text;
+
+    if (newValue.selection.baseOffset == 0) {
+      return newValue;
+    }
+
+    var buffer = StringBuffer();
+    for (int i = 0; i < text.length; i++) {
+      buffer.write(text[i]);
+      var nonZeroIndex = i + 1;
+      if (nonZeroIndex % 4 == 0 && nonZeroIndex != text.length) {
+        buffer.write(' '); // Replace this with anything you want to put after each 4 numbers
+      }
+    }
+
+    var string = buffer.toString();
+    return newValue.copyWith(
+        text: string,
+        selection: new TextSelection.collapsed(offset: string.length)
+    );
   }
 }

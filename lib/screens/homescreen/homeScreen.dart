@@ -58,6 +58,9 @@ class HomeScreen extends StatelessWidget {
                         child: const PicHorizontalContainer(),
                       ),
                       AppSpacer.p15(),
+
+
+                      //______________Slider Container__________//
                       Padding(
                         padding: EdgeInsets.symmetric(horizontal: 13.w,vertical: 13.h),
                         child: Row(
@@ -67,7 +70,7 @@ class HomeScreen extends StatelessWidget {
                               height: 130.h,
                               width: 160.w,
                               child: SliderContainer(
-                                number: 35,
+                                number: 25,
                                 iconPath: IconsVariables.checkIcon,
                                 activeColor: const Color(0xff248d5d),
                                 bottomText: S.of(context).availablePoints,
@@ -78,7 +81,7 @@ class HomeScreen extends StatelessWidget {
                               height: 130.h,
                               width: 160.w,
                               child: SliderContainer(
-                                number: 15,
+                                number: 25,
                                 iconPath: IconsVariables.redeemedIcon,
                                 activeColor: const Color(0xff0d6efd),
                                 bottomText: S.of(context).redeemedPoint,
@@ -97,7 +100,7 @@ class HomeScreen extends StatelessWidget {
                               height: 130.h,
                               width: 160.w,
                               child: SliderContainer(
-                                number: 20,
+                                number: 50,
                                 iconPath: IconsVariables.process,
                                 activeColor: const Color(0xfffd7314),
                                 bottomText: S.of(context).inProcessPoint,
@@ -108,7 +111,7 @@ class HomeScreen extends StatelessWidget {
                               height: 130.h,
                               width: 160.w,
                               child: SliderContainer(
-                                number: 30,
+                                number: 50,
                                 iconPath: IconsVariables.taxIcon,
                                 activeColor: const Color(0xffdc3545),
                                 bottomText: S.of(context).texDeducted,

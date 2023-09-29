@@ -4,6 +4,7 @@ import 'package:demo_flutter/commonwidgets/customTextField.dart';
 import 'package:demo_flutter/commonwidgets/simpleAppbar.dart';
 import 'package:demo_flutter/constants/textStyles.dart';
 import 'package:demo_flutter/imageVairableFiles/ImageVariableFiles.dart';
+import 'package:demo_flutter/screens/popUps/successfulPopUp.dart';
 import 'package:demo_flutter/utils/app_utils/extensions/color_extension.dart';
 import 'package:demo_flutter/utils/app_utils/validators/form_validator.dart';
 import 'package:flutter/material.dart';
@@ -13,6 +14,7 @@ import '../../constants/app_padding.dart';
 import '../../constants/app_spacer_constants.dart';
 import '../../constants/snackbar.dart';
 import '../../generated/l10n.dart';
+import '../popUps/somethineWentWrongPopup.dart';
 
 class ManualEntry extends StatefulWidget {
 
@@ -65,8 +67,12 @@ class _ManualEntryState extends State<ManualEntry> {
                       child: CustomTextField(
                         keyBoardtype: TextInputType.number,
                         labelText: '#### #### ####',
+                        maxLength: 14,
+                        spacer: true,
                         callback: (v){
+
                           setState(() {
+
                             couponCode=v;
                           });
 
@@ -90,7 +96,14 @@ class _ManualEntryState extends State<ManualEntry> {
             CustomElivitedButton(
               onPress: () {
                 if(couponCode.isCouponValid()){
-
+                  if(couponCode=='2222 2222 2222') {
+                    showDialog(context: context,
+                      builder: (context) => SuccessfulPopup(),);
+                  }
+                  else{
+                    showDialog(context: context,
+                      builder: (context) => SomethingWentWrongPopup(),);
+                  }
                 }
                 else{
                   ScaffoldMessenger.of(context).showSnackBar(customSnackBar);

@@ -59,7 +59,9 @@ void showCustomBottomSheet(context, Color color) {
                 ],
               ),
               AppSpacer.p15(),
-              CustomElivitedButton(onPress: (){},text: 'Save',)
+              CustomElivitedButton(onPress: (){
+                Navigator.pop(context);
+              },text: 'Save',)
 
             ],
           ),

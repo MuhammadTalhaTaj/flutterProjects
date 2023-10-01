@@ -80,7 +80,7 @@ class MyApp extends StatelessWidget {
 
 
         supportedLocales: S.delegate.supportedLocales,
-        home:  History(),
+        home:  Language(),
 
 
 

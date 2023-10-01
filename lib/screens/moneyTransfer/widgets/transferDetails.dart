@@ -10,10 +10,11 @@ import '../../../constants/textStyles.dart';
 class TransferDetails extends StatefulWidget {
   String upperText;
   String lowerText;
-
   String imagePath;
+  bool value;
+  VoidCallback voidCallBack;
 
-  TransferDetails({required this.imagePath,required this.upperText,required this.lowerText});
+  TransferDetails({required this.imagePath,required this.upperText,required this.lowerText,required this.value,required this.voidCallBack});
 
   @override
   State<TransferDetails> createState() => _TransferDetailsState();
@@ -71,14 +72,15 @@ class _TransferDetailsState extends State<TransferDetails> {
             height: 23.h,
             width: 23.w,
             child: GestureDetector(
-              onTap: () {
-                setState(() {
-                  _checkbox1 = !_checkbox1;
-                  print('jslfjs ');
-                });
-              },
+              onTap: widget.voidCallBack,
+              //     () {
+              //   setState(() {
+              //     _checkbox1 = !_checkbox1;
+              //     print('jslfjs ');
+              //   });
+              // },
               child: Center(
-                  child: Image.asset(_checkbox1 == true
+                  child: Image.asset(widget.value == true
                       ? 'lib/icons/checkboxSelectedIcon.png'
                       : 'lib/icons/checkboxIcon.png')),
             ),

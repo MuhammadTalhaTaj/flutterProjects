@@ -147,7 +147,9 @@ class _BottomContainerState extends State<BottomContainer> {
             AppSize(
               height: 10.h,
             ),
-            DottedElevatedButton(),
+            DottedElevatedButton(
+              voidCallBack: (){},
+            ),
 
           ],
         ),

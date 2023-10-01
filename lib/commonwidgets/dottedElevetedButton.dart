@@ -9,8 +9,9 @@ import 'appsize.dart';
 
 class DottedElevatedButton extends StatelessWidget {
   String text;
+  VoidCallback voidCallBack;
 
-  DottedElevatedButton({this.text='Upload image'});
+  DottedElevatedButton({this.text='Upload image',required this.voidCallBack});
 
   @override
   Widget build(BuildContext context) {
@@ -31,7 +32,7 @@ class DottedElevatedButton extends StatelessWidget {
               backgroundColor:
               context.colorScheme.onPrimaryContainer,
             ),
-            onPressed: () {},
+            onPressed: voidCallBack,
             child: Row(
               children: [
                 Icon(

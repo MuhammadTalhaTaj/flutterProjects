@@ -5,6 +5,7 @@ import 'package:demo_flutter/constants/app_spacer_constants.dart';
 import 'package:demo_flutter/constants/textStyles.dart';
 import 'package:demo_flutter/imageVairableFiles/ImageVariableFiles.dart';
 import 'package:demo_flutter/screens/OTP/otp.dart';
+import 'package:demo_flutter/screens/popUps/successfulPopUp.dart';
 import 'package:demo_flutter/utils/app_utils/extensions/color_extension.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -112,17 +113,13 @@ class TeamSupport extends StatelessWidget {
                         ),
                         AppSpacer.p10(),
 
-                        DottedElevatedButton(),
+                        DottedElevatedButton(voidCallBack: (){},),
                         AppSpacer.p32(),
 
                         CustomElivitedButton(
                             text: S.of(context).submit,
                             onPress: () {
-                              Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (context) => const OTP(),
-                                  ));
+                            showDialog(context: context, builder: (context) =>SuccessfulPopup(),);
                             }),
 
                       ],

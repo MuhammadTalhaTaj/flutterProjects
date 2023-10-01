@@ -8,6 +8,7 @@ import 'package:demo_flutter/imageVairableFiles/ImageVariableFiles.dart';
 import 'package:demo_flutter/providers/transefer_money_provider.dart';
 import 'package:demo_flutter/screens/moneyTransfer/widgets/slider.dart';
 import 'package:demo_flutter/screens/moneyTransfer/widgets/transferDetails.dart';
+import 'package:demo_flutter/screens/popUps/successfulPopUp.dart';
 import 'package:demo_flutter/utils/app_utils/extensions/color_extension.dart';
 import 'package:demo_flutter/utils/app_utils/extensions/screen_util_extension.dart';
 import 'package:flutter/material.dart';
@@ -28,6 +29,7 @@ class MoneyTransfer extends StatefulWidget {
 }
 
 class _MoneyTransferState extends State<MoneyTransfer> {
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -63,6 +65,8 @@ class Body extends StatefulWidget {
 }
 
 class _BodyState extends State<Body> {
+  bool value1=false;
+  bool value2=false;
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -192,17 +196,42 @@ class _BodyState extends State<Body> {
                     imagePath: IconsVariables.bankTransferIcon,
                     upperText: S.of(context).bankTransfer,
                     lowerText: S.of(context).clickToSelectBankAccount,
+                    value: value1,
+                    voidCallBack: (){
+                      setState(() {
+                        value1=!value1;
+
+                        if(value2==true){
+                          value2=!value2;
+                        }
+                      });
+
+                    },
                   ),
                   AppSpacer.p20(),
                   TransferDetails(
+
                     imagePath: IconsVariables.upiTransferIcon,
                     upperText: S.of(context).upiTransfer,
                     lowerText: S.of(context).selectUpiAddress,
+                      value: value2,
+                      voidCallBack: (){
+                        setState(() {
+
+                          value2=!value2;
+                          if(value1==true){
+                            value1=!value1;
+                          }
+                        });
+                      },
                   ),
                 ],
               ),
               CustomElivitedButton(
-                onPress: () {},
+                onPress: () {
+
+                  showDialog(context: context, builder: (context) => SuccessfulPopup(),);
+                },
                 text: S.of(context).submit,
               )
             ],

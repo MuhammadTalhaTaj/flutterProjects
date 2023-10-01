@@ -20,7 +20,7 @@ class History extends StatelessWidget {
       'name': 'Adf65hljl',
       'date': 'May 2023, 11:30 PM',
       'code': 'category',
-      'imagePath': IconsVariables.histIcon,
+      'imagePath': IconsVariables.bankTransferIcon,
       'rightNumber': '+58'
     },
     {
@@ -34,7 +34,7 @@ class History extends StatelessWidget {
       'name': 'HDFC Bank',
       'date': 'May 2023, 11:30 PM',
       'code': 'category',
-      'imagePath': IconsVariables.histIcon,
+      'imagePath': IconsVariables.bankTransferIcon,
       'rightNumber': '+58'
     },
     {

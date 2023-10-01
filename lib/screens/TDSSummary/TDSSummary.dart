@@ -18,7 +18,7 @@ class TDSSummary extends StatelessWidget {
         'name': 'ADLJLJ4546K',
       'date': 'May 2023, 11:30 PM',
       'code': 'category',
-      'imagePath': IconsVariables.histIcon,
+      'imagePath': IconsVariables.bankTransferIcon,
       'rightNumber1':'56',
    'rightNumber2': '-23',
    'rightNumber3':'23'

@@ -43,11 +43,12 @@ class _NotificationsState extends State<Notifications> {
         child: Column(
 
           children: [
-            SizedBox(height: 90.h,),
+            SizedBox(height: 110.h,),
+
             Container(
               color: context.colorScheme.primaryContainer,
               padding: padding8,
-             //height: 40.h,
+            // height: 40.h,
               //width: double.infinity,
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -56,31 +57,32 @@ class _NotificationsState extends State<Notifications> {
                     S.of(context).clearAllNotification,
                     style: bodyTextStyle(),
                   ),
-                  InkWell(
-                    onTap:(){
-                      print('object jjlkjlk');
-                    setState(() {
-                      clearNotification();
+                  AppSize(
+                    height: 35.h,
+                    width: 63.w,
+                    child: CustomElivitedButton(
+                      onPress: () {
+                        setState(() {
+                          clearNotification();
+                        });
 
+                        print('ddd dd d          d');
 
-                    });} ,
-                    child: AppSize(
-                      height: 55.h,
-                      width: 63.w,
-                      child: CustomElivitedButton(
-                        onPress: () {
-                        },
-                        text: S.of(context).clear,
-                        fontSize: 12.sp,
-                        backgroundColor: context.colorScheme.onPrimaryContainer,
-                        textColor: context.colorScheme.primary,
-                      ),
+                      },
+                      text: S.of(context).clear,
+                      fontSize: 12.sp,
+                      backgroundColor: context.colorScheme.onPrimaryContainer,
+                      textColor: context.colorScheme.primary,
                     ),
                   )
                 ],
               ),
             ),
+
+
+
             AppSpacer.p20(),
+
 
             Expanded(
               child: MediaQuery.removePadding(context: context,

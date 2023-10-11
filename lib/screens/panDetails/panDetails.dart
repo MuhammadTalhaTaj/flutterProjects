@@ -83,118 +83,127 @@ class BottomContainer extends StatefulWidget {
 
 class _BottomContainerState extends State<BottomContainer> {
   String panNumber='';
+  final _formKey = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              S.of(context).addPanDetails,
-              style: headingTextStyle(),
-            ),
-            AppSize(
-              height: 10,
-            ),
-            Text(
-              S.of(context).pleaseEnterPanDetails,
-              style: subBodyTextStyle(),
-            ),
-            AppSize(
-              height: 20.h,
-            ),
-            Text(
-              S.of(context).panNumber,
-              style: bodyTextStyle(),
-            ),
-            AppSize(
-              height: 10.h,
-            ),
-            CustomTextField(
-              callback: (v){
-                setState(() {
-                  panNumber=v;
-                });
-              },
-                    keyBoardtype: TextInputType.number,
-              labelText: S.of(context).enterNumber,
-            ),
-            AppSize(
-              height: 10.h,
-            ),
-            RichText(
-              text: TextSpan(
-                text: S.of(context).note,
-                style: alertTextStyle(),
-                children: [
-                  TextSpan(
-                      text: S.of(context).loremIspumdolor,
-                      style: const TextStyle(fontWeight: FontWeight.normal))
-                ],
+    return Form(
+      key:_formKey,
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                S.of(context).addPanDetails,
+                style: headingTextStyle(),
               ),
-            ),
-            AppSize(
-              height: 25.h,
-            ),
-            Text(
-              S.of(context).uploadImage,
-              style: bodyTextStyle(),
-            ),
-            AppSize(
-              height: 10.h,
-            ),
-            DottedElevatedButton(
-              voidCallBack: (){},
-            ),
+              AppSize(
+                height: 8,
+              ),
+              Text(
+                S.of(context).pleaseEnterPanDetails,
+                style: subBodyTextStyle(),
+              ),
+              AppSize(
+                height: 10.h,
+              ),
+              Text(
+                S.of(context).panNumber,
+                style: bodyTextStyle(),
+              ),
+              AppSize(
+                height: 10.h,
+              ),
+              CustomTextField(
+                maxLength: 10,
+                validation: (val) {
+                  if (val!.isPanValid()==false) return 'Enter valid number';
+                  else null;
+                },
+                callback: (v){
+                  setState(() {
+                    panNumber=v;
+                  });
+                },
+                      keyBoardtype: TextInputType.number,
+                labelText: S.of(context).enterNumber,
+              ),
+              AppSize(
+                height: 10.h,
+              ),
+              RichText(
+                text: TextSpan(
+                  text: S.of(context).note,
+                  style: alertTextStyle(),
+                  children: [
+                    TextSpan(
+                        text: S.of(context).loremIspumdolor,
+                        style: const TextStyle(fontWeight: FontWeight.normal))
+                  ],
+                ),
+              ),
+              AppSize(
+                height: 25.h,
+              ),
+              Text(
+                S.of(context).uploadImage,
+                style: bodyTextStyle(),
+              ),
+              AppSize(
+                height: 10.h,
+              ),
+              DottedElevatedButton(
+                voidCallBack: (){},
+              ),
 
-          ],
-        ),
-        Column(
-          children: [
-            CustomElivitedButton(
-                text: S.of(context).continue1,
-                onPress: () {
-                  if(panNumber.isPanValid()){
+            ],
+          ),
+          Column(
+            children: [
+              CustomElivitedButton(
+                  text: S.of(context).continue1,
+                  onPress: () {
+
+                    if (_formKey.currentState!.validate()) {
+                      // If the form is valid, display a snackbar. In the real world,
+                      // you'd often call a server or save the information in a database.
+                      Navigator.pushNamed(context, Congratulation.routeName);
+
+                    }
+                    else{
+                      print('Error');
+                    }
+
+
+
+                    // Navigator.push(
+                    //     context,
+                    //     MaterialPageRoute(
+                    //       builder: (context) => const Congratulation(),
+                    //     ));
+                  }),
+              AppSize(
+                height: 15.h,
+              ),
+              GestureDetector(
+                  onTap: () {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => const PanUpdate(),
+                          builder: (context) => SignIn(),
                         ));
-                  }
-
-                  else{
-                    ScaffoldMessenger.of(context).showSnackBar(customSnackBar);
-                    // showDialog(context: context, builder: (context) => ValidatorPopup(),);
-                    return;
-                  }
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => const Congratulation(),
-                      ));
-                }),
-            AppSize(
-              height: 15.h,
-            ),
-            GestureDetector(
-                onTap: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => SignIn(),
-                      ));
-                },
-                child: Text(
-                  S.of(context).skip,
-                  style: bodyTextStyle(),
-                ))
-          ],
-        )
-      ],
+                  },
+                  child: Text(
+                    S.of(context).skip,
+                    style: bodyTextStyle(),
+                  ))
+            ],
+          )
+        ],
+      ),
     );
   }
 }

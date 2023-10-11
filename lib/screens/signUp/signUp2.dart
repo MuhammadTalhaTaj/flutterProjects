@@ -29,6 +29,7 @@ class SignUp2 extends StatefulWidget {
 }
 
 class _SignUp2State extends State<SignUp2> {
+  final _formKey = GlobalKey<FormState>();
   String name='';
   String number='';
   String workShopName='';
@@ -82,216 +83,250 @@ class _SignUp2State extends State<SignUp2> {
                       Expanded(
                         child: SingleChildScrollView(
 
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Text(S.of(context).welcome,style: headingTextStyle(),),
-                                  AppSize(
-                                    height: 10.h,
-                                  ),
-                                  Text(
-                                    S.of(context).welcomePleaseSignInTOContinue,
-                                    style: subBodyTextStyle(),
-                                  ),
-                                  AppSize(
-                                    height: 20.h,
-                                  ),
-                                  Text(
-                                    S.of(context).selectUserType,
-                                    style: bodyTextStyle(),
-                                  ),
-                                  AppSize(
-                                    height: 10.h,
-                                  ),
-                                  CustomDropDownButton(
-                                    list: listUserType, onPressed:(value) {},color:context.colorScheme.onPrimaryContainer,hint: S.of(context).selectType,),
-                                  AppSize(
-                                    height: 15.h,
-                                  ),
-                                  Text(
-                                    S.of(context).yourName,
-                                    style: bodyTextStyle(),
-                                  ),
-                                  AppSize(
-                                    height: 10.h,
-                                  ),
-                                  CustomTextField(
+                          child: Form(
+                            key: _formKey,
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text(S.of(context).welcome,style: headingTextStyle(),),
+                                    AppSize(
+                                      height: 10.h,
+                                    ),
+                                    Text(
+                                      S.of(context).welcomePleaseSignInTOContinue,
+                                      style: subBodyTextStyle(),
+                                    ),
+                                    AppSize(
+                                      height: 20.h,
+                                    ),
+                                    Text(
+                                      S.of(context).selectUserType,
+                                      style: bodyTextStyle(),
+                                    ),
+                                    AppSize(
+                                      height: 10.h,
+                                    ),
+                                    CustomDropDownButton(
+                                      list: listUserType, onPressed:(value) {},color:context.colorScheme.onPrimaryContainer,hint: S.of(context).selectType,),
+                                    AppSize(
+                                      height: 15.h,
+                                    ),
+                                    Text(
+                                      S.of(context).yourName,
+                                      style: bodyTextStyle(),
+                                    ),
+                                    AppSize(
+                                      height: 10.h,
+                                    ),
+                                    CustomTextField(
 
-                                    labelText: S.of(context).enterName,
-                                    callback: (v){
-                                      setState(() {
-                                        name=v;
-                                      });
-                                    },
-                                  ),
-                                  AppSize(
-                                    height: 15.h,
-                                  ),
-                                  Text(
+                                      labelText: S.of(context).enterName,
+                                      validation: (val) {
+                                        if (val!.isNameValid()==false) return 'Enter valid name';
+                                        else null;
+                                      },
+                                      callback: (v){
+                                        setState(() {
+                                          name=v;
+                                        });
+                                      },
+                                    ),
+                                    AppSize(
+                                      height: 15.h,
+                                    ),
+                                    Text(
 
-                                    S.of(context).mobileNumber,
-                                    style: bodyTextStyle(),
-                                  ),
-                                  AppSize(
-                                    height: 10.h,
-                                  ),
-                                  CustomTextField(
-                                    keyBoardtype: TextInputType.number,
-                                    labelText: S.of(context).enterNumber,
-                                    callback: (v){
-                                      setState(() {
-                                        number=v;
-                                      });
-                                    },
-                                  ),
-                                  AppSize(
-                                    height: 15.h,
-                                  ),
-                                  Text(
-                                    S.of(context).workShopName,
-                                    style: bodyTextStyle(),
-                                  ),
-                                  AppSize(
-                                    height: 10.h,
-                                  ),
-                                  CustomTextField(
-                                    labelText: S.of(context).enterName,
+                                      S.of(context).mobileNumber,
+                                      style: bodyTextStyle(),
+                                    ),
+                                    AppSize(
+                                      height: 10.h,
+                                    ),
+                                    CustomTextField(
+                                      keyBoardtype: TextInputType.number,
+                                      labelText: S.of(context).enterNumber,
+                                      maxLength: 10,
+                                      validation: (val) {
+                                        if (val!.isMobileValid()==false) return 'Enter valid number';
+                                        else null;
+                                      },
+                                      callback: (v){
+                                        setState(() {
+                                          number=v;
+                                        });
+                                      },
+                                    ),
+                                    AppSize(
+                                      height: 15.h,
+                                    ),
+                                    Text(
+                                      S.of(context).workShopName,
+                                      style: bodyTextStyle(),
+                                    ),
+                                    AppSize(
+                                      height: 10.h,
+                                    ),
+                                    CustomTextField(
+                                      labelText: S.of(context).enterName,
+                                      validation: (val) {
+                                        if (val!.isNameValid()==false) return 'Enter valid name';
+                                        else null;
+                                      },
 
-                                    callback: (v){
-                                      setState(() {
-                                        workShopName=v;
-                                      });
-                                    },
-                                  ),
-                                  AppSize(
-                                    height: 15.h,
-                                  ),
-                                  Text(
-                                    S.of(context).roadName,
-                                    style: bodyTextStyle(),
-                                  ),
-                                  AppSize(
-                                    height: 10.h,
-                                  ),
-                                  CustomTextField(
-                                    labelText: S.of(context).enterName,
+                                      callback: (v){
+                                        setState(() {
+                                          workShopName=v;
+                                        });
+                                      },
+                                    ),
+                                    AppSize(
+                                      height: 15.h,
+                                    ),
+                                    Text(
+                                      S.of(context).roadName,
+                                      style: bodyTextStyle(),
+                                    ),
+                                    AppSize(
+                                      height: 10.h,
+                                    ),
+                                    CustomTextField(
+                                      labelText: S.of(context).enterName,
+                                      validation: (val) {
+                                        if (val!.isNameValid()==false) return 'Enter valid name';
+                                        else null;
+                                      },
+                                      callback: (v){
+                                        setState(() {
+                                          roadName=v;
+                                        });
+                                      },
+                                    ),
+                                    AppSize(
+                                      height: 15.h,
+                                    ),
+                                    Text(
+                                      S.of(context).pinCode,
+                                      style: bodyTextStyle(),
+                                    ),
+                                    AppSize(
+                                      height: 10.h,
+                                    ),
+                                    CustomTextField(
+                                      keyBoardtype: TextInputType.number,
+                                      labelText: S.of(context).enterCode,
+                                      maxLength: 18,
+                                      validation: (val) {
+                                        if (val!.isCodeValid()==false) return 'Enter valid code 12 16 18';
+                                        else null;
+                                      },
 
-                                    callback: (v){
-                                      setState(() {
-                                        roadName=v;
-                                      });
-                                    },
-                                  ),
-                                  AppSize(
-                                    height: 15.h,
-                                  ),
-                                  Text(
-                                    S.of(context).pinCode,
-                                    style: bodyTextStyle(),
-                                  ),
-                                  AppSize(
-                                    height: 10.h,
-                                  ),
-                                  CustomTextField(
-                                    keyBoardtype: TextInputType.number,
-                                    labelText: S.of(context).enterCode,
+                                      callback: (v){
+                                        setState(() {
+                                          pinCode=v;
+                                        });
+                                      },
+                                    ),
+                                    AppSize(
+                                      height: 15.h,
+                                    ),
+                                    Text(
+                                      S.of(context).yourState,
+                                      style: bodyTextStyle(),
+                                    ),
+                                    AppSize(
+                                      height: 10.h,
+                                    ),
+                                    CustomDropDownButton(
+                                       list: listStates,
+                                            onPressed: (value) {},
+                                       color: context.colorScheme.onPrimaryContainer,hint: S.of(context).selectState,),
+                                    AppSize(
+                                      height: 15.h,
+                                    ),
 
-                                    callback: (v){
-                                      setState(() {
-                                        pinCode=v;
-                                      });
-                                    },
-                                  ),
-                                  AppSize(
-                                    height: 15.h,
-                                  ),
-                                  Text(
-                                    S.of(context).yourState,
-                                    style: bodyTextStyle(),
-                                  ),
-                                  AppSize(
-                                    height: 10.h,
-                                  ),
-                                  CustomDropDownButton(
-                                     list: listStates,
-                                          onPressed: (value) {},
-                                     color: context.colorScheme.onPrimaryContainer,hint: S.of(context).selectState,),
-                                  AppSize(
-                                    height: 15.h,
-                                  ),
-
-                                  Text(
-                                    S.of(context).yourCity,
-                                    style: bodyTextStyle(),
-                                  ),
-                                  AppSize(
-                                    height: 10.h,
-                                  ),
-                                  CustomDropDownButton(
-                                   list:listCities,
-                                         onPressed: (value) {},
-                                      color:context.colorScheme.onPrimaryContainer,hint: S.of(context).selectCity,),
-                                  AppSize(
-                                    height: 15.h,
-                                  ),
-
-
-                                ],
-                              ),
-                              Column(
-                                children: [
-                                  CustomElivitedButton(
-                                      text: S.of(context).getStarted,
-                                      onPress: () {
-                                        if(name.isNameValid()&&number.isMobileValid()&&workShopName.isNameValid()&&roadName.isNameValid()&&pinCode.isMpinValid()){
-                                          Navigator.push(
-                                              context,
-                                              MaterialPageRoute(
-                                                builder: (context) => const PanUpdate(),
-                                              ));
-                                        }
-
-                                        else{
-                                          ScaffoldMessenger.of(context).showSnackBar(customSnackBar);
-                                          // showDialog(context: context, builder: (context) => ValidatorPopup(),);
-                                          return;
-                                        }
-
+                                    Text(
+                                      S.of(context).yourCity,
+                                      style: bodyTextStyle(),
+                                    ),
+                                    AppSize(
+                                      height: 10.h,
+                                    ),
+                                    CustomDropDownButton(
+                                     list:listCities,
+                                           onPressed: (value) {},
+                                        color:context.colorScheme.onPrimaryContainer,hint: S.of(context).selectCity,),
+                                    AppSize(
+                                      height: 15.h,
+                                    ),
 
 
-                                      }),
-                                  AppSize(
-                                    height: 10.h,
-                                  ),
-                                  Row(
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: [
-                                      Text(
-                                        S.of(context).alreadyMemberWithUs,
-                                        style: subBodyTextStyle(),
-                                      ),
-                                      AppSize(width: 5.w,),
-                                      GestureDetector(
-                                          onTap: () {
-                                            Navigator.push(
-                                                context,
-                                                MaterialPageRoute(
-                                                  builder: (context) => const SignIn(),
-                                                ));
-                                          },
-                                          child: Text(
-                                            S.of(context).logIn,
-                                            style: bodyTextStyle(),
-                                          ))
-                                    ],
-                                  )
-                                ],
-                              )
-                            ],
+                                  ],
+                                ),
+                                Column(
+                                  children: [
+                                    CustomElivitedButton(
+                                        text: S.of(context).getStarted,
+                                        onPress: () {
+                                          if (_formKey.currentState!.validate()) {
+                                            // If the form is valid, display a snackbar. In the real world,
+                                            // you'd often call a server or save the information in a database.
+                                            Navigator.pushNamed(context, PanUpdate.routeName);
+
+                                          }
+                                          else{
+                                            print('Error');
+                                          }
+
+                                          // if(name.isNameValid()&&number.isMobileValid()&&workShopName.isNameValid()&&roadName.isNameValid()&&pinCode.isMpinValid()){
+                                          //   Navigator.push(
+                                          //       context,
+                                          //       MaterialPageRoute(
+                                          //         builder: (context) => const PanUpdate(),
+                                          //       ));
+                                          // }
+
+                                          // else{
+                                          //   ScaffoldMessenger.of(context).showSnackBar(customSnackBar('Kindly Enter Correct Input'));
+                                          //   // showDialog(context: context, builder: (context) => ValidatorPopup(),);
+                                          //   return;
+                                          // }
+
+
+
+                                        }),
+                                    AppSize(
+                                      height: 10.h,
+                                    ),
+                                    Row(
+                                      mainAxisAlignment: MainAxisAlignment.center,
+                                      children: [
+                                        Text(
+                                          S.of(context).alreadyMemberWithUs,
+                                          style: subBodyTextStyle(),
+                                        ),
+                                        AppSize(width: 5.w,),
+                                        GestureDetector(
+                                            onTap: () {
+                                              Navigator.push(
+                                                  context,
+                                                  MaterialPageRoute(
+                                                    builder: (context) => const SignIn(),
+                                                  ));
+                                            },
+                                            child: Text(
+                                              S.of(context).logIn,
+                                              style: bodyTextStyle(),
+                                            ))
+                                      ],
+                                    )
+                                  ],
+                                )
+                              ],
+                            ),
                           ),
                         ),
                       ),

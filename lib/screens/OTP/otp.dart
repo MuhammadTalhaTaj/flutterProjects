@@ -156,7 +156,7 @@ class _BottomContainerState extends State<BottomContainer> {
                 text: S.of(context).continue1,
                 onPress: () {
                   if(myOtp==false){
-                    ScaffoldMessenger.of(context).showSnackBar(customSnackBar);
+                    ScaffoldMessenger.of(context).showSnackBar(customSnackBar('Kindly Enter Correct Input'));
                     // showDialog(context: context, builder: (context) => ValidatorPopup(),);
                     return;
                   }

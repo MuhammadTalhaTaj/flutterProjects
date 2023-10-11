@@ -31,47 +31,49 @@ class _CustomDropDownButtonState extends State<CustomDropDownButton> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: 58.h,
-      padding: paddingH13,
-      decoration: BoxDecoration(
-
-          // border: Border.all( color:Colors.grey,width: 0,),
-          color: widget.color
-      ),
-      child: DropdownButtonHideUnderline(
-
-        child: DropdownButton<String>(
-          itemHeight: 60.h,
+    return ConstrainedBox(
+      constraints: BoxConstraints(minHeight: 50.h),
+      child: Container(
+        //height: 58.h,
+        padding: paddingH13,
+        decoration: BoxDecoration(
 
 
-          dropdownColor: widget.color,
-          hint:Text(widget.selected==''?widget.hint:widget.selected,style:  TextStyle(fontSize: 20.sp,color: Colors.white),),
-          isExpanded: true,
+            // border: Border.all( color:Colors.grey,width: 0,),
+            color: widget.color
+        ),
 
-          value: selectedValue,
-          icon: SizedBox(height: 15.h,child: Image.asset(IconsVariables.vectorIcon,fit: BoxFit.fill,),),
-          // icon: const Icon(Icons.arrow_drop_down_sharp,color: Colors.white,size: 40),
-          elevation: 16,
-          style: TextStyle(color: Colors.white,fontSize: 20.sp),
-          onChanged: (value) {
-            setState(() {
-              selectedValue = value;
-            });
-            widget.onPressed(value!);
-          },
-          items: widget.list.map<DropdownMenuItem<String>>((String value) {
-            return DropdownMenuItem<String>(
+        child: DropdownButtonHideUnderline(
+          child: DropdownButtonFormField<String>(
+            validator: (value) => value == null ? 'field required' : null,
+            itemHeight: 60.h,
+            dropdownColor: widget.color,
+            hint:Text(widget.selected==''?widget.hint:widget.selected,style:  TextStyle(fontSize: 20.sp,color: Colors.white),),
+            isExpanded: true,
+            value: selectedValue,
+            icon: SizedBox(height: 15.h,child: Image.asset(IconsVariables.vectorIcon,fit: BoxFit.fill,),),
+            // icon: const Icon(Icons.arrow_drop_down_sharp,color: Colors.white,size: 40),
+            elevation: 16,
+            style: TextStyle(color: Colors.white,fontSize: 20.sp),
+            onChanged: (value) {
+              setState(() {
+                selectedValue = value;
+              });
+              widget.onPressed(value!);
+            },
+            items: widget.list.map<DropdownMenuItem<String>>((String value) {
+              return DropdownMenuItem<String>(
 
-              alignment: Alignment.centerLeft,
+                alignment: Alignment.centerLeft,
 
-              value: value,
-              child: Text(
-                value,
-                style: TextStyle(fontSize: 20.sp,color: Colors.white),
-              ),
-            );
-          }).toList(),
+                value: value,
+                child: Text(
+                  value,
+                  style: TextStyle(fontSize: 20.sp,color: Colors.white),
+                ),
+              );
+            }).toList(),
+          ),
         ),
       ),
     );

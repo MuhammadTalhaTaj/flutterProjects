@@ -102,7 +102,7 @@ class _ChangePinState extends State<ChangePin> {
                   CustomElivitedButton(
                     onPress: () {
                       if(myOtp==false){
-                        ScaffoldMessenger.of(context).showSnackBar(customSnackBar);
+                        ScaffoldMessenger.of(context).showSnackBar(customSnackBar('Kindly Enter Correct Input'));
                         // showDialog(context: context, builder: (context) => ValidatorPopup(),);
                         return;
                       }

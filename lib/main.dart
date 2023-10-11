@@ -41,15 +41,15 @@ import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 void main() =>
+    // runApp(
+    // const MyApp());
     runApp(
-    const MyApp());
-//     runApp(
-//   DevicePreview(
-//     enabled: !kReleaseMode,
-//     builder: (context) =>
-//         MyApp(), // Wrap your app
-//   ),
-// );
+  DevicePreview(
+    enabled: !kReleaseMode,
+    builder: (context) =>
+        MyApp(), // Wrap your app
+  ),
+);
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
@@ -87,12 +87,12 @@ class MyApp extends StatelessWidget {
 
 
         routes: {
-          SignIn.routeName: (ctx) => SignIn(),
-          SignUp.routeName: (ctx) => SignUp(),
-          SignUp2.routeName: (ctx) => SignUp2(),
-          OTP.routeName: (ctx) => OTP(),
-          PanUpdate.routeName: (ctx) => PanUpdate(),
-          Language.routeName: (ctx) => Language(),
+          SignIn.routeName: (ctx) => const SignIn(),
+          SignUp.routeName: (ctx) => const SignUp(),
+          SignUp2.routeName: (ctx) => const SignUp2(),
+          OTP.routeName: (ctx) => const OTP(),
+          PanUpdate.routeName: (ctx) => const PanUpdate(),
+          Language.routeName: (ctx) =>  Language(),
           Failed.routeName: (ctx) => Failed(),
           Congratulation.routeName: (ctx) => Congratulation(),
           EditProfile.routeName: (ctx) => EditProfile(),

@@ -4,18 +4,26 @@ import 'package:flutter/material.dart';
 
 import 'app_spacer_constants.dart';
 
-final customSnackBar = SnackBar(
+import 'package:flutter/material.dart';
 
- // duration: Duration(seconds: 1),
-  closeIconColor: Colors.white,
-  backgroundColor: Color(0xffa30010),
-  content:  Row(children: [
+// Define a function to create a custom SnackBar with dynamic text.
+SnackBar customSnackBar(String message) {
+  return SnackBar(
+    closeIconColor: Colors.white,
+    backgroundColor: Color(0xffa30010),
+    content: Row(
+      children: [
+        Image.asset('lib/icons/cancelIcon.png'),
+        AppSpacer.p8(),
+        Flexible(
+          child: Text(
+            message,
+            style: bodyTextStyle(),
+          ),
+        ),
+      ],
+    ),
+    showCloseIcon: true,
+  );
+}
 
-    Image.asset('lib/icons/cancelIcon.png'),
-    AppSpacer.p8(),
-    Flexible(child: Text('Kindly Enter Correct Input',style: bodyTextStyle(),)),
-  ],),
-  showCloseIcon: true,
-
-  //action: SnackBarAction(label: 'Ok', onPressed: (){})
-);

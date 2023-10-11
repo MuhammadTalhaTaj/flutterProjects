@@ -106,7 +106,7 @@ class _ManualEntryState extends State<ManualEntry> {
                   }
                 }
                 else{
-                  ScaffoldMessenger.of(context).showSnackBar(customSnackBar);
+                  ScaffoldMessenger.of(context).showSnackBar(customSnackBar('Kindly Enter Correct Input'));
                   // showDialog(context: context, builder: (context) => ValidatorPopup(),);
                   return;
                 }
